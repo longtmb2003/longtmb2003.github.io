@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Long Tran — Backend Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0A0A0C;
+  --surface: #131316;
+  --surface-2: #1A1A1F;
+  --border: #28282F;
+  --border-hover: #3A3A44;
+  --text: #EEEEF0;
+  --text-2: #A0A0A8;
+  --text-3: #5C5C66;
+  --amber: #F0A030;
+  --amber-glow: rgba(240,160,48,0.08);
+  --teal: #38C8B0;
+  --teal-glow: rgba(56,200,176,0.08);
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+::selection { background: rgba(240,160,48,0.25); }
+a { color: inherit; text-decoration: none; }
+
+body::before {
+  content: ''; position: fixed; inset: 0; z-index: 9999; pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.wrap { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+
+/* ── TOPBAR ── */
+.topbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(10,10,12,0.7); backdrop-filter: blur(20px) saturate(1.4);
+  border-bottom: 1px solid rgba(40,40,47,0.5);
+}
+.topbar-inner {
+  max-width: 1100px; margin: 0 auto; padding: 16px 28px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.logo { font-family: 'Outfit', sans-serif; font-size: 20px; font-weight: 800; letter-spacing: -0.02em; }
+.logo span { color: var(--amber); }
+.nav-links { display: flex; gap: 32px; }
+.nav-links a {
+  font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--text-2);
+  letter-spacing: 0.02em; transition: color 0.25s;
+}
+.nav-links a:hover { color: var(--text); }
+
+/* ── HERO ── */
+.hero {
+  padding: 160px 0 60px;
+  position: relative;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--teal);
+  margin-bottom: 32px;
+}
+.hero-badge .dot {
+  width: 7px; height: 7px; border-radius: 50%; background: var(--teal);
+  animation: blink 2.4s infinite;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; } 50% { opacity: 0.3; }
+}
+.hero h1 {
+  font-family: 'Outfit', sans-serif; font-weight: 900;
+  font-size: clamp(52px, 8vw, 88px);
+  line-height: 1; letter-spacing: -0.035em;
+  margin-bottom: 28px;
+}
+.hero h1 .dim { color: var(--text-3); }
+.hero-sub {
+  font-size: 18px; color: var(--text-2); max-width: 520px;
+  line-height: 1.65; margin-bottom: 40px;
+}
+.hero-sub strong { color: var(--text); font-weight: 600; }
+.hero-cta {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: 'JetBrains Mono', monospace; font-size: 14px; font-weight: 600;
+  background: var(--amber); color: #0A0A0C; padding: 14px 28px;
+  border-radius: 8px; transition: all 0.2s;
+}
+.hero-cta:hover { background: #F5B040; transform: translateY(-1px); box-shadow: 0 8px 24px rgba(240,160,48,0.2); }
+
+/* ── BENTO GRID ── */
+.bento {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
+  padding: 20px 0 80px;
+}
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.card:hover { border-color: var(--border-hover); transform: translateY(-2px); }
+
+.card.span-8 { grid-column: span 8; }
+.card.span-6 { grid-column: span 6; }
+.card.span-4 { grid-column: span 4; }
+.card.span-3 { grid-column: span 3; }
+.card.span-12 { grid-column: span 12; }
+
+.card-label {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-3);
+  text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 18px;
+}
+
+/* ── METRIC CARDS ── */
+.metric-val {
+  font-family: 'Outfit', sans-serif; font-weight: 900;
+  font-size: 60px; line-height: 1; letter-spacing: -0.03em;
+  margin-bottom: 10px;
+}
+.metric-val.amber { color: var(--amber); }
+.metric-val.teal { color: var(--teal); }
+.metric-desc { font-size: 15px; color: var(--text-2); line-height: 1.5; }
+
+/* ── PIPELINE CARD ── */
+.card.pipeline-card {
+  padding: 28px 28px 18px;
+  background: linear-gradient(180deg, var(--surface) 0%, var(--surface-2) 100%);
+}
+.pipeline-card .card-label { margin-bottom: 14px; }
+svg.pipe { width: 100%; height: auto; display: block; }
+.pipe .node { fill: var(--surface-2); stroke: var(--border); stroke-width: 1.2; }
+.pipe .node.hot { stroke: var(--amber); stroke-width: 1.5; }
+.pipe .node-label { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; fill: var(--text); }
+.pipe .node-sub { font-family: 'JetBrains Mono', monospace; font-size: 8.5px; fill: var(--text-3); }
+.pipe .edge { fill: none; stroke: var(--border); stroke-width: 1.2; }
+.pipe .pulse { fill: var(--amber); }
+.pipe .pulse.t { fill: var(--teal); }
+
+/* ── PROJECT CARDS ── */
+.proj-card { display: flex; flex-direction: column; justify-content: space-between; }
+.proj-card .proj-title {
+  font-family: 'Outfit', sans-serif; font-weight: 700;
+  font-size: 22px; line-height: 1.2; letter-spacing: -0.01em;
+  margin-bottom: 12px;
+}
+.proj-card .proj-desc { font-size: 15px; color: var(--text-2); line-height: 1.6; flex: 1; }
+.proj-card .proj-desc strong { color: var(--text); font-weight: 600; }
+.proj-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 20px; }
+.proj-tags span {
+  font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: var(--text-3);
+  background: var(--surface-2); border: 1px solid var(--border);
+  padding: 5px 10px; border-radius: 5px;
+}
+
+/* ── STACK CARD ── */
+.stack-grid { display: flex; flex-wrap: wrap; gap: 9px; }
+.stack-chip {
+  font-family: 'JetBrains Mono', monospace; font-size: 13px;
+  color: var(--text-2); padding: 8px 16px;
+  background: var(--surface-2); border: 1px solid var(--border);
+  border-radius: 7px; transition: all 0.2s;
+}
+.stack-chip:hover { border-color: var(--amber); color: var(--text); }
+.stack-chip.core { border-color: rgba(240,160,48,0.35); color: var(--amber); background: var(--amber-glow); }
+
+/* ── TIMELINE ── */
+.timeline { padding: 60px 0 80px; }
+.timeline h2 {
+  font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 40px;
+  letter-spacing: -0.025em; margin-bottom: 48px;
+}
+.timeline h2 span { color: var(--text-3); }
+.tl-item {
+  display: grid; grid-template-columns: 140px 1px 1fr; gap: 32px;
+  padding-bottom: 48px; position: relative;
+}
+.tl-item:last-child { padding-bottom: 0; }
+.tl-date { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--text-3); padding-top: 4px; text-align: right; }
+.tl-line { background: var(--border); position: relative; }
+.tl-line::before {
+  content: ''; position: absolute; top: 6px; left: -3.5px;
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--amber); box-shadow: 0 0 0 3px var(--bg);
+}
+.tl-role { font-size: 19px; font-weight: 700; margin-bottom: 3px; }
+.tl-company { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--teal); margin-bottom: 10px; }
+.tl-desc { font-size: 15px; color: var(--text-2); line-height: 1.6; max-width: 540px; }
+.tl-highlight {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: 'JetBrains Mono', monospace; font-size: 12px;
+  color: var(--amber); background: var(--amber-glow);
+  border: 1px solid rgba(240,160,48,0.25);
+  padding: 5px 12px; border-radius: 20px; margin-top: 10px;
+}
+
+.confid {
+  font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--text-3);
+  margin-top: 40px; padding: 16px 20px;
+  border: 1px dashed var(--border); border-radius: 8px;
+}
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 72px 0 48px;
+}
+.footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+.footer-heading {
+  font-family: 'Outfit', sans-serif; font-weight: 800;
+  font-size: clamp(30px, 4vw, 48px); line-height: 1.05; letter-spacing: -0.025em;
+}
+.footer-heading span { color: var(--amber); }
+.contact-items { display: flex; flex-direction: column; gap: 0; }
+.contact-item {
+  display: flex; align-items: center; gap: 16px;
+  padding: 18px 0; border-bottom: 1px solid var(--border);
+  font-size: 15px; color: var(--text);
+  transition: color 0.2s;
+}
+a.contact-item:hover { color: var(--amber); }
+.contact-item .k {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-3);
+  text-transform: uppercase; letter-spacing: 0.08em; width: 80px; flex-shrink: 0;
+}
+.copyright {
+  grid-column: 1 / -1; margin-top: 40px;
+  font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--text-3);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 860px) {
+  .bento { grid-template-columns: repeat(6, 1fr); }
+  .card.span-8, .card.span-12 { grid-column: span 6; }
+  .card.span-4, .card.span-3 { grid-column: span 6; }
+  .tl-item { grid-template-columns: 1fr; gap: 8px; padding-left: 24px; }
+  .tl-date { text-align: left; }
+  .tl-line { display: none; }
+  .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+}
+@media (max-width: 520px) {
+  .bento { grid-template-columns: 1fr; }
+  .card.span-8, .card.span-6, .card.span-4, .card.span-3, .card.span-12 { grid-column: span 1; }
+  .nav-links { gap: 20px; }
+  .nav-links a { font-size: 11px; }
+  .metric-val { font-size: 44px; }
+}
+
+.rv { opacity: 0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; }
+.rv.in { opacity: 1; transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .rv { opacity: 1; transform: none; }
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="logo">LT<span>.</span></div>
+    <nav class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#stack">Stack</a>
+      <a href="#path">Path</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section class="hero">
+  <div class="hero-badge"><span class="dot"></span> Available for hire — Ho Chi Minh City</div>
+  <h1>Build the<br>backend.<span class="dim"><br>Break nothing.</span></h1>
+  <p class="hero-sub">
+    I build <strong>auth systems, event pipelines, and RBAC engines</strong> for
+    platforms where downtime isn't an option — government public-safety and emergency response.
+  </p>
+  <a class="hero-cta" href="mailto:tranminhbaolong.forwork@gmail.com">Get in touch →</a>
+</section>
+
+<!-- BENTO -->
+<section id="work" class="bento">
+
+  <!-- PIPELINE -->
+  <div class="card span-8 pipeline-card rv">
+    <div class="card-label">// Production system I designed</div>
+    <svg class="pipe" viewBox="0 0 640 195" xmlns="http://www.w3.org/2000/svg">
+      <rect class="node hot" x="6" y="78" width="100" height="40" rx="6"/>
+      <text class="node-label" x="56" y="96" text-anchor="middle">IoT Devices</text>
+      <text class="node-sub" x="56" y="108" text-anchor="middle">alarm + heartbeat</text>
+      <rect class="node" x="160" y="78" width="100" height="40" rx="6"/>
+      <text class="node-label" x="210" y="96" text-anchor="middle">gRPC Gateway</text>
+      <text class="node-sub" x="210" y="108" text-anchor="middle">event intake</text>
+      <rect class="node hot" x="315" y="78" width="80" height="40" rx="6"/>
+      <text class="node-label" x="355" y="100" text-anchor="middle">Kafka</text>
+      <rect class="node" x="470" y="12" width="160" height="34" rx="6"/>
+      <text class="node-label" x="550" y="34" text-anchor="middle">Monitoring System</text>
+      <rect class="node" x="470" y="80" width="160" height="34" rx="6"/>
+      <text class="node-label" x="550" y="102" text-anchor="middle">Support System</text>
+      <rect class="node" x="470" y="148" width="160" height="34" rx="6"/>
+      <text class="node-label" x="550" y="170" text-anchor="middle">Event Log + DB</text>
+      <path class="edge" d="M106,98 L160,98"/>
+      <path class="edge" d="M260,98 L315,98"/>
+      <path class="edge" d="M395,90 C430,90 430,29 470,29"/>
+      <path class="edge" d="M395,98 L470,97"/>
+      <path class="edge" d="M395,106 C430,106 430,165 470,165"/>
+      <circle class="pulse" r="3"><animateMotion dur="2.2s" repeatCount="indefinite" path="M106,98 L160,98 L260,98 L315,98"/></circle>
+      <circle class="pulse t" r="2.5"><animateMotion dur="2s" begin="0.2s" repeatCount="indefinite" path="M395,90 C430,90 430,29 470,29"/></circle>
+      <circle class="pulse t" r="2.5"><animateMotion dur="2s" begin="0.5s" repeatCount="indefinite" path="M395,98 L470,97"/></circle>
+      <circle class="pulse t" r="2.5"><animateMotion dur="2s" begin="0.8s" repeatCount="indefinite" path="M395,106 C430,106 430,165 470,165"/></circle>
+    </svg>
+  </div>
+
+  <!-- METRIC: bugs -->
+  <div class="card span-4 rv" style="background: linear-gradient(135deg, var(--surface) 60%, var(--amber-glow));">
+    <div class="card-label">Root-cause fixes</div>
+    <div class="metric-val amber">100+</div>
+    <div class="metric-desc">Production & QC bugs traced to root cause — not patched.</div>
+  </div>
+
+  <!-- PROJECT: OTP -->
+  <div class="card span-4 proj-card rv">
+    <div>
+      <div class="card-label">Auth System</div>
+      <div class="proj-title">OTP Service from Scratch</div>
+      <div class="proj-desc">
+        Full OTP flow — generation, <strong>AES-GCM encryption</strong>, SHA-256 lookup, lockout, expiry. Decoupled from JWT issuance.
+      </div>
+    </div>
+    <div class="proj-tags">
+      <span>Spring Security</span><span>MongoDB</span><span>Redis</span><span>Feign</span>
+    </div>
+  </div>
+
+  <!-- PROJECT: RBAC -->
+  <div class="card span-4 proj-card rv">
+    <div>
+      <div class="card-label">Authorization</div>
+      <div class="proj-title">Multi-Level RBAC Engine</div>
+      <div class="proj-desc">
+        Granular permissions, groups, role-mapping migrations across <strong>org hierarchy changes</strong>. Row-level Data Scope.
+      </div>
+    </div>
+    <div class="proj-tags">
+      <span>RBAC</span><span>Data Scope</span><span>Oracle</span><span>JPA</span>
+    </div>
+  </div>
+
+  <!-- PROJECT: Bulk -->
+  <div class="card span-4 proj-card rv">
+    <div>
+      <div class="card-label">Data Pipeline</div>
+      <div class="proj-title">Bulk Notification Engine</div>
+      <div class="proj-desc">
+        Mass-recipient management for government-scale SMS — <strong>Excel import/export</strong> via async pipeline.
+      </div>
+    </div>
+    <div class="proj-tags">
+      <span>Kafka</span><span>Redis</span><span>MinIO</span><span>Async</span>
+    </div>
+  </div>
+
+  <!-- METRIC: years -->
+  <div class="card span-3 rv" style="display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
+    <div class="metric-val teal" style="font-size:72px;">~2y</div>
+    <div class="metric-desc">Backend experience<br>in enterprise systems</div>
+  </div>
+
+  <!-- METRIC: platforms -->
+  <div class="card span-3 rv" style="display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
+    <div class="metric-val" style="font-size:72px;">3</div>
+    <div class="metric-desc">Government platforms<br>shipped to production</div>
+  </div>
+
+  <!-- STACK -->
+  <div class="card span-6 rv" id="stack">
+    <div class="card-label">Core Stack</div>
+    <div class="stack-grid">
+      <span class="stack-chip core">Java 17/21</span>
+      <span class="stack-chip core">Spring Boot</span>
+      <span class="stack-chip core">Apache Kafka</span>
+      <span class="stack-chip core">gRPC</span>
+      <span class="stack-chip">PostgreSQL</span>
+      <span class="stack-chip">Oracle</span>
+      <span class="stack-chip">MongoDB</span>
+      <span class="stack-chip">Redis</span>
+      <span class="stack-chip">MinIO</span>
+      <span class="stack-chip">Elasticsearch</span>
+      <span class="stack-chip">Spring Security</span>
+      <span class="stack-chip">Spring Data JPA</span>
+      <span class="stack-chip">Hibernate</span>
+      <span class="stack-chip">Feign</span>
+      <span class="stack-chip">MapStruct</span>
+      <span class="stack-chip">Flyway</span>
+      <span class="stack-chip">Docker</span>
+      <span class="stack-chip">Rancher</span>
+      <span class="stack-chip">OpenShift</span>
+      <span class="stack-chip">GitLab CI/CD</span>
+    </div>
+  </div>
+
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline" id="path">
+  <h2 class="rv">Career <span>path.</span></h2>
+
+  <div class="tl-item rv">
+    <div class="tl-date">2024 — now</div>
+    <div class="tl-line"></div>
+    <div class="tl-content">
+      <div class="tl-role">Backend Developer</div>
+      <div class="tl-company">GTEL OTS · Ho Chi Minh City</div>
+      <div class="tl-desc">
+        Auth services, RBAC engines, and event pipelines for 3 government
+        public-safety platforms. Full ownership of data quality across Kafka,
+        gRPC, and Oracle layers.
+      </div>
+    </div>
+  </div>
+
+  <div class="tl-item rv">
+    <div class="tl-date">2023 — 2024</div>
+    <div class="tl-line"></div>
+    <div class="tl-content">
+      <div class="tl-role">Desktop App Developer</div>
+      <div class="tl-company">IO STREAM</div>
+      <div class="tl-desc">
+        Windows apps with C# & WinUI — file security tools and media downloaders.
+      </div>
+    </div>
+  </div>
+
+  <div class="tl-item rv">
+    <div class="tl-date">2021 — 2025</div>
+    <div class="tl-line"></div>
+    <div class="tl-content">
+      <div class="tl-role">B.Eng Information Technology</div>
+      <div class="tl-company">HCMC Open University · Grade: Good</div>
+      <div class="tl-desc">
+        Academic Excellence Scholarship (HBKKHT) recipient, Jan 2025.
+      </div>
+      <div class="tl-highlight">🏆 Academic Excellence Scholarship — 01/2025</div>
+    </div>
+  </div>
+
+  <div class="tl-item rv">
+    <div class="tl-date">Jul 2026</div>
+    <div class="tl-line"></div>
+    <div class="tl-content">
+      <div class="tl-role">SQL (Advanced) — HackerRank</div>
+      <div class="tl-company">Certification</div>
+      <div class="tl-highlight">✓ Achieved Jul 5, 2026</div>
+    </div>
+  </div>
+
+  <div class="confid rv">
+    Due to government project confidentiality, agency names, specific metrics,
+    and system details are generalized throughout this page.
+  </div>
+</section>
+
+</div>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-grid rv">
+      <div class="footer-heading">Let's build<br>something <span>reliable.</span></div>
+      <div class="contact-items">
+        <a class="contact-item" href="mailto:tranminhbaolong.forwork@gmail.com">
+          <span class="k">Email</span> tranminhbaolong.forwork@gmail.com
+        </a>
+        <a class="contact-item" href="tel:+84905195123">
+          <span class="k">Phone</span> (+84) 905 195 123
+        </a>
+        <a class="contact-item" href="https://linkedin.com/in/long-tmb" target="_blank" rel="noopener">
+          <span class="k">LinkedIn</span> linkedin.com/in/long-tmb
+        </a>
+        <div class="contact-item">
+          <span class="k">Location</span> District 7, Ho Chi Minh City
+        </div>
+      </div>
+      <div class="copyright">© 2026 Long Tran</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(es => {
+  es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }});
+}, { threshold: 0.1 });
+document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
