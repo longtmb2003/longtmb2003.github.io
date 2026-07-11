@@ -9,19 +9,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #0D1117;
-  --surface: #151B24;
-  --surface-2: #1B2330;
-  --border: #252E3D;
-  --border-hi: #33405454;
-  --text: #E9EDF3;
-  --text-2: #9AA6B5;
-  --text-3: #5D6B7E;
-  --blue: #4F8EF7;
-  --blue-deep: #2563EB;
-  --blue-soft: #7FADFA;
-  --blue-tint: rgba(79,142,247,0.10);
-  --green: #34D399;
+  /* Warm charcoal + emerald: calm, harmonious, "all systems green" */
+  --bg: #0E100E;
+  --surface: #151815;
+  --surface-2: #1B1F1B;
+  --border: #262B26;
+  --border-hi: #37403788;
+  --text: #EFF2EC;
+  --text-2: #9DA69C;
+  --text-3: #5E675E;
+  --em: #34D399;          /* emerald accent */
+  --em-deep: #0E9F6E;
+  --em-soft: #6EE7B7;
+  --em-tint: rgba(52,211,153,0.10);
+  --cream: #F3EFE6;       /* echoes the shirt in the photo */
+  --cream-2: #E7E1D3;
 }
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior: smooth; }
@@ -33,53 +35,55 @@ body {
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
-::selection { background: rgba(79,142,247,0.3); }
+::selection { background: rgba(52,211,153,0.28); }
 a { color: inherit; text-decoration: none; }
-.mono { font-family: 'JetBrains Mono', monospace; }
 
 .wrap { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
 
 /* ── NAV ── */
 .topbar {
   position: sticky; top: 0; z-index: 100;
-  background: rgba(13,17,23,0.8); backdrop-filter: blur(16px);
+  background: rgba(14,16,14,0.82); backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
 }
 .topbar-inner {
-  max-width: 1080px; margin: 0 auto; padding: 18px 28px;
+  max-width: 1080px; margin: 0 auto; padding: 17px 28px;
   display: flex; align-items: center; justify-content: space-between;
 }
 .logo { font-weight: 800; font-size: 18px; letter-spacing: -0.02em; }
-.logo span { color: var(--blue); }
+.logo span { color: var(--em); }
 .nav-links { display: flex; gap: 30px; align-items: center; }
 .nav-links a { font-size: 14px; font-weight: 500; color: var(--text-2); transition: color 0.2s; }
-.nav-links a:hover { color: var(--text); }
+.nav-links a:hover { color: var(--em); }
 .nav-cta {
-  font-size: 13.5px; font-weight: 600;
-  background: var(--blue); color: #fff;
-  padding: 9px 20px; border-radius: 8px;
-  transition: background 0.2s;
+  font-size: 13.5px; font-weight: 700;
+  background: var(--em); color: #06231A !important;
+  padding: 9px 20px; border-radius: 9px;
+  transition: all 0.2s;
 }
-.nav-cta:hover { background: var(--blue-deep); color: #fff !important; }
+.nav-cta:hover { background: var(--em-soft); }
 
-/* ── HERO: split layout ── */
+/* ── HERO ── */
 .hero {
-  display: grid; grid-template-columns: 1.15fr 1fr;
-  gap: 60px; align-items: center;
-  padding: 90px 0 80px;
+  display: grid; grid-template-columns: 1.12fr 1fr;
+  gap: 56px; align-items: center;
+  padding: 84px 0 84px;
 }
 .hero-greet {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-size: 15px; font-weight: 600; color: var(--text-2);
-  margin-bottom: 18px;
+  display: inline-flex; align-items: center; gap: 9px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13.5px; color: var(--em);
+  margin-bottom: 20px;
 }
+.hero-greet .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--em); animation: blink 2.4s infinite; }
+@keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
 .hero h1 {
   font-weight: 800;
-  font-size: clamp(36px, 5vw, 54px);
-  line-height: 1.12; letter-spacing: -0.025em;
-  margin-bottom: 10px;
+  font-size: clamp(38px, 5.2vw, 56px);
+  line-height: 1.1; letter-spacing: -0.028em;
+  margin-bottom: 12px;
 }
-.hero h1 .accent { color: var(--blue); }
+.hero h1 .accent { color: var(--em); }
 .hero-role {
   font-family: 'JetBrains Mono', monospace;
   font-size: 15px; color: var(--text-2);
@@ -93,84 +97,78 @@ a { color: inherit; text-decoration: none; }
 .btn-row { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 44px; }
 .btn {
   display: inline-flex; align-items: center; gap: 9px;
-  font-size: 15px; font-weight: 600;
-  padding: 13px 28px; border-radius: 10px;
+  font-size: 15px; font-weight: 700;
+  padding: 13px 28px; border-radius: 11px;
   transition: all 0.22s;
 }
-.btn.primary { background: var(--blue); color: #fff; }
-.btn.primary:hover { background: var(--blue-deep); transform: translateY(-2px); box-shadow: 0 10px 28px rgba(79,142,247,0.3); }
+.btn.primary { background: var(--em); color: #06231A; }
+.btn.primary:hover { background: var(--em-soft); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(52,211,153,0.25); }
 .btn.outline { border: 1.5px solid var(--border); color: var(--text-2); }
-.btn.outline:hover { border-color: var(--blue); color: var(--blue); }
+.btn.outline:hover { border-color: var(--em); color: var(--em); }
 
-/* hero stats inline */
 .hero-stats { display: flex; gap: 40px; }
-.hstat .num {
-  font-weight: 800; font-size: 30px; letter-spacing: -0.02em;
-  color: var(--text);
-}
-.hstat .num em { color: var(--blue); font-style: normal; }
+.hstat .num { font-weight: 800; font-size: 30px; letter-spacing: -0.02em; }
+.hstat .num em { color: var(--em); font-style: normal; }
 .hstat .lbl { font-size: 13px; color: var(--text-3); margin-top: 2px; }
 
-/* hero photo */
+/* hero photo — cream card echoing the shirt */
 .hero-photo { position: relative; }
 .photo-frame {
-  aspect-ratio: 4/4.6;
-  border-radius: 24px;
-  background: linear-gradient(165deg, var(--surface-2) 0%, var(--surface) 100%);
-  border: 1px solid var(--border);
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  gap: 14px;
-  position: relative;
+  border-radius: 26px;
+  background:
+    radial-gradient(ellipse at 70% 15%, rgba(52,211,153,0.16), transparent 55%),
+    linear-gradient(170deg, var(--cream) 0%, var(--cream-2) 100%);
   overflow: hidden;
-}
-.photo-frame::before {
-  content: ''; position: absolute; inset: 0;
-  background: radial-gradient(ellipse at 30% 20%, var(--blue-tint), transparent 60%);
-}
-.photo-placeholder-icon {
-  width: 84px; height: 84px; border-radius: 50%;
-  background: var(--blue-tint); border: 1.5px dashed rgba(79,142,247,0.4);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 34px; position: relative;
-}
-.photo-placeholder-text {
-  font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--text-3);
   position: relative;
+  display: flex; align-items: flex-end; justify-content: center;
+  aspect-ratio: 4/4.4;
+  box-shadow: 0 30px 70px rgba(0,0,0,0.5);
 }
-/* floating badge on photo */
+/* faint code pattern on cream card */
+.photo-frame::before {
+  content: '{ } </> ( ) => [ ] :: { } </> ( ) => [ ] :: { } </> ( ) => [ ]';
+  position: absolute; inset: 0;
+  font-family: 'JetBrains Mono', monospace; font-size: 34px; font-weight: 600;
+  color: rgba(14,16,14,0.045);
+  line-height: 2.1; padding: 20px;
+  word-break: break-all;
+}
+.photo-frame img {
+  width: 88%; display: block; position: relative;
+  filter: drop-shadow(0 18px 34px rgba(0,0,0,0.28));
+}
+/* floating tech badges */
 .photo-badge {
-  position: absolute; bottom: 22px; left: -18px;
+  position: absolute;
   display: flex; align-items: center; gap: 10px;
   background: var(--surface-2); border: 1px solid var(--border);
-  border-radius: 14px; padding: 12px 18px;
-  box-shadow: 0 16px 40px rgba(0,0,0,0.45);
+  border-radius: 14px; padding: 11px 16px;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.5);
   animation: floaty 5s ease-in-out infinite;
+  z-index: 2;
 }
 .photo-badge .ic {
-  width: 36px; height: 36px; border-radius: 10px;
-  background: var(--blue-tint); display: flex; align-items: center; justify-content: center;
-  font-size: 17px;
+  width: 34px; height: 34px; border-radius: 9px;
+  background: var(--em-tint); border: 1px solid rgba(52,211,153,0.3);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
 }
-.photo-badge .t1 { font-size: 13.5px; font-weight: 700; line-height: 1.3; }
-.photo-badge .t2 { font-size: 11.5px; color: var(--text-3); }
-.photo-badge.b2 {
-  bottom: auto; top: 26px; left: auto; right: -14px;
-  animation-delay: 1.4s;
-}
+.photo-badge .t1 { font-size: 13px; font-weight: 700; line-height: 1.3; }
+.photo-badge .t2 { font-family:'JetBrains Mono',monospace; font-size: 10.5px; color: var(--text-3); }
+.photo-badge.b1 { bottom: 26px; left: -22px; }
+.photo-badge.b2 { top: 24px; right: -16px; animation-delay: 1.4s; }
+.photo-badge.b3 { bottom: 110px; right: -26px; animation-delay: 2.6s; }
 @keyframes floaty { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-9px);} }
 
 /* ── SECTIONS ── */
 section { padding: 80px 0; }
 .sec-tag {
-  font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 500;
-  color: var(--blue); text-transform: uppercase; letter-spacing: 0.12em;
+  font-family: 'JetBrains Mono', monospace; font-size: 12px;
+  color: var(--em); text-transform: uppercase; letter-spacing: 0.14em;
   margin-bottom: 12px;
 }
-.sec-title {
-  font-weight: 800; font-size: 34px; letter-spacing: -0.02em;
-  margin-bottom: 14px;
-}
-.sec-desc { font-size: 16px; color: var(--text-2); max-width: 540px; margin-bottom: 48px; }
+.sec-title { font-weight: 800; font-size: 34px; letter-spacing: -0.02em; margin-bottom: 14px; }
+.sec-desc { font-size: 16px; color: var(--text-2); max-width: 560px; margin-bottom: 48px; }
 
 /* ── SERVICES ── */
 .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
@@ -179,10 +177,10 @@ section { padding: 80px 0; }
   border-radius: 18px; padding: 30px;
   transition: all 0.25s;
 }
-.svc-card:hover { border-color: rgba(79,142,247,0.45); transform: translateY(-4px); }
+.svc-card:hover { border-color: rgba(52,211,153,0.45); transform: translateY(-4px); }
 .svc-icon {
   width: 50px; height: 50px; border-radius: 13px;
-  background: var(--blue-tint); border: 1px solid rgba(79,142,247,0.25);
+  background: var(--em-tint); border: 1px solid rgba(52,211,153,0.25);
   display: flex; align-items: center; justify-content: center;
   font-size: 22px; margin-bottom: 20px;
 }
@@ -193,24 +191,23 @@ section { padding: 80px 0; }
 .proj-row {
   display: grid; grid-template-columns: 1fr 1fr;
   gap: 44px; align-items: center;
-  padding: 36px 0;
+  padding: 38px 0;
 }
 .proj-row + .proj-row { border-top: 1px solid var(--border); }
 .proj-row.flip .proj-media { order: 2; }
 .proj-media {
-  aspect-ratio: 16/10; border-radius: 18px;
+  border-radius: 18px;
   background: linear-gradient(160deg, var(--surface-2), var(--surface));
   border: 1px solid var(--border);
-  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
   overflow: hidden; position: relative;
   transition: border-color 0.25s;
+  padding: 26px 20px;
+  display: flex; align-items: center; justify-content: center;
 }
-.proj-row:hover .proj-media { border-color: rgba(79,142,247,0.4); }
-.proj-media .ph-ic { font-size: 30px; opacity: 0.8; }
-.proj-media .ph-tx { font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: var(--text-3); }
+.proj-row:hover .proj-media { border-color: rgba(52,211,153,0.4); }
 .proj-info .p-tag {
   font-family: 'JetBrains Mono', monospace; font-size: 11.5px;
-  color: var(--blue); text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--em); text-transform: uppercase; letter-spacing: 0.1em;
   margin-bottom: 10px;
 }
 .proj-info h3 { font-size: 24px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 12px; }
@@ -224,47 +221,45 @@ section { padding: 80px 0; }
 }
 .p-featured {
   display: inline-flex; align-items: center; gap: 7px;
-  font-size: 12px; font-weight: 700; color: var(--blue);
-  background: var(--blue-tint); border: 1px solid rgba(79,142,247,0.3);
+  font-size: 12px; font-weight: 700; color: var(--em);
+  background: var(--em-tint); border: 1px solid rgba(52,211,153,0.3);
   padding: 5px 13px; border-radius: 14px; margin-bottom: 12px;
 }
 
-/* pipeline svg inside project media */
-svg.pipe { width: 92%; height: auto; display: block; position: relative; }
-.pipe .node { fill: var(--surface-2); stroke: var(--border-hi); stroke-width: 1.2; }
-.pipe .node.hot { stroke: var(--blue); stroke-width: 1.5; }
-.pipe .node-label { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; fill: var(--text); }
-.pipe .edge { fill: none; stroke: #33405488; stroke-width: 1.2; }
-.pipe .pulse { fill: var(--blue); }
-.pipe .pulse.g { fill: var(--green); }
+/* diagram SVG shared */
+svg.dgm { width: 100%; height: auto; display: block; }
+.dgm .node { fill: var(--surface-2); stroke: var(--border-hi); stroke-width: 1.2; }
+.dgm .node.hot { stroke: var(--em); stroke-width: 1.5; }
+.dgm .node.warn { stroke: #E8A33D; stroke-width: 1.4; }
+.dgm .lbl { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; fill: var(--text); }
+.dgm .sub { font-family: 'JetBrains Mono', monospace; font-size: 8.5px; fill: var(--text-3); }
+.dgm .edge { fill: none; stroke: #37403799; stroke-width: 1.2; }
+.dgm .edge.dash { stroke-dasharray: 4 4; }
+.dgm .pulse { fill: var(--em); }
+.dgm .pulse.w { fill: var(--cream); }
+.dgm .tick { font-family:'JetBrains Mono',monospace; font-size: 9px; fill: var(--em); }
 
 /* ── EXPERIENCE ── */
 .xp-list { max-width: 720px; }
-.xp-item {
-  display: grid; grid-template-columns: 130px 1fr; gap: 36px;
-  padding: 28px 0;
-}
+.xp-item { display: grid; grid-template-columns: 130px 1fr; gap: 36px; padding: 28px 0; }
 .xp-item + .xp-item { border-top: 1px solid var(--border); }
 .xp-date { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--text-3); padding-top: 3px; }
 .xp-role { font-size: 18px; font-weight: 700; margin-bottom: 3px; }
-.xp-co { font-size: 14px; color: var(--blue-soft); margin-bottom: 8px; font-weight: 500; }
+.xp-co { font-size: 14px; color: var(--em-soft); margin-bottom: 8px; font-weight: 500; }
 .xp-desc { font-size: 14.5px; color: var(--text-2); }
 .xp-badge {
   display: inline-flex; align-items: center; gap: 7px;
-  font-size: 12.5px; font-weight: 600; color: var(--green);
-  background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.3);
+  font-size: 12.5px; font-weight: 600; color: var(--em);
+  background: var(--em-tint); border: 1px solid rgba(52,211,153,0.3);
   padding: 5px 13px; border-radius: 14px; margin-top: 10px;
 }
 
 /* ── SKILLS ── */
 .skill-cols { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
-.skill-col {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: 16px; padding: 24px;
-}
+.skill-col { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 24px; }
 .skill-col h4 {
   font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600;
-  color: var(--blue); text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--em); text-transform: uppercase; letter-spacing: 0.08em;
   margin-bottom: 16px;
 }
 .skill-col ul { list-style: none; }
@@ -274,7 +269,7 @@ svg.pipe { width: 92%; height: auto; display: block; position: relative; }
 }
 .skill-col li::before {
   content: ''; width: 5px; height: 5px; border-radius: 50%;
-  background: var(--blue); opacity: 0.7; flex-shrink: 0;
+  background: var(--em); opacity: 0.75; flex-shrink: 0;
 }
 
 /* ── CONTACT ── */
@@ -288,17 +283,17 @@ svg.pipe { width: 92%; height: auto; display: block; position: relative; }
 }
 .contact-box::before {
   content: ''; position: absolute; inset: 0;
-  background: radial-gradient(ellipse at 50% -20%, var(--blue-tint), transparent 55%);
+  background: radial-gradient(ellipse at 50% -20%, var(--em-tint), transparent 55%);
 }
 .contact-box > * { position: relative; }
 .contact-box h2 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 14px; }
-.contact-box h2 span { color: var(--blue); }
+.contact-box h2 span { color: var(--em); }
 .contact-box p { color: var(--text-2); max-width: 440px; margin: 0 auto 34px; }
 .contact-meta {
   display: flex; justify-content: center; gap: 32px; flex-wrap: wrap;
   margin-top: 40px; font-size: 14px; color: var(--text-2);
 }
-.contact-meta a:hover { color: var(--blue); }
+.contact-meta a:hover { color: var(--em); }
 
 footer {
   padding: 36px 0; text-align: center;
@@ -308,8 +303,8 @@ footer {
 
 /* ── RESPONSIVE ── */
 @media (max-width: 880px) {
-  .hero { grid-template-columns: 1fr; gap: 44px; padding: 60px 0; }
-  .hero-photo { max-width: 420px; }
+  .hero { grid-template-columns: 1fr; gap: 48px; padding: 56px 0; }
+  .hero-photo { max-width: 420px; margin: 0 auto; }
   .svc-grid { grid-template-columns: 1fr; }
   .proj-row { grid-template-columns: 1fr; gap: 24px; }
   .proj-row.flip .proj-media { order: 0; }
@@ -321,8 +316,9 @@ footer {
   .skill-cols { grid-template-columns: 1fr; }
   .hero-stats { gap: 24px; }
   .contact-box { padding: 44px 24px; }
-  .photo-badge { left: 8px; }
-  .photo-badge.b2 { right: 8px; }
+  .photo-badge.b1 { left: 6px; }
+  .photo-badge.b2 { right: 6px; }
+  .photo-badge.b3 { display: none; }
 }
 
 .rv { opacity: 0; transform: translateY(18px); transition: opacity 0.55s ease, transform 0.55s ease; }
@@ -353,7 +349,7 @@ footer {
 <!-- HERO -->
 <section class="hero">
   <div class="hero-text">
-    <div class="hero-greet">👋 Hello, I'm</div>
+    <div class="hero-greet"><span class="dot"></span>available_for_hire = true</div>
     <h1>Long Tran<br><span class="accent">Backend Developer</span></h1>
     <div class="hero-role">Java · Spring Boot · Kafka · gRPC</div>
     <p class="hero-desc">
@@ -373,16 +369,19 @@ footer {
 
   <div class="hero-photo">
     <div class="photo-frame">
-      <div class="photo-placeholder-icon">📷</div>
-      <div class="photo-placeholder-text">// your photo here</div>
+      <img src="assets/long.png" alt="Long Tran — Backend Developer">
     </div>
-    <div class="photo-badge">
+    <div class="photo-badge b1">
       <div class="ic">⚡</div>
       <div><div class="t1">Event Pipelines</div><div class="t2">Kafka · gRPC</div></div>
     </div>
     <div class="photo-badge b2">
       <div class="ic">🔐</div>
       <div><div class="t1">Auth & Security</div><div class="t2">OTP · RBAC · JWT</div></div>
+    </div>
+    <div class="photo-badge b3">
+      <div class="ic">🗄️</div>
+      <div><div class="t1">Data & APIs</div><div class="t2">Oracle · Mongo · PG</div></div>
     </div>
   </div>
 </section>
@@ -415,33 +414,35 @@ footer {
 <section id="projects">
   <div class="sec-tag rv">Projects</div>
   <h2 class="sec-title rv">Selected work.</h2>
-  <p class="sec-desc rv">Systems running in production today. Screenshots generalized due to government confidentiality.</p>
+  <p class="sec-desc rv">Real production systems — visualized as architecture diagrams, since screenshots are confidential on government projects.</p>
 
-  <!-- P1: pipeline -->
+  <!-- P1: incident pipeline -->
   <div class="proj-row rv">
     <div class="proj-media">
-      <svg class="pipe" viewBox="0 0 640 195" xmlns="http://www.w3.org/2000/svg">
+      <svg class="dgm" viewBox="0 0 640 195" xmlns="http://www.w3.org/2000/svg">
         <rect class="node hot" x="6" y="78" width="100" height="40" rx="8"/>
-        <text class="node-label" x="56" y="101" text-anchor="middle">IoT Devices</text>
+        <text class="lbl" x="56" y="96" text-anchor="middle">IoT Devices</text>
+        <text class="sub" x="56" y="108" text-anchor="middle">alarm + heartbeat</text>
         <rect class="node" x="160" y="78" width="100" height="40" rx="8"/>
-        <text class="node-label" x="210" y="101" text-anchor="middle">gRPC Gateway</text>
+        <text class="lbl" x="210" y="96" text-anchor="middle">gRPC Gateway</text>
+        <text class="sub" x="210" y="108" text-anchor="middle">event intake</text>
         <rect class="node hot" x="315" y="78" width="80" height="40" rx="8"/>
-        <text class="node-label" x="355" y="101" text-anchor="middle">Kafka</text>
+        <text class="lbl" x="355" y="101" text-anchor="middle">Kafka</text>
         <rect class="node" x="470" y="12" width="160" height="34" rx="8"/>
-        <text class="node-label" x="550" y="34" text-anchor="middle">Monitoring System</text>
+        <text class="lbl" x="550" y="34" text-anchor="middle">Monitoring System</text>
         <rect class="node" x="470" y="80" width="160" height="34" rx="8"/>
-        <text class="node-label" x="550" y="102" text-anchor="middle">Support System</text>
+        <text class="lbl" x="550" y="102" text-anchor="middle">Support System</text>
         <rect class="node" x="470" y="148" width="160" height="34" rx="8"/>
-        <text class="node-label" x="550" y="170" text-anchor="middle">Event Log + DB</text>
+        <text class="lbl" x="550" y="170" text-anchor="middle">Event Log + DB</text>
         <path class="edge" d="M106,98 L160,98"/>
         <path class="edge" d="M260,98 L315,98"/>
         <path class="edge" d="M395,90 C430,90 430,29 470,29"/>
         <path class="edge" d="M395,98 L470,97"/>
         <path class="edge" d="M395,106 C430,106 430,165 470,165"/>
         <circle class="pulse" r="3"><animateMotion dur="2.2s" repeatCount="indefinite" path="M106,98 L160,98 L260,98 L315,98"/></circle>
-        <circle class="pulse g" r="2.5"><animateMotion dur="2s" begin="0.2s" repeatCount="indefinite" path="M395,90 C430,90 430,29 470,29"/></circle>
-        <circle class="pulse g" r="2.5"><animateMotion dur="2s" begin="0.5s" repeatCount="indefinite" path="M395,98 L470,97"/></circle>
-        <circle class="pulse g" r="2.5"><animateMotion dur="2s" begin="0.8s" repeatCount="indefinite" path="M395,106 C430,106 430,165 470,165"/></circle>
+        <circle class="pulse w" r="2.5"><animateMotion dur="2s" begin="0.2s" repeatCount="indefinite" path="M395,90 C430,90 430,29 470,29"/></circle>
+        <circle class="pulse w" r="2.5"><animateMotion dur="2s" begin="0.5s" repeatCount="indefinite" path="M395,98 L470,97"/></circle>
+        <circle class="pulse w" r="2.5"><animateMotion dur="2s" begin="0.8s" repeatCount="indefinite" path="M395,106 C430,106 430,165 470,165"/></circle>
       </svg>
     </div>
     <div class="proj-info">
@@ -453,11 +454,37 @@ footer {
     </div>
   </div>
 
-  <!-- P2: OTP -->
+  <!-- P2: OTP flow diagram -->
   <div class="proj-row flip rv">
     <div class="proj-media">
-      <div class="ph-ic">🔐</div>
-      <div class="ph-tx">// screenshot coming soon</div>
+      <svg class="dgm" viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg">
+        <rect class="node" x="10" y="20" width="90" height="38" rx="8"/>
+        <text class="lbl" x="55" y="43" text-anchor="middle">Client</text>
+        <rect class="node hot" x="180" y="20" width="120" height="38" rx="8"/>
+        <text class="lbl" x="240" y="37" text-anchor="middle">Auth Service</text>
+        <text class="sub" x="240" y="50" text-anchor="middle">generate OTP</text>
+        <rect class="node" x="390" y="20" width="110" height="38" rx="8"/>
+        <text class="lbl" x="445" y="37" text-anchor="middle">AES-GCM</text>
+        <text class="sub" x="445" y="50" text-anchor="middle">encrypt + SHA-256</text>
+        <rect class="node" x="390" y="120" width="110" height="38" rx="8"/>
+        <text class="lbl" x="445" y="137" text-anchor="middle">MongoDB</text>
+        <text class="sub" x="445" y="150" text-anchor="middle">OTP session</text>
+        <rect class="node warn" x="180" y="120" width="120" height="38" rx="8"/>
+        <text class="lbl" x="240" y="137" text-anchor="middle">Verify + Lockout</text>
+        <text class="sub" x="240" y="150" text-anchor="middle">expiry · max attempts</text>
+        <rect class="node hot" x="10" y="120" width="90" height="38" rx="8"/>
+        <text class="lbl" x="55" y="137" text-anchor="middle">JWT</text>
+        <text class="sub" x="55" y="150" text-anchor="middle">issued ✓</text>
+        <path class="edge" d="M100,39 L180,39"/>
+        <path class="edge" d="M300,39 L390,39"/>
+        <path class="edge" d="M445,58 L445,120"/>
+        <path class="edge" d="M390,139 L300,139"/>
+        <path class="edge" d="M180,139 L100,139"/>
+        <path class="edge dash" d="M240,58 L240,120"/>
+        <circle class="pulse" r="3"><animateMotion dur="3.2s" repeatCount="indefinite" path="M100,39 L180,39 L300,39 L390,39 L445,58 L445,120 L390,139 L300,139 L180,139 L100,139"/></circle>
+        <text class="tick" x="558" y="42">🔒 encrypted</text>
+        <text class="tick" x="558" y="142">✓ verified</text>
+      </svg>
     </div>
     <div class="proj-info">
       <div class="p-tag">Notification Platform</div>
@@ -467,11 +494,36 @@ footer {
     </div>
   </div>
 
-  <!-- P3: RBAC -->
+  <!-- P3: RBAC hierarchy diagram -->
   <div class="proj-row rv">
     <div class="proj-media">
-      <div class="ph-ic">🛡️</div>
-      <div class="ph-tx">// screenshot coming soon</div>
+      <svg class="dgm" viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg">
+        <rect class="node hot" x="255" y="10" width="130" height="36" rx="8"/>
+        <text class="lbl" x="320" y="27" text-anchor="middle">Central Org</text>
+        <text class="sub" x="320" y="39" text-anchor="middle">full data scope</text>
+        <rect class="node" x="80" y="82" width="130" height="36" rx="8"/>
+        <text class="lbl" x="145" y="99" text-anchor="middle">Province A</text>
+        <text class="sub" x="145" y="111" text-anchor="middle">scoped access</text>
+        <rect class="node" x="430" y="82" width="130" height="36" rx="8"/>
+        <text class="lbl" x="495" y="99" text-anchor="middle">Province B</text>
+        <text class="sub" x="495" y="111" text-anchor="middle">scoped access</text>
+        <rect class="node" x="10" y="154" width="120" height="36" rx="8"/>
+        <text class="lbl" x="70" y="171" text-anchor="middle">District A1</text>
+        <text class="sub" x="70" y="183" text-anchor="middle">row-level scope</text>
+        <rect class="node" x="150" y="154" width="120" height="36" rx="8"/>
+        <text class="lbl" x="210" y="171" text-anchor="middle">District A2</text>
+        <text class="sub" x="210" y="183" text-anchor="middle">row-level scope</text>
+        <rect class="node warn" x="430" y="154" width="130" height="36" rx="8"/>
+        <text class="lbl" x="495" y="171" text-anchor="middle">Role Migration</text>
+        <text class="sub" x="495" y="183" text-anchor="middle">org tier changed</text>
+        <path class="edge" d="M290,46 C230,60 180,66 150,82"/>
+        <path class="edge" d="M350,46 C410,60 460,66 490,82"/>
+        <path class="edge" d="M120,118 C100,132 85,140 72,154"/>
+        <path class="edge" d="M170,118 C185,132 197,140 208,154"/>
+        <path class="edge dash" d="M495,118 L495,154"/>
+        <circle class="pulse" r="3"><animateMotion dur="2.6s" repeatCount="indefinite" path="M320,46 C230,60 180,66 150,82 C 110,120 85,140 72,154"/></circle>
+        <circle class="pulse w" r="2.6"><animateMotion dur="2.6s" begin="1.2s" repeatCount="indefinite" path="M320,46 C410,60 460,66 490,82 L495,154"/></circle>
+      </svg>
     </div>
     <div class="proj-info">
       <div class="p-tag">Command Platform</div>
@@ -481,11 +533,34 @@ footer {
     </div>
   </div>
 
-  <!-- P4: Bulk -->
+  <!-- P4: bulk pipeline diagram -->
   <div class="proj-row flip rv">
     <div class="proj-media">
-      <div class="ph-ic">📡</div>
-      <div class="ph-tx">// screenshot coming soon</div>
+      <svg class="dgm" viewBox="0 0 640 190" xmlns="http://www.w3.org/2000/svg">
+        <rect class="node" x="8" y="75" width="105" height="40" rx="8"/>
+        <text class="lbl" x="60" y="93" text-anchor="middle">Excel Import</text>
+        <text class="sub" x="60" y="105" text-anchor="middle">100k+ recipients</text>
+        <rect class="node hot" x="165" y="75" width="90" height="40" rx="8"/>
+        <text class="lbl" x="210" y="98" text-anchor="middle">MinIO</text>
+        <rect class="node hot" x="305" y="75" width="90" height="40" rx="8"/>
+        <text class="lbl" x="350" y="98" text-anchor="middle">Kafka</text>
+        <rect class="node" x="445" y="20" width="120" height="36" rx="8"/>
+        <text class="lbl" x="505" y="37" text-anchor="middle">Chunk Workers</text>
+        <text class="sub" x="505" y="49" text-anchor="middle">parallel consume</text>
+        <rect class="node" x="445" y="132" width="120" height="36" rx="8"/>
+        <text class="lbl" x="505" y="149" text-anchor="middle">Redis Progress</text>
+        <text class="sub" x="505" y="161" text-anchor="middle">status tracking</text>
+        <rect class="node hot" x="588" y="76" width="44" height="38" rx="8"/>
+        <text class="lbl" x="610" y="99" text-anchor="middle">SMS</text>
+        <path class="edge" d="M113,95 L165,95"/>
+        <path class="edge" d="M255,95 L305,95"/>
+        <path class="edge" d="M395,88 C420,80 425,50 445,40"/>
+        <path class="edge" d="M395,102 C420,110 425,140 445,148"/>
+        <path class="edge" d="M565,40 C585,52 595,68 605,76"/>
+        <path class="edge dash" d="M565,148 C580,140 592,124 604,114"/>
+        <circle class="pulse" r="3"><animateMotion dur="2.8s" repeatCount="indefinite" path="M113,95 L165,95 L255,95 L305,95 L395,95 C420,80 425,50 445,40 L565,40 C585,52 595,68 605,90"/></circle>
+        <circle class="pulse w" r="2.5"><animateMotion dur="2.4s" begin="0.9s" repeatCount="indefinite" path="M395,102 C420,110 425,140 445,148 L565,148"/></circle>
+      </svg>
     </div>
     <div class="proj-info">
       <div class="p-tag">Notification Platform</div>
@@ -589,7 +664,6 @@ const obs = new IntersectionObserver(es => {
   });
 }, { threshold: 0.12 });
 document.querySelectorAll('.rv').forEach(el => obs.observe(el));
-// hero counters fire immediately
 document.querySelectorAll('.hero .count').forEach(runCounter);
 
 function runCounter(el) {
