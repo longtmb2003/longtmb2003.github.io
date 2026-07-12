@@ -423,6 +423,82 @@ footer {
 /* dark logos need lightening on dark bg */
 .logo-tile img[alt="Gradle"] { filter: invert(0.92) brightness(1.15); }
 .logo-tile img[alt="Kafka"] { filter: invert(0.95); }
+
+/* ═══ VISIBILITY BOOST: stronger effects + louder achievements ═══ */
+
+/* card glow: turned up */
+.svc-card, .skill-col, .logo-tile, .proj-media, .photo-badge, .contact-box {
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.06) inset,
+    0 16px 40px rgba(0,0,0,0.6),
+    0 0 34px rgba(255,255,255,0.08);
+}
+.svc-card:hover, .skill-col:hover, .logo-tile:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.09) inset,
+    0 28px 60px rgba(0,0,0,0.7),
+    0 0 56px rgba(255,255,255,0.16);
+}
+.proj-row:hover .proj-media {
+  box-shadow:
+    0 30px 64px rgba(0,0,0,0.7),
+    0 0 60px rgba(255,255,255,0.16);
+}
+
+/* ── achievements: bigger, brighter, breathing gold ── */
+@keyframes goldPulse {
+  0%, 100% { text-shadow: 0 0 16px rgba(245,192,68,0.4); }
+  50%      { text-shadow: 0 0 34px rgba(245,192,68,0.8), 0 0 60px rgba(245,192,68,0.3); }
+}
+.hstat .num { font-size: 36px; }
+.hstat .num em { color: var(--gold); animation: goldPulse 3.2s ease-in-out infinite; }
+.hstat .lbl { font-size: 13.5px; color: var(--text-2); font-weight: 500; }
+
+.xp-badge {
+  font-size: 14px; font-weight: 800;
+  padding: 9px 18px;
+  color: #FFD97A;
+  background: linear-gradient(140deg, rgba(245,192,68,0.16), rgba(245,192,68,0.06));
+  border: 1.5px solid rgba(245,192,68,0.55);
+  box-shadow: 0 0 28px rgba(245,192,68,0.25), 0 6px 18px rgba(0,0,0,0.4);
+}
+.p-featured {
+  font-size: 13px; font-weight: 800;
+  padding: 7px 16px;
+  color: #FFD97A;
+  border: 1.5px solid rgba(245,192,68,0.5);
+  background: linear-gradient(140deg, rgba(245,192,68,0.16), rgba(245,192,68,0.05));
+  box-shadow: 0 0 24px rgba(245,192,68,0.22);
+}
+
+/* featured project frame glows gold */
+.proj-row:has(.p-featured) .proj-media {
+  border-color: rgba(245,192,68,0.45);
+  box-shadow:
+    0 16px 40px rgba(0,0,0,0.6),
+    0 0 44px rgba(245,192,68,0.14);
+}
+.proj-row:has(.p-featured):hover .proj-media {
+  border-color: rgba(245,192,68,0.7);
+  box-shadow:
+    0 30px 64px rgba(0,0,0,0.7),
+    0 0 70px rgba(245,192,68,0.28);
+}
+
+/* structure markers in gold so sections are easy to scan */
+.sec-tag { color: var(--gold); }
+.hero-greet { color: var(--gold); }
+.hero-greet .dot { background: var(--gold); box-shadow: 0 0 10px var(--gold); }
+.logo span { color: var(--gold); }
+.hero h1 .accent { color: var(--gold); text-shadow: 0 0 30px rgba(245,192,68,0.3); }
+.contact-box h2 span { color: var(--gold); }
+.xp-co { color: #D9C489; }
+
+/* photo card: warm gold ambience */
+.photo-frame {
+  box-shadow: 0 30px 70px rgba(0,0,0,0.6), 0 0 60px rgba(245,192,68,0.10);
+}
 </style>
 </head>
 <body>
