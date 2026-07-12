@@ -9,21 +9,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
-  /* Dark slate + blue: recommended palette */
-  --bg: #0F172A;
-  --surface: #1E293B;
-  --surface-2: #253248;
-  --border: #334155;
-  --border-hi: #475D7EAA;
-  --text: #F8FAFC;
-  --text-2: #94A3B8;
-  --text-3: #64748B;
-  --em: #3B82F6;          /* primary blue */
-  --em-deep: #2563EB;
-  --em-soft: #60A5FA;
-  --em-tint: rgba(59,130,246,0.13);
-  --gold: #60A5FA;        /* achievements accent */
-  --gold-tint: rgba(96,165,250,0.13);
+  /* True-black minimal (vonhi style) */
+  --bg: #000000;
+  --surface: #0E0E0E;
+  --surface-2: #171717;
+  --border: #262626;
+  --border-hi: #404040AA;
+  --text: #FAFAFA;
+  --text-2: #A1A1AA;
+  --text-3: #71717A;
+  --em: #FFFFFF;          /* mono accent */
+  --em-deep: #D4D4D8;
+  --em-soft: #FFFFFF;
+  --em-tint: rgba(255,255,255,0.07);
+  --gold: #FFFFFF;        /* achievements: bright white */
+  --gold-tint: rgba(255,255,255,0.08);
   --cream: #F5F1E8;       /* echoes the shirt in the photo */
   --cream-2: #E9E3D5;
 }
@@ -37,7 +37,7 @@ body {
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
-::selection { background: rgba(96,165,250,0.35); }
+::selection { background: rgba(255,255,255,0.32); }
 a { color: inherit; text-decoration: none; }
 
 .wrap { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
@@ -69,11 +69,11 @@ a { color: inherit; text-decoration: none; }
 .nav-links a:not(.nav-cta):hover::after { width: 100%; }
 .nav-cta {
   font-size: 13.5px; font-weight: 700;
-  background: var(--em); color: #FFFFFF !important;
+  background: #FAFAFA; color: #0A0A0A !important;
   padding: 9px 20px; border-radius: 9px;
   transition: all 0.2s;
 }
-.nav-cta:hover { background: var(--em-soft); }
+.nav-cta:hover { background: #FFFFFF; }
 
 /* ── HERO ── */
 .hero {
@@ -113,14 +113,14 @@ a { color: inherit; text-decoration: none; }
   padding: 13px 28px; border-radius: 11px;
   transition: all 0.22s;
 }
-.btn.primary { background: var(--em); color: #FFFFFF; }
-.btn.primary:hover { background: var(--em-soft); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(96,165,250,0.3); }
+.btn.primary { background: #FAFAFA; color: #0A0A0A; }
+.btn.primary:hover { background: #FFFFFF; transform: translateY(-2px); box-shadow: 0 12px 34px rgba(255,255,255,0.2); }
 .btn.outline { border: 1.5px solid var(--border); color: var(--text-2); }
 .btn.outline:hover { border-color: var(--em); color: var(--em); }
 
 .hero-stats { display: flex; gap: 40px; }
 .hstat .num { font-weight: 800; font-size: 30px; letter-spacing: -0.02em; }
-.hstat .num em { color: var(--em); font-style: normal; text-shadow: 0 0 18px rgba(96,165,250,0.4); }
+.hstat .num em { color: var(--em); font-style: normal; text-shadow: 0 0 18px rgba(255,255,255,0.36); }
 .hstat .lbl { font-size: 13px; color: var(--text-3); margin-top: 2px; }
 
 /* hero photo — cream card echoing the shirt */
@@ -128,7 +128,7 @@ a { color: inherit; text-decoration: none; }
 .photo-frame {
   border-radius: 26px;
   background:
-    radial-gradient(ellipse at 70% 15%, rgba(59,130,246,0.25), transparent 55%),
+    radial-gradient(ellipse at 70% 15%, rgba(255,255,255,0.20), transparent 55%),
     linear-gradient(170deg, var(--cream) 0%, var(--cream-2) 100%);
   overflow: hidden;
   position: relative;
@@ -161,7 +161,7 @@ a { color: inherit; text-decoration: none; }
 }
 .photo-badge .ic {
   width: 34px; height: 34px; border-radius: 9px;
-  background: var(--em-tint); border: 1px solid rgba(96,165,250,0.35);
+  background: var(--em-tint); border: 1px solid rgba(255,255,255,0.32);
   display: flex; align-items: center; justify-content: center;
   font-size: 16px;
 }
@@ -191,12 +191,12 @@ section { padding: 80px 0; }
   box-shadow: 0 10px 30px rgba(0,0,0,0.35), 0 1px 0 rgba(255,255,255,0.03) inset;
 }
 .svc-card:hover {
-  border-color: rgba(96,165,250,0.5); transform: translateY(-4px);
-  box-shadow: 0 22px 48px rgba(0,0,0,0.5), 0 0 30px rgba(59,130,246,0.13), 0 1px 0 rgba(255,255,255,0.04) inset;
+  border-color: rgba(255,255,255,0.45); transform: translateY(-4px);
+  box-shadow: 0 22px 48px rgba(0,0,0,0.5), 0 0 30px rgba(255,255,255,0.10), 0 1px 0 rgba(255,255,255,0.04) inset;
 }
 .svc-icon {
   width: 50px; height: 50px; border-radius: 13px;
-  background: var(--em-tint); border: 1px solid rgba(96,165,250,0.3);
+  background: var(--em-tint); border: 1px solid rgba(255,255,255,0.27);
   display: flex; align-items: center; justify-content: center;
   font-size: 22px; margin-bottom: 20px;
 }
@@ -222,7 +222,7 @@ section { padding: 80px 0; }
   box-shadow: 0 14px 36px rgba(0,0,0,0.4);
 }
 .proj-row:hover .proj-media {
-  border-color: rgba(96,165,250,0.45);
+  border-color: rgba(255,255,255,0.41);
   box-shadow: 0 26px 56px rgba(0,0,0,0.55), 0 0 34px rgba(255,255,255,0.06);
   transform: translateY(-3px);
 }
@@ -243,7 +243,7 @@ section { padding: 80px 0; }
 .p-featured {
   display: inline-flex; align-items: center; gap: 7px;
   font-size: 12px; font-weight: 700; color: var(--em);
-  background: var(--em-tint); border: 1px solid rgba(96,165,250,0.35);
+  background: var(--em-tint); border: 1px solid rgba(255,255,255,0.32);
   padding: 5px 13px; border-radius: 14px; margin-bottom: 12px;
 }
 
@@ -271,9 +271,9 @@ svg.dgm { width: 100%; height: auto; display: block; }
 .xp-badge {
   display: inline-flex; align-items: center; gap: 7px;
   font-size: 12.5px; font-weight: 700; color: var(--em);
-  background: var(--em-tint); border: 1px solid rgba(96,165,250,0.45);
+  background: var(--em-tint); border: 1px solid rgba(255,255,255,0.41);
   padding: 6px 14px; border-radius: 14px; margin-top: 10px;
-  box-shadow: 0 0 18px rgba(59,130,246,0.2);
+  box-shadow: 0 0 18px rgba(255,255,255,0.16);
 }
 
 /* ── LOGO GRID ── */
@@ -290,7 +290,7 @@ svg.dgm { width: 100%; height: auto; display: block; }
 }
 .logo-tile:hover {
   transform: translateY(-4px);
-  border-color: rgba(96,165,250,0.45);
+  border-color: rgba(255,255,255,0.41);
   box-shadow: 0 18px 38px rgba(0,0,0,0.45), 0 0 24px rgba(255,255,255,0.08);
 }
 .logo-tile img { width: 38px; height: 38px; object-fit: contain; }
@@ -304,7 +304,7 @@ svg.dgm { width: 100%; height: auto; display: block; }
   box-shadow: 0 10px 28px rgba(0,0,0,0.32);
   transition: all 0.25s;
 }
-.skill-col:hover { transform: translateY(-3px); box-shadow: 0 20px 44px rgba(0,0,0,0.48); border-color: rgba(96,165,250,0.4); }
+.skill-col:hover { transform: translateY(-3px); box-shadow: 0 20px 44px rgba(0,0,0,0.48); border-color: rgba(255,255,255,0.36); }
 .skill-col h4 {
   font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600;
   color: var(--em); text-transform: uppercase; letter-spacing: 0.08em;
@@ -378,45 +378,45 @@ footer {
 }
 
 /* ═══ MINIMAL THEME OVERRIDES ═══ */
-::selection { background: rgba(59,130,246,0.35); }
+::selection { background: rgba(255,255,255,0.28); }
 
 /* soft glow behind every card */
 .svc-card, .skill-col, .logo-tile, .proj-media, .photo-badge, .contact-box {
   box-shadow:
     0 1px 0 rgba(255,255,255,0.04) inset,
     0 14px 36px rgba(0,0,0,0.55),
-    0 0 26px rgba(59,130,246,0.10);
+    0 0 26px rgba(255,255,255,0.08);
 }
 .svc-card:hover, .skill-col:hover, .logo-tile:hover {
   border-color: var(--border-hi);
   box-shadow:
     0 1px 0 rgba(255,255,255,0.06) inset,
     0 24px 52px rgba(0,0,0,0.65),
-    0 0 40px rgba(59,130,246,0.18);
+    0 0 40px rgba(255,255,255,0.14);
 }
 .proj-row:hover .proj-media {
   border-color: var(--border-hi);
   box-shadow:
     0 26px 56px rgba(0,0,0,0.65),
-    0 0 44px rgba(59,130,246,0.18);
+    0 0 44px rgba(255,255,255,0.14);
 }
 
 /* buttons: minimal white */
-.btn.primary { background: var(--em); color: #FFFFFF; }
-.btn.primary:hover { background: var(--em-deep); box-shadow: 0 12px 34px rgba(59,130,246,0.35); }
+.btn.primary { background: #FAFAFA; color: #0A0A0A; }
+.btn.primary:hover { background: #FFFFFF; transform: translateY(-2px); box-shadow: 0 12px 34px rgba(255,255,255,0.2); }
 .nav-cta { background: var(--em); color: #FFFFFF !important; }
-.nav-cta:hover { background: var(--em-deep); }
+.nav-cta:hover { background: #FFFFFF; }
 
 /* achievements stay GOLD — the only color on the page */
-.hstat .num em { color: var(--gold); text-shadow: 0 0 20px rgba(96,165,250,0.4); }
+.hstat .num em { color: var(--gold); text-shadow: 0 0 20px rgba(255,255,255,0.36); }
 .xp-badge {
   color: var(--gold); background: var(--gold-tint);
-  border-color: rgba(96,165,250,0.45);
-  box-shadow: 0 0 20px rgba(96,165,250,0.14);
+  border-color: rgba(255,255,255,0.41);
+  box-shadow: 0 0 20px rgba(255,255,255,0.13);
 }
 .p-featured {
   color: var(--gold); background: var(--gold-tint);
-  border-color: rgba(96,165,250,0.4);
+  border-color: rgba(255,255,255,0.36);
 }
 .hero-desc strong, .proj-info p strong { color: var(--text); font-weight: 700; }
 
@@ -431,25 +431,25 @@ footer {
   box-shadow:
     0 1px 0 rgba(255,255,255,0.06) inset,
     0 16px 40px rgba(0,0,0,0.6),
-    0 0 34px rgba(59,130,246,0.12);
+    0 0 34px rgba(255,255,255,0.10);
 }
 .svc-card:hover, .skill-col:hover, .logo-tile:hover {
   transform: translateY(-5px);
   box-shadow:
     0 1px 0 rgba(255,255,255,0.09) inset,
     0 28px 60px rgba(0,0,0,0.7),
-    0 0 56px rgba(59,130,246,0.25);
+    0 0 56px rgba(255,255,255,0.20);
 }
 .proj-row:hover .proj-media {
   box-shadow:
     0 30px 64px rgba(0,0,0,0.7),
-    0 0 60px rgba(59,130,246,0.25);
+    0 0 60px rgba(255,255,255,0.20);
 }
 
 /* ── achievements: bigger, brighter, breathing gold ── */
 @keyframes goldPulse {
-  0%, 100% { text-shadow: 0 0 16px rgba(96,165,250,0.4); }
-  50%      { text-shadow: 0 0 34px rgba(96,165,250,0.8), 0 0 60px rgba(96,165,250,0.3); }
+  0%, 100% { text-shadow: 0 0 16px rgba(255,255,255,0.36); }
+  50%      { text-shadow: 0 0 34px rgba(255,255,255,0.55), 0 0 60px rgba(255,255,255,0.27); }
 }
 .hstat .num { font-size: 36px; }
 .hstat .num em { color: var(--gold); animation: goldPulse 3.2s ease-in-out infinite; }
@@ -458,46 +458,46 @@ footer {
 .xp-badge {
   font-size: 14px; font-weight: 800;
   padding: 9px 18px;
-  color: #93C5FD;
-  background: linear-gradient(140deg, rgba(96,165,250,0.16), rgba(96,165,250,0.06));
-  border: 1.5px solid rgba(96,165,250,0.55);
-  box-shadow: 0 0 28px rgba(96,165,250,0.25), 0 6px 18px rgba(0,0,0,0.4);
+  color: #FFFFFF;
+  background: linear-gradient(140deg, rgba(255,255,255,0.14), rgba(255,255,255,0.05));
+  border: 1.5px solid rgba(255,255,255,0.50);
+  box-shadow: 0 0 28px rgba(255,255,255,0.23), 0 6px 18px rgba(0,0,0,0.4);
 }
 .p-featured {
   font-size: 13px; font-weight: 800;
   padding: 7px 16px;
-  color: #93C5FD;
-  border: 1.5px solid rgba(96,165,250,0.5);
-  background: linear-gradient(140deg, rgba(96,165,250,0.16), rgba(96,165,250,0.05));
-  box-shadow: 0 0 24px rgba(96,165,250,0.22);
+  color: #FFFFFF;
+  border: 1.5px solid rgba(255,255,255,0.45);
+  background: linear-gradient(140deg, rgba(255,255,255,0.14), rgba(255,255,255,0.05));
+  box-shadow: 0 0 24px rgba(255,255,255,0.20);
 }
 
 /* featured project frame glows gold */
 .proj-row:has(.p-featured) .proj-media {
-  border-color: rgba(96,165,250,0.45);
+  border-color: rgba(255,255,255,0.41);
   box-shadow:
     0 16px 40px rgba(0,0,0,0.6),
-    0 0 44px rgba(96,165,250,0.14);
+    0 0 44px rgba(255,255,255,0.13);
 }
 .proj-row:has(.p-featured):hover .proj-media {
-  border-color: rgba(96,165,250,0.7);
+  border-color: rgba(255,255,255,0.55);
   box-shadow:
     0 30px 64px rgba(0,0,0,0.7),
-    0 0 70px rgba(96,165,250,0.28);
+    0 0 70px rgba(255,255,255,0.25);
 }
 
 /* structure markers in gold so sections are easy to scan */
 .sec-tag { color: var(--gold); }
-.hero-greet { color: var(--gold); }
-.hero-greet .dot { background: var(--gold); box-shadow: 0 0 10px var(--gold); }
+.hero-greet { color: #4ADE80; }
+.hero-greet .dot { background: #4ADE80; box-shadow: 0 0 10px #4ADE80; }
 .logo span { color: var(--gold); }
-.hero h1 .accent { color: var(--gold); text-shadow: 0 0 30px rgba(96,165,250,0.3); }
+.hero h1 .accent { color: var(--gold); text-shadow: 0 0 30px rgba(255,255,255,0.27); }
 .contact-box h2 span { color: var(--gold); }
-.xp-co { color: #93C5FD; }
+.xp-co { color: #FFFFFF; }
 
 /* photo card: warm gold ambience */
 .photo-frame {
-  box-shadow: 0 30px 70px rgba(0,0,0,0.6), 0 0 60px rgba(96,165,250,0.10);
+  box-shadow: 0 30px 70px rgba(0,0,0,0.6), 0 0 60px rgba(255,255,255,0.09);
 }
 </style>
 </head>
