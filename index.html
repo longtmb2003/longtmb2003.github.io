@@ -4,6 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2310B981'/%3E%3Cstop offset='1' stop-color='%2306B6D4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ctext x='32' y='43' font-family='Arial,Helvetica,sans-serif' font-size='28' font-weight='800' text-anchor='middle' fill='%23052018'%3ELT%3C/text%3E%3C/svg%3E">
+<meta name="description" content="Long Tran — Backend Developer (Java, Spring Boot, Kafka, gRPC). Auth systems, event pipelines, and RBAC engines for mission-critical platforms.">
+<meta property="og:title" content="Long Tran — Backend Developer">
+<meta property="og:description" content="Auth systems, event pipelines, and RBAC engines for mission-critical platforms. Java · Spring Boot · Kafka · gRPC.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://longtmb2003.github.io/">
+<meta name="theme-color" content="#060A13">
 <title>Long Tran — Backend Developer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -217,7 +223,7 @@ a { color: inherit; text-decoration: none; }
 .photo-badge.b3 { bottom:34%; right:-10%; animation-delay:2.6s; }
 @keyframes floaty { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px);} }
 
-section { padding: 84px 0; position: relative; }
+section { padding: 84px 0; position: relative; scroll-margin-top: 70px; }
 .sec-tag {
   font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.14em; text-transform:uppercase;
   margin-bottom:12px;
@@ -478,6 +484,45 @@ footer {
 }
 .avatar-scene:hover .glow-disc { opacity: 1; }
 
+
+/* side rails */
+.rail {
+  position: fixed; bottom: 0; z-index: 90;
+  display: flex; flex-direction: column; align-items: center; gap: 22px;
+}
+.rail-l { left: 34px; }
+.rail-r { right: 34px; }
+.rail a { color: var(--text-3); transition: color .25s, transform .25s; }
+.rail a:hover { color: #22D3EE; transform: translateY(-3px); filter: drop-shadow(0 0 8px rgba(6,182,212,0.5)); }
+.rail-line {
+  width: 1.5px; height: 90px;
+  background: linear-gradient(180deg, rgba(34,211,238,0.5), rgba(148,163,184,0.15));
+}
+.rail-mail {
+  writing-mode: vertical-rl;
+  font-family: 'JetBrains Mono', monospace; font-size: 12px;
+  letter-spacing: .1em; color: var(--text-3);
+}
+.rail-mail:hover { color: #22D3EE; }
+@media (max-width: 1180px) { .rail { display: none; } }
+
+/* back to top */
+#toTop {
+  position: fixed; right: 26px; bottom: 26px; z-index: 95;
+  width: 46px; height: 46px; border-radius: 13px; border: none; cursor: pointer;
+  background: var(--grad); color: #04120D; font-size: 20px; font-weight: 800;
+  box-shadow: 0 8px 24px rgba(16,185,129,0.35);
+  opacity: 0; pointer-events: none; transform: translateY(12px);
+  transition: opacity .3s, transform .3s;
+}
+#toTop.show { opacity: 1; pointer-events: auto; transform: translateY(0); }
+#toTop:hover { transform: translateY(-3px); box-shadow: 0 12px 34px rgba(6,182,212,0.5); }
+@media (max-width: 1180px) { #toTop { right: 18px; bottom: 18px; } }
+
+/* scrollspy active nav */
+.nav-links a.active { color: var(--text); }
+.nav-links a.active:not(.nav-cta)::after { width: 100%; }
+
 .rv { opacity:0; transform:translateY(20px); transition:opacity .55s ease, transform .55s ease; }
 .rv.in { opacity:1; transform:translateY(0); }
 @media (prefers-reduced-motion: reduce) {
@@ -489,6 +534,24 @@ footer {
 </head>
 <body>
 <div id="progress"></div>
+<aside class="rail rail-l">
+  <a href="https://github.com/longtmb2003" target="_blank" rel="noopener" aria-label="GitHub">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.15c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.78 1.05.78 2.12v3.14c0 .31.21.67.8.55A10.52 10.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+  </a>
+  <a href="https://linkedin.com/in/long-tmb" target="_blank" rel="noopener" aria-label="LinkedIn">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+  </a>
+  <a href="mailto:tranminhbaolong.forwork@gmail.com" aria-label="Email">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 6 9 7 9-7"/></svg>
+  </a>
+  <span class="rail-line"></span>
+</aside>
+<aside class="rail rail-r">
+  <a class="rail-mail" href="mailto:tranminhbaolong.forwork@gmail.com">tranminhbaolong.forwork@gmail.com</a>
+  <span class="rail-line"></span>
+</aside>
+<button id="toTop" aria-label="Back to top">↑</button>
+
 
 <header class="topbar">
   <div class="topbar-inner">
@@ -644,6 +707,20 @@ footer {
       <h3>OTP Auth Service</h3>
       <p>Full OTP lifecycle — generation, <strong>AES-GCM encryption</strong>, SHA-256 fast lookup, lockout and expiry — decoupled from login/JWT, with a safe debug bypass.</p>
       <div class="chip-row"><span class="chip">Spring Security</span><span class="chip">MongoDB</span><span class="chip">Redis</span></div>
+      <details class="case">
+        <summary>📖 Read case study</summary>
+        <div class="case-body">
+          <h5>Problem</h5>
+          <p>OTP logic lived inside the login flow — tangled with JWT issuance, hard to test, and risky to change. Codes needed protection at rest and a defense against brute-force attempts.</p>
+          <h5>Solution</h5>
+          <p>A standalone OTP module: codes are <strong>AES-GCM encrypted</strong> at rest with a <strong>SHA-256 hash</strong> for O(1) lookup, TTL-based expiry, and automatic account lockout after repeated failures — plus a config-guarded bypass for safe debugging.</p>
+          <h5>Key decisions</h5>
+          <p>Hash-then-encrypt so the hot verification path never decrypts · MongoDB TTL indexes handle expiry natively · fully decoupled from JWT issuance so login flows evolve independently.</p>
+          <h5>Impact</h5>
+          <p>Isolated blast radius for auth changes; third-party partners integrate through Feign clients without touching core login; hardened through penetration-testing cycles.</p>
+        </div>
+      </details>
+
     </div>
   </div>
 
@@ -680,6 +757,20 @@ footer {
       <h3>Multi-Level RBAC Engine</h3>
       <p>Granular permissions, permission groups, and <strong>role-mapping migrations</strong> across organizational hierarchy changes — with row-level Data Scope enforcement.</p>
       <div class="chip-row"><span class="chip">RBAC</span><span class="chip">Oracle</span><span class="chip">Spring Data JPA</span></div>
+      <details class="case">
+        <summary>📖 Read case study</summary>
+        <div class="case-body">
+          <h5>Problem</h5>
+          <p>Permissions varied across organizational levels — and whenever an organization changed tier, thousands of role mappings silently broke, requiring manual data fixes.</p>
+          <h5>Solution</h5>
+          <p>A layered permission matrix (permissions → groups → roles) with <strong>row-level Data Scope</strong> filtering, plus a migration engine that remaps roles automatically when the org hierarchy changes.</p>
+          <h5>Key decisions</h5>
+          <p>Scope enforcement at the query layer (JPA specifications) instead of post-filtering results · permission groups to prevent role explosion · dedicated provisioning flows for integration accounts.</p>
+          <h5>Impact</h5>
+          <p>One permission model across all account types; organization restructures no longer require manual intervention; access rules are auditable in one place.</p>
+        </div>
+      </details>
+
     </div>
   </div>
 
@@ -714,6 +805,20 @@ footer {
       <h3>Bulk Notification Engine</h3>
       <p>Mass-recipient group management for <strong>large-scale SMS delivery</strong> — Excel import/export through an async Kafka + Redis + MinIO pipeline.</p>
       <div class="chip-row"><span class="chip">Kafka</span><span class="chip">Redis</span><span class="chip">MinIO</span></div>
+      <details class="case">
+        <summary>📖 Read case study</summary>
+        <div class="case-body">
+          <h5>Problem</h5>
+          <p>Importing 100k+ recipients from Excel blocked request threads, timed out, and a single failure lost all progress.</p>
+          <h5>Solution</h5>
+          <p>Files upload straight to <strong>MinIO</strong>; parse jobs are chunked through <strong>Kafka</strong> and consumed by parallel workers, while <strong>Redis</strong> tracks live progress. Export runs the same pipeline in reverse.</p>
+          <h5>Key decisions</h5>
+          <p>Chunk size tuned against consumer lag · idempotent chunk processing so retries never duplicate recipients · progress state in Redis for real-time UI polling.</p>
+          <h5>Impact</h5>
+          <p>Imports run fully async at scale with resumable progress and zero request-thread blocking.</p>
+        </div>
+      </details>
+
     </div>
   </div>
 </section>
@@ -841,6 +946,25 @@ function runCounter(el) {
     });
   });
 })();
+
+// back to top
+const toTop = document.getElementById('toTop');
+addEventListener('scroll', () => {
+  toTop.classList.toggle('show', scrollY > 600);
+}, { passive: true });
+toTop.addEventListener('click', () => scrollTo({ top: 0, behavior: 'smooth' }));
+
+// scrollspy
+const spyLinks = [...document.querySelectorAll('.nav-links a:not(.nav-cta)')];
+const spySections = spyLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+const spy = new IntersectionObserver(es => {
+  es.forEach(e => {
+    if (e.isIntersecting) {
+      spyLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
+    }
+  });
+}, { rootMargin: '-40% 0px -55% 0px' });
+spySections.forEach(s => spy.observe(s));
 </script>
 </body>
 </html>
