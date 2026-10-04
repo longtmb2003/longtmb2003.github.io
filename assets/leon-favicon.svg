@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Leon</title>
+  <desc id="desc">Leon monogram inspired by a mountain seal</desc>
+  <defs>
+    <linearGradient id="bg" x1="8" y1="4" x2="56" y2="60" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#252b28"/>
+      <stop offset="1" stop-color="#111513"/>
+    </linearGradient>
+    <linearGradient id="ink" x1="20" y1="13" x2="47" y2="50" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f0eadf"/>
+      <stop offset=".55" stop-color="#c9bea8"/>
+      <stop offset="1" stop-color="#9fb2a8"/>
+    </linearGradient>
+    <radialGradient id="aura" cx="0" cy="0" r="1" gradientTransform="translate(32 31) rotate(90) scale(25)">
+      <stop stop-color="#9fb2a8" stop-opacity=".15"/>
+      <stop offset="1" stop-color="#9fb2a8" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="15" fill="url(#bg)"/>
+  <rect x="2.75" y="2.75" width="58.5" height="58.5" rx="14.25" fill="none" stroke="#c9bea8" stroke-opacity=".32" stroke-width="1.5"/>
+  <circle cx="32" cy="31" r="24" fill="url(#aura)"/>
+  <path d="M11 45.5 20.5 35l5.2 5.6L35 27.8l18 17.7H11Z" fill="#9fb2a8" fill-opacity=".13" stroke="#9fb2a8" stroke-opacity=".28"/>
+  <path d="M23 14.5h8v27h14.5v7H23v-34Z" fill="url(#ink)"/>
+  <path d="M27 14.5h4v27h14.5" fill="none" stroke="#fff" stroke-opacity=".25" stroke-width="1"/>
+  <circle cx="48.5" cy="15.5" r="2" fill="#c9bea8"/>
+  <path d="M48.5 10.5v2M48.5 18.5v2M43.5 15.5h2M51.5 15.5h2" stroke="#c9bea8" stroke-linecap="round" stroke-opacity=".6"/>
+</svg>
