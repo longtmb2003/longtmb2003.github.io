@@ -133,6 +133,7 @@ const VI_TRANSLATIONS = {
   "Open to opportunities":"Sẵn sàng nhận dự án",
   "For inquiries:":"Liên hệ:",
   "Click to unlock ↓":"Bấm để mở nắp đầu ↓",
+  "CLICK MY HEAD ↓":"BẤM VÀO ĐẦU TÔI ĐỂ MỞ ↓",
   "Click my head to toggle · Click any memory to read":"Bấm vào đầu để đóng/mở · Bấm vào từng ký ức để xem",
   "BACKEND CRAFTSMAN":"THỢ XÂY BACKEND",
   "SPRING BOOT & KAFKA TAMER":"THUẦN HÓA SPRING BOOT & KAFKA",
