@@ -9,11 +9,38 @@
 <meta property="og:description" content="Authentication, event-driven integrations and Oracle performance tuning for large-scale government platforms. Java · Spring Boot · Kafka · gRPC.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://longtmb2003.github.io/">
+<meta property="og:image" content="https://longtmb2003.github.io/assets/og-preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Long Tran — Backend Java Developer">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Long Tran — Backend Java Developer">
+<meta name="twitter:description" content="Spring Boot microservices, Kafka, gRPC and Oracle performance tuning — with the stories behind the systems.">
+<meta name="twitter:image" content="https://longtmb2003.github.io/assets/og-preview.png">
+<link rel="canonical" href="https://longtmb2003.github.io/">
 <meta name="theme-color" content="#ECE9E2">
 <title>Long Tran — Backend Java Developer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Long Tran",
+  "jobTitle": "Backend Java Developer",
+  "url": "https://longtmb2003.github.io/",
+  "image": "https://longtmb2003.github.io/assets/long.png",
+  "email": "mailto:tranminhbaolong.forwork@gmail.com",
+  "telephone": "+84905195128",
+  "address": { "@type": "PostalAddress", "addressLocality": "Ho Chi Minh City", "addressCountry": "VN" },
+  "sameAs": [
+    "https://www.linkedin.com/in/long-tmb",
+    "https://github.com/longtmb2003"
+  ],
+  "knowsAbout": ["Java", "Spring Boot", "Apache Kafka", "gRPC", "Oracle Database", "Kubernetes"]
+}
+</script>
 <style>
 :root {
   --paper:#ECE9E2;
@@ -27,6 +54,8 @@
   --accent-soft:#FDE8E2;
   --accent-hover:#D03B21;
   --green:#2FA36B;
+  --c-green:#24855A;
+  --c-indigo:#3F4FB3;
   --display:'Anton', Impact, 'Arial Narrow', sans-serif;
   --sans:'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --mono:'JetBrains Mono', ui-monospace, Menlo, Monaco, monospace;
@@ -62,7 +91,7 @@ a { color:inherit; text-decoration:none; }
 .topbar .wrap {
   display:flex;
   align-items:center;
-  gap:20px;
+  gap:16px;
   height:64px;
 }
 .logo-block { display:flex; align-items:baseline; gap:6px; }
@@ -118,36 +147,6 @@ a { color:inherit; text-decoration:none; }
   animation:pulseDot 2s infinite;
 }
 @keyframes pulseDot { 0%,100%{opacity:1;transform:scale(1);} 50%{opacity:.6;transform:scale(1.2);} }
-
-.sound-toggle {
-  border:1px solid var(--line);
-  background:none;
-  padding:5px 11px;
-  border-radius:99px;
-  font:600 11px var(--mono);
-  letter-spacing:.04em;
-  text-transform:uppercase;
-  cursor:pointer;
-  color:var(--ink);
-  transition:all .2s;
-  display:inline-flex;
-  align-items:center;
-  gap:4px;
-}
-.sound-toggle:hover { background:var(--card); border-color:var(--ink); }
-.sound-toggle.on { background:var(--ink); color:var(--paper); border-color:var(--ink); }
-
-.language-switcher { display:flex; border:1px solid var(--ink); border-radius:99px; overflow:hidden; }
-.language-switcher button {
-  border:0;
-  background:none;
-  padding:5px 10px;
-  font:600 11px var(--mono);
-  cursor:pointer;
-  color:var(--ink);
-  transition:background .2s, color .2s;
-}
-.language-switcher button.active { background:var(--ink); color:var(--paper); }
 
 .hire {
   font:600 11.5px var(--mono);
@@ -326,6 +325,7 @@ a { color:inherit; text-decoration:none; }
   border-radius:4px;
   transition:background .2s, color .2s;
 }
+.polaroid-close-btn { font-size:11px; text-transform:uppercase; letter-spacing:.06em; border:1.5px solid var(--ink); border-radius:99px; padding:4px 10px; }
 .polaroid-close-btn:hover { background:var(--ink); color:var(--paper); }
 .polaroid-visual {
   position:relative;
@@ -336,6 +336,27 @@ a { color:inherit; text-decoration:none; }
   background:#F5F3EF;
 }
 .polaroid-visual svg { width:100%; height:100%; display:block; }
+.polaroid-visual img { width:100%; height:100%; object-fit:cover; display:block; }
+/* memory materials: terminal, paper note, certificate ticket */
+.mat { position:relative; height:100%; overflow:hidden; }
+.mat-term { background:#1A1917; color:#E8E5DE; }
+.mat-bar { display:flex; align-items:center; gap:5px; padding:7px 10px; background:#252421; font:600 9.5px var(--mono); color:#9B978E; }
+.mat-bar i { width:7px; height:7px; border-radius:50%; background:#4A4743; }
+.mat-bar span { margin-left:6px; }
+.mat-term pre { margin:0; padding:10px 14px; font:10.5px/1.6 var(--mono); white-space:pre; overflow:hidden; }
+.mat-term .k { color:#F08A6E; } .mat-term .s { color:#A9CF9C; } .mat-term .c { color:#8A877F; }
+.rx { display:inline-block; width:3.2em; height:.95em; vertical-align:-1px; background:currentColor; border-radius:2px; }
+.mat-paper { background:#F4F1EA; display:grid; place-items:center; }
+.mat-note { position:relative; width:72%; padding:16px 20px 18px; background:#FFF4C4; font:600 21px/1.15 'Caveat', cursive; color:#2A2925; transform:rotate(-2deg); box-shadow:3px 4px 0 rgba(20,20,20,.12); }
+.mat-note::before { content:''; position:absolute; top:-9px; left:50%; width:64px; height:18px; transform:translateX(-50%) rotate(3deg); background:rgba(228,71,44,.25); }
+.mat .mat-doodle { position:absolute; right:22px; bottom:20px; width:44px; height:auto; fill:none; stroke:var(--accent); stroke-width:3; stroke-linecap:round; transform:rotate(8deg); }
+.mat-ticket { position:relative; width:80%; padding:14px 18px; background:var(--card); border:1.5px solid var(--ink); outline:1px dashed var(--ink); outline-offset:-7px; display:grid; gap:2px; transform:rotate(1.5deg); }
+.mat-ticket strong { font:400 22px/1.05 var(--display); text-transform:uppercase; margin:2px 0 4px; }
+.mat-ticket span { font:500 10.5px var(--mono); color:var(--ink-2); }
+.mat-kicker { text-transform:uppercase; letter-spacing:.08em; color:var(--accent) !important; }
+.mat-stamp { position:absolute; right:12px; bottom:10px; padding:2px 8px; border:2px solid var(--accent); border-radius:4px; color:var(--accent) !important; font-weight:700 !important; text-transform:uppercase; transform:rotate(-8deg); }
+.mat-cap { position:absolute; right:10px; bottom:7px; font:600 8.5px var(--mono); letter-spacing:.08em; text-transform:uppercase; opacity:.55; }
+.mat-paper .mat-cap { color:var(--ink); }
 .polaroid-body { padding:18px 20px 16px; }
 .polaroid-tag {
   display:inline-block;
@@ -387,7 +408,8 @@ a { color:inherit; text-decoration:none; }
 
 /* CENTER COLUMN: THE HEAD & INTERACTIVE STAGE */
 .stage {
-  --k:1;
+  --k:.8;
+  --ky:1;
   position:relative;
   height:650px;
   width:100%;
@@ -397,6 +419,25 @@ a { color:inherit; text-decoration:none; }
   justify-content:flex-end;
   user-select:none;
 }
+
+.skip-interaction {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:30px;
+  border:1px solid var(--line);
+  border-radius:99px;
+  background:rgba(255,255,255,.78);
+  color:var(--ink-2);
+  padding:5px 10px;
+  font:600 9.5px/1 var(--mono);
+  letter-spacing:.05em;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:background .2s, color .2s, border-color .2s, transform .2s;
+}
+.skip-interaction:hover { border-color:var(--ink); color:var(--ink); transform:translateY(-1px); }
+.intro-skip { margin-top:14px; }
 
 /* Editorial Paper Pointer Card & Gentle Soothing Arrow pointing to head */
 .bubble {
@@ -561,73 +602,73 @@ a { color:inherit; text-decoration:none; }
 }
 
 /* Playful Bouncing / Nudging Animation when closed */
-.stage:not(.open) .head-box {
-  animation: headBounce 3.2s cubic-bezier(.28,.84,.42,1) infinite;
+.stage:not(.open) .head-box:hover {
+  animation: headBounce 1.1s cubic-bezier(.28,.84,.42,1);
   transform-origin: bottom center;
 }
 
 @keyframes headBounce {
-  0%, 65%, 100% {
+  0%, 100% {
     transform: translateY(0) rotate(0deg) scale(1, 1);
   }
-  70% {
+  12% {
     transform: translateY(-4px) scale(0.98, 1.03);
   }
-  76% {
+  30% {
     transform: translateY(-16px) rotate(-2deg) scale(1.02, 0.98);
   }
-  82% {
+  52% {
     transform: translateY(2px) rotate(1deg) scale(1.04, 0.95);
   }
-  88% {
+  72% {
     transform: translateY(-6px) rotate(-0.5deg) scale(0.99, 1.01);
   }
-  94% {
+  90% {
     transform: translateY(0) scale(1, 1);
   }
 }
 
-/* Lid Teaser (hé mở nắp đầu một chút khi nhảy) */
-.stage:not(.open) .head-lid {
-  animation: lidTeaser 3.2s cubic-bezier(.28,.84,.42,1) infinite;
+/* Lid teaser (cracks open lid slightly on bounce) */
+.stage:not(.open) .head-box:hover .head-lid {
+  animation: lidTeaser 1.1s cubic-bezier(.28,.84,.42,1);
   transform-origin: bottom left;
 }
 
 @keyframes lidTeaser {
-  0%, 65%, 100% {
+  0%, 100% {
     transform: translateY(0) rotate(0deg);
   }
-  74% {
+  25% {
     transform: translateY(-15px) rotate(-3.5deg);
   }
-  82% {
+  52% {
     transform: translateY(-4px) rotate(-1deg);
   }
-  88% {
+  72% {
     transform: translateY(-8px) rotate(-2deg);
   }
-  94% {
+  90% {
     transform: translateY(0) rotate(0deg);
   }
 }
 
-/* Tia sáng hé ra từ bên trong khi nắp cựa quậy */
-.stage:not(.open) .head-interior {
-  animation: interiorGleam 3.2s ease infinite;
+/* Light gleam escaping from interior when lid nudges */
+.stage:not(.open) .head-box:hover .head-interior {
+  animation: interiorGleam 1.1s ease;
 }
 
 @keyframes interiorGleam {
-  0%, 68%, 100% {
+  0%, 100% {
     opacity: 0;
     transform: translateX(-50%) scale(0.8);
   }
-  74%, 86% {
+  20%, 70% {
     opacity: 0.9;
     transform: translateX(-50%) scale(1.08);
   }
 }
 
-/* Aura vòng tròn mời gọi click */
+/* Pulsing aura ring inviting click */
 .head-box::before {
   content: '';
   position: absolute;
@@ -642,18 +683,18 @@ a { color:inherit; text-decoration:none; }
   pointer-events: none;
   z-index: 1;
 }
-.stage:not(.open) .head-box::before {
-  animation: tapRing 3.2s ease-out infinite;
+.stage:not(.open) .head-box:hover::before {
+  animation: tapRing 1.1s ease-out;
 }
 @keyframes tapRing {
-  0%, 70% {
+  0% {
     opacity: 0;
     transform: translateX(-50%) scale(0.5);
   }
-  74% {
+  20% {
     opacity: 0.8;
   }
-  92% {
+  90% {
     opacity: 0;
     transform: translateX(-50%) scale(1.6);
   }
@@ -687,9 +728,6 @@ a { color:inherit; text-decoration:none; }
   padding:3px 10px;
   border-radius:99px;
   transition:all .3s;
-}
-.stage:not(.open) .head-hint {
-  animation: hintHop 3.2s ease infinite;
 }
 @keyframes hintHop {
   0%, 70%, 100% { transform: translateX(-50%) translateY(0); }
@@ -739,46 +777,104 @@ a { color:inherit; text-decoration:none; }
 .item:hover, .item:focus-visible, .item.selected {
   background:var(--accent-soft);
   box-shadow:5px 5px 0 var(--ink);
-  transform:translate(calc(var(--dx) * var(--k) * 1px), calc(var(--dy) * 1px)) rotate(var(--r)) scale(1.15) !important;
+  transform:translate(calc(var(--dx) * var(--k) * 1px), calc(var(--dy) * var(--ky) * 1px)) rotate(var(--r)) scale(1.15) !important;
   outline:none;
   z-index:10;
 }
-.item.selected { border-color:var(--accent); }
+.item.selected { border-color:var(--ink); background:var(--accent); box-shadow:5px 5px 0 var(--ink); }
+.item.selected span { background:var(--accent); color:#fff; border-color:var(--ink); }
+.stage.has-selection .item:not(.selected):not(:hover):not(:focus-visible) { opacity:.55; }
 
 .stage.open .item {
   z-index:10;
   opacity:1;
   pointer-events:auto;
-  transform:translate(calc(var(--dx) * var(--k) * 1px), calc(var(--dy) * 1px)) rotate(var(--r));
-  animation:itemBob 3.6s ease-in-out infinite alternate;
-  animation-delay:calc(var(--i) * 0.25s + 0.8s);
-}
-@keyframes itemBob {
-  0% { transform:translate(calc(var(--dx) * var(--k) * 1px), calc(var(--dy) * 1px)) rotate(var(--r)); }
-  100% { transform:translate(calc(var(--dx) * var(--k) * 1px), calc((var(--dy) - 9) * 1px)) rotate(calc(var(--r) + 2deg)); }
+  transform:translate(calc(var(--dx) * var(--k) * 1px), calc(var(--dy) * var(--ky) * 1px)) rotate(var(--r));
 }
 
 /* RIGHT COLUMN: MANIFESTO & PHILOSOPHY */
-.hero-right { position:relative; z-index:2; padding-top:14px; }
+.hero-right { position:relative; z-index:2; padding-top:6px; }
+.manifesto-wrap { margin-bottom:20px; }
+.manifesto-kicker {
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  margin-bottom:12px;
+  padding-bottom:6px;
+  border-bottom:1.5px solid var(--ink);
+  width:100%;
+}
 .manifesto-list {
   list-style:none;
-  font:400 clamp(22px,2.4vw,32px)/1.14 var(--display);
-  text-transform:uppercase;
-  color:var(--accent);
-  margin-bottom:28px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  margin-bottom:20px;
 }
-.manifesto-list li { margin-bottom:4px; transition:transform .2s; }
-.manifesto-list li:hover { transform:translateX(4px); }
-.manifesto-list li:last-child::after { content:'…'; }
+.manifesto-item {
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:4px;
+  padding:4px 0 8px;
+  border-bottom:1px dashed var(--line);
+  transition:transform .2s ease;
+}
+.manifesto-item:last-child {
+  border-bottom:none;
+  padding-bottom:0;
+}
+.manifesto-item:hover {
+  transform:translateX(4px);
+}
+.manifesto-title {
+  font:400 clamp(19px,2vw,25px)/1.15 var(--display);
+  text-transform:uppercase;
+  color:var(--ink);
+  letter-spacing:.02em;
+  transition:color .2s;
+}
+.manifesto-item:hover .manifesto-title {
+  color:var(--accent);
+}
+.manifesto-badge {
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  font:700 10.5px/1 var(--mono);
+  letter-spacing:.05em;
+  text-transform:uppercase;
+  padding:4px 10px;
+  border-radius:99px;
+  border:1px solid var(--ink);
+  background:var(--card);
+}
+.manifesto-badge.fire {
+  background:var(--accent);
+  color:#fff;
+  border-color:var(--accent);
+  box-shadow:2px 2px 0 var(--ink);
+}
+.manifesto-badge.cert {
+  background:var(--ink);
+  color:var(--paper);
+  box-shadow:2px 2px 0 rgba(0,0,0,0.15);
+}
+.manifesto-badge.learn {
+  background:var(--paper);
+  color:var(--ink);
+  border-color:var(--ink);
+}
 
 .mission-text {
-  font:600 12.5px/1.7 var(--mono);
-  letter-spacing:.04em;
-  text-transform:uppercase;
+  font:500 13px/1.7 var(--mono);
+  letter-spacing:.02em;
   color:var(--ink-2);
-  margin-bottom:24px;
-  padding-left:14px;
-  border-left:2px solid var(--accent);
+  margin-bottom:20px;
+  padding:12px 16px;
+  background:var(--ghost);
+  border-left:3px solid var(--accent);
+  border-radius:0 8px 8px 0;
 }
 .trusted-block { padding-top:14px; border-top:1px solid var(--line); }
 .trusted-names { font:500 12px/1.6 var(--mono); color:var(--ink-2); margin-top:4px; }
@@ -798,6 +894,66 @@ a { color:inherit; text-decoration:none; }
 .hero-cols ul { list-style:none; font-size:13.5px; line-height:1.95; color:var(--ink-2); }
 .hero-cols a { text-decoration:underline; text-decoration-color:var(--line); text-underline-offset:3px; transition:color .2s; }
 .hero-cols a:hover { color:var(--accent); text-decoration-color:currentColor; }
+
+/* HUMAN LAYER */
+.human-story {
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:minmax(280px,.9fr) minmax(0,1.6fr);
+  gap:clamp(36px,6vw,88px);
+  padding:44px 0 72px;
+  border-top:1.5px solid var(--ink);
+}
+.human-intro { position:sticky; top:92px; align-self:start; }
+.human-kicker {
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:18px;
+}
+.human-kicker::before { content:'✦'; color:var(--accent); font-size:12px; }
+.human-intro h2 { font-size:clamp(50px,6vw,86px); margin-bottom:20px; }
+.human-lessons { display:grid; gap:14px; max-width:440px; }
+.human-lesson {
+  padding:14px 16px;
+  border-left:3px solid var(--ink);
+  background:rgba(255,255,255,.48);
+  color:var(--ink-2);
+  font-size:14px;
+  line-height:1.75;
+}
+.human-lesson:last-child { border-left-color:var(--accent); }
+.human-lesson span {
+  display:block;
+  margin-bottom:7px;
+  color:var(--ink);
+  font:700 10.5px/1.4 var(--mono);
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.human-signoff {
+  display:inline-block;
+  margin-top:22px;
+  font:600 11px var(--mono);
+  letter-spacing:.07em;
+  text-transform:uppercase;
+  color:var(--accent);
+  transform:rotate(-2deg);
+}
+.human-notes { border-top:1px solid var(--ink); }
+.human-note {
+  display:grid;
+  grid-template-columns:54px minmax(150px,.55fr) minmax(0,1fr);
+  gap:20px;
+  align-items:start;
+  padding:24px 0;
+  border-bottom:1px solid var(--line);
+}
+.human-note-index { font:600 11px var(--mono); color:var(--accent); }
+.human-note h3 { font:400 clamp(24px,2.4vw,34px)/1.05 var(--display); text-transform:uppercase; }
+.human-note p { color:var(--ink-2); font-size:14px; line-height:1.75; }
+.human-note em { color:var(--ink); font-style:normal; font-weight:700; }
 
 /* TICKER */
 .ticker {
@@ -820,12 +976,16 @@ section { padding:96px 0; scroll-margin-top:64px; }
   justify-content:space-between;
   align-items:end;
   gap:24px;
-  margin-bottom:44px;
+  margin-bottom:40px;
   padding-bottom:18px;
   border-bottom:1.5px solid var(--ink);
 }
-.sec-head h2 { font-size:clamp(54px,8vw,112px); }
-.sec-head p { max-width:380px; color:var(--ink-2); font-size:14.5px; line-height:1.6; }
+.sec-head h2 {
+  font-size:clamp(38px,5.2vw,76px);
+  line-height:1.05;
+  white-space:nowrap;
+}
+.sec-head p { max-width:420px; color:var(--ink-2); font-size:14.5px; line-height:1.6; }
 
 .box {
   background:var(--card);
@@ -841,14 +1001,32 @@ section { padding:96px 0; scroll-margin-top:64px; }
 .does h3 { font:400 26px/1 var(--display); text-transform:uppercase; margin:8px 0 10px; }
 .does p { font-size:14px; color:var(--ink-2); line-height:1.65; }
 
-.proj-row { display:grid; grid-template-columns:1.1fr 1fr; gap:48px; align-items:center; padding:44px 0; }
-.proj-row + .proj-row { border-top:1px solid var(--line); }
-.proj-row.flip .proj-media { order:2; }
-.proj-media { padding:22px 18px; }
+.work-group { margin:8px 0 6px; }
+/* featured case study: big diagram beside a structured story, alternating sides */
+.case-study { display:grid; grid-template-columns:1.15fr 1fr; gap:48px; align-items:start; padding:36px 0 56px; }
+.case-study + .case-study { border-top:1px solid var(--line); }
+.case-study.flip .proj-media { order:2; }
+.proj-media { padding:18px; }
 .proj-no { font:400 64px/1 var(--display); color:var(--accent); }
 .p-tag { margin:6px 0 4px; }
-.proj-info h3 { font:400 clamp(30px,3.4vw,42px)/1 var(--display); text-transform:uppercase; margin-bottom:14px; }
-.proj-info > p { color:var(--ink-2); font-size:15px; line-height:1.65; }
+.cs-text h3, .more-body h3 { font:400 clamp(30px,3.4vw,42px)/1 var(--display); text-transform:uppercase; margin-bottom:18px; }
+.cs-metrics { display:flex; flex-wrap:wrap; gap:12px; margin-bottom:28px; }
+.cs-metrics div { flex:1 1 150px; padding:12px 14px; background:var(--card); border:1.5px solid var(--ink); border-radius:10px; box-shadow:3px 3px 0 var(--ink); }
+.cs-metrics b { display:block; font:400 clamp(26px,3vw,34px)/1.05 var(--display); color:var(--accent); }
+.cs-metrics span { font:500 10.5px var(--mono); text-transform:uppercase; letter-spacing:.04em; color:var(--mute); }
+.cs-body { max-width:62ch; }
+.cs-body dt { display:flex; align-items:center; gap:8px; font:700 11px var(--mono); text-transform:uppercase; letter-spacing:.1em; }
+.cs-body dt::before { content:''; width:14px; height:2px; background:var(--accent); }
+.cs-body dd { margin:6px 0 22px; font-size:15px; line-height:1.7; color:var(--ink-2); }
+.cs-body dd:last-child { margin-bottom:0; }
+.m { font-weight:700; color:var(--ink); background:linear-gradient(transparent 58%, var(--accent-soft) 58%); }
+.more-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; align-items:start; margin-top:18px; }
+.more-card { overflow:hidden; }
+.more-card .proj-media { padding:14px; border-bottom:1.5px solid var(--ink); }
+.more-body { padding:18px 20px 20px; }
+.more-body .proj-no { font-size:40px; }
+.more-body h3 { font-size:24px; margin-bottom:10px; }
+.more-body > p { font-size:14px; line-height:1.65; color:var(--ink-2); }
 .chip-row { display:flex; flex-wrap:wrap; gap:6px; margin-top:16px; }
 .chip { font:600 11px var(--mono); padding:4px 10px; border:1px solid var(--ink); border-radius:99px; background:var(--card); }
 
@@ -875,52 +1053,248 @@ code { font:12.5px var(--mono); background:var(--ghost); padding:1px 5px; border
 /* SVG ARCHITECTURE DIAGRAMS */
 .dgm { width:100%; height:auto; display:block; }
 .dgm .node { fill:#fff; stroke:var(--ink); stroke-width:1.2; }
-.dgm .node.hot { fill:var(--accent-soft); stroke:var(--accent); }
+.dgm .node.hot { fill:color-mix(in srgb, var(--dg, var(--accent)) 14%, #fff); stroke:var(--dg, var(--accent)); }
 .dgm .node.warn { fill:#F1EEE7; stroke-dasharray:4 3; }
 .dgm .lbl { font:600 11px var(--sans); fill:var(--ink); }
 .dgm .sub, .dgm .tick { font:9.5px var(--mono); fill:var(--mute); }
 .dgm .edge { fill:none; stroke:var(--ink); stroke-width:1.1; opacity:.45; }
 .dgm .edge.dash { stroke-dasharray:4 4; }
-.dgm .pulse { fill:var(--accent); }
+.dgm .pulse { fill:var(--dg, var(--accent)); }
 .dgm .pulse.w { fill:var(--ink); }
+/* interactive diagrams: hover a node for its role; pulses run along the data path */
+.dgm-bar { display:flex; justify-content:flex-end; margin-bottom:12px; }
+.dgm-cap { min-height:3.2em; margin-top:12px; padding-top:10px; border-top:1px dashed var(--line); font:500 12.5px/1.55 var(--mono); color:var(--ink-2); }
+.dgm .se { font:700 9.5px var(--mono); letter-spacing:.1em; fill:var(--dg, var(--accent)); }
+.dgm .n { cursor:help; outline:none; }
+.dgm .n .node { transition:stroke-width .15s; }
+.dgm .n:hover .node, .dgm .n:focus-visible .node { stroke:var(--dg, var(--accent)); stroke-width:2.4; }
 
 /* ACHIEVEMENTS */
 .ach-group { margin:0 0 18px; }
-.ach-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-bottom:48px; }
-.ach-card { padding:24px; transform:rotate(var(--t,-1deg)); }
-.ach-card:nth-child(even) { --t:1.2deg; }
-.ach-card:hover { transform:rotate(0) translate(-2px,-2px); }
-.ach-ic { font-size:32px; margin-bottom:12px; }
-.ach-card h3 { font:400 26px/1.02 var(--display); text-transform:uppercase; margin-bottom:6px; }
-.ach-meta { font:500 11.5px var(--mono); color:var(--mute); margin-bottom:10px; }
-.ach-card p { font-size:14px; color:var(--ink-2); }
-.ach-status {
-  display:inline-block;
-  margin-top:14px;
-  padding:5px 12px;
-  border-radius:99px;
-  font:600 11px var(--mono);
-  text-transform:uppercase;
-  background:var(--ink);
-  color:var(--paper);
-}
-.ach-card.wip { background:var(--paper); border-style:dashed; }
-.ach-card.wip .ach-status { background:var(--accent-soft); color:var(--accent); }
-.ach-bar { height:6px; margin-top:16px; border:1px solid var(--ink); border-radius:6px; overflow:hidden; }
+/* achievements as tickets: main body + perforated stub */
+.tickets { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; margin-bottom:44px; }
+.ticket { position:relative; display:grid; grid-template-columns:1fr 168px; background:var(--card); border:1.5px solid var(--ink); border-radius:12px; box-shadow:5px 5px 0 var(--ink); overflow:hidden; transition:transform .2s, box-shadow .2s; }
+.ticket:hover { transform:translate(-2px,-2px); box-shadow:7px 7px 0 var(--ink); }
+.tk-main { padding:20px 22px; }
+.tk-no b { font-size:16px; margin-right:4px; }
+.ticket h3 { font:400 26px/1.02 var(--display); text-transform:uppercase; margin:8px 0 4px; }
+.tk-meta { font:500 11.5px var(--mono); color:var(--mute); margin-bottom:10px; }
+.tk-main > p:last-child { font-size:14px; color:var(--ink-2); }
+.tk-stub { position:relative; display:flex; flex-direction:column; justify-content:center; gap:4px; padding:18px; border-left:2px dashed var(--ink); background:var(--accent-soft); }
+.tk-stub::before, .tk-stub::after { content:''; position:absolute; left:-12px; width:22px; height:22px; border-radius:50%; background:var(--paper); border:1.5px solid var(--ink); }
+.tk-stub::before { top:-12px; } .tk-stub::after { bottom:-12px; }
+.tk-stub b { font:400 24px/1 var(--display); text-transform:uppercase; }
+.tk-stamp { align-self:flex-start; margin-top:8px; padding:3px 8px; border:2px solid var(--accent); border-radius:4px; font:700 10.5px var(--mono); text-transform:uppercase; color:var(--accent); transform:rotate(-6deg); }
+.ticket.wip { background:var(--paper); border-style:dashed; }
+.ticket.wip .tk-stub { background:transparent; }
+.ticket.wip .tk-stamp { border-style:dashed; }
+.ach-bar { height:6px; margin-top:12px; border:1px solid var(--ink); border-radius:6px; overflow:hidden; }
 .ach-bar i { display:block; height:100%; width:var(--p); background:var(--accent); }
 
 /* EXPERIENCE */
-.xp-item { display:grid; grid-template-columns:200px 1fr; gap:32px; padding:28px 0; border-bottom:1px solid var(--line); }
-.xp-role { font:400 30px/1 var(--display); text-transform:uppercase; margin-bottom:6px; }
-.xp-co { font-weight:600; font-size:14px; margin-bottom:8px; }
-.xp-desc { font-size:14.5px; color:var(--ink-2); }
+.xp-item { display:grid; grid-template-columns:200px 1fr; gap:32px; }
+.xp-item > div:last-child { position:relative; padding:0 0 40px 30px; border-left:1.5px solid var(--ink); }
+.xp-item:last-child > div:last-child { border-left-style:dashed; padding-bottom:8px; }
+.xp-item > div:last-child::before { content:''; position:absolute; left:-8px; top:4px; width:14px; height:14px; border-radius:50%; background:var(--paper); border:2px solid var(--accent); }
+.sec-head + .xp-item > div:last-child::before { background:var(--accent); box-shadow:0 0 0 4px var(--accent-soft); }
+.xp-header-row { display:flex; align-items:baseline; flex-wrap:wrap; gap:8px 16px; margin-bottom:8px; }
+.xp-role { font:400 clamp(24px,2.5vw,32px)/1.1 var(--display); text-transform:uppercase; color:var(--ink); }
+.xp-co { font-weight:600; font-size:13.5px; font-family:var(--mono); color:var(--accent); }
+.xp-desc { font-size:14.5px; line-height:1.7; color:var(--ink-2); }
 
-/* SKILLS */
-.skill-cols { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
-.skill-col { padding:22px; }
-.skill-col h3 { font:400 24px/1 var(--display); text-transform:uppercase; margin-bottom:12px; }
-.skill-col ul { list-style:none; font-size:14px; line-height:1.95; color:var(--ink-2); }
-.skill-note { margin-top:28px; color:var(--ink-2); font-size:14.5px; }
+/* TOOLBOX / CREATIVE CRAFT PINBOARD & STICKY NOTE */
+.craft-grid {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:26px;
+  margin-bottom:12px;
+}
+.craft-card {
+  position:relative;
+  background:var(--card);
+  border:1.5px solid var(--ink);
+  border-radius:12px;
+  padding:28px 24px 20px;
+  box-shadow:4px 4px 0 var(--ink);
+  display:flex;
+  flex-direction:column;
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.craft-card:hover {
+  transform:translateY(-2px);
+  box-shadow:6px 6px 0 var(--ink);
+}
+
+/* WASHI TAPE STRIP */
+.washi-tape {
+  position:absolute;
+  top:-11px;
+  left:50%;
+  transform:translateX(-50%) rotate(var(--tape-rot, -1.2deg));
+  width:88px;
+  height:22px;
+  background:var(--tape-bg, rgba(225, 215, 175, 0.75));
+  border-left:2px dashed rgba(0,0,0,0.18);
+  border-right:2px dashed rgba(0,0,0,0.18);
+  box-shadow:0 1px 3px rgba(0,0,0,0.08);
+  pointer-events:none;
+  z-index:2;
+}
+
+/* CARD HEADER */
+.craft-card-head {
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:8px;
+}
+.craft-stamp {
+  font:700 11px var(--mono);
+  text-transform:uppercase;
+  letter-spacing:0.06em;
+  color:var(--craft-accent, var(--accent));
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+.craft-stamp .emoji {
+  font-size:15px;
+}
+.craft-card h3 {
+  font:400 clamp(21px,2.2vw,26px)/1.15 var(--display);
+  text-transform:uppercase;
+  color:var(--ink);
+  margin-bottom:4px;
+}
+.craft-card-desc {
+  font:500 12.5px/1.55 var(--mono);
+  color:var(--mute);
+  margin-bottom:16px;
+}
+
+/* CHIP TAGS */
+.craft-tags {
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-bottom:18px;
+  flex:1;
+}
+.craft-tag {
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  padding:5px 12px;
+  font:600 11.5px var(--mono);
+  color:var(--ink);
+  background:var(--paper);
+  border:1.5px solid var(--ink);
+  border-radius:99px;
+  transition:transform .15s ease, background .15s ease;
+}
+.craft-tag:hover {
+  transform:translateY(-1px);
+}
+.craft-tag.core {
+  background:var(--ink);
+  color:var(--paper);
+  border-color:var(--ink);
+}
+.craft-tag.highlight small {
+  font-size:9.5px;
+  padding:1px 5px;
+  background:var(--accent);
+  color:#fff;
+  border-radius:99px;
+  font-weight:700;
+  margin-left:2px;
+}
+
+/* PROOF FOOTER */
+.craft-proof {
+  padding-top:12px;
+  border-top:1px dashed var(--line);
+  font:500 12px/1.55 var(--mono);
+  color:var(--ink-2);
+}
+.craft-proof span {
+  color:var(--craft-accent, var(--accent));
+  font-weight:700;
+  margin-right:4px;
+}
+
+/* AUTHENTIC YELLOW STICKY NOTE */
+.sticky-note {
+  position:relative;
+  background:#FFF9D2;
+  border:1.5px solid var(--ink);
+  border-radius:4px;
+  box-shadow:5px 5px 0 var(--ink);
+  padding:28px 28px 24px;
+  margin-top:20px;
+  margin-bottom:24px;
+  transform:rotate(-0.8deg);
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.sticky-note:hover {
+  transform:rotate(0deg) translateY(-2px);
+  box-shadow:7px 7px 0 var(--ink);
+}
+.sticky-tape {
+  position:absolute;
+  top:-12px;
+  left:50%;
+  transform:translateX(-50%) rotate(1deg);
+  width:110px;
+  height:24px;
+  background:rgba(235, 218, 160, 0.85);
+  border-left:2px dashed rgba(0,0,0,0.15);
+  border-right:2px dashed rgba(0,0,0,0.15);
+  box-shadow:0 1px 4px rgba(0,0,0,0.1);
+  pointer-events:none;
+}
+.sticky-head {
+  display:flex;
+  align-items:baseline;
+  flex-wrap:wrap;
+  gap:8px 14px;
+  margin-bottom:16px;
+  padding-bottom:12px;
+  border-bottom:1px dashed rgba(20,20,20,0.2);
+}
+.sticky-head h4 {
+  font:400 clamp(20px,2vw,24px)/1 var(--display);
+  text-transform:uppercase;
+  color:var(--ink);
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.sticky-head .sticky-sub {
+  font:500 12px var(--mono);
+  color:var(--ink-2);
+}
+.sticky-items {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+.sticky-item {
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  padding-left:12px;
+  border-left:2px solid rgba(20,20,20,0.25);
+  font:500 12.5px/1.6 var(--mono);
+  color:var(--ink-2);
+}
+.sticky-item b {
+  font:700 12px var(--mono);
+  text-transform:uppercase;
+  letter-spacing:0.04em;
+  color:var(--ink);
+}
 
 /* CONTACT */
 #contact { padding-bottom:40px; }
@@ -928,17 +1302,15 @@ code { font:12.5px var(--mono); background:var(--ghost); padding:1px 5px; border
 .contact-big a { color:var(--accent); text-decoration:none; }
 .contact-big a:hover { text-decoration:underline; text-decoration-thickness:6px; text-underline-offset:10px; }
 .contact-copy { max-width:520px; margin:24px 0 32px; color:var(--ink-2); }
-.contact-links { display:flex; flex-wrap:wrap; gap:10px; }
-.contact-links a {
-  font:600 12.5px var(--mono);
-  text-decoration:none;
-  padding:10px 18px;
-  border:1.5px solid var(--ink);
-  border-radius:99px;
-  background:var(--card);
-  transition:all .2s;
-}
-.contact-links a:hover { background:var(--ink); color:var(--paper); transform:translateY(-1px); }
+.avail-row { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:22px; }
+.avail-row span { font:600 11px var(--mono); text-transform:uppercase; letter-spacing:.06em; padding:6px 12px; border:1px solid var(--ink); border-radius:99px; }
+.avail-row span:first-child { background:var(--ink); color:var(--paper); }
+.contact-primary { display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr; gap:14px; }
+.contact-primary a { display:grid; gap:4px; padding:16px 18px; text-decoration:none; background:var(--card); border:1.5px solid var(--ink); border-radius:12px; box-shadow:4px 4px 0 var(--ink); font:600 13px var(--mono); overflow-wrap:anywhere; transition:transform .15s, box-shadow .15s, background .15s; }
+.contact-primary a:hover { transform:translate(-2px,-2px); box-shadow:6px 6px 0 var(--ink); background:var(--accent-soft); }
+.contact-primary small { font:400 22px/1 var(--display); text-transform:uppercase; color:var(--accent); }
+.contact-secondary { margin-top:18px; font-size:13.5px; color:var(--mute); }
+.contact-secondary a { color:var(--ink-2); text-underline-offset:3px; }
 footer {
   display:flex;
   justify-content:space-between;
@@ -951,7 +1323,6 @@ footer {
 /* REVEAL ANIMATIONS */
 .rv { opacity:0; transform:translateY(14px); transition:opacity .5s ease, transform .5s ease; }
 .rv.in { opacity:1; transform:none; }
-.ach-card.rv.in { transform:rotate(var(--t,-1deg)); }
 
 /* RESPONSIVE */
 @media (max-width:1080px) {
@@ -959,10 +1330,12 @@ footer {
   .hero-stage-container { order:2; grid-column:span 2; }
   .hero-right { order:3; grid-column:span 2; }
   .stage { max-width:440px; margin:0 auto; height:580px; }
-  .hero-cols, .skill-cols { grid-template-columns:1fr 1fr; }
-  .does, .ach-grid { grid-template-columns:1fr; }
-  .proj-row { grid-template-columns:1fr; gap:28px; }
-  .proj-row.flip .proj-media { order:0; }
+  .hero-cols { grid-template-columns:1fr 1fr; }
+  .does, .tickets { grid-template-columns:1fr; }
+  .case-study { grid-template-columns:1fr; gap:24px; }
+  .case-study.flip .proj-media { order:0; }
+  .more-grid { grid-template-columns:1fr; }
+  .contact-primary { grid-template-columns:1fr 1fr; }
   .big-year { display:none; }
 }
 @media (max-width:840px) {
@@ -971,27 +1344,59 @@ footer {
   .topbar .wrap { gap:12px; }
   .status-badge { display:none; }
   .sec-head { flex-direction:column; align-items:start; }
+  .sec-head h2 { white-space:normal; }
   .xp-item { grid-template-columns:1fr; gap:6px; }
+  .craft-grid { grid-template-columns:1fr; gap:20px; }
+  .sticky-items { grid-template-columns:1fr; gap:16px; }
+  .sticky-note { transform:none; }
+  .human-story { grid-template-columns:1fr; gap:32px; }
+  .human-intro { position:static; }
 }
 @media (max-width:580px) {
   .wrap { padding:0 18px; }
+  .topbar .wrap { gap:8px; }
+  .topbar .btn-cv-top { display:none; }
+  .logo-block { margin-right:auto; }
+  .topbar .hire { padding:8px 13px; }
   .hero-grid { grid-template-columns:1fr; }
   .hero-stage-container { grid-column:span 1; }
   .hero-right { grid-column:span 1; }
-  .stage { --k:.62; height:530px; }
+  .stage { --k:.58; --ky:.62; height:510px; }
   .head-box { width:240px; height:272px; margin-bottom:30px; }
   .bubble { top:75px; max-width:220px; }
   .bubble-box { padding:10px 14px; font-size:14px; }
-  .hero-cols, .skill-cols { grid-template-columns:1fr; }
+  .head-hint {
+    bottom:0;
+    width:calc(100% - 16px);
+    white-space:normal;
+    text-align:center;
+    line-height:1.5;
+  }
+  .polaroid-close-btn { background:var(--ink); color:var(--paper); padding:8px 16px; }
+  .dgm-bar .label { display:none; }
+  .case-study .proj-media { overflow-x:auto; }
+  .case-study .dgm { min-width:540px; }
+  .human-story { padding:36px 0 54px; }
+  .human-note { grid-template-columns:34px 1fr; gap:10px 14px; }
+  .human-note p { grid-column:2; }
+  .hero-cols, .contact-primary { grid-template-columns:1fr; }
+  .ticket { grid-template-columns:1fr; }
+  .tk-stub { border-left:0; border-top:2px dashed var(--ink); flex-direction:row; flex-wrap:wrap; align-items:center; gap:4px 12px; }
+  .tk-stub::before { top:-12px; left:-12px; } .tk-stub::after { top:-12px; bottom:auto; left:auto; right:-12px; }
+  .tk-stamp { margin-top:0; }
+  .ach-bar { flex-basis:100%; }
   footer { flex-direction:column; }
 }
 @media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior:auto; }
   *, *::before, *::after { animation:none !important; transition:none !important; }
   .rv { opacity:1; transform:none; }
 }
 </style>
+<link rel="stylesheet" href="assets/refinements.css">
 </head>
 <body>
+<a class="access-skip" href="#work">Skip to selected work</a>
 
 <header class="topbar">
   <div class="wrap">
@@ -1017,16 +1422,19 @@ footer {
       <span>Saigon <strong id="saigonClock">14:30:00</strong></span>
     </div>
 
-    <button class="sound-toggle" id="soundToggle" type="button" aria-pressed="false" aria-label="Toggle interactive sound effects">
-      <span>Audio: Off 🔈</span>
-    </button>
-
-    <div class="language-switcher" role="group" aria-label="Language selection">
-      <button type="button" data-language="vi" aria-pressed="false">VI</button>
-      <button type="button" data-language="en" aria-pressed="true">EN</button>
-    </div>
-
     <a class="btn-cv-top" href="assets/CV_LongTran_BackendJavaDeveloper.pdf" target="_blank" download="CV_LongTran_BackendJavaDeveloper.pdf" title="Download CV (PDF)">Download CV ↓</a>
+    <details class="mobile-index">
+      <summary>Menu <span aria-hidden="true">+</span></summary>
+      <nav aria-label="Page index">
+        <a href="#about"><span>01</span> Meet Long</a>
+        <a href="#beyond-code"><span>02</span> How I think</a>
+        <a href="#work"><span>03</span> Selected work</a>
+        <a href="#achievements"><span>04</span> Achievements</a>
+        <a href="#experience"><span>05</span> Experience</a>
+        <a href="#skills"><span>06</span> Toolbox</a>
+        <a href="#contact"><span>07</span> Let's talk ↗</a>
+      </nav>
+    </details>
     <a class="hire" href="#contact">Hire Me</a>
   </div>
 </header>
@@ -1060,13 +1468,14 @@ footer {
           <div class="h-stat"><b>1M+</b><span>Records migrated</span></div>
           <div class="h-stat"><b>~300×</b><span>Query speedup</span></div>
         </div>
+        <a class="skip-interaction intro-skip" href="#work">Skip the interaction → View work</a>
       </div>
 
       <!-- POLAROID STORY CARD CONTAINER -->
       <div class="polaroid-card" id="polaroidCard" role="region" aria-live="polite">
         <div class="polaroid-drag-handle">
           <span>Memory scrap · <b id="pMemoryIndex">01/10</b></span>
-          <button class="polaroid-close-btn" id="pCloseBtn" type="button" aria-label="Close memory card">×</button>
+          <button class="polaroid-close-btn" id="pCloseBtn" type="button" aria-label="Close memory card">Close ×</button>
         </div>
         <div class="polaroid-visual" id="pVisual"></div>
         <div class="polaroid-body">
@@ -1100,16 +1509,16 @@ footer {
         </div>
 
         <!-- 10 Floating Memory Items (Perfect Unobstructed Symmetrical Arch) -->
-        <button class="item" data-idx="0" data-id="java" style="--i:0;--dx:-220;--dy:-210;--r:-6deg" aria-label="Java and Spring Boot memory"><b aria-hidden="true">☕</b><span>Java</span></button>
-        <button class="item" data-idx="1" data-id="kafka" style="--i:1;--dx:-145;--dy:-285;--r:-4deg" aria-label="Kafka and gRPC memory"><b aria-hidden="true">📨</b><span>Kafka</span></button>
-        <button class="item" data-idx="5" data-id="gaming" style="--i:5;--dx:-50;--dy:-330;--r:-2deg" aria-label="Gaming and focus memory"><b aria-hidden="true">🎮</b><span>Gaming</span></button>
-        <button class="item" data-idx="2" data-id="oracle" style="--i:2;--dx:50;--dy:-330;--r:2deg" aria-label="Oracle tuning memory"><b aria-hidden="true">⚡</b><span>Oracle</span></button>
-        <button class="item" data-idx="3" data-id="security" style="--i:3;--dx:145;--dy:-285;--r:4deg" aria-label="Security and auth memory"><b aria-hidden="true">🔐</b><span>Security</span></button>
-        <button class="item" data-idx="4" data-id="aws" style="--i:4;--dx:220;--dy:-210;--r:6deg" aria-label="AWS Cloud architecture memory"><b aria-hidden="true">☁️</b><span>AWS</span></button>
-        <button class="item" data-idx="6" data-id="sql" style="--i:6;--dx:-245;--dy:-110;--r:-9deg" aria-label="SQL Advanced certification memory"><b aria-hidden="true">🏅</b><span>SQL</span></button>
-        <button class="item" data-idx="7" data-id="scholarship" style="--i:7;--dx:-230;--dy:-10;--r:-12deg" aria-label="Academic scholarship memory"><b aria-hidden="true">🎓</b><span>Scholarship</span></button>
-        <button class="item" data-idx="8" data-id="marketing" style="--i:8;--dx:245;--dy:-110;--r:9deg" aria-label="Digital marketing memory"><b aria-hidden="true">📈</b><span>Marketing</span></button>
-        <button class="item" data-idx="9" data-id="csharp" style="--i:9;--dx:230;--dy:-10;--r:12deg" aria-label="Where it began in C# memory"><b aria-hidden="true">🪟</b><span>C# WinUI</span></button>
+        <button class="item" data-idx="0" data-id="java" style="--i:0;--dx:-220;--dy:-210;--r:-6deg"><b aria-hidden="true">☕</b><span>Java</span></button>
+        <button class="item" data-idx="1" data-id="kafka" style="--i:1;--dx:-145;--dy:-285;--r:-4deg"><b aria-hidden="true">📨</b><span>Kafka</span></button>
+        <button class="item" data-idx="5" data-id="gaming" style="--i:5;--dx:-50;--dy:-330;--r:-2deg"><b aria-hidden="true">🎮</b><span>Gaming</span></button>
+        <button class="item" data-idx="2" data-id="oracle" style="--i:2;--dx:50;--dy:-330;--r:2deg"><b aria-hidden="true">⚡</b><span>Oracle</span></button>
+        <button class="item" data-idx="3" data-id="security" style="--i:3;--dx:145;--dy:-285;--r:4deg"><b aria-hidden="true">🔐</b><span>Security</span></button>
+        <button class="item" data-idx="4" data-id="aws" style="--i:4;--dx:220;--dy:-210;--r:6deg"><b aria-hidden="true">☁️</b><span>AWS</span></button>
+        <button class="item" data-idx="6" data-id="sql" style="--i:6;--dx:-245;--dy:-110;--r:-9deg"><b aria-hidden="true">🏅</b><span>SQL</span></button>
+        <button class="item" data-idx="7" data-id="scholarship" style="--i:7;--dx:-230;--dy:-10;--r:-12deg"><b aria-hidden="true">🎓</b><span>Scholarship</span></button>
+        <button class="item" data-idx="8" data-id="marketing" style="--i:8;--dx:245;--dy:-110;--r:9deg"><b aria-hidden="true">📈</b><span>Marketing</span></button>
+        <button class="item" data-idx="9" data-id="csharp" style="--i:9;--dx:230;--dy:-10;--r:12deg"><b aria-hidden="true">🪟</b><span>C# WinUI</span></button>
 
         <!-- The Head Assembly -->
         <button class="head-box" id="headBtn" type="button" aria-expanded="false" aria-controls="stage" aria-label="Open my head to explore my memories">
@@ -1128,28 +1537,43 @@ footer {
           <img class="head-base" src="assets/head_base.png" alt="Long Tran - head base" width="452" height="512">
         </button>
 
-        <div class="head-hint label" aria-hidden="true">Click my head to toggle · Click any memory to read</div>
+        <div class="head-hint label" id="headHint" aria-live="polite">Click my head to open it</div>
       </div>
     </div>
 
-    <!-- RIGHT: MANIFESTO & PHILOSOPHY (MATCHING VIDEO) -->
+    <!-- RIGHT: MANIFESTO & PHILOSOPHY -->
     <div class="hero-right">
-      <ul class="manifesto-list">
-        <li>BACKEND CRAFTSMAN</li>
-        <li>SPRING BOOT &amp; KAFKA TAMER</li>
-        <li>ORACLE QUERY WHISPERER (~300X FASTER)</li>
-        <li>CLUTCHING IN VALORANT, CS:GO &amp; LOL</li>
-        <li>HACKERRANK SQL ADVANCED CERTIFIED</li>
-        <li>NOW DIVING INTO AWS SAA &amp; MARKETING</li>
-        <li>COFFEE-DRIVEN ARCHITECT...</li>
-      </ul>
+      <div class="manifesto-wrap">
+        <div class="manifesto-kicker label">
+          <span class="live-dot" style="background:var(--accent);width:6px;height:6px;"></span>
+          <span>Core Craft &amp; Identity</span>
+        </div>
+
+        <ul class="manifesto-list">
+          <li class="manifesto-item">
+            <span class="manifesto-title">SPRING BOOT &amp; KAFKA TAMER</span>
+          </li>
+          <li class="manifesto-item">
+            <span class="manifesto-title">ORACLE QUERY WHISPERER</span>
+            <span class="manifesto-badge fire">⚡ ~300X FASTER</span>
+          </li>
+          <li class="manifesto-item">
+            <span class="manifesto-title">HACKERRANK SQL</span>
+            <span class="manifesto-badge cert">ADVANCED CERTIFIED 🏅</span>
+          </li>
+          <li class="manifesto-item">
+            <span class="manifesto-title">NOW DIVING INTO</span>
+            <span class="manifesto-badge learn">AWS SAA &amp; MARKETING 📈</span>
+          </li>
+        </ul>
+      </div>
 
       <p class="mission-text">
-        BUILDING HIGH-THROUGHPUT, FAULT-TOLERANT DISTRIBUTED SYSTEMS WITH CLARITY, INTENTION, ARCHITECTURAL RIGOR AND COLLABORATING WITH PASSIONATE ENGINEERS AROUND THE WORLD SINCE 2023.
+        I care about backend systems that stay understandable under pressure: explicit contracts, observable failures, and database work measured from execution plans instead of guesswork.
       </p>
 
       <div class="trusted-block">
-        <span class="label">Shipped for &amp; Trusted by:</span>
+        <span class="label">Experience shaped by:</span>
         <p class="trusted-names">GTEL OTS · Public-Safety Command Platform · National Smart-Camera Traffic · IO STREAM</p>
       </div>
     </div>
@@ -1191,6 +1615,35 @@ footer {
       </ul>
     </div>
   </div>
+
+  <div class="human-story rv" id="beyond-code">
+    <div class="human-intro">
+      <p class="label human-kicker">Beyond the stack</p>
+      <h2 class="display">How I<br><span class="accent">think</span></h2>
+      <div class="human-lessons">
+        <p class="human-lesson"><span>IO STREAM · The purpose</span>Technology should remove a problem people cannot solve manually — or return the hours a manual process would take. That was my first practical definition of IT, and it is still how I judge whether a solution is useful.</p>
+        <p class="human-lesson"><span>GTEL OTS · The method</span>The problems became larger, more connected and more consequential. I learned to improve not only the answer, but the method: break complexity into clear contracts, data flows, access rules and failure paths, then refine the design until it can be trusted in production.</p>
+      </div>
+      <span class="human-signoff">Curious by default. Calm under pressure.</span>
+    </div>
+    <div class="human-notes">
+      <article class="human-note">
+        <span class="human-note-index">01</span>
+        <h3>Why backend?</h3>
+        <p>I like following a request all the way down: from a user action, through a contract and a queue, to the query that decides whether the experience feels instant or broken. <em>That chain of cause and effect keeps me curious.</em></p>
+      </article>
+      <article class="human-note">
+        <span class="human-note-index">02</span>
+        <h3>When I get stuck</h3>
+        <p>I make the problem smaller. I reproduce one path, read the logs and execution plan, test the assumption, then widen the scope. If context is missing, I ask early — debugging is faster when the team shares the same picture.</p>
+      </article>
+      <article class="human-note">
+        <span class="human-note-index">03</span>
+        <h3>Why marketing?</h3>
+        <p>A reliable system still fails as a product if nobody understands why it matters. Learning marketing helps me connect infrastructure decisions with adoption, user journeys and the outcomes the software is meant to create.</p>
+      </article>
+    </div>
+  </div>
 </section>
 </div>
 
@@ -1206,7 +1659,7 @@ footer {
 <!-- WORK SECTION WITH 6 INTERACTIVE ARCHITECTURE DIAGRAMS -->
 <section id="work">
   <div class="sec-head rv">
-    <h2 class="display">Selected<br>work <span class="accent">(06)</span></h2>
+    <h2 class="display">Selected Work <span class="accent">(06)</span></h2>
     <p>Real systems shown as architecture diagrams, because product screenshots are confidential.</p>
   </div>
   <div class="does">
@@ -1215,328 +1668,529 @@ footer {
     <div class="rv"><span class="label">03 · What I do</span><h3>Data &amp; Performance</h3><p>Oracle tuning from execution plans, Flyway schema migrations, and REST/gRPC APIs across Oracle, MongoDB and Elasticsearch.</p></div>
   </div>
 
-  <!-- PROJECT 01 -->
-  <div class="proj-row rv">
-    <div class="box proj-media"><svg class="dgm" viewBox="0 0 640 195" xmlns="http://www.w3.org/2000/svg">
-        <rect class="node hot" x="6" y="78" width="110" height="40" rx="8"/>
-        <text class="lbl" x="61" y="96" text-anchor="middle">Command System</text>
-        <text class="sub" x="61" y="108" text-anchor="middle">incident events</text>
-        <rect class="node" x="160" y="78" width="100" height="40" rx="8"/>
-        <text class="lbl" x="210" y="96" text-anchor="middle">gRPC Gateway</text>
-        <text class="sub" x="210" y="108" text-anchor="middle">event intake</text>
-        <rect class="node hot" x="315" y="78" width="80" height="40" rx="8"/>
-        <text class="lbl" x="355" y="101" text-anchor="middle">Kafka</text>
-        <rect class="node" x="470" y="12" width="160" height="34" rx="8"/>
-        <text class="lbl" x="550" y="34" text-anchor="middle">Support System</text>
-        <rect class="node" x="470" y="80" width="160" height="34" rx="8"/>
-        <text class="lbl" x="550" y="102" text-anchor="middle">Field Units</text>
-        <rect class="node" x="470" y="148" width="160" height="34" rx="8"/>
-        <text class="lbl" x="550" y="170" text-anchor="middle">Event Log + DB</text>
-        <path class="edge" d="M116,98 L160,98"/>
-        <path class="edge" d="M260,98 L315,98"/>
-        <path class="edge" d="M395,90 C430,90 430,29 470,29"/>
-        <path class="edge" d="M395,98 L470,97"/>
-        <path class="edge" d="M395,106 C430,106 430,165 470,165"/>
-        <circle class="pulse" r="3"><animateMotion dur="2.2s" repeatCount="indefinite" path="M116,98 L160,98 L260,98 L315,98"/></circle>
-        <circle class="pulse w" r="2.5"><animateMotion dur="2s" begin="0.2s" repeatCount="indefinite" path="M395,90 C430,90 430,29 470,29"/></circle>
-        <circle class="pulse w" r="2.5"><animateMotion dur="2s" begin="0.5s" repeatCount="indefinite" path="M395,98 L470,97"/></circle>
-        <circle class="pulse w" r="2.5"><animateMotion dur="2s" begin="0.8s" repeatCount="indefinite" path="M395,106 C430,106 430,165 470,165"/></circle>
-      </svg></div>
-    <div class="proj-info">
+  <p class="label work-group rv">◆ Featured case studies</p>
+
+  <!-- FEATURED 01 -->
+  <article class="case-study rv">
+    <div class="box proj-media" style="--dg:var(--c-green)">
+      <div class="dgm-bar"><span class="label">Hover a node to see its role</span></div>
+      <svg class="dgm" viewBox="0 0 640 225" xmlns="http://www.w3.org/2000/svg">
+        <text class="se" x="6" y="80">▶ START</text>
+        <g class="n" tabindex="0" style="--d:0s" data-role="Command system: operators create incidents here, and each incident is emitted once as an event.">
+          <rect class="node hot" x="6" y="88" width="110" height="40" rx="8"/>
+          <text class="lbl" x="61" y="106" text-anchor="middle">Command System</text>
+          <text class="sub" x="61" y="118" text-anchor="middle">incident events</text>
+        </g>
+        <g class="n" tabindex="0" style="--d:.6s" data-role="gRPC gateway: the single intake point. A typed contract checks every event before it enters the stream.">
+          <rect class="node" x="160" y="88" width="100" height="40" rx="8"/>
+          <text class="lbl" x="210" y="106" text-anchor="middle">gRPC Gateway</text>
+          <text class="sub" x="210" y="118" text-anchor="middle">typed contract</text>
+        </g>
+        <g class="n" tabindex="0" style="--d:1.2s" data-role="Kafka topics: each downstream system reads with its own consumer group, so one slow reader cannot hold up the others.">
+          <rect class="node hot" x="315" y="88" width="80" height="40" rx="8"/>
+          <text class="lbl" x="355" y="111" text-anchor="middle">Kafka</text>
+        </g>
+        <g class="n" tabindex="0" style="--d:1.8s" data-role="Support system: consumer group A, reads the incident stream on its own schedule.">
+          <rect class="node" x="470" y="22" width="160" height="34" rx="8"/>
+          <text class="lbl" x="550" y="44" text-anchor="middle">Support System</text>
+        </g>
+        <g class="n" tabindex="0" style="--d:1.8s" data-role="Field units: consumer group B, receive the same events independently.">
+          <rect class="node" x="470" y="90" width="160" height="34" rx="8"/>
+          <text class="lbl" x="550" y="112" text-anchor="middle">Field Units</text>
+        </g>
+        <g class="n" tabindex="0" style="--d:1.8s" data-role="Event log and database: consumer group C, keeps raw events so history can be checked later.">
+          <rect class="node" x="470" y="158" width="160" height="34" rx="8"/>
+          <text class="lbl" x="550" y="180" text-anchor="middle">Event Log + DB</text>
+        </g>
+        <path class="edge flow" style="--d:.3s" d="M116,108 L160,108"/>
+        <path class="edge flow" style="--d:.9s" d="M260,108 L315,108"/>
+        <path class="edge flow" style="--d:1.5s" d="M395,100 C430,100 430,39 470,39"/>
+        <path class="edge flow" style="--d:1.5s" d="M395,108 L470,107"/>
+        <path class="edge flow" style="--d:1.5s" d="M395,116 C430,116 430,175 470,175"/>
+        <circle class="pulse" r="3"><animateMotion dur="2.2s" repeatCount="indefinite" path="M116,108 L160,108 L260,108 L315,108"/></circle>
+        <circle class="pulse w" r="2.5"><animateMotion dur="2s" begin="0.2s" repeatCount="indefinite" path="M395,100 C430,100 430,39 470,39"/></circle>
+        <circle class="pulse w" r="2.5"><animateMotion dur="2s" begin="0.5s" repeatCount="indefinite" path="M395,108 L470,107"/></circle>
+        <circle class="pulse w" r="2.5"><animateMotion dur="2s" begin="0.8s" repeatCount="indefinite" path="M395,116 C430,116 430,175 470,175"/></circle>
+        <text class="se" x="405" y="214">■ END · 3 independent consumers</text>
+      </svg>
+      <p class="dgm-cap" aria-live="polite">Data starts at the command system and ends in three independent consumers.</p>
+    </div>
+    <div class="cs-text">
       <div class="proj-no">01</div>
       <div class="p-tag label">Public-Safety Command Platform</div>
       <h3>Incident-Event Pipeline</h3>
-      <p>Designed a gRPC-to-Kafka pipeline that carries <strong>incident events</strong> between the command, support and field systems, so each one consumes the same stream independently.</p>
-      <div class="chip-row"><span class="chip">gRPC</span><span class="chip">Kafka</span><span class="chip">Spring Boot</span><span class="chip">Oracle</span></div>
-      <details class="case">
-        <summary>Read the case study</summary>
-        <div class="case-body">
-          <h5>Problem</h5>
-          <p>The command, support and field systems all needed the same incident events. Point-to-point calls coupled them tightly, so a slow or failed system held up the others.</p>
-          <h5>Solution</h5>
-          <p>A <strong>gRPC gateway</strong> became the single intake point and publishes into <strong>Kafka topics</strong>. Each downstream system consumes on its own, and raw events are logged so history can be checked later.</p>
-          <h5>Key decisions</h5>
-          <p>Typed gRPC contracts at the edge · a separate consumer group per downstream system to isolate failures · producers don't know who consumes their events.</p>
-          <h5>Impact</h5>
-          <p>Systems scale and fail independently, and new consumers attach without changes to producers.</p>
-        </div>
-      </details>
+      <div class="cs-metrics">
+        <div><b>3</b><span>systems on one stream</span></div>
+        <div><b>0</b><span>producer changes per new consumer</span></div>
+      </div>
+      <dl class="cs-body">
+        <dt>Problem</dt>
+        <dd>The command, support and field systems all needed the same incident events. Point-to-point calls coupled them tightly, so a slow or failed system held up the others.</dd>
+        <dt>My part</dt>
+        <dd>Designed the gRPC-to-Kafka flow: the gateway contract, the incident topics and one consumer group per downstream system.</dd>
+        <dt>Key decisions</dt>
+        <dd>Typed gRPC contracts at the edge · a separate consumer group per system to isolate failures · producers never know who consumes their events · raw events are logged for later checks.</dd>
+        <dt>Result</dt>
+        <dd>Systems scale and fail independently, and <b class="m">new consumers attach without changes to producers</b>.</dd>
+        <dt>What I learned</dt>
+        <dd>Decoupling starts with the contract, not the broker. Once the event shape was typed and stable, adding a consumer became a low-risk change.</dd>
+      </dl>
+      <div class="chip-row"><span class="chip">gRPC</span><span class="chip">Kafka</span><span class="chip">Spring Boot</span></div>
     </div>
-  </div>
+  </article>
 
-  <!-- PROJECT 02 -->
-  <div class="proj-row flip rv">
-    <div class="box proj-media"><svg class="dgm" viewBox="0 0 640 195" xmlns="http://www.w3.org/2000/svg">
-        <text class="lbl" x="10" y="44">Before</text>
-        <rect class="node warn" x="80" y="26" width="470" height="28" rx="6"/>
-        <text class="lbl" x="562" y="44">~120s</text>
-        <text class="sub" x="88" y="70">filter on a hard-coded organisation code</text>
-        <text class="lbl" x="10" y="124">After</text>
-        <rect class="node hot" x="80" y="106" width="8" height="28" rx="4"/>
-        <text class="lbl" x="100" y="124">~0.4s</text>
-        <text class="sub" x="88" y="150">filter on the indexed organisation ID</text>
-        <text class="tick" x="80" y="184">▸ diagnosed from Oracle execution plans · ~300× faster</text>
-        <circle class="pulse w" r="3"><animateMotion dur="6s" repeatCount="indefinite" path="M86,40 L544,40"/></circle>
-        <circle class="pulse" r="3"><animateMotion dur="0.5s" repeatCount="indefinite" path="M82,120 L86,120"/></circle>
-      </svg></div>
-    <div class="proj-info">
-      <div class="proj-no">02</div><div class="p-tag label">Public-Safety Command Platform</div>
+  <!-- FEATURED 02 -->
+  <article class="case-study flip rv">
+    <div class="box proj-media" style="--dg:var(--accent)">
+      <div class="dgm-bar"><span class="label">Hover a bar to see what changed</span></div>
+      <svg class="dgm" viewBox="0 0 640 225" xmlns="http://www.w3.org/2000/svg">
+        <text class="se" x="10" y="22">▶ START · user opens the organisation tree</text>
+        <g class="n" tabindex="0" style="--d:.2s" data-role="Before: the query filtered on a hard-coded organisation code that the database could not use efficiently. About two minutes per load.">
+          <text class="lbl" x="10" y="64">Before</text>
+          <rect class="node warn" x="80" y="46" width="470" height="28" rx="6"/>
+          <text class="lbl" x="562" y="64">~120s</text>
+          <text class="sub" x="88" y="92">filter on a hard-coded organisation code</text>
+        </g>
+        <g class="n" tabindex="0" style="--d:2.8s" data-role="After: the same results, with the filter rewritten on the indexed organisation ID. Found by reading the execution plans.">
+          <text class="lbl" x="10" y="136">After</text>
+          <rect class="node hot" x="80" y="118" width="8" height="28" rx="4"/>
+          <text class="lbl" x="100" y="136">~0.4s</text>
+          <text class="sub" x="88" y="164">filter on the indexed organisation ID</text>
+        </g>
+        <circle class="pulse w" r="3"><animateMotion dur="6s" repeatCount="indefinite" path="M86,60 L544,60"/></circle>
+        <circle class="pulse" r="3"><animateMotion dur="0.5s" repeatCount="indefinite" path="M82,132 L86,132"/></circle>
+        <text class="se" x="10" y="208">■ END · users listed · ~300× faster</text>
+      </svg>
+      <p class="dgm-cap" aria-live="polite">Same screen, same results. Only the filter changed.</p>
+    </div>
+    <div class="cs-text">
+      <div class="proj-no">02</div>
+      <div class="p-tag label">Public-Safety Command Platform</div>
       <h3>Organisation-Tree Query Tuning</h3>
-      <p>Cut user loading across the organisation tree from <strong>~120s to ~0.4s</strong>, during a re-platform from .NET to Spring Boot that migrated <strong>1M+ records</strong> with live sync.</p>
+      <div class="cs-metrics">
+        <div><b>120s → 0.4s</b><span>user loading time</span></div>
+        <div><b>~300×</b><span>faster, no new infra</span></div>
+      </div>
+      <dl class="cs-body">
+        <dt>Problem</dt>
+        <dd>Loading the users of an organisation and its sub-units took about two minutes, which made the screen unusable for daily operations. It surfaced during a re-platform from .NET to Spring Boot that migrated <b class="m">1M+ records</b> with live sync.</dd>
+        <dt>My part</dt>
+        <dd>Traced the <strong>execution plans</strong>, found the costly filter and shipped the query fix.</dd>
+        <dt>Key decisions</dt>
+        <dd>Fix the query before adding caching or hardware · filter on the <strong>indexed organisation ID</strong> instead of a hard-coded code · keep the query results unchanged.</dd>
+        <dt>Result</dt>
+        <dd>Load time fell from <b class="m">~120s to ~0.4s</b>, without new infrastructure or caching.</dd>
+        <dt>What I learned</dt>
+        <dd>Measure before changing anything. The execution plan, not intuition, pointed to one filter that looked harmless.</dd>
+      </dl>
       <div class="chip-row"><span class="chip">Oracle</span><span class="chip">Execution Plans</span><span class="chip">Spring Data JPA</span></div>
-      <details class="case">
-        <summary>Read the case study</summary>
-        <div class="case-body">
-          <h5>Problem</h5>
-          <p>Loading the users of an organisation and its sub-units took about two minutes, which made the screen unusable for daily operations.</p>
-          <h5>Diagnosis</h5>
-          <p>I traced the <strong>execution plans</strong> and found that the cost came from a filter on a hard-coded organisation code instead of on a key the database could use efficiently.</p>
-          <h5>Fix</h5>
-          <p>I replaced it with a filter on the <strong>indexed organisation ID</strong>, keeping the query results unchanged.</p>
-          <h5>Impact</h5>
-          <p>Load time fell from <strong>~120s to ~0.4s</strong>, without new infrastructure or caching.</p>
-        </div>
-      </details>
     </div>
-  </div>
+  </article>
 
-  <!-- PROJECT 03 -->
-  <div class="proj-row rv">
-    <div class="box proj-media"><svg class="dgm" viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg">
-        <rect class="node" x="10" y="20" width="90" height="38" rx="8"/>
-        <text class="lbl" x="55" y="43" text-anchor="middle">Client</text>
-        <rect class="node hot" x="180" y="20" width="120" height="38" rx="8"/>
-        <text class="lbl" x="240" y="37" text-anchor="middle">Auth Service</text>
-        <text class="sub" x="240" y="50" text-anchor="middle">generate · resend</text>
-        <rect class="node" x="390" y="20" width="110" height="38" rx="8"/>
-        <text class="lbl" x="445" y="37" text-anchor="middle">AES-GCM</text>
-        <text class="sub" x="445" y="50" text-anchor="middle">encrypt at rest</text>
-        <rect class="node" x="390" y="120" width="110" height="38" rx="8"/>
-        <text class="lbl" x="445" y="137" text-anchor="middle">MongoDB</text>
-        <text class="sub" x="445" y="150" text-anchor="middle">OTP session</text>
-        <rect class="node warn" x="180" y="120" width="120" height="38" rx="8"/>
-        <text class="lbl" x="240" y="137" text-anchor="middle">Verify + Lockout</text>
-        <text class="sub" x="240" y="150" text-anchor="middle">expiry · max attempts</text>
-        <rect class="node hot" x="10" y="120" width="90" height="38" rx="8"/>
-        <text class="lbl" x="55" y="137" text-anchor="middle">JWT</text>
-        <text class="sub" x="55" y="150" text-anchor="middle">issued ✓</text>
-        <path class="edge" d="M100,39 L180,39"/>
-        <path class="edge" d="M300,39 L390,39"/>
-        <path class="edge" d="M445,58 L445,120"/>
-        <path class="edge" d="M390,139 L300,139"/>
-        <path class="edge" d="M180,139 L100,139"/>
-        <path class="edge dash" d="M240,58 L240,120"/>
-        <circle class="pulse" r="3"><animateMotion dur="3.2s" repeatCount="indefinite" path="M100,39 L180,39 L300,39 L390,39 L445,58 L445,120 L390,139 L300,139 L180,139 L100,139"/></circle>
-        <text class="tick" x="558" y="42">🔒 encrypted</text>
-        <text class="tick" x="558" y="142">✓ verified</text>
-      </svg></div>
-    <div class="proj-info">
-      <div class="proj-no">03</div><div class="p-tag label">Enterprise Notification Platform</div>
+  <!-- FEATURED 03 -->
+  <article class="case-study rv">
+    <div class="box proj-media" style="--dg:var(--c-indigo)">
+      <div class="dgm-bar"><span class="label">Hover a node to see its role</span></div>
+      <svg class="dgm" viewBox="0 0 640 225" xmlns="http://www.w3.org/2000/svg">
+        <text class="se" x="10" y="24">▶ START</text>
+        <g class="n" tabindex="0" style="--d:0s" data-role="Client: the user asks for a one-time code.">
+          <rect class="node" x="10" y="32" width="90" height="38" rx="8"/>
+          <text class="lbl" x="55" y="55" text-anchor="middle">Client</text>
+        </g>
+        <g class="n" tabindex="0" style="--d:.6s" data-role="Auth service: generates the code, applies the resend quota and masks phone numbers in logs.">
+          <rect class="node hot" x="180" y="32" width="120" height="38" rx="8"/>
+          <text class="lbl" x="240" y="49" text-anchor="middle">Auth Service</text>
+          <text class="sub" x="240" y="62" text-anchor="middle">generate · resend</text>
+        </g>
+        <g class="n" tabindex="0" style="--d:1.2s" data-role="AES-GCM: the code is encrypted before it is stored, so a leaked record does not expose a usable OTP.">
+          <rect class="node" x="390" y="32" width="110" height="38" rx="8"/>
+          <text class="lbl" x="445" y="49" text-anchor="middle">AES-GCM</text>
+          <text class="sub" x="445" y="62" text-anchor="middle">encrypt at rest</text>
+        </g>
+        <g class="n" tabindex="0" style="--d:1.8s" data-role="MongoDB: the OTP session keeps the encrypted code, its expiry and the failed-attempt counter.">
+          <rect class="node" x="390" y="132" width="110" height="38" rx="8"/>
+          <text class="lbl" x="445" y="149" text-anchor="middle">MongoDB</text>
+          <text class="sub" x="445" y="162" text-anchor="middle">OTP session</text>
+        </g>
+        <g class="n" tabindex="0" style="--d:2.4s" data-role="Verify and lockout: checks expiry and attempts. Validity, max attempts and lockout time are editable at runtime through an admin API.">
+          <rect class="node warn" x="180" y="132" width="120" height="38" rx="8"/>
+          <text class="lbl" x="240" y="149" text-anchor="middle">Verify + Lockout</text>
+          <text class="sub" x="240" y="162" text-anchor="middle">expiry · max attempts</text>
+        </g>
+        <g class="n" tabindex="0" style="--d:3s" data-role="JWT: issued on success. Refresh-token lifetime follows the group's session timeout, pushed to other services over gRPC.">
+          <rect class="node hot" x="10" y="132" width="90" height="38" rx="8"/>
+          <text class="lbl" x="55" y="149" text-anchor="middle">JWT</text>
+          <text class="sub" x="55" y="162" text-anchor="middle">issued ✓</text>
+        </g>
+        <path class="edge flow" style="--d:.3s" d="M100,51 L180,51"/>
+        <path class="edge flow" style="--d:.9s" d="M300,51 L390,51"/>
+        <path class="edge flow" style="--d:1.5s" d="M445,70 L445,132"/>
+        <path class="edge flow" style="--d:2.1s" d="M390,151 L300,151"/>
+        <path class="edge flow" style="--d:2.7s" d="M180,151 L100,151"/>
+        <circle class="pulse" r="3"><animateMotion dur="3.2s" repeatCount="indefinite" path="M100,51 L180,51 L300,51 L390,51 L445,70 L445,132 L390,151 L300,151 L180,151 L100,151"/></circle>
+        <text class="se" x="10" y="196">■ END · token issued</text>
+      </svg>
+      <p class="dgm-cap" aria-live="polite">A code goes in encrypted, and only a verified attempt comes out as a token.</p>
+    </div>
+    <div class="cs-text">
+      <div class="proj-no">03</div>
+      <div class="p-tag label">Enterprise Notification Platform</div>
       <h3>OTP Login &amp; Access Policies</h3>
-      <p>Built OTP login with <strong>AES-GCM-encrypted codes</strong>, expiry, lockout and resend throttling, plus per-group access-time policies and session timeouts enforced over gRPC.</p>
-      <div class="chip-row"><span class="chip">Spring Security</span><span class="chip">AES-GCM</span><span class="chip">MongoDB</span><span class="chip">gRPC</span></div>
-      <details class="case">
-        <summary>Read the case study</summary>
-        <div class="case-body">
-          <h5>Problem</h5>
-          <p>OTP codes needed protection at rest and against brute force, and administrators needed to tune the rules without a redeploy.</p>
-          <h5>Solution</h5>
-          <p>Codes are stored <strong>AES-GCM-encrypted</strong> in MongoDB. Validity period, maximum failed attempts and lockout duration can be changed at runtime through an admin API. A resend quota throttles abuse, and phone numbers are masked in logs.</p>
-          <h5>Key decisions</h5>
-          <p>Access-time policies and session timeouts are set per role group and pushed to other services over <strong>gRPC</strong> · refresh-token lifetime follows the group's session timeout · a debug mode is guarded by config for non-production environments.</p>
-          <h5>Impact</h5>
-          <p>Login security rules can be adjusted per group at runtime, and every service applies the same access policy.</p>
-        </div>
-      </details>
+      <div class="cs-metrics">
+        <div><b>0</b><span>redeploys to tune OTP rules</span></div>
+        <div><b>1</b><span>access policy shared by every service</span></div>
+      </div>
+      <dl class="cs-body">
+        <dt>Problem</dt>
+        <dd>OTP codes needed protection at rest and against brute force, and administrators needed to tune the rules without a redeploy.</dd>
+        <dt>My part</dt>
+        <dd>Built the OTP flow (encryption, expiry, lockout, resend quota) and the per-group access-time and session-timeout policies.</dd>
+        <dt>Key decisions</dt>
+        <dd>Codes stored <strong>AES-GCM-encrypted</strong> · limits editable at runtime through an admin API · policies set per role group and pushed to other services over <strong>gRPC</strong> · debug mode guarded by config outside production.</dd>
+        <dt>Result</dt>
+        <dd>Login security rules can be adjusted per group at runtime, and <b class="m">every service applies the same access policy</b>.</dd>
+        <dt>What I learned</dt>
+        <dd>Security rules change more often than code. Making them configurable mattered as much as the encryption itself.</dd>
+      </dl>
+      <div class="chip-row"><span class="chip">Spring Security</span><span class="chip">AES-GCM</span><span class="chip">gRPC</span></div>
     </div>
-  </div>
+  </article>
 
-  <!-- PROJECT 04 -->
-  <div class="proj-row flip rv">
-    <div class="box proj-media"><svg class="dgm" viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg">
-        <rect class="node hot" x="6" y="80" width="110" height="40" rx="8"/>
-        <text class="lbl" x="61" y="98" text-anchor="middle">Backup Job</text>
-        <text class="sub" x="61" y="110" text-anchor="middle">Redis lock + TTL</text>
-        <rect class="node hot" x="160" y="80" width="90" height="40" rx="8"/>
-        <text class="lbl" x="205" y="98" text-anchor="middle">Kafka</text>
-        <text class="sub" x="205" y="110" text-anchor="middle">batch events</text>
-        <rect class="node" x="300" y="16" width="150" height="36" rx="8"/>
-        <text class="lbl" x="375" y="38" text-anchor="middle">Oracle</text>
-        <rect class="node" x="300" y="82" width="150" height="36" rx="8"/>
-        <text class="lbl" x="375" y="104" text-anchor="middle">Elasticsearch</text>
-        <rect class="node" x="300" y="148" width="150" height="36" rx="8"/>
-        <text class="lbl" x="375" y="165" text-anchor="middle">Redis Counter</text>
-        <text class="sub" x="375" y="177" text-anchor="middle">batches done</text>
-        <rect class="node warn" x="500" y="80" width="134" height="40" rx="8"/>
-        <text class="lbl" x="567" y="98" text-anchor="middle">MinIO</text>
-        <text class="sub" x="567" y="110" text-anchor="middle">AES-GCM archive</text>
-        <path class="edge" d="M116,100 L160,100"/>
-        <path class="edge" d="M250,92 C275,92 275,34 300,34"/>
-        <path class="edge" d="M250,100 L300,100"/>
-        <path class="edge" d="M250,108 C275,108 275,166 300,166"/>
-        <path class="edge" d="M450,34 C475,34 475,92 500,92"/>
-        <path class="edge" d="M450,100 L500,100"/>
-        <path class="edge dash" d="M450,166 C475,166 475,108 500,108"/>
-        <circle class="pulse" r="3"><animateMotion dur="2.6s" repeatCount="indefinite" path="M116,100 L160,100 L250,100 L300,100 L450,100 L500,100"/></circle>
-        <circle class="pulse w" r="2.5"><animateMotion dur="2.4s" begin="0.8s" repeatCount="indefinite" path="M250,92 C275,92 275,34 300,34 L450,34 C475,34 475,92 500,92"/></circle>
-        <text class="tick" x="480" y="190">↻ retry · exp. backoff</text>
-      </svg></div>
-    <div class="proj-info">
-      <div class="proj-no">04</div><div class="p-tag label">Enterprise Notification Platform</div>
-      <h3>Backup &amp; Restore Engine</h3>
-      <p>Backup and restore across <strong>Oracle, Elasticsearch and MinIO</strong>, split into Kafka batch jobs with Redis locking, encrypted archives and retries.</p>
-      <div class="chip-row"><span class="chip">Kafka</span><span class="chip">Redis</span><span class="chip">MinIO</span><span class="chip">AES-GCM</span></div>
-      <details class="case">
-        <summary>Read the case study</summary>
-        <div class="case-body">
-          <h5>Problem</h5>
-          <p>Backups covered large volumes of data in several stores, had to run safely with multiple pods, and restores were producing duplicate recipients.</p>
-          <h5>Solution</h5>
-          <p>A job takes a <strong>Redis lock</strong> (<code>setIfAbsent</code> with a TTL) so only one run proceeds. Work is split into batches published to <strong>Kafka</strong>, and a Redis counter tracks finished batches to trigger finalisation. Archive files are encrypted with <strong>AES-GCM</strong> before they reach MinIO.</p>
-          <h5>Key decisions</h5>
-          <p>The lock TTL keeps a crashed pod from blocking later runs · transient failures are retried with exponential backoff · the restore path was fixed so recipients are not inserted twice.</p>
-          <h5>Impact</h5>
-          <p>Backups run safely across pods, archives are encrypted at rest, and restores no longer create duplicate recipients.</p>
-        </div>
-      </details>
-    </div>
-  </div>
-
-  <!-- PROJECT 05 -->
-  <div class="proj-row rv">
-    <div class="box proj-media"><svg class="dgm" viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg">
-        <rect class="node hot" x="255" y="10" width="130" height="36" rx="8"/>
-        <text class="lbl" x="320" y="27" text-anchor="middle">Central Org</text>
-        <text class="sub" x="320" y="39" text-anchor="middle">full data scope</text>
-        <rect class="node" x="80" y="82" width="130" height="36" rx="8"/>
-        <text class="lbl" x="145" y="99" text-anchor="middle">Province A</text>
-        <text class="sub" x="145" y="111" text-anchor="middle">scoped access</text>
-        <rect class="node" x="430" y="82" width="130" height="36" rx="8"/>
-        <text class="lbl" x="495" y="99" text-anchor="middle">Province B</text>
-        <text class="sub" x="495" y="111" text-anchor="middle">scoped access</text>
-        <rect class="node" x="10" y="154" width="120" height="36" rx="8"/>
-        <text class="lbl" x="70" y="171" text-anchor="middle">District A1</text>
-        <text class="sub" x="70" y="183" text-anchor="middle">row-level scope</text>
-        <rect class="node" x="150" y="154" width="120" height="36" rx="8"/>
-        <text class="lbl" x="210" y="171" text-anchor="middle">District A2</text>
-        <text class="sub" x="210" y="183" text-anchor="middle">row-level scope</text>
-        <rect class="node warn" x="430" y="154" width="130" height="36" rx="8"/>
-        <text class="lbl" x="495" y="171" text-anchor="middle">Role Migration</text>
-        <text class="sub" x="495" y="183" text-anchor="middle">org tier changed</text>
-        <path class="edge" d="M290,46 C230,60 180,66 150,82"/>
-        <path class="edge" d="M350,46 C410,60 460,66 490,82"/>
-        <path class="edge" d="M120,118 C100,132 85,140 72,154"/>
-        <path class="edge" d="M170,118 C185,132 197,140 208,154"/>
-        <path class="edge dash" d="M495,118 L495,154"/>
-        <circle class="pulse" r="3"><animateMotion dur="2.6s" repeatCount="indefinite" path="M320,46 C230,60 180,66 150,82 C 110,120 85,140 72,154"/></circle>
-        <circle class="pulse w" r="2.6"><animateMotion dur="2.6s" begin="1.2s" repeatCount="indefinite" path="M320,46 C410,60 460,66 490,82 L495,154"/></circle>
-      </svg></div>
-    <div class="proj-info">
-      <div class="proj-no">05</div><div class="p-tag label">Public-Safety Command Platform</div>
-      <h3>Multi-Level RBAC &amp; Incident Operations</h3>
-      <p>Multi-level RBAC with <strong>data scoping</strong> by organisation tier, plus the fire-incident lifecycle and GPS-based resource dispatch.</p>
-      <div class="chip-row"><span class="chip">RBAC</span><span class="chip">Spring Security</span><span class="chip">Oracle</span><span class="chip">Spring Data JPA</span></div>
-      <details class="case">
-        <summary>Read the case study</summary>
-        <div class="case-body">
-          <h5>Problem</h5>
-          <p>Permissions differed at each organisational level, and a user should only see data from their own unit and the units below it. When an organisation changed tier, its role mappings had to follow.</p>
-          <h5>Solution</h5>
-          <p>A layered permission model (permissions → groups → roles) with <strong>data scoping</strong> by organisation, plus a migration that remaps roles when the hierarchy changes.</p>
-          <h5>Key decisions</h5>
-          <p>Scope is applied in the query instead of filtering results afterwards · permission groups keep the number of roles small · integration accounts get their own provisioning flow.</p>
-          <h5>Impact</h5>
-          <p>One permission model covers every account type, and access rules are kept in one place.</p>
-        </div>
-      </details>
-    </div>
-  </div>
-
-  <!-- PROJECT 06 -->
-  <div class="proj-row flip rv">
-    <div class="box proj-media"><svg class="dgm" viewBox="0 0 640 195" xmlns="http://www.w3.org/2000/svg">
-        <rect class="node hot" x="6" y="78" width="130" height="40" rx="8"/>
-        <text class="lbl" x="71" y="96" text-anchor="middle">~2,000 Cameras</text>
-        <text class="sub" x="71" y="108" text-anchor="middle">AI detection</text>
-        <rect class="node" x="185" y="78" width="120" height="40" rx="8"/>
-        <text class="lbl" x="245" y="96" text-anchor="middle">Kafka · gRPC</text>
-        <text class="sub" x="245" y="108" text-anchor="middle">ingestion</text>
-        <rect class="node" x="400" y="12" width="230" height="34" rx="8"/>
-        <text class="lbl" x="515" y="34" text-anchor="middle">Penalty Notices</text>
-        <rect class="node warn" x="400" y="80" width="230" height="36" rx="8"/>
-        <text class="lbl" x="515" y="97" text-anchor="middle">Licence-Plate Enquiry</text>
-        <text class="sub" x="515" y="109" text-anchor="middle">Spring AOP lookup aspect</text>
-        <rect class="node" x="400" y="148" width="230" height="34" rx="8"/>
-        <text class="lbl" x="515" y="170" text-anchor="middle">Online Fine Payment</text>
-        <path class="edge" d="M136,98 L185,98"/>
-        <path class="edge" d="M305,90 C350,90 350,29 400,29"/>
-        <path class="edge" d="M305,98 L400,98"/>
-        <path class="edge" d="M305,106 C350,106 350,165 400,165"/>
-        <circle class="pulse" r="3"><animateMotion dur="2s" repeatCount="indefinite" path="M136,98 L185,98 L305,98 L400,98"/></circle>
-        <circle class="pulse w" r="2.5"><animateMotion dur="2s" begin="0.4s" repeatCount="indefinite" path="M305,90 C350,90 350,29 400,29"/></circle>
-        <circle class="pulse w" r="2.5"><animateMotion dur="2s" begin="0.9s" repeatCount="indefinite" path="M305,106 C350,106 350,165 400,165"/></circle>
-      </svg></div>
-    <div class="proj-info">
-      <div class="proj-no">06</div><div class="p-tag label">Smart-Camera Traffic Enforcement</div>
-      <h3>Citizen Enforcement Services</h3>
-      <p>Backend services for a city-scale platform fed by a <strong>~2,000-camera AI network</strong>: penalty notices, licence-plate enquiry and online fine payment.</p>
-      <div class="chip-row"><span class="chip">Spring AOP</span><span class="chip">Kafka</span><span class="chip">gRPC</span></div>
-      <details class="case">
-        <summary>Read the case study</summary>
-        <div class="case-body">
-          <h5>What I did</h5>
-          <p>Moved vehicle and licence lookups behind a reusable <strong>Spring AOP aspect</strong>, so endpoints no longer repeated the same lookup code. Fixed data inconsistencies in the Kafka/gRPC camera ingestion path.</p>
-          <h5>Scope</h5>
-          <p>Joined as an intern (Sep 2024) and continued full-time until Feb 2025.</p>
-        </div>
-      </details>
-    </div>
+  <p class="label work-group rv">◇ More work</p>
+  <div class="more-grid">
+    <!-- MORE 04 -->
+    <article class="box more-card rv">
+      <div class="proj-media"><svg class="dgm" viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg">
+          <rect class="node hot" x="6" y="80" width="110" height="40" rx="8"/>
+          <text class="lbl" x="61" y="98" text-anchor="middle">Backup Job</text>
+          <text class="sub" x="61" y="110" text-anchor="middle">Redis lock + TTL</text>
+          <rect class="node hot" x="160" y="80" width="90" height="40" rx="8"/>
+          <text class="lbl" x="205" y="98" text-anchor="middle">Kafka</text>
+          <text class="sub" x="205" y="110" text-anchor="middle">batch events</text>
+          <rect class="node" x="300" y="16" width="150" height="36" rx="8"/>
+          <text class="lbl" x="375" y="38" text-anchor="middle">Oracle</text>
+          <rect class="node" x="300" y="82" width="150" height="36" rx="8"/>
+          <text class="lbl" x="375" y="104" text-anchor="middle">Elasticsearch</text>
+          <rect class="node" x="300" y="148" width="150" height="36" rx="8"/>
+          <text class="lbl" x="375" y="165" text-anchor="middle">Redis Counter</text>
+          <text class="sub" x="375" y="177" text-anchor="middle">batches done</text>
+          <rect class="node warn" x="500" y="80" width="134" height="40" rx="8"/>
+          <text class="lbl" x="567" y="98" text-anchor="middle">MinIO</text>
+          <text class="sub" x="567" y="110" text-anchor="middle">AES-GCM archive</text>
+          <path class="edge" d="M116,100 L160,100"/>
+          <path class="edge" d="M250,92 C275,92 275,34 300,34"/>
+          <path class="edge" d="M250,100 L300,100"/>
+          <path class="edge" d="M250,108 C275,108 275,166 300,166"/>
+          <path class="edge" d="M450,34 C475,34 475,92 500,92"/>
+          <path class="edge" d="M450,100 L500,100"/>
+          <path class="edge dash" d="M450,166 C475,166 475,108 500,108"/>
+          <circle class="pulse" r="3"><animateMotion dur="2.6s" repeatCount="indefinite" path="M116,100 L160,100 L250,100 L300,100 L450,100 L500,100"/></circle>
+          <circle class="pulse w" r="2.5"><animateMotion dur="2.4s" begin="0.8s" repeatCount="indefinite" path="M250,92 C275,92 275,34 300,34 L450,34 C475,34 475,92 500,92"/></circle>
+          <text class="tick" x="480" y="190">↻ retry · exp. backoff</text>
+        </svg></div>
+      <div class="more-body">
+        <div class="proj-no">04</div><div class="p-tag label">Enterprise Notification Platform</div>
+        <h3>Backup &amp; Restore Engine</h3>
+        <p>Backup and restore across <strong>Oracle, Elasticsearch and MinIO</strong>, split into Kafka batch jobs with Redis locking, encrypted archives and retries.</p>
+        <div class="chip-row"><span class="chip">Kafka</span><span class="chip">Redis</span><span class="chip">MinIO</span></div>
+        <details class="case">
+          <summary>Read the case study</summary>
+          <div class="case-body">
+            <h5>Problem</h5>
+            <p>Backups covered large volumes of data in several stores, had to run safely with multiple pods, and restores were producing duplicate recipients.</p>
+            <h5>Solution</h5>
+            <p>A job takes a <strong>Redis lock</strong> (<code>setIfAbsent</code> with a TTL) so only one run proceeds. Work is split into batches published to <strong>Kafka</strong>, and a Redis counter tracks finished batches to trigger finalisation. Archive files are encrypted with <strong>AES-GCM</strong> before they reach MinIO.</p>
+            <h5>Key decisions</h5>
+            <p>The lock TTL keeps a crashed pod from blocking later runs · transient failures are retried with exponential backoff · the restore path was fixed so recipients are not inserted twice.</p>
+            <h5>Impact</h5>
+            <p>Backups run safely across pods, archives are encrypted at rest, and restores no longer create duplicate recipients.</p>
+          </div>
+        </details>
+      </div>
+    </article>
+    <!-- MORE 05 -->
+    <article class="box more-card rv">
+      <div class="proj-media"><svg class="dgm" viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg">
+          <rect class="node hot" x="255" y="10" width="130" height="36" rx="8"/>
+          <text class="lbl" x="320" y="27" text-anchor="middle">Central Org</text>
+          <text class="sub" x="320" y="39" text-anchor="middle">full data scope</text>
+          <rect class="node" x="80" y="82" width="130" height="36" rx="8"/>
+          <text class="lbl" x="145" y="99" text-anchor="middle">Province A</text>
+          <text class="sub" x="145" y="111" text-anchor="middle">scoped access</text>
+          <rect class="node" x="430" y="82" width="130" height="36" rx="8"/>
+          <text class="lbl" x="495" y="99" text-anchor="middle">Province B</text>
+          <text class="sub" x="495" y="111" text-anchor="middle">scoped access</text>
+          <rect class="node" x="10" y="154" width="120" height="36" rx="8"/>
+          <text class="lbl" x="70" y="171" text-anchor="middle">District A1</text>
+          <text class="sub" x="70" y="183" text-anchor="middle">row-level scope</text>
+          <rect class="node" x="150" y="154" width="120" height="36" rx="8"/>
+          <text class="lbl" x="210" y="171" text-anchor="middle">District A2</text>
+          <text class="sub" x="210" y="183" text-anchor="middle">row-level scope</text>
+          <rect class="node warn" x="430" y="154" width="130" height="36" rx="8"/>
+          <text class="lbl" x="495" y="171" text-anchor="middle">Role Migration</text>
+          <text class="sub" x="495" y="183" text-anchor="middle">org tier changed</text>
+          <path class="edge" d="M290,46 C230,60 180,66 150,82"/>
+          <path class="edge" d="M350,46 C410,60 460,66 490,82"/>
+          <path class="edge" d="M120,118 C100,132 85,140 72,154"/>
+          <path class="edge" d="M170,118 C185,132 197,140 208,154"/>
+          <path class="edge dash" d="M495,118 L495,154"/>
+          <circle class="pulse" r="3"><animateMotion dur="2.6s" repeatCount="indefinite" path="M320,46 C230,60 180,66 150,82 C 110,120 85,140 72,154"/></circle>
+          <circle class="pulse w" r="2.6"><animateMotion dur="2.6s" begin="1.2s" repeatCount="indefinite" path="M320,46 C410,60 460,66 490,82 L495,154"/></circle>
+        </svg></div>
+      <div class="more-body">
+        <div class="proj-no">05</div><div class="p-tag label">Public-Safety Command Platform</div>
+        <h3>Multi-Level RBAC &amp; Incident Operations</h3>
+        <p>Multi-level RBAC with <strong>data scoping</strong> by organisation tier, plus the fire-incident lifecycle and GPS-based resource dispatch.</p>
+        <div class="chip-row"><span class="chip">RBAC</span><span class="chip">Spring Security</span><span class="chip">Oracle</span></div>
+        <details class="case">
+          <summary>Read the case study</summary>
+          <div class="case-body">
+            <h5>Problem</h5>
+            <p>Permissions differed at each organisational level, and a user should only see data from their own unit and the units below it. When an organisation changed tier, its role mappings had to follow.</p>
+            <h5>Solution</h5>
+            <p>A layered permission model (permissions → groups → roles) with <strong>data scoping</strong> by organisation, plus a migration that remaps roles when the hierarchy changes.</p>
+            <h5>Key decisions</h5>
+            <p>Scope is applied in the query instead of filtering results afterwards · permission groups keep the number of roles small · integration accounts get their own provisioning flow.</p>
+            <h5>Impact</h5>
+            <p>One permission model covers every account type, and access rules are kept in one place.</p>
+          </div>
+        </details>
+      </div>
+    </article>
+    <!-- MORE 06 -->
+    <article class="box more-card rv">
+      <div class="proj-media"><svg class="dgm" viewBox="0 0 640 195" xmlns="http://www.w3.org/2000/svg">
+          <rect class="node hot" x="6" y="78" width="130" height="40" rx="8"/>
+          <text class="lbl" x="71" y="96" text-anchor="middle">~2,000 Cameras</text>
+          <text class="sub" x="71" y="108" text-anchor="middle">AI detection</text>
+          <rect class="node" x="185" y="78" width="120" height="40" rx="8"/>
+          <text class="lbl" x="245" y="96" text-anchor="middle">Kafka · gRPC</text>
+          <text class="sub" x="245" y="108" text-anchor="middle">ingestion</text>
+          <rect class="node" x="400" y="12" width="230" height="34" rx="8"/>
+          <text class="lbl" x="515" y="34" text-anchor="middle">Penalty Notices</text>
+          <rect class="node warn" x="400" y="80" width="230" height="36" rx="8"/>
+          <text class="lbl" x="515" y="97" text-anchor="middle">Licence-Plate Enquiry</text>
+          <text class="sub" x="515" y="109" text-anchor="middle">Spring AOP lookup aspect</text>
+          <rect class="node" x="400" y="148" width="230" height="34" rx="8"/>
+          <text class="lbl" x="515" y="170" text-anchor="middle">Online Fine Payment</text>
+          <path class="edge" d="M136,98 L185,98"/>
+          <path class="edge" d="M305,90 C350,90 350,29 400,29"/>
+          <path class="edge" d="M305,98 L400,98"/>
+          <path class="edge" d="M305,106 C350,106 350,165 400,165"/>
+          <circle class="pulse" r="3"><animateMotion dur="2s" repeatCount="indefinite" path="M136,98 L185,98 L305,98 L400,98"/></circle>
+          <circle class="pulse w" r="2.5"><animateMotion dur="2s" begin="0.4s" repeatCount="indefinite" path="M305,90 C350,90 350,29 400,29"/></circle>
+          <circle class="pulse w" r="2.5"><animateMotion dur="2s" begin="0.9s" repeatCount="indefinite" path="M305,106 C350,106 350,165 400,165"/></circle>
+        </svg></div>
+      <div class="more-body">
+        <div class="proj-no">06</div><div class="p-tag label">Smart-Camera Traffic Enforcement</div>
+        <h3>Citizen Enforcement Services</h3>
+        <p>Backend services for a city-scale platform fed by a <strong>~2,000-camera AI network</strong>: penalty notices, licence-plate enquiry and online fine payment.</p>
+        <div class="chip-row"><span class="chip">Spring AOP</span><span class="chip">Kafka</span><span class="chip">gRPC</span></div>
+        <details class="case">
+          <summary>Read the case study</summary>
+          <div class="case-body">
+            <h5>What I did</h5>
+            <p>Moved vehicle and licence lookups behind a reusable <strong>Spring AOP aspect</strong>, so endpoints no longer repeated the same lookup code. Fixed data inconsistencies in the Kafka/gRPC camera ingestion path.</p>
+            <h5>Scope</h5>
+            <p>Joined as an intern (Sep 2024) and continued full-time until Feb 2025.</p>
+          </div>
+        </details>
+      </div>
+    </article>
   </div>
 </section>
 
 <!-- ACHIEVEMENTS SECTION -->
 <section id="achievements">
   <div class="sec-head rv">
-    <h2 class="display">Achieve<br>ments</h2>
+    <h2 class="display">Achievements</h2>
     <p>Certifications and recognition I have earned, and the ones I am working on right now.</p>
   </div>
   <p class="label ach-group rv">◆ Unlocked</p>
-  <div class="ach-grid">
-    <div class="box ach-card rv"><div class="ach-ic" aria-hidden="true">🏅</div><h3>SQL (Advanced)</h3><div class="ach-meta">HackerRank · Certification</div><p>Advanced SQL: joins, window functions and query design.</p><span class="ach-status">✓ Achieved Jul 5, 2026</span></div>
-    <div class="box ach-card rv"><div class="ach-ic" aria-hidden="true">🎓</div><h3>Academic Excellence Scholarship</h3><div class="ach-meta">HCMC Open University</div><p>Awarded for academic results during my B.Eng in Information Technology.</p><span class="ach-status">✓ Awarded Jan 2025</span></div>
-    <div class="box ach-card rv"><div class="ach-ic" aria-hidden="true">📜</div><h3>B.Eng Information Technology</h3><div class="ach-meta">HCMC Open University · Grade: Good</div><p>Four years of software engineering foundations, 2021 — 2025.</p><span class="ach-status">✓ Graduated Sep 2025</span></div>
+  <div class="tickets">
+    <article class="ticket rv">
+      <div class="tk-main"><span class="label tk-no"><b aria-hidden="true">🏅</b> No. 01</span><h3>SQL (Advanced)</h3><p class="tk-meta">HackerRank · Certification</p><p>Advanced SQL: joins, window functions and query design.</p></div>
+      <div class="tk-stub"><span class="label">Issued</span><b>Jul 5, 2026</b><span class="tk-stamp">✓ Certified</span></div>
+    </article>
+    <article class="ticket rv">
+      <div class="tk-main"><span class="label tk-no"><b aria-hidden="true">🎓</b> No. 02</span><h3>Academic Excellence Scholarship</h3><p class="tk-meta">HCMC Open University</p><p>Awarded for academic results during my B.Eng in Information Technology.</p></div>
+      <div class="tk-stub"><span class="label">Awarded</span><b>Jan 2025</b><span class="tk-stamp">✓ Awarded</span></div>
+    </article>
+    <article class="ticket rv">
+      <div class="tk-main"><span class="label tk-no"><b aria-hidden="true">📜</b> No. 03</span><h3>B.Eng Information Technology</h3><p class="tk-meta">HCMC Open University · Grade: Good</p><p>Four years of software engineering foundations, 2021 — 2025.</p></div>
+      <div class="tk-stub"><span class="label">Graduated</span><b>Sep 2025</b><span class="tk-stamp">✓ Graduated</span></div>
+    </article>
   </div>
   <p class="label ach-group rv">◇ In progress</p>
-  <div class="ach-grid">
-    <div class="box ach-card wip rv"><div class="ach-ic" aria-hidden="true">☁️</div><h3>AWS Solutions Architect – Associate</h3><div class="ach-meta">Amazon Web Services · SAA-C03</div><p>Designing resilient, secure and cost-aware architectures on AWS.</p><span class="ach-status">◷ Just started</span><div class="ach-bar" role="img" aria-label="Just started"><i style="--p:6%"></i></div></div>
-    <div class="box ach-card wip rv"><div class="ach-ic" aria-hidden="true">📈</div><h3>Digital Marketing</h3><div class="ach-meta">Self-study · New path</div><p>How products reach users: content, SEO, ads and analytics.</p><span class="ach-status">◷ Just started</span><div class="ach-bar" role="img" aria-label="Just started"><i style="--p:6%"></i></div></div>
+  <div class="tickets">
+    <article class="ticket wip rv">
+      <div class="tk-main"><span class="label tk-no"><b aria-hidden="true">☁️</b> No. 04</span><h3>AWS Solutions Architect – Associate</h3><p class="tk-meta">Amazon Web Services · SAA-C03</p><p>Designing resilient, secure and cost-aware architectures on AWS.</p></div>
+      <div class="tk-stub"><span class="label">Status</span><b>Just started</b><span class="tk-stamp">◷ In progress</span><div class="ach-bar" role="img" aria-label="Just started"><i style="--p:6%"></i></div></div>
+    </article>
+    <article class="ticket wip rv">
+      <div class="tk-main"><span class="label tk-no"><b aria-hidden="true">📈</b> No. 05</span><h3>Digital Marketing</h3><p class="tk-meta">Self-study · New path</p><p>How products reach users: content, SEO, ads and analytics.</p></div>
+      <div class="tk-stub"><span class="label">Status</span><b>Just started</b><span class="tk-stamp">◷ In progress</span><div class="ach-bar" role="img" aria-label="Just started"><i style="--p:6%"></i></div></div>
+    </article>
   </div>
 </section>
 
 <!-- EXPERIENCE SECTION -->
 <section id="experience">
   <div class="sec-head rv">
-    <h2 class="display">Experi<br>ence</h2>
+    <h2 class="display">Experience</h2>
     <p>Where I have worked and studied.</p>
   </div>
-  <div class="xp-item rv"><div class="xp-date label">Sep 2024 — now</div><div><div class="xp-role">Backend Java Developer</div><div class="xp-co">GTEL OTS · Ho Chi Minh City · Intern Sep–Dec 2024, full-time from Jan 2025</div><div class="xp-desc">Spring Boot microservices for three government platforms: public-safety command (Nov 2024 – now), enterprise notification (Jan 2026 – now) and smart-camera traffic enforcement (Sep 2024 – Feb 2025). Maintained shared gRPC/Feign contracts used by 10+ services, authored 120+ Flyway migrations, and added JUnit 5/Spock tests and OpenAPI documentation. Also resolved React/TypeScript UI defects across the project frontends, including typography, sizing and layout.</div></div></div>
-  <div class="xp-item rv"><div class="xp-date label">Oct 2023 — Jan 2024</div><div><div class="xp-role">Desktop App Developer</div><div class="xp-co">IO STREAM</div><div class="xp-desc">Windows desktop applications with C# and WinUI, focused on file security tools and media downloaders.</div></div></div>
-  <div class="xp-item rv"><div class="xp-date label">Sep 2021 — Sep 2025</div><div><div class="xp-role">B.Eng Information Technology</div><div class="xp-co">HCMC Open University · Grade: Good</div></div></div>
+  <div class="xp-item rv">
+    <div class="xp-date label">Sep 2024 — now</div>
+    <div>
+      <div class="xp-header-row">
+        <div class="xp-role">Backend Java Developer</div>
+      </div>
+      <div class="xp-desc">Spring Boot microservices for three government platforms: public-safety command (Nov 2024 – now), enterprise notification (Jan 2026 – now) and smart-camera traffic enforcement (Sep 2024 – Feb 2025). Maintained shared gRPC/Feign contracts used by 10+ services, authored 120+ Flyway migrations, and added JUnit 5/Spock tests and OpenAPI documentation. Also resolved React/TypeScript UI defects across the project frontends, including typography, sizing and layout.</div>
+    </div>
+  </div>
+  <div class="xp-item rv">
+    <div class="xp-date label">Oct 2023 — Jan 2024</div>
+    <div>
+      <div class="xp-header-row">
+        <div class="xp-role">Desktop App Developer</div>
+        <div class="xp-co">IO STREAM</div>
+      </div>
+      <div class="xp-desc">Windows desktop applications with C# and WinUI, focused on file security tools and media downloaders.</div>
+    </div>
+  </div>
+  <div class="xp-item rv">
+    <div class="xp-date label">Sep 2021 — Sep 2025</div>
+    <div>
+      <div class="xp-header-row">
+        <div class="xp-role">B.Eng Information Technology</div>
+        <div class="xp-co">HCMC Open University · Grade: Good</div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- TOOLBOX SECTION -->
+<!-- TOOLBOX SECTION: CREATIVE CRAFT PINBOARD & STICKY NOTE -->
 <section id="skills">
   <div class="sec-head rv">
-    <h2 class="display">Tool<br>box</h2>
-    <p>Professional tools grouped by the role they play in production systems.</p>
+    <h2 class="display">Toolbox</h2>
+    <p>Daily crafts &amp; technical gear — battle-tested in real production environments.</p>
   </div>
-  <div class="skill-cols">
-    <div class="box skill-col rv"><h3>Java &amp; Spring</h3><ul><li>Java 17/21</li><li>Spring Boot 3.x</li><li>Spring Security</li><li>Spring Data JPA · Hibernate</li><li>Spring AOP · OpenFeign</li></ul></div>
-    <div class="box skill-col rv"><h3>Messaging &amp; APIs</h3><ul><li>Apache Kafka</li><li>gRPC</li><li>REST · OpenAPI</li><li>MapStruct</li><li>JWT · OAuth2/SSO</li></ul></div>
-    <div class="box skill-col rv"><h3>Data</h3><ul><li>Oracle</li><li>PostgreSQL · MySQL</li><li>MongoDB</li><li>Redis</li><li>Elasticsearch · MinIO</li></ul></div>
-    <div class="box skill-col rv"><h3>DevOps &amp; Testing</h3><ul><li>Docker · Kubernetes</li><li>Rancher · OpenShift</li><li>GitLab CI/CD</li><li>Flyway · Gradle · Maven</li><li>JUnit 5 · AssertJ · Spock</li></ul></div>
+
+  <div class="craft-grid">
+    <!-- PAD 01: CORE RUNTIME -->
+    <div class="craft-card rv" style="--craft-accent:var(--accent); --tape-bg:rgba(228, 71, 44, 0.28); --tape-rot:-1.5deg;">
+      <div class="washi-tape" aria-hidden="true"></div>
+      <div class="craft-card-head">
+        <span class="craft-stamp"><span class="emoji" aria-hidden="true">☕</span> 01 / Core Runtime</span>
+      </div>
+      <h3>Java &amp; Spring Ecosystem</h3>
+      <p class="craft-card-desc">Where robust domain modeling, clean transactions &amp; business logic live.</p>
+      <div class="craft-tags">
+        <span class="craft-tag core">Java 17/21</span>
+        <span class="craft-tag core">Spring Boot 3</span>
+        <span class="craft-tag">Spring Security</span>
+        <span class="craft-tag">Spring Data JPA</span>
+        <span class="craft-tag">Hibernate</span>
+        <span class="craft-tag">Spring AOP</span>
+        <span class="craft-tag">OpenFeign</span>
+        <span class="craft-tag">MapStruct</span>
+      </div>
+      <div class="craft-proof">
+        <span>↳ Verified:</span> Microservices for 3 government platforms · Zero-allocation domain persistence
+      </div>
+    </div>
+
+    <!-- PAD 02: STREAMING & APIS -->
+    <div class="craft-card rv" style="--craft-accent:var(--c-green); --tape-bg:rgba(46, 204, 113, 0.3); --tape-rot:1.2deg;">
+      <div class="washi-tape" aria-hidden="true"></div>
+      <div class="craft-card-head">
+        <span class="craft-stamp"><span class="emoji" aria-hidden="true">⚡</span> 02 / Event Bus &amp; APIs</span>
+      </div>
+      <h3>Kafka &amp; Distributed APIs</h3>
+      <p class="craft-card-desc">Decoupled communication, high-throughput event pipelines &amp; low-latency RPC.</p>
+      <div class="craft-tags">
+        <span class="craft-tag core">Apache Kafka</span>
+        <span class="craft-tag core">gRPC</span>
+        <span class="craft-tag">REST APIs</span>
+        <span class="craft-tag">Protobuf</span>
+        <span class="craft-tag">OpenAPI / Swagger</span>
+        <span class="craft-tag">JWT</span>
+        <span class="craft-tag">OAuth2 / SSO</span>
+      </div>
+      <div class="craft-proof">
+        <span>↳ Verified:</span> Zero-drop emergency incident streams · Shared Protobuf contracts for 10+ services
+      </div>
+    </div>
+
+    <!-- PAD 03: PERSISTENCE & STORAGE -->
+    <div class="craft-card rv" style="--craft-accent:#E67E22; --tape-bg:rgba(230, 126, 34, 0.3); --tape-rot:-1deg;">
+      <div class="washi-tape" aria-hidden="true"></div>
+      <div class="craft-card-head">
+        <span class="craft-stamp"><span class="emoji" aria-hidden="true">💾</span> 03 / Persistence &amp; Speed</span>
+      </div>
+      <h3>Data, Query Tuning &amp; Storage</h3>
+      <p class="craft-card-desc">Execution plan optimization, distributed cache locks &amp; cryptographic vaults.</p>
+      <div class="craft-tags">
+        <span class="craft-tag core highlight">Oracle DB <small>~300×</small></span>
+        <span class="craft-tag core">Execution Plans</span>
+        <span class="craft-tag">Redis</span>
+        <span class="craft-tag">MinIO</span>
+        <span class="craft-tag">PostgreSQL</span>
+        <span class="craft-tag">MySQL</span>
+        <span class="craft-tag">Elasticsearch</span>
+      </div>
+      <div class="craft-proof">
+        <span>↳ Verified:</span> ~300× Oracle query acceleration · Redis distributed locks · AES-GCM encrypted archives
+      </div>
+    </div>
+
+    <!-- PAD 04: DELIVERY & QUALITY -->
+    <div class="craft-card rv" style="--craft-accent:var(--c-indigo); --tape-bg:rgba(108, 92, 231, 0.28); --tape-rot:1.5deg;">
+      <div class="washi-tape" aria-hidden="true"></div>
+      <div class="craft-card-head">
+        <span class="craft-stamp"><span class="emoji" aria-hidden="true">🚢</span> 04 / Delivery &amp; Reliability</span>
+      </div>
+      <h3>DevOps, CI/CD &amp; Testing</h3>
+      <p class="craft-card-desc">Zero-downtime database migrations, container pods &amp; automated test suites.</p>
+      <div class="craft-tags">
+        <span class="craft-tag core">Docker</span>
+        <span class="craft-tag core">Kubernetes</span>
+        <span class="craft-tag core">Flyway</span>
+        <span class="craft-tag">GitLab CI/CD</span>
+        <span class="craft-tag">Rancher / OpenShift</span>
+        <span class="craft-tag">Gradle / Maven</span>
+        <span class="craft-tag">JUnit 5</span>
+        <span class="craft-tag">Spock &amp; AssertJ</span>
+      </div>
+      <div class="craft-proof">
+        <span>↳ Verified:</span> 120+ Flyway migrations across 1M+ records · Automated regression safety in CI/CD
+      </div>
+    </div>
   </div>
-  <p class="skill-note rv">Also: React/TypeScript (UI fixes on project frontends), Go and Vue 3 (personal projects), C#.</p>
+
+  <!-- AUTHENTIC YELLOW STICKY NOTE -->
+  <div class="sticky-note rv">
+    <div class="sticky-tape" aria-hidden="true"></div>
+    <div class="sticky-head">
+      <h4><span aria-hidden="true">📌</span> P.S. Also In My Bag</h4>
+      <span class="sticky-sub">(Quick field notes on adjacent skills &amp; foundational roots)</span>
+    </div>
+    <div class="sticky-items">
+      <div class="sticky-item">
+        <b>🎨 Frontend Support</b>
+        <span>React &amp; TypeScript — UI &amp; layout defect triage on production web consoles.</span>
+      </div>
+      <div class="sticky-item">
+        <b>🧪 Explorations</b>
+        <span>Go &amp; Vue 3 — Prototyping lightweight concurrency services &amp; reactive tools.</span>
+      </div>
+      <div class="sticky-item">
+        <b>💾 Where It Began</b>
+        <span>C# &amp; WinUI 3 — Native Windows file security &amp; multi-threaded media engines at IO STREAM.</span>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- CONTACT SECTION -->
@@ -1544,25 +2198,22 @@ footer {
   <p class="label rv">Got a backend problem?</p>
   <h2 class="display contact-big rv">Let's<br><a href="mailto:tranminhbaolong.forwork@gmail.com">talk ↗</a></h2>
   <p class="contact-copy rv">Open to Backend Java roles and systems where engineering quality matters.</p>
-  <div class="contact-links rv">
-    <a class="cv-cta" href="assets/CV_LongTran_BackendJavaDeveloper.pdf" target="_blank" download="CV_LongTran_BackendJavaDeveloper.pdf">
-      <span>Download CV</span>
-      <span class="cv-badge">PDF</span>
-    </a>
-    <a href="mailto:tranminhbaolong.forwork@gmail.com">tranminhbaolong.forwork@gmail.com</a>
-    <a href="tel:+84905195123">(+84) 905 195 123</a>
-    <a href="https://zalo.me/0905195128" target="_blank" rel="noopener">Zalo: 0905 195 128</a>
-    <a href="https://linkedin.com/in/long-tmb" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="https://github.com/longtmb2003" target="_blank" rel="noopener">GitHub</a>
+  <p class="avail-row rv"><span>Available for Backend Java roles</span><span>Ho Chi Minh City</span><span>Open to remote</span></p>
+  <div class="contact-primary rv">
+    <a href="mailto:tranminhbaolong.forwork@gmail.com"><small>Email</small>tranminhbaolong.forwork@gmail.com</a>
+    <a href="https://linkedin.com/in/long-tmb" target="_blank" rel="noopener"><small>LinkedIn</small>in/long-tmb ↗</a>
+    <a href="https://github.com/longtmb2003" target="_blank" rel="noopener"><small>GitHub</small>longtmb2003 ↗</a>
+    <a href="assets/CV_LongTran_BackendJavaDeveloper.pdf" target="_blank" download="CV_LongTran_BackendJavaDeveloper.pdf"><small>Résumé</small>Download CV · PDF ↓</a>
   </div>
+  <p class="contact-secondary rv">Also reachable by phone <a href="tel:+84905195128">(+84) 905 195 128</a> · <a href="https://zalo.me/0905195128" target="_blank" rel="noopener">Zalo</a></p>
   <footer class="label"><span>© 2026 Long Tran · Ho Chi Minh City</span><a href="#about">Back to top ↑</a></footer>
 </section>
 </div></main>
 
 <!-- SCRIPT LIBRARIES & INTERACTION ENGINE -->
-<script src="assets/components/language-switcher.js"></script>
 <script>
 // --- MEMORY DATA & VISUAL BANNER ART ---
+// Optional: add photo: 'assets/memories/<file>.jpg' to a memory to show a real photo instead of its visual.
 const MEMORIES = [
   {
     id: 'java',
@@ -1571,32 +2222,11 @@ const MEMORIES = [
     text: 'Modern Java (17/21) with Spring Boot 3 is my primary weapon. Domain modelling, transaction management, zero-allocation persistence and clean contract enforcement across distributed government services.',
     chips: ['Java 21', 'Spring Boot 3', 'Hibernate', 'MapStruct', 'OpenFeign'],
     glyph: '☕',
-    visual: `<svg viewBox="0 0 390 175" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="gJ" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#221C18"/><stop offset="100%" stop-color="#14110E"/></linearGradient>
-        <linearGradient id="gSteam" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#E4472C" stop-opacity="0"/><stop offset="100%" stop-color="#FFA894" stop-opacity="0.8"/></linearGradient>
-      </defs>
-      <rect width="390" height="175" fill="url(#gJ)"/>
-      <g opacity="0.15" stroke="#fff" stroke-width="0.5">
-        <line x1="20" y1="30" x2="370" y2="30"/><line x1="20" y1="60" x2="370" y2="60"/><line x1="20" y1="90" x2="370" y2="90"/><line x1="20" y1="120" x2="370" y2="120"/><line x1="20" y1="150" x2="370" y2="150"/>
-      </g>
-      <!-- Coffee mug & steam -->
-      <path d="M70,80 C70,125 90,135 125,135 C160,135 180,125 180,80 Z" fill="#E4472C" stroke="#fff" stroke-width="3"/>
-      <path d="M180,90 C198,90 205,102 205,110 C205,118 198,124 180,124" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
-      <ellipse cx="125" cy="80" rx="55" ry="12" fill="#2E1C14" stroke="#fff" stroke-width="2"/>
-      <ellipse cx="125" cy="80" rx="46" ry="8" fill="#1A0D08"/>
-      <!-- Steam curves -->
-      <path d="M110,65 Q118,45 112,28" stroke="url(#gSteam)" stroke-width="3" fill="none" stroke-linecap="round"/>
-      <path d="M128,65 Q138,42 130,22" stroke="url(#gSteam)" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-      <path d="M145,65 Q152,48 146,30" stroke="url(#gSteam)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-      <!-- Code snippet snippet on right -->
-      <rect x="220" y="32" width="150" height="110" rx="8" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)"/>
-      <text x="232" y="52" fill="#E4472C" font-family="JetBrains Mono" font-size="10.5" font-weight="bold">@Transactional</text>
-      <text x="232" y="70" fill="#ECE9E2" font-family="JetBrains Mono" font-size="9.5">public Mono&lt;Void&gt;</text>
-      <text x="232" y="85" fill="#88C0D0" font-family="JetBrains Mono" font-size="9.5"> dispatch(Event ev)</text>
-      <text x="232" y="102" fill="#A3BE8C" font-family="JetBrains Mono" font-size="9.5">  stream.publish(ev);</text>
-      <text x="232" y="122" fill="#EBCB8B" font-family="JetBrains Mono" font-size="9.5">  // 99.99% uptime</text>
-    </svg>`
+    visual: `<div class="mat mat-term"><div class="mat-bar"><i></i><i></i><i></i><span>FieldUnitConsumer.java</span></div><pre><span class="k">@KafkaListener</span>(topics = <span class="s">"incident.<i class="rx"></i>"</span>,
+               groupId = <span class="s">"field-units"</span>)
+<span class="k">public void</span> onIncident(IncidentEvent event) {
+    fieldDispatch.handle(event);
+}</pre><span class="mat-cap">simplified · names redacted</span></div>`
   },
   {
     id: 'kafka',
@@ -1605,62 +2235,24 @@ const MEMORIES = [
     text: 'Decoupling distributed architectures with high-throughput streams. I designed gRPC-to-Kafka ingestion pipelines so command, support and field systems process identical incident events independently.',
     chips: ['Apache Kafka', 'gRPC', 'Protobuf', 'Consumer Groups'],
     glyph: '📨',
-    visual: `<svg viewBox="0 0 390 175" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="gK" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0F172A"/><stop offset="100%" stop-color="#020617"/></linearGradient>
-      </defs>
-      <rect width="390" height="175" fill="url(#gK)"/>
-      <!-- Nodes & Stream Lines -->
-      <circle cx="50" cy="88" r="26" fill="#1E293B" stroke="#38BDF8" stroke-width="2"/>
-      <text x="50" y="92" fill="#F8FAFC" font-family="JetBrains Mono" font-size="10" font-weight="bold" text-anchor="middle">gRPC</text>
-      <path d="M76,88 L140,88" stroke="#38BDF8" stroke-width="2" stroke-dasharray="4 4"/>
-      <!-- Kafka Broker -->
-      <rect x="140" y="45" width="110" height="86" rx="8" fill="#1E293B" stroke="#E4472C" stroke-width="2"/>
-      <text x="195" y="68" fill="#E4472C" font-family="Anton" font-size="16" letter-spacing="1" text-anchor="middle">KAFKA CLUSTER</text>
-      <rect x="150" y="76" width="90" height="14" rx="3" fill="#334155"/>
-      <text x="195" y="87" fill="#CBD5E1" font-family="JetBrains Mono" font-size="8.5" text-anchor="middle">partition-0 [OK]</text>
-      <rect x="150" y="96" width="90" height="14" rx="3" fill="#334155"/>
-      <text x="195" y="107" fill="#CBD5E1" font-family="JetBrains Mono" font-size="8.5" text-anchor="middle">partition-1 [OK]</text>
-      <!-- Downstream Consumers -->
-      <path d="M250,75 C280,75 285,45 315,45" stroke="#4ADE80" stroke-width="1.8"/>
-      <circle cx="340" cy="45" r="18" fill="#1E293B" stroke="#4ADE80" stroke-width="1.5"/>
-      <text x="340" y="49" fill="#F8FAFC" font-family="JetBrains Mono" font-size="8" text-anchor="middle">Field</text>
-      <path d="M250,88 L315,88" stroke="#4ADE80" stroke-width="1.8"/>
-      <circle cx="340" cy="88" r="18" fill="#1E293B" stroke="#4ADE80" stroke-width="1.5"/>
-      <text x="340" y="92" fill="#F8FAFC" font-family="JetBrains Mono" font-size="8" text-anchor="middle">Cmd</text>
-      <path d="M250,101 C280,101 285,130 315,130" stroke="#4ADE80" stroke-width="1.8"/>
-      <circle cx="340" cy="130" r="18" fill="#1E293B" stroke="#4ADE80" stroke-width="1.5"/>
-      <text x="340" y="134" fill="#F8FAFC" font-family="JetBrains Mono" font-size="8" text-anchor="middle">Audit</text>
-      <circle cx="108" cy="88" r="3.5" fill="#38BDF8"><animate attributeName="cx" values="76;140" dur="1.2s" repeatCount="indefinite"/></circle>
-      <circle cx="280" cy="88" r="3" fill="#4ADE80"><animate attributeName="cx" values="250;320" dur="1s" repeatCount="indefinite"/></circle>
-    </svg>`
+    visual: `<div class="mat mat-term"><div class="mat-bar"><i></i><i></i><i></i><span>terminal</span></div><pre><span class="c">$</span> kafka-consumer-groups --list
+support-system
+field-units
+event-log
+<span class="c"># 3 groups · 1 incident stream</span></pre><span class="mat-cap">illustrative · names redacted</span></div>`
   },
   {
     id: 'oracle',
     tag: 'Performance',
     title: 'Oracle Tuning (~300× Faster) ⚡',
-    text: 'A critical screen took ~120s to load the organisation tree. Tracing Oracle execution plans revealed a bottleneck filter on hard-coded codes. Refactored to indexed keys: dropped load time to ~0.4s with zero extra caching.',
+    text: 'A critical organisation screen used to make everyone wait about two minutes. I followed the execution plan to one filter that looked harmless, changed it to use the indexed organisation ID, and watched the same screen return in ~0.4s. That moment made performance work feel less like magic and more like patient investigation.',
     chips: ['Oracle DB', 'Execution Plans', 'Query Tuning', '~300× Boost'],
     glyph: '⚡',
-    visual: `<svg viewBox="0 0 390 175" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="gO" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#14231E"/><stop offset="100%" stop-color="#0A1411"/></linearGradient>
-      </defs>
-      <rect width="390" height="175" fill="url(#gO)"/>
-      <text x="25" y="32" fill="#84CC16" font-family="JetBrains Mono" font-size="11" font-weight="bold">ORACLE EXECUTION PLAN BENCHMARK</text>
-      <!-- Before bar -->
-      <text x="25" y="65" fill="#EF4444" font-family="JetBrains Mono" font-size="10" font-weight="bold">BEFORE (Full Scan): ~120s</text>
-      <rect x="25" y="74" width="280" height="18" rx="4" fill="#7F1D1D" stroke="#EF4444"/>
-      <!-- After bar -->
-      <text x="25" y="118" fill="#4ADE80" font-family="JetBrains Mono" font-size="10" font-weight="bold">AFTER (Indexed ID): ~0.4s</text>
-      <rect x="25" y="126" width="10" height="18" rx="3" fill="#15803D" stroke="#4ADE80"/>
-      <!-- 300x badge -->
-      <g transform="translate(295, 80) rotate(6)">
-        <rect x="0" y="0" width="76" height="52" rx="8" fill="#E4472C" stroke="#fff" stroke-width="2"/>
-        <text x="38" y="24" fill="#fff" font-family="Anton" font-size="20" text-anchor="middle">~300×</text>
-        <text x="38" y="42" fill="#fff" font-family="JetBrains Mono" font-size="8.5" font-weight="bold" text-anchor="middle">FASTER</text>
-      </g>
-    </svg>`
+    visual: `<div class="mat mat-term"><div class="mat-bar"><i></i><i></i><i></i><span>execution plan</span></div><pre><span class="c">-- before · ~120s</span>
+| 2 |  <span class="k">TABLE ACCESS FULL</span> | <i class="rx"></i> |
+|   |  filter: ORG_CODE = <span class="s">'<i class="rx"></i>'</span>
+<span class="c">-- after · ~0.4s</span>
+| 2 |  <span class="s">INDEX RANGE SCAN</span>  | <i class="rx"></i>_ORG_ID |</pre><span class="mat-cap">reconstructed · names redacted</span></div>`
   },
   {
     id: 'security',
@@ -1669,26 +2261,11 @@ const MEMORIES = [
     text: 'Guarding the gates is the most critical backend duty. Built OTP login with AES-GCM encryption at rest in MongoDB, lockout and resend quotas, plus dynamic role-based access control and session timeouts enforced over gRPC.',
     chips: ['AES-GCM', 'Spring Security', 'JWT', 'RBAC Scoping'],
     glyph: '🔐',
-    visual: `<svg viewBox="0 0 390 175" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="gSec" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#241618"/><stop offset="100%" stop-color="#120A0B"/></linearGradient>
-      </defs>
-      <rect width="390" height="175" fill="url(#gSec)"/>
-      <!-- Shield & Lock -->
-      <g transform="translate(50, 25)">
-        <path d="M50,15 Q85,15 90,45 Q90,95 50,125 Q10,95 10,45 Q15,15 50,15 Z" fill="#3B1219" stroke="#E4472C" stroke-width="2.5"/>
-        <rect x="36" y="60" width="28" height="26" rx="4" fill="#E4472C"/>
-        <path d="M42,60 L42,48 C42,43 58,43 58,48 L58,60" fill="none" stroke="#E4472C" stroke-width="3" stroke-linecap="round"/>
-        <circle cx="50" cy="71" r="3" fill="#fff"/>
-        <line x1="50" y1="74" x2="50" y2="80" stroke="#fff" stroke-width="2"/>
-      </g>
-      <!-- Security specs text -->
-      <text x="175" y="48" fill="#F87171" font-family="Anton" font-size="18" letter-spacing="0.5">ZERO-TRUST SECURITY</text>
-      <text x="175" y="70" fill="#E2E8F0" font-family="JetBrains Mono" font-size="10">✓ AES-256-GCM at Rest</text>
-      <text x="175" y="88" fill="#E2E8F0" font-family="JetBrains Mono" font-size="10">✓ Anti-Brute-Force Lockout</text>
-      <text x="175" y="106" fill="#E2E8F0" font-family="JetBrains Mono" font-size="10">✓ Dynamic Group Timeouts</text>
-      <text x="175" y="124" fill="#4ADE80" font-family="JetBrains Mono" font-size="10">✓ Enforced over gRPC</text>
-    </svg>`
+    visual: `<div class="mat mat-term"><div class="mat-bar"><i></i><i></i><i></i><span>OtpCipher.java</span></div><pre>Cipher c = Cipher.getInstance(<span class="s">"AES/GCM/NoPadding"</span>);
+c.init(ENCRYPT_MODE, key,
+       <span class="k">new</span> GCMParameterSpec(128, iv));
+<span class="k">byte</span>[] sealed = c.doFinal(code);
+<span class="c">// stored with expiry + attempt counter</span></pre><span class="mat-cap">simplified</span></div>`
   },
   {
     id: 'aws',
@@ -1697,81 +2274,25 @@ const MEMORIES = [
     text: 'Actively preparing for the AWS Certified Solutions Architect – Associate (SAA-C03). Bridging software and cloud infra: resilient multi-AZ VPC topologies, Kubernetes orchestration, Docker pipelines, and cost-effective scalability.',
     chips: ['AWS SAA-C03', 'Kubernetes', 'Docker', 'Multi-AZ'],
     glyph: '☁️',
-    visual: `<svg viewBox="0 0 390 175" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="gAWS" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0E1D2D"/><stop offset="100%" stop-color="#050B12"/></linearGradient>
-      </defs>
-      <rect width="390" height="175" fill="url(#gAWS)"/>
-      <g transform="translate(40, 30)">
-        <!-- Cloud shape -->
-        <path d="M45,75 Q20,75 20,50 Q20,30 40,30 Q50,10 75,10 Q105,10 110,30 Q130,30 130,50 Q130,75 105,75 Z" fill="#FF9900" opacity="0.9"/>
-        <text x="75" y="52" fill="#232F3E" font-family="Anton" font-size="18" text-anchor="middle">AWS SAA</text>
-      </g>
-      <text x="195" y="52" fill="#38BDF8" font-family="Anton" font-size="17">CLOUD &amp; INFRASTRUCTURE</text>
-      <text x="195" y="74" fill="#E2E8F0" font-family="JetBrains Mono" font-size="10">◆ High-Availability VPC</text>
-      <text x="195" y="92" fill="#E2E8F0" font-family="JetBrains Mono" font-size="10">◆ K8s &amp; Container Clusters</text>
-      <text x="195" y="110" fill="#E2E8F0" font-family="JetBrains Mono" font-size="10">◆ S3 &amp; RDS Failover</text>
-      <text x="195" y="128" fill="#FBBF24" font-family="JetBrains Mono" font-size="10">◷ Exam In-Progress 2026</text>
-    </svg>`
+    visual: `<div class="mat mat-paper"><div class="mat-note">SAA-C03 · just started<br>☐ IAM &amp; accounts<br>☐ VPC, subnets, NAT<br>☐ S3 · RDS · DynamoDB<br>☐ HA &amp; disaster recovery</div><span class="mat-cap">my study list</span></div>`
   },
   {
     id: 'gaming',
     tag: 'Competitive gaming',
     title: 'LoL, Valorant & CS:GO 🎮',
-    text: 'When the terminal closes, you\'ll find me clutching in Valorant, holding bomb sites in CS:GO, or shotcalling in League of Legends. High-stakes competitive gaming trains split-second execution, communication under pressure, and relentless team coordination.',
+    text: 'Some of my favourite gaming moments start when a round looks lost and the team needs one clear call. Valorant, CS:GO and League taught me to stay calm, share only the useful information and commit to a decision together — habits that follow me into incident debugging too.',
     chips: ['Valorant', 'CS:GO', 'League of Legends', 'Teamplay', 'Clutch'],
     glyph: '🎮',
-    visual: `<svg viewBox="0 0 390 175" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="gGame" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1E121E"/><stop offset="100%" stop-color="#0C0710"/></linearGradient>
-      </defs>
-      <rect width="390" height="175" fill="url(#gGame)"/>
-      <!-- Crosshair & Tactical HUD -->
-      <g transform="translate(30, 20)">
-        <!-- Outer circle radar -->
-        <circle cx="65" cy="65" r="50" fill="none" stroke="rgba(250,68,84,0.35)" stroke-width="1.5" stroke-dasharray="6 4"/>
-        <circle cx="65" cy="65" r="32" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
-        <!-- Crosshair lines -->
-        <line x1="15" y1="65" x2="52" y2="65" stroke="#FA4454" stroke-width="2.5" stroke-linecap="round"/>
-        <line x1="78" y1="65" x2="115" y2="65" stroke="#FA4454" stroke-width="2.5" stroke-linecap="round"/>
-        <line x1="65" y1="15" x2="65" y2="52" stroke="#FA4454" stroke-width="2.5" stroke-linecap="round"/>
-        <line x1="65" y1="78" x2="65" y2="115" stroke="#FA4454" stroke-width="2.5" stroke-linecap="round"/>
-        <circle cx="65" cy="65" r="3" fill="#FA4454"/>
-        <!-- Tactical apex marker -->
-        <polygon points="65,38 75,52 55,52" fill="#FA4454" opacity="0.95"/>
-        <text x="65" y="102" fill="#E2E8F0" font-family="JetBrains Mono" font-size="9" text-anchor="middle" font-weight="bold">CLUTCH 1v3</text>
-      </g>
-      <text x="175" y="48" fill="#FA4454" font-family="Anton" font-size="18" letter-spacing="0.5">VALORANT · CS:GO · LOL</text>
-      <text x="175" y="70" fill="#E2E8F0" font-family="JetBrains Mono" font-size="10">◆ Tactical Callouts &amp; Aim</text>
-      <text x="175" y="88" fill="#E2E8F0" font-family="JetBrains Mono" font-size="10">◆ High-Pressure Decisions</text>
-      <text x="175" y="106" fill="#E2E8F0" font-family="JetBrains Mono" font-size="10">◆ Map Control &amp; Synergy</text>
-      <text x="175" y="125" fill="#4ADE80" font-family="JetBrains Mono" font-size="10">✓ Radiant / Global / Challenger Mindset</text>
-    </svg>`
+    visual: `<div class="mat mat-paper"><div class="mat-note">Clutch rules:<br>1. stay calm<br>2. one clear call<br>3. commit together</div><svg class="mat-doodle" viewBox="0 0 60 60" aria-hidden="true"><circle cx="30" cy="30" r="20"/><path d="M30 4v16M30 40v16M4 30h16M40 30h16"/></svg><span class="mat-cap">notebook</span></div>`
   },
   {
     id: 'sql',
     tag: 'HackerRank · Jul 2026',
     title: 'SQL (Advanced) Certified 🏅',
-    text: 'Achieved Gold distinction in Advanced SQL on HackerRank. Covers recursive CTEs, complex analytical window functions (ROW_NUMBER, DENSE_RANK, LAG/LEAD) and query cost optimization — skills I rely on daily for production tuning.',
-    chips: ['HackerRank Gold', 'Window Functions', 'Recursive CTEs'],
+    text: 'Earned the HackerRank SQL (Advanced) certificate in July 2026. The exercises sharpened joins, window functions and query design — the same fundamentals I use when reading and reshaping production queries.',
+    chips: ['HackerRank Certified', 'Window Functions', 'Query Design'],
     glyph: '🏅',
-    visual: `<svg viewBox="0 0 390 175" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="gSQL" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#261B0B"/><stop offset="100%" stop-color="#120B04"/></linearGradient>
-      </defs>
-      <rect width="390" height="175" fill="url(#gSQL)"/>
-      <!-- Medal -->
-      <g transform="translate(65, 30)">
-        <polygon points="25,0 40,45 10,45" fill="#E4472C"/>
-        <polygon points="55,0 40,45 70,45" fill="#D03B21"/>
-        <circle cx="40" cy="65" r="30" fill="#F59E0B" stroke="#FDE68A" stroke-width="3"/>
-        <polygon points="40,48 44,58 54,58 46,64 49,74 40,68 31,74 34,64 26,58 36,58" fill="#FFFBEB"/>
-      </g>
-      <text x="175" y="55" fill="#FBBF24" font-family="Anton" font-size="18">HACKERRANK CERTIFIED</text>
-      <text x="175" y="78" fill="#E2E8F0" font-family="JetBrains Mono" font-size="10.5" font-weight="bold">SQL (ADVANCED) · GOLD</text>
-      <text x="175" y="98" fill="#CBD5E1" font-family="JetBrains Mono" font-size="9.5">✓ Partition &amp; Analytical Queries</text>
-      <text x="175" y="115" fill="#CBD5E1" font-family="JetBrains Mono" font-size="9.5">✓ Certified on July 5, 2026</text>
-    </svg>`
+    visual: `<div class="mat mat-paper"><div class="mat-ticket"><span class="mat-kicker">Certificate · HackerRank</span><strong>SQL (Advanced)</strong><span>Long Tran</span><span>Issued Jul 5, 2026</span><span class="mat-stamp">✓ Certified</span></div></div>`
   },
   {
     id: 'scholarship',
@@ -1780,48 +2301,16 @@ const MEMORIES = [
     text: 'Awarded the Academic Excellence Scholarship in January 2025 while finishing my B.Eng in Information Technology (Graduated Sep 2025 with "Good" honors). Four years of computer science fundamentals, data structures and algorithms.',
     chips: ['B.Eng in IT', 'Scholarship Awardee', '2021 — 2025'],
     glyph: '🎓',
-    visual: `<svg viewBox="0 0 390 175" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="gSch" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#181A2A"/><stop offset="100%" stop-color="#0B0D18"/></linearGradient>
-      </defs>
-      <rect width="390" height="175" fill="url(#gSch)"/>
-      <!-- Mortarboard -->
-      <g transform="translate(45, 35)">
-        <polygon points="55,20 105,35 55,50 5,35" fill="#3B82F6" stroke="#fff" stroke-width="2"/>
-        <rect x="25" y="50" width="60" height="24" rx="4" fill="#1D4ED8"/>
-        <circle cx="55" cy="35" r="3" fill="#FBBF24"/>
-        <path d="M55,35 Q30,40 28,60" fill="none" stroke="#FBBF24" stroke-width="2.5"/>
-      </g>
-      <text x="180" y="52" fill="#60A5FA" font-family="Anton" font-size="17">ACADEMIC EXCELLENCE</text>
-      <text x="180" y="74" fill="#E2E8F0" font-family="JetBrains Mono" font-size="10">HCMC Open University</text>
-      <text x="180" y="92" fill="#E2E8F0" font-family="JetBrains Mono" font-size="10">B.Eng Information Tech</text>
-      <text x="180" y="112" fill="#4ADE80" font-family="JetBrains Mono" font-size="10">✓ Awarded Jan 2025</text>
-    </svg>`
+    visual: `<div class="mat mat-paper"><div class="mat-ticket"><span class="mat-kicker">HCMC Open University</span><strong>Academic Excellence Scholarship</strong><span>B.Eng Information Technology</span><span>January 2025</span><span class="mat-stamp">✓ Awarded</span></div></div>`
   },
   {
     id: 'marketing',
     tag: 'New path · 2026',
     title: 'Digital Marketing & Growth 📈',
-    text: 'A deliberate path outside pure engineering: studying digital marketing, SEO mechanics, analytics telemetry and user conversion funnels. Helps me design backend architectures that directly understand product adoption and user journey.',
+    text: 'I started learning marketing because reliable software is only useful when people understand and adopt it. SEO, analytics and conversion journeys give me a new lens on backend decisions: not only whether a system works, but whether it helps the product reach the right outcome.',
     chips: ['Funnel Analytics', 'SEO Telemetry', 'Growth Strategy'],
     glyph: '📈',
-    visual: `<svg viewBox="0 0 390 175" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="gMkt" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#261614"/><stop offset="100%" stop-color="#120A09"/></linearGradient>
-      </defs>
-      <rect width="390" height="175" fill="url(#gMkt)"/>
-      <!-- Growth Graph Curve -->
-      <g transform="translate(35, 25)">
-        <line x1="10" y1="100" x2="120" y2="100" stroke="#fff" stroke-width="1.5"/>
-        <line x1="10" y1="100" x2="10" y2="10" stroke="#fff" stroke-width="1.5"/>
-        <path d="M10,95 Q50,90 75,55 T120,15" fill="none" stroke="#E4472C" stroke-width="3.5" stroke-linecap="round"/>
-        <circle cx="120" cy="15" r="4.5" fill="#FFA500"/>
-      </g>
-      <text x="185" y="55" fill="#FB923C" font-family="Anton" font-size="18">PRODUCT &amp; GROWTH</text>
-      <text x="185" y="78" fill="#E2E8F0" font-family="JetBrains Mono" font-size="10">◆ SEO &amp; Organic Discovery</text>
-      <text x="185" y="96" fill="#E2E8F0" font-family="JetBrains Mono" font-size="10">◆ Conversion Funnels</text>
-      <text x="185" y="114" fill="#E2E8F0" font-family="JetBrains Mono" font-size="10">◆ User Telemetry &amp; Data</text>
-    </svg>`
+    visual: `<div class="mat mat-paper"><div class="mat-note">Why should anyone care?<br>visit → read → try → stay</div><svg class="mat-doodle" viewBox="0 0 60 60" aria-hidden="true"><path d="M6 8h48L36 32v18l-12 6V32Z"/></svg><span class="mat-cap">notebook</span></div>`
   },
   {
     id: 'csharp',
@@ -1830,123 +2319,14 @@ const MEMORIES = [
     text: 'My professional engineering foundation began at IO STREAM crafting native Windows applications with C# and modern WinUI: file security utilities, encryption and multi-threaded media downloaders. Instilled my obsession with low-level execution speed.',
     chips: ['C# / .NET', 'WinUI 3', 'File Security', 'Desktop'],
     glyph: '🪟',
-    visual: `<svg viewBox="0 0 390 175" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="gCS" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#141B24"/><stop offset="100%" stop-color="#080C11"/></linearGradient>
-      </defs>
-      <rect width="390" height="175" fill="url(#gCS)"/>
-      <!-- Windows desktop frame -->
-      <g transform="translate(35, 25)">
-        <rect x="0" y="0" width="115" height="95" rx="6" fill="#1E293B" stroke="#38BDF8" stroke-width="2"/>
-        <rect x="0" y="0" width="115" height="18" rx="6" fill="#0F172A"/>
-        <circle cx="12" cy="9" r="2.5" fill="#EF4444"/>
-        <circle cx="20" cy="9" r="2.5" fill="#FBBF24"/>
-        <circle cx="28" cy="9" r="2.5" fill="#4ADE80"/>
-        <!-- Window Content -->
-        <rect x="12" y="28" width="40" height="8" rx="2" fill="#E4472C"/>
-        <rect x="12" y="42" width="75" height="6" rx="2" fill="#475569"/>
-        <rect x="12" y="54" width="60" height="6" rx="2" fill="#475569"/>
-        <rect x="12" y="68" width="90" height="14" rx="3" fill="#38BDF8" opacity="0.3"/>
-      </g>
-      <text x="180" y="52" fill="#38BDF8" font-family="Anton" font-size="18">C# &amp; WINUI 3 APPS</text>
-      <text x="180" y="74" fill="#E2E8F0" font-family="JetBrains Mono" font-size="10">◆ File Security Tools</text>
-      <text x="180" y="92" fill="#E2E8F0" font-family="JetBrains Mono" font-size="10">◆ Thread-Safe Concurrency</text>
-      <text x="180" y="110" fill="#94A3B8" font-family="JetBrains Mono" font-size="10">IO STREAM · 2023</text>
-    </svg>`
+    visual: `<div class="mat mat-term"><div class="mat-bar"><i></i><i></i><i></i><span>MainWindow.xaml.cs</span></div><pre><span class="c">// IO STREAM · 2023 · WinUI 3</span>
+<span class="k">private async void</span> Download_Click(
+    <span class="k">object</span> sender, RoutedEventArgs e)
+{
+    <span class="k">await</span> downloader.StartAsync(url, progress);
+}</pre><span class="mat-cap">simplified</span></div>`
   }
 ];
-
-// --- SOUND ENGINE (WEB AUDIO API SYNTHESIZER - 0 EXTERNAL DEPENDENCIES) ---
-class SoundSystem {
-  constructor() {
-    this.ctx = null;
-    this.enabled = false;
-  }
-  init() {
-    if (!this.ctx) {
-      const AC = window.AudioContext || window.webkitAudioContext;
-      if (AC) this.ctx = new AC();
-    }
-    if (this.ctx && this.ctx.state === 'suspended') {
-      this.ctx.resume();
-    }
-  }
-  toggle() {
-    this.init();
-    this.enabled = !this.enabled;
-    if (this.enabled) this.playTone(580, 0.1, 'sine', 0.15);
-    return this.enabled;
-  }
-  playPop() {
-    if (!this.enabled || !this.ctx) return;
-    const now = this.ctx.currentTime;
-    const osc = this.ctx.createOscillator();
-    const gain = this.ctx.createGain();
-    osc.type = 'sine';
-    osc.frequency.setValueAtTime(260, now);
-    osc.frequency.exponentialRampToValueAtTime(740, now + 0.12);
-    gain.gain.setValueAtTime(0.25, now);
-    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.14);
-    osc.connect(gain);
-    gain.connect(this.ctx.destination);
-    osc.start(now);
-    osc.stop(now + 0.14);
-  }
-  playBlip() {
-    if (!this.enabled || !this.ctx) return;
-    const now = this.ctx.currentTime;
-    const osc = this.ctx.createOscillator();
-    const gain = this.ctx.createGain();
-    osc.type = 'triangle';
-    osc.frequency.setValueAtTime(600, now);
-    osc.frequency.exponentialRampToValueAtTime(950, now + 0.05);
-    gain.gain.setValueAtTime(0.05, now);
-    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.06);
-    osc.connect(gain);
-    gain.connect(this.ctx.destination);
-    osc.start(now);
-    osc.stop(now + 0.06);
-  }
-  playSnap() {
-    if (!this.enabled || !this.ctx) return;
-    const now = this.ctx.currentTime;
-    const osc = this.ctx.createOscillator();
-    const gain = this.ctx.createGain();
-    osc.type = 'sine';
-    osc.frequency.setValueAtTime(840, now);
-    osc.frequency.exponentialRampToValueAtTime(220, now + 0.09);
-    gain.gain.setValueAtTime(0.18, now);
-    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.11);
-    osc.connect(gain);
-    gain.connect(this.ctx.destination);
-    osc.start(now);
-    osc.stop(now + 0.11);
-  }
-  playTone(freq, dur, type='sine', vol=0.1) {
-    if (!this.ctx) return;
-    const now = this.ctx.currentTime;
-    const osc = this.ctx.createOscillator();
-    const gain = this.ctx.createGain();
-    osc.type = type;
-    osc.frequency.setValueAtTime(freq, now);
-    gain.gain.setValueAtTime(vol, now);
-    gain.gain.exponentialRampToValueAtTime(0.001, now + dur);
-    osc.connect(gain);
-    gain.connect(this.ctx.destination);
-    osc.start(now);
-    osc.stop(now + dur);
-  }
-}
-const sfx = new SoundSystem();
-
-// Sound toggle button wiring
-const soundToggle = document.getElementById('soundToggle');
-soundToggle.addEventListener('click', () => {
-  const on = sfx.toggle();
-  soundToggle.classList.toggle('on', on);
-  soundToggle.setAttribute('aria-pressed', String(on));
-  soundToggle.querySelector('span').textContent = on ? 'Audio: On 🔊' : 'Audio: Off 🔈';
-});
 
 // --- SAIGON REAL-TIME CLOCK (GMT+7) ---
 function updateSaigonClock() {
@@ -1988,14 +2368,18 @@ updateSaigonClock();
   const pText = document.getElementById('pText');
   const pChips = document.getElementById('pChips');
   const memoryItems = document.querySelectorAll('.item');
+  const headHint = document.getElementById('headHint');
 
   let activeIndex = -1;
+  memoryItems.forEach(btn => { btn.tabIndex = -1; });
 
   function toggleStage(open) {
     const shouldOpen = open !== undefined ? open : !stage.classList.contains('open');
     stage.classList.toggle('open', shouldOpen);
     headBtn.setAttribute('aria-expanded', String(shouldOpen));
-    sfx.playPop();
+    memoryItems.forEach(btn => { btn.tabIndex = shouldOpen ? 0 : -1; });
+    headHint.textContent = shouldOpen ? 'Choose a memory ↑' : 'Click my head to open it';
+    if (!shouldOpen) closeMemory(false);
   }
 
   function renderMemory(index) {
@@ -2004,14 +2388,15 @@ updateSaigonClock();
     const mem = MEMORIES[index];
 
     // Select item visually
-    memoryItems.forEach((btn, i) => btn.classList.toggle('selected', i === index));
+    memoryItems.forEach(btn => btn.classList.toggle('selected', Number(btn.dataset.idx) === index));
+    stage.classList.add('has-selection');
 
     // Populate Polaroid Card
     pMemoryIndex.textContent = `${String(index + 1).padStart(2, '0')}/${String(MEMORIES.length).padStart(2, '0')}`;
     pTag.textContent = mem.tag;
     pTitle.textContent = mem.title;
     pText.textContent = mem.text;
-    pVisual.innerHTML = mem.visual;
+    pVisual.innerHTML = mem.photo ? `<img src="${mem.photo}" alt="">` : mem.visual;
     pChips.innerHTML = mem.chips.map(c => `<span class="polaroid-chip">${c}</span>`).join('');
 
     // Ensure Stage is open
@@ -2022,15 +2407,18 @@ updateSaigonClock();
     // Show Card
     heroLeft.classList.add('has-active-card');
     polaroidCard.classList.add('active');
-    sfx.playSnap();
+    pCloseBtn.focus({ preventScroll: true });
   }
 
-  function closeMemory() {
+  function closeMemory(restoreFocus = true) {
+    const previousIndex = activeIndex;
     activeIndex = -1;
     memoryItems.forEach(btn => btn.classList.remove('selected'));
+    stage.classList.remove('has-selection');
     heroLeft.classList.remove('has-active-card');
     polaroidCard.classList.remove('active');
-    sfx.playTone(340, 0.08, 'sine', 0.1);
+    polaroidCard.style.transform = '';
+    if (restoreFocus && previousIndex >= 0) document.querySelector(`.item[data-idx="${previousIndex}"]`).focus({ preventScroll: true });
   }
 
   headBtn.addEventListener('click', () => toggleStage());
@@ -2046,12 +2434,11 @@ updateSaigonClock();
     });
   }
 
-  memoryItems.forEach((btn, idx) => {
-    btn.addEventListener('mouseenter', () => sfx.playBlip());
-    btn.addEventListener('click', () => renderMemory(idx));
+  memoryItems.forEach(btn => {
+    btn.addEventListener('click', () => renderMemory(Number(btn.dataset.idx)));
   });
 
-  pCloseBtn.addEventListener('click', closeMemory);
+  pCloseBtn.addEventListener('click', () => closeMemory());
 
   pPrevBtn.addEventListener('click', () => {
     const prev = (activeIndex - 1 + MEMORIES.length) % MEMORIES.length;
@@ -2086,6 +2473,7 @@ updateSaigonClock();
     handle.style.cursor = 'grab';
 
     handle.addEventListener('mousedown', e => {
+      if (e.target.closest('button') || !window.matchMedia('(min-width: 581px) and (pointer: fine)').matches) return;
       isDragging = true;
       handle.style.cursor = 'grabbing';
       startX = e.clientX - origX;
@@ -2109,11 +2497,27 @@ updateSaigonClock();
   })();
 })();
 
+// Diagrams: hover or focus a node to read its role
+document.querySelectorAll('.proj-media').forEach(media => {
+  const cap = media.querySelector('.dgm-cap');
+  if (!cap) return;
+  const idle = cap.textContent;
+  media.querySelectorAll('.n').forEach(node => {
+    const show = () => { cap.textContent = node.dataset.role; };
+    const hide = () => { cap.textContent = idle; };
+    node.addEventListener('mouseenter', show);
+    node.addEventListener('focus', show);
+    node.addEventListener('mouseleave', hide);
+    node.addEventListener('blur', hide);
+  });
+});
+
 // Scroll reveal observer
 const io = new IntersectionObserver(es => es.forEach(e => {
   if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
 }), { threshold: 0.12 });
 document.querySelectorAll('.rv').forEach(el => io.observe(el));
 </script>
+<script src="assets/refinements.js" defer></script>
 </body>
 </html>
