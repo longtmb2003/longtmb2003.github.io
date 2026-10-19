@@ -1102,86 +1102,69 @@ code { font:12.5px var(--mono); background:var(--ghost); padding:1px 5px; border
 .xp-co { font-weight:600; font-size:13.5px; font-family:var(--mono); color:var(--accent); }
 .xp-desc { font-size:14.5px; line-height:1.7; color:var(--ink-2); }
 
-/* TOOLBOX / CREATIVE CRAFT PINBOARD & STICKY NOTE */
-.craft-grid {
+/* TOOLBOX / TECH STACK */
+.toolbox-grid {
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:26px;
+  gap:24px;
   margin-bottom:12px;
 }
-.craft-card {
-  position:relative;
-  background:var(--card);
-  border:1.5px solid var(--ink);
-  border-radius:12px;
-  padding:28px 24px 20px;
-  box-shadow:4px 4px 0 var(--ink);
+.tool-card {
   display:flex;
   flex-direction:column;
+  background:var(--card);
+  border:1.5px solid var(--ink);
+  border-radius:14px;
+  padding:24px 26px 20px;
+  box-shadow:5px 5px 0 var(--ink);
   transition:transform .2s ease, box-shadow .2s ease;
 }
-.craft-card:hover {
-  transform:translateY(-2px);
-  box-shadow:6px 6px 0 var(--ink);
+.tool-card:hover {
+  transform:translate(-2px,-2px);
+  box-shadow:7px 7px 0 var(--ink);
 }
-
-/* WASHI TAPE STRIP */
-.washi-tape {
-  position:absolute;
-  top:-11px;
-  left:50%;
-  transform:translateX(-50%) rotate(var(--tape-rot, -1.2deg));
-  width:88px;
-  height:22px;
-  background:var(--tape-bg, rgba(225, 215, 175, 0.75));
-  border-left:2px dashed rgba(0,0,0,0.18);
-  border-right:2px dashed rgba(0,0,0,0.18);
-  box-shadow:0 1px 3px rgba(0,0,0,0.08);
-  pointer-events:none;
-  z-index:2;
-}
-
-/* CARD HEADER */
-.craft-card-head {
+.tool-card-head {
   display:flex;
   align-items:flex-start;
   justify-content:space-between;
   gap:12px;
-  margin-bottom:8px;
+  margin-bottom:10px;
+  padding-bottom:12px;
+  border-bottom:1px solid var(--line);
 }
-.craft-stamp {
+.tool-card-meta {
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+}
+.tool-card-stamp {
   font:700 11px var(--mono);
   text-transform:uppercase;
   letter-spacing:0.06em;
-  color:var(--craft-accent, var(--accent));
-  display:flex;
-  align-items:center;
-  gap:6px;
+  color:var(--card-accent, var(--accent));
 }
-.craft-stamp .emoji {
-  font-size:15px;
-}
-.craft-card h3 {
-  font:400 clamp(21px,2.2vw,26px)/1.15 var(--display);
+.tool-card h3 {
+  font:400 clamp(22px,2.2vw,27px)/1.15 var(--display);
   text-transform:uppercase;
   color:var(--ink);
-  margin-bottom:4px;
 }
-.craft-card-desc {
-  font:500 12.5px/1.55 var(--mono);
-  color:var(--mute);
+.tool-card-icon {
+  font-size:24px;
+  line-height:1;
+}
+.tool-card-desc {
+  font:500 13px/1.55 var(--mono);
+  color:var(--ink-2);
   margin-bottom:16px;
 }
-
-/* CHIP TAGS */
-.craft-tags {
+.tool-chips {
   display:flex;
   flex-wrap:wrap;
   gap:7px;
-  margin-bottom:18px;
+  margin-bottom:20px;
   flex:1;
 }
-.craft-tag {
+.tool-chip {
   display:inline-flex;
   align-items:center;
   gap:5px;
@@ -1193,15 +1176,15 @@ code { font:12.5px var(--mono); background:var(--ghost); padding:1px 5px; border
   border-radius:99px;
   transition:transform .15s ease, background .15s ease;
 }
-.craft-tag:hover {
+.tool-chip:hover {
   transform:translateY(-1px);
 }
-.craft-tag.core {
+.tool-chip.core {
   background:var(--ink);
   color:var(--paper);
   border-color:var(--ink);
 }
-.craft-tag.highlight small {
+.tool-chip.highlight small {
   font-size:9.5px;
   padding:1px 5px;
   background:var(--accent);
@@ -1210,30 +1193,43 @@ code { font:12.5px var(--mono); background:var(--ghost); padding:1px 5px; border
   font-weight:700;
   margin-left:2px;
 }
-
-/* PROOF FOOTER */
-.craft-proof {
+.tool-proof {
+  display:flex;
+  align-items:baseline;
+  gap:8px;
   padding-top:12px;
   border-top:1px dashed var(--line);
   font:500 12px/1.55 var(--mono);
   color:var(--ink-2);
 }
-.craft-proof span {
-  color:var(--craft-accent, var(--accent));
-  font-weight:700;
-  margin-right:4px;
+.tool-proof-tag {
+  font:700 10px var(--mono);
+  text-transform:uppercase;
+  letter-spacing:0.06em;
+  padding:2px 6px;
+  background:var(--paper);
+  border:1px solid var(--ink);
+  border-radius:3px;
+  color:var(--card-accent, var(--accent));
+  white-space:nowrap;
 }
 
 /* AUTHENTIC YELLOW STICKY NOTE */
+.sticky-note-wrap {
+  display:flex;
+  justify-content:center;
+  margin-top:28px;
+  margin-bottom:20px;
+}
 .sticky-note {
   position:relative;
+  width:100%;
+  max-width:820px;
   background:#FFF9D2;
   border:1.5px solid var(--ink);
   border-radius:4px;
   box-shadow:5px 5px 0 var(--ink);
-  padding:28px 28px 24px;
-  margin-top:20px;
-  margin-bottom:24px;
+  padding:24px 28px 22px;
   transform:rotate(-0.8deg);
   transition:transform .2s ease, box-shadow .2s ease;
 }
@@ -1241,13 +1237,20 @@ code { font:12.5px var(--mono); background:var(--ghost); padding:1px 5px; border
   transform:rotate(0deg) translateY(-2px);
   box-shadow:7px 7px 0 var(--ink);
 }
+.sticky-pin {
+  position:absolute;
+  top:8px;
+  right:12px;
+  font-size:16px;
+  line-height:1;
+}
 .sticky-tape {
   position:absolute;
-  top:-12px;
+  top:-11px;
   left:50%;
   transform:translateX(-50%) rotate(1deg);
   width:110px;
-  height:24px;
+  height:23px;
   background:rgba(235, 218, 160, 0.85);
   border-left:2px dashed rgba(0,0,0,0.15);
   border-right:2px dashed rgba(0,0,0,0.15);
@@ -1267,9 +1270,6 @@ code { font:12.5px var(--mono); background:var(--ghost); padding:1px 5px; border
   font:400 clamp(20px,2vw,24px)/1 var(--display);
   text-transform:uppercase;
   color:var(--ink);
-  display:flex;
-  align-items:center;
-  gap:8px;
 }
 .sticky-head .sticky-sub {
   font:500 12px var(--mono);
@@ -1320,6 +1320,867 @@ footer {
   margin-top:72px;
 }
 
+/* DIRECTION 1 (REFINED): TELEMETRY HUD & 3D DEV COMIC POCKET BOOK */
+.arch-blueprint-layer {
+  display: none;
+}
+.book-dock {
+  display: none;
+}
+.book-mobile-pill {
+  display: none;
+}
+.comic-reader-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 700;
+  background: rgba(18, 17, 16, 0.75);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  font-family: var(--mono);
+}
+.comic-reader-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media (min-width: 1380px) {
+  .wrap {
+    max-width: 1160px;
+  }
+  .arch-blueprint-layer {
+    display: block;
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 4;
+    user-select: none;
+    overflow: hidden;
+  }
+
+  /* LEFT SIDEBAR: DELUXE 3D POCKET DEV NOTEBOOK */
+  .book-dock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    left: 20px;
+    top: 92px;
+    z-index: 45;
+    user-select: none;
+    cursor: pointer;
+    perspective: 1200px;
+  }
+  .book-dock-tag {
+    font-size: 8.5px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--mute);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .book-dock-tag .pulse-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 7px var(--accent);
+    animation: bookDotBlink 2.4s infinite;
+  }
+  @keyframes bookDotBlink {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.35; transform: scale(0.85); }
+  }
+  .book-pocket-card {
+    width: 116px;
+    height: 164px;
+    background:
+      radial-gradient(ellipse at 30% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 60%),
+      linear-gradient(145deg, #2D2721 0%, #1A1714 45%, #231E1A 100%);
+    border-radius: 5px 9px 9px 5px;
+    position: relative;
+    padding: 12px 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.35s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.35s ease;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    /* Multi-layered Realistic Paper Stack Edge */
+    box-shadow:
+      1px 1px 0 #F8F5EE,
+      2px 2px 0 #ECE6D8,
+      3px 3px 0 #E2DAC8,
+      4px 4px 0 #D6CDB8,
+      5px 5px 0 #C7BDA6,
+      10px 18px 32px rgba(0, 0, 0, 0.38),
+      0 3px 8px rgba(0, 0, 0, 0.22);
+  }
+  .book-dock:hover .book-pocket-card {
+    transform: translateY(-8px) rotateY(-11deg) rotateX(5deg) scale(1.04);
+    box-shadow:
+      2px 2px 0 #F8F5EE,
+      4px 4px 0 #ECE6D8,
+      6px 6px 0 #E2DAC8,
+      8px 8px 0 #D6CDB8,
+      10px 10px 0 #C7BDA6,
+      16px 26px 42px rgba(0, 0, 0, 0.44),
+      0 6px 14px rgba(0, 0, 0, 0.28);
+  }
+
+  /* Stitched Spine */
+  .book-spine-stitch {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 12px;
+    background: linear-gradient(90deg, #110F0E 0%, #1A1715 70%, #0E0C0B 100%);
+    border-radius: 5px 0 0 5px;
+    border-right: 1.5px dashed rgba(220, 175, 100, 0.55);
+    box-shadow:
+      inset 1.5px 0 2px rgba(255, 255, 255, 0.12),
+      inset -1px 0 2px rgba(0, 0, 0, 0.5),
+      1.5px 0 3px rgba(0, 0, 0, 0.45);
+  }
+
+  /* Vertical Elastic Closure Band with Brass Clip */
+  .book-elastic-band {
+    position: absolute;
+    right: 16px;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    background: linear-gradient(90deg, #151311 0%, #221E1B 50%, #141210 100%);
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    border-right: 1px solid rgba(0, 0, 0, 0.4);
+    box-shadow: 1px 0 3px rgba(0, 0, 0, 0.35);
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .book-brass-slider {
+    width: 10px;
+    height: 14px;
+    background: linear-gradient(135deg, #FFEAB8 0%, #D4A359 50%, #8A6424 100%);
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .book-brass-slider::after {
+    content: '';
+    width: 4px;
+    height: 6px;
+    border-left: 1px solid rgba(0, 0, 0, 0.45);
+    border-right: 1px solid rgba(0, 0, 0, 0.45);
+  }
+
+  /* Brass Corner Clips */
+  .corner-brass {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: linear-gradient(135deg, #FFEAB8 0%, #D4A359 55%, #845F20 100%);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+    z-index: 6;
+  }
+  .corner-brass::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #5A3E12 40%, transparent 60%);
+  }
+  .corner-brass.top-right {
+    top: 0;
+    right: 0;
+    border-radius: 0 9px 0 0;
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+  }
+  .corner-brass.top-right::after {
+    top: 3px;
+    right: 3px;
+  }
+  .corner-brass.bottom-right {
+    bottom: 0;
+    right: 0;
+    border-radius: 0 0 9px 0;
+    clip-path: polygon(100% 100%, 0 100%, 100% 0);
+  }
+  .corner-brass.bottom-right::after {
+    bottom: 3px;
+    right: 3px;
+  }
+
+  /* Crimson Satin Ribbon Bookmark */
+  .book-pocket-ribbon {
+    position: absolute;
+    bottom: -20px;
+    left: 24px;
+    width: 12px;
+    height: 26px;
+    background: linear-gradient(180deg, #E6432B 0%, #B52A15 65%, #8C1C0C 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 74%, 0 100%);
+    box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.38);
+    z-index: 7;
+    animation: ribbonFlutter 3.2s ease-in-out infinite;
+  }
+  @keyframes ribbonFlutter {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(3.5deg) skewX(2deg); }
+  }
+
+  /* Cover Hot-Foil Debossed Content */
+  .cover-header {
+    margin-left: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 14px;
+  }
+  .cover-header-tag {
+    font-size: 7px;
+    color: var(--gold, #D4A359);
+    letter-spacing: 0.14em;
+    font-weight: 800;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.8), 0 -1px 0 rgba(255, 255, 255, 0.15);
+  }
+  .cover-header-rev {
+    font-size: 6.5px;
+    color: rgba(212, 163, 89, 0.7);
+    font-weight: 600;
+  }
+
+  .cover-emblem {
+    margin-left: 6px;
+    text-align: center;
+    margin-top: 6px;
+    padding-right: 14px;
+  }
+  .cover-seal-circle {
+    width: 38px;
+    height: 38px;
+    margin: 0 auto 6px;
+    border: 1.5px dashed rgba(212, 163, 89, 0.75);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:
+      inset 0 0 8px rgba(212, 163, 89, 0.3),
+      0 1px 2px rgba(0, 0, 0, 0.5);
+    background: radial-gradient(circle, rgba(212, 163, 89, 0.15) 0%, transparent 75%);
+  }
+  .cover-title-main {
+    font-size: 10px;
+    font-weight: 800;
+    color: #FFF;
+    letter-spacing: 0.12em;
+    line-height: 1.25;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+  }
+  .cover-title-sub {
+    font-size: 7.5px;
+    color: var(--gold-light, #FCEFD2);
+    letter-spacing: 0.1em;
+    margin-top: 3px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+  }
+
+  .cover-action-badge {
+    margin-left: 6px;
+    margin-right: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(212, 163, 89, 0.35);
+    border-radius: 4px;
+    padding: 4px 0;
+    text-align: center;
+    font-size: 7.5px;
+    font-weight: 800;
+    color: var(--gold-light, #FCEFD2);
+    letter-spacing: 0.08em;
+    transition: all 0.2s ease;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  .book-dock:hover .cover-action-badge {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #FFF;
+    box-shadow: 0 3px 8px rgba(228, 71, 44, 0.4);
+  }
+
+  .book-dock-status {
+    margin-top: 24px;
+    font-size: 8.5px;
+    color: var(--ink-2);
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.45;
+    max-width: 116px;
+  }
+  .book-dock-status span {
+    display: block;
+    color: var(--accent);
+    font-size: 7.5px;
+    letter-spacing: 0.1em;
+    font-weight: 800;
+    margin-bottom: 2px;
+  }
+
+  /* RIGHT MARGIN: TELEMETRY & ARCHITECTURE HUD (ENLARGED & PRECISE) */
+  .arch-margin-right {
+    position: absolute;
+    right: 20px;
+    top: 92px;
+    bottom: 28px;
+    width: 118px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-family: var(--mono);
+  }
+  .arch-spec-block {
+    text-align: right;
+    border-top: 1.5px solid var(--line);
+    border-right: 1.5px solid var(--line);
+    padding: 8px 10px 10px 12px;
+    background: rgba(255, 255, 255, 0.45);
+    border-radius: 0 4px 0 0;
+  }
+  .arch-spec-corner {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 3px;
+  }
+  .arch-spec-title {
+    font-size: 9.5px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    color: var(--ink);
+    margin-bottom: 5px;
+  }
+  .arch-spec-row {
+    font-size: 8px;
+    color: var(--mute);
+    display: flex;
+    justify-content: flex-end;
+    gap: 6px;
+    line-height: 1.5;
+  }
+  .arch-spec-row strong {
+    color: var(--ink);
+    font-weight: 700;
+  }
+
+  .arch-telemetry-hud {
+    background: rgba(250, 247, 242, 0.92);
+    backdrop-filter: blur(10px);
+    border: 1.5px solid rgba(60, 57, 53, 0.18);
+    border-radius: 6px;
+    padding: 11px 11px;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.07);
+  }
+  .arch-hud-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 9px;
+    padding-bottom: 6px;
+    border-bottom: 1px dashed var(--line);
+  }
+  .arch-hud-pulse-box {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .arch-hud-pulse {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 5px var(--green);
+    animation: archHudBlink 2.6s infinite;
+  }
+  @keyframes archHudBlink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.35; }
+  }
+  .arch-hud-title {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    color: var(--ink);
+  }
+  .hud-live-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+    height: 11px;
+  }
+  .hud-live-bar {
+    width: 2px;
+    background: var(--green);
+    border-radius: 1px;
+    animation: hudBarPulse 1.2s ease-in-out infinite alternate;
+  }
+  .hud-live-bar:nth-child(1) { height: 40%; animation-delay: 0.1s; }
+  .hud-live-bar:nth-child(2) { height: 90%; animation-delay: 0.35s; }
+  .hud-live-bar:nth-child(3) { height: 65%; animation-delay: 0.2s; }
+  .hud-live-bar:nth-child(4) { height: 100%; animation-delay: 0.45s; }
+  @keyframes hudBarPulse {
+    0% { height: 25%; }
+    100% { height: 100%; }
+  }
+
+  .arch-hud-body {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .arch-hud-metric {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 9px;
+    line-height: 1.5;
+  }
+  .arch-hud-label {
+    color: var(--mute);
+    font-weight: 600;
+  }
+  .arch-hud-val {
+    color: var(--ink);
+    font-weight: 700;
+  }
+  #archElevVal {
+    color: var(--accent);
+    font-size: 10px;
+    font-weight: 800;
+  }
+  #archZoneVal {
+    color: var(--c-indigo, #3857B2);
+    font-weight: 800;
+  }
+  .arch-hud-footer {
+    margin-top: 9px;
+    padding-top: 6px;
+    border-top: 1px dashed var(--line);
+    font-size: 8px;
+    color: var(--green);
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .status-live-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 5px var(--green);
+  }
+
+  .arch-coord-block {
+    text-align: right;
+    font-size: 9px;
+    color: var(--mute);
+    padding: 6px 10px 4px 12px;
+    border-right: 1.5px solid var(--line);
+    border-bottom: 1.5px solid var(--line);
+    background: rgba(255, 255, 255, 0.45);
+    border-radius: 0 0 4px 0;
+  }
+  .arch-coord-row strong {
+    color: var(--ink);
+    font-weight: 700;
+    margin-left: 4px;
+  }
+  .arch-coord-corner {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--accent);
+    margin-top: 2px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .wrap {
+    max-width: 1240px;
+  }
+}
+
+@media (max-width: 1379px) {
+  .book-mobile-pill {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 120;
+    background: var(--ink);
+    color: #fff;
+    border: 1px solid var(--accent);
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
+    padding: 9px 16px;
+    border-radius: 99px;
+    font-family: var(--mono);
+    font-size: 9.5px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+  }
+  .book-mobile-pill:hover {
+    background: var(--accent);
+    transform: translateY(-2px);
+  }
+  .book-mobile-pill .pill-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #2FA36B;
+    box-shadow: 0 0 6px #2FA36B;
+  }
+}
+
+/* 3D COMIC READER SPREAD MODAL */
+.book-spread-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(94vw, 760px);
+  transform: scale(0.92);
+  transition: transform 0.35s cubic-bezier(0.2, 1, 0.4, 1);
+}
+.comic-reader-overlay.active .book-spread-modal {
+  transform: scale(1);
+}
+.book-modal-topbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  font-size: 9.5px;
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+}
+.book-quick-tabs {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.book-quick-tab {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.8);
+  font-family: inherit;
+  font-size: 8.5px;
+  padding: 3px 8px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.book-quick-tab:hover,
+.book-quick-tab.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  font-weight: 700;
+}
+.book-close-btn {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  font-family: inherit;
+  font-size: 9px;
+  padding: 4px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.book-close-btn:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+/* Book Cover Underlay for Deluxe Physicality */
+.book-cover-underlay {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  background: #25201C;
+  border-radius: 9px;
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.5), 0 10px 24px rgba(0, 0, 0, 0.3);
+  position: relative;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+.book-cover-underlay .corner-brass {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: linear-gradient(135deg, #FFEAB8 0%, #D4A359 55%, #845F20 100%);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  z-index: 5;
+}
+.book-cover-underlay .corner-brass.top-left {
+  top: 0; left: 0; border-radius: 9px 0 0 0; clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+.book-cover-underlay .corner-brass.top-right {
+  top: 0; right: 0; border-radius: 0 9px 0 0; clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
+.book-cover-underlay .corner-brass.bottom-left {
+  bottom: 0; left: 0; border-radius: 0 0 0 9px; clip-path: polygon(0 100%, 100% 100%, 0 0);
+}
+.book-cover-underlay .corner-brass.bottom-right {
+  bottom: 0; right: 0; border-radius: 0 0 9px 0; clip-path: polygon(100% 100%, 0 100%, 100% 0);
+}
+
+.book-open-spread {
+  width: 100%;
+  height: min(76vh, 440px);
+  perspective: 1600px;
+  position: relative;
+  display: flex;
+  border-radius: 4px 6px 6px 4px;
+  background: #FAF7F0;
+  user-select: none;
+  overflow: hidden;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.15);
+}
+.center-spine-gutter {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 34px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg,
+    rgba(0, 0, 0, 0.06) 0%,
+    rgba(0, 0, 0, 0.22) 46%,
+    rgba(0, 0, 0, 0.26) 50%,
+    rgba(0, 0, 0, 0.22) 54%,
+    rgba(0, 0, 0, 0.06) 100%
+  );
+  pointer-events: none;
+  z-index: 12;
+}
+.center-spine-gutter::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 10px;
+  bottom: 10px;
+  width: 1px;
+  border-left: 1.5px dashed rgba(220, 180, 110, 0.5);
+  transform: translateX(-50%);
+}
+.gutter-ribbon-tip {
+  position: absolute;
+  left: 50%;
+  top: -6px;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 18px;
+  background: linear-gradient(180deg, #E6432B 0%, #A82212 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 70%, 0 100%);
+  z-index: 13;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.spread-page {
+  flex: 1;
+  padding: 26px 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+.spread-page.left {
+  background: #FAF7F0;
+  border-radius: 4px 0 0 4px;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: inset -22px 0 24px -12px rgba(0, 0, 0, 0.16);
+}
+.spread-page.right {
+  background:
+    radial-gradient(circle, rgba(0, 0, 0, 0.07) 1px, transparent 1px) 0 0 / 16px 16px,
+    #FAF7F0;
+  border-radius: 0 4px 4px 0;
+  box-shadow: inset 22px 0 24px -12px rgba(0, 0, 0, 0.16);
+  cursor: pointer;
+}
+.spread-flipper {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  transform-origin: left center;
+  transform-style: preserve-3d;
+  z-index: 20;
+  transition: transform 0.62s cubic-bezier(0.25, 1, 0.4, 1);
+  display: none;
+  border-radius: 0 4px 4px 0;
+}
+.spread-flipper.active {
+  display: block;
+}
+.spread-flipper.flipped {
+  transform: rotateY(-180deg);
+}
+.flipper-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  padding: 26px 30px;
+  box-sizing: border-box;
+  background: #FAF7F0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.flipper-face.front {
+  background:
+    radial-gradient(circle, rgba(0, 0, 0, 0.07) 1px, transparent 1px) 0 0 / 16px 16px,
+    #FAF7F0;
+  border-radius: 0 4px 4px 0;
+  box-shadow: inset 22px 0 24px -12px rgba(0, 0, 0, 0.18);
+}
+.flipper-face.back {
+  transform: rotateY(180deg);
+  border-radius: 4px 0 0 4px;
+  box-shadow: inset -22px 0 24px -12px rgba(0, 0, 0, 0.18);
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1.5px solid var(--ink);
+  padding-bottom: 6px;
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+.page-header .accent-tag {
+  color: var(--accent);
+  font-weight: 800;
+}
+.page-comic-art {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+}
+.page-text-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 11.5px;
+  line-height: 1.68;
+  color: #3C3935;
+}
+.page-text-content h3 {
+  margin: 0 0 8px;
+  font-size: 17px;
+  letter-spacing: 0.03em;
+  color: var(--ink);
+  font-weight: 800;
+}
+.page-stamp {
+  position: absolute;
+  bottom: 28px;
+  right: 28px;
+  border: 1.5px solid var(--green);
+  color: var(--green);
+  padding: 2px 7px;
+  font-size: 7.5px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  transform: rotate(-6deg);
+  border-radius: 2px;
+  opacity: 0.85;
+}
+.page-footer {
+  border-top: 1px dashed var(--line);
+  padding-top: 6px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 8px;
+  color: var(--mute);
+}
+
+.book-spread-controls {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: #fff;
+  font-size: 9px;
+}
+.spread-ctrl-btn {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+.spread-ctrl-btn:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+@media (max-width: 600px) {
+  .book-open-spread {
+    flex-direction: column;
+    height: auto;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+  .spread-page.left {
+    border-radius: 4px 4px 0 0;
+    border-right: none;
+    border-bottom: 1px dashed var(--line);
+  }
+  .spread-page.right {
+    border-radius: 0 0 4px 4px;
+  }
+  .spread-flipper {
+    display: none !important;
+  }
+  .center-spine-gutter,
+  .gutter-ribbon-tip {
+    display: none;
+  }
+}
+
 /* REVEAL ANIMATIONS */
 .rv { opacity:0; transform:translateY(14px); transition:opacity .5s ease, transform .5s ease; }
 .rv.in { opacity:1; transform:none; }
@@ -1346,9 +2207,11 @@ footer {
   .sec-head { flex-direction:column; align-items:start; }
   .sec-head h2 { white-space:normal; }
   .xp-item { grid-template-columns:1fr; gap:6px; }
-  .craft-grid { grid-template-columns:1fr; gap:20px; }
-  .sticky-items { grid-template-columns:1fr; gap:16px; }
+  .toolbox-workspace { display:flex; flex-direction:column; gap:20px; }
+  .toolbox-grid { grid-template-columns:1fr; gap:16px; }
+  .toolbox-side.left, .toolbox-side.right { width:100%; position:static; }
   .sticky-note { transform:none; }
+  .side-memo.creed-memo { transform:none; }
   .human-story { grid-template-columns:1fr; gap:32px; }
   .human-intro { position:static; }
 }
@@ -1397,6 +2260,188 @@ footer {
 </head>
 <body>
 <a class="access-skip" href="#work">Skip to selected work</a>
+
+<!-- RIGHT MARGIN ARCHITECTURAL TELEMETRY HUD -->
+<div class="arch-blueprint-layer" id="archBlueprintLayer" aria-hidden="true">
+  <aside class="arch-margin-right">
+    <!-- Top System Spec Watermark -->
+    <div class="arch-spec-block">
+      <div class="arch-spec-corner">+</div>
+      <div class="arch-spec-title">ARCH·SPEC</div>
+      <div class="arch-spec-row"><span>REV</span><strong>2026.4</strong></div>
+      <div class="arch-spec-row"><span>JVM</span><strong>21-LTS</strong></div>
+      <div class="arch-spec-row"><span>SYS</span><strong>DISTRIB</strong></div>
+    </div>
+
+    <!-- Live Telemetry Capsule -->
+    <div class="arch-telemetry-hud">
+      <div class="arch-hud-header">
+        <div class="arch-hud-pulse-box">
+          <span class="arch-hud-pulse"></span>
+          <span class="arch-hud-title">TELEMETRY</span>
+        </div>
+        <div class="hud-live-bars">
+          <div class="hud-live-bar"></div>
+          <div class="hud-live-bar"></div>
+          <div class="hud-live-bar"></div>
+          <div class="hud-live-bar"></div>
+        </div>
+      </div>
+      <div class="arch-hud-body">
+        <div class="arch-hud-metric">
+          <span class="arch-hud-label">ELEV</span>
+          <span class="arch-hud-val" id="archElevVal">00%</span>
+        </div>
+        <div class="arch-hud-metric">
+          <span class="arch-hud-label">ZONE</span>
+          <span class="arch-hud-val" id="archZoneVal">ABOUT</span>
+        </div>
+        <div class="arch-hud-metric">
+          <span class="arch-hud-label">TPS</span>
+          <span class="arch-hud-val">14.8k</span>
+        </div>
+        <div class="arch-hud-metric">
+          <span class="arch-hud-label">HEAP</span>
+          <span class="arch-hud-val">42MB</span>
+        </div>
+        <div class="arch-hud-metric">
+          <span class="arch-hud-label">PING</span>
+          <span class="arch-hud-val">~8ms</span>
+        </div>
+      </div>
+      <div class="arch-hud-footer">
+        <span>STATUS: NOMINAL</span>
+      </div>
+    </div>
+
+    <!-- Bottom Coordinate Crosshair -->
+    <div class="arch-coord-block">
+      <div class="arch-coord-row">
+        <span>LOC</span>
+        <strong id="archScrollY">Y:0000</strong>
+      </div>
+      <div class="arch-coord-corner">+</div>
+    </div>
+  </aside>
+</div>
+
+<!-- 3D POCKET DEV COMIC BOOK (LEFT MARGIN DOCK) -->
+<aside class="book-dock" id="bookDock" title="Click to open Long's 3D Dev Comic Book">
+  <div class="book-dock-tag">
+    <span class="pulse-dot"></span>
+    <span>FIELD·JOURNAL</span>
+  </div>
+  <div class="book-pocket-card">
+    <div class="book-spine-stitch"></div>
+    <div class="book-elastic-band">
+      <div class="book-brass-slider"></div>
+    </div>
+    <div class="corner-brass top-right"></div>
+    <div class="corner-brass bottom-right"></div>
+    <div class="book-pocket-ribbon"></div>
+
+    <div class="cover-header">
+      <span class="cover-header-tag">★ JVM 21</span>
+      <span class="cover-header-rev">REV.26</span>
+    </div>
+
+    <div class="cover-emblem">
+      <div class="cover-seal-circle">
+        <!-- Coffee Cup SVG inside seal -->
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4A359" stroke-width="2">
+          <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
+          <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+          <line x1="6" y1="1" x2="6" y2="4"/>
+          <line x1="10" y1="1" x2="10" y2="4"/>
+          <line x1="14" y1="1" x2="14" y2="4"/>
+        </svg>
+      </div>
+      <div class="cover-title-main">DEV LOG</div>
+      <div class="cover-title-sub">SAIGON STORIES</div>
+    </div>
+
+    <div class="cover-action-badge">READ COMIC ↷</div>
+  </div>
+  <div class="book-dock-status">
+    <span>ACTIVE CHAPTER</span>
+    <strong id="dockChapterTitle">01 · Coffee Ritual</strong>
+  </div>
+</aside>
+
+<!-- Mobile Floating Pill for Tablet/Phone -->
+<button class="book-mobile-pill" id="bookMobilePill" title="Open Long's Dev Comic Book" aria-label="Open Dev Comic">
+  <span class="pill-dot"></span>
+  <span id="mobilePillTitle">📖 DEV COMIC: CH.1 ↷</span>
+</button>
+
+<!-- Full 3D Comic Reader Modal Overlay -->
+<div class="comic-reader-overlay" id="comicReaderOverlay" aria-hidden="true" role="dialog" aria-label="Dev Comic Book">
+  <div class="book-spread-modal">
+    <div class="book-modal-topbar">
+      <span>📖 LONG TRAN // BACKEND STORIES & SKETCHES</span>
+      <div class="book-quick-tabs" id="bookQuickTabs">
+        <button class="book-quick-tab active" type="button" data-chap="0">01 · Coffee</button>
+        <button class="book-quick-tab" type="button" data-chap="1">02 · SQL</button>
+        <button class="book-quick-tab" type="button" data-chap="2">03 · Kafka</button>
+        <button class="book-quick-tab" type="button" data-chap="3">04 · Deploy</button>
+      </div>
+      <button class="book-close-btn" id="bookCloseBtn" type="button">✕ CLOSE [ESC]</button>
+    </div>
+
+    <!-- Deluxe Hardcover Leather Underlay -->
+    <div class="book-cover-underlay">
+      <div class="corner-brass top-left"></div>
+      <div class="corner-brass top-right"></div>
+      <div class="corner-brass bottom-left"></div>
+      <div class="corner-brass bottom-right"></div>
+
+      <div class="book-open-spread" id="bookSpread">
+        <div class="center-spine-gutter"></div>
+        <div class="gutter-ribbon-tip"></div>
+
+        <!-- STATIC LEFT PAGE -->
+        <div class="spread-page left" id="spreadLeftPage">
+          <div class="page-header">
+            <span class="accent-tag" id="leftChapNum">CH. 01</span>
+            <span id="leftChapDate">SAIGON · 07:30 AM</span>
+          </div>
+          <div class="page-comic-art" id="leftArtBox"></div>
+          <div class="page-footer">
+            <span id="leftSubtitle">THE MORNING ALGORITHM</span>
+            <span>PAGE 01</span>
+          </div>
+        </div>
+
+        <!-- STATIC UNDERLYING RIGHT PAGE -->
+        <div class="spread-page right" id="spreadRightPage">
+          <div class="page-header">
+            <span class="accent-tag" id="rightChapNum">CH. 01</span>
+            <span id="rightCategory">PROLOGUE</span>
+          </div>
+          <div class="page-text-content" id="rightStoryBox"></div>
+          <div class="page-stamp" id="rightPageStamp">COMPILED WITH CAFFEINE</div>
+          <div class="page-footer">
+            <span>CLICK PAGE TO FLIP ↷</span>
+            <span id="rightPageNum">PAGE 02</span>
+          </div>
+        </div>
+
+        <!-- 3D FLIPPING SHEET -->
+        <div class="spread-flipper" id="spreadFlipper">
+          <div class="flipper-face front" id="flipFront"></div>
+          <div class="flipper-face back" id="flipBack"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTROLS -->
+    <div class="book-spread-controls">
+      <button class="spread-ctrl-btn" id="prevChapBtn" type="button">◄ PREV CHAPTER</button>
+      <span id="spreadIndicator">Chapter 1 of 4</span>
+      <button class="spread-ctrl-btn" id="nextChapBtn" type="button">NEXT CHAPTER ►</button>
+    </div>
+  </div>
+</div>
 
 <header class="topbar">
   <div class="wrap">
@@ -2070,124 +3115,139 @@ footer {
   </div>
 </section>
 
-<!-- TOOLBOX SECTION: CREATIVE CRAFT PINBOARD & STICKY NOTE -->
+<!-- TOOLBOX SECTION -->
 <section id="skills">
   <div class="sec-head rv">
     <h2 class="display">Toolbox</h2>
     <p>Daily crafts &amp; technical gear — battle-tested in real production environments.</p>
   </div>
 
-  <div class="craft-grid">
-    <!-- PAD 01: CORE RUNTIME -->
-    <div class="craft-card rv" style="--craft-accent:var(--accent); --tape-bg:rgba(228, 71, 44, 0.28); --tape-rot:-1.5deg;">
-      <div class="washi-tape" aria-hidden="true"></div>
-      <div class="craft-card-head">
-        <span class="craft-stamp"><span class="emoji" aria-hidden="true">☕</span> 01 / Core Runtime</span>
+  <div class="toolbox-grid">
+    <!-- BAY 01: CORE RUNTIME -->
+    <div class="tool-card rv" style="--card-accent:var(--accent);">
+      <div class="tool-card-head">
+        <div class="tool-card-meta">
+          <span class="tool-card-stamp">01 / Core Runtime</span>
+          <h3>Java &amp; Spring Ecosystem</h3>
+        </div>
+        <span class="tool-card-icon" aria-hidden="true">☕</span>
       </div>
-      <h3>Java &amp; Spring Ecosystem</h3>
-      <p class="craft-card-desc">Where robust domain modeling, clean transactions &amp; business logic live.</p>
-      <div class="craft-tags">
-        <span class="craft-tag core">Java 17/21</span>
-        <span class="craft-tag core">Spring Boot 3</span>
-        <span class="craft-tag">Spring Security</span>
-        <span class="craft-tag">Spring Data JPA</span>
-        <span class="craft-tag">Hibernate</span>
-        <span class="craft-tag">Spring AOP</span>
-        <span class="craft-tag">OpenFeign</span>
-        <span class="craft-tag">MapStruct</span>
+      <p class="tool-card-desc">Where robust domain modeling, clean transactions &amp; business logic live.</p>
+      <div class="tool-chips">
+        <span class="tool-chip core">Java 17/21</span>
+        <span class="tool-chip core">Spring Boot 3</span>
+        <span class="tool-chip">Spring Security</span>
+        <span class="tool-chip">Spring Data JPA</span>
+        <span class="tool-chip">Hibernate</span>
+        <span class="tool-chip">Spring AOP</span>
+        <span class="tool-chip">OpenFeign</span>
+        <span class="tool-chip">MapStruct</span>
       </div>
-      <div class="craft-proof">
-        <span>↳ Verified:</span> Microservices for 3 government platforms · Zero-allocation domain persistence
-      </div>
-    </div>
-
-    <!-- PAD 02: STREAMING & APIS -->
-    <div class="craft-card rv" style="--craft-accent:var(--c-green); --tape-bg:rgba(46, 204, 113, 0.3); --tape-rot:1.2deg;">
-      <div class="washi-tape" aria-hidden="true"></div>
-      <div class="craft-card-head">
-        <span class="craft-stamp"><span class="emoji" aria-hidden="true">⚡</span> 02 / Event Bus &amp; APIs</span>
-      </div>
-      <h3>Kafka &amp; Distributed APIs</h3>
-      <p class="craft-card-desc">Decoupled communication, high-throughput event pipelines &amp; low-latency RPC.</p>
-      <div class="craft-tags">
-        <span class="craft-tag core">Apache Kafka</span>
-        <span class="craft-tag core">gRPC</span>
-        <span class="craft-tag">REST APIs</span>
-        <span class="craft-tag">Protobuf</span>
-        <span class="craft-tag">OpenAPI / Swagger</span>
-        <span class="craft-tag">JWT</span>
-        <span class="craft-tag">OAuth2 / SSO</span>
-      </div>
-      <div class="craft-proof">
-        <span>↳ Verified:</span> Zero-drop emergency incident streams · Shared Protobuf contracts for 10+ services
+      <div class="tool-proof">
+        <span class="tool-proof-tag">↳ Verified</span>
+        <span>Microservices for 3 government platforms · Zero-allocation domain persistence</span>
       </div>
     </div>
 
-    <!-- PAD 03: PERSISTENCE & STORAGE -->
-    <div class="craft-card rv" style="--craft-accent:#E67E22; --tape-bg:rgba(230, 126, 34, 0.3); --tape-rot:-1deg;">
-      <div class="washi-tape" aria-hidden="true"></div>
-      <div class="craft-card-head">
-        <span class="craft-stamp"><span class="emoji" aria-hidden="true">💾</span> 03 / Persistence &amp; Speed</span>
+    <!-- BAY 02: STREAMING & APIS -->
+    <div class="tool-card rv" style="--card-accent:var(--c-green);">
+      <div class="tool-card-head">
+        <div class="tool-card-meta">
+          <span class="tool-card-stamp">02 / Event Bus &amp; APIs</span>
+          <h3>Kafka &amp; Distributed APIs</h3>
+        </div>
+        <span class="tool-card-icon" aria-hidden="true">⚡</span>
       </div>
-      <h3>Data, Query Tuning &amp; Storage</h3>
-      <p class="craft-card-desc">Execution plan optimization, distributed cache locks &amp; cryptographic vaults.</p>
-      <div class="craft-tags">
-        <span class="craft-tag core highlight">Oracle DB <small>~300×</small></span>
-        <span class="craft-tag core">Execution Plans</span>
-        <span class="craft-tag">Redis</span>
-        <span class="craft-tag">MinIO</span>
-        <span class="craft-tag">PostgreSQL</span>
-        <span class="craft-tag">MySQL</span>
-        <span class="craft-tag">Elasticsearch</span>
+      <p class="tool-card-desc">Decoupled communication, high-throughput event pipelines &amp; low-latency RPC.</p>
+      <div class="tool-chips">
+        <span class="tool-chip core">Apache Kafka</span>
+        <span class="tool-chip core">gRPC</span>
+        <span class="tool-chip">REST APIs</span>
+        <span class="tool-chip">Protobuf</span>
+        <span class="tool-chip">OpenAPI / Swagger</span>
+        <span class="tool-chip">JWT</span>
+        <span class="tool-chip">OAuth2 / SSO</span>
       </div>
-      <div class="craft-proof">
-        <span>↳ Verified:</span> ~300× Oracle query acceleration · Redis distributed locks · AES-GCM encrypted archives
+      <div class="tool-proof">
+        <span class="tool-proof-tag">↳ Verified</span>
+        <span>Zero-drop emergency incident streams · Shared Protobuf contracts for 10+ services</span>
       </div>
     </div>
 
-    <!-- PAD 04: DELIVERY & QUALITY -->
-    <div class="craft-card rv" style="--craft-accent:var(--c-indigo); --tape-bg:rgba(108, 92, 231, 0.28); --tape-rot:1.5deg;">
-      <div class="washi-tape" aria-hidden="true"></div>
-      <div class="craft-card-head">
-        <span class="craft-stamp"><span class="emoji" aria-hidden="true">🚢</span> 04 / Delivery &amp; Reliability</span>
+    <!-- BAY 03: PERSISTENCE & STORAGE -->
+    <div class="tool-card rv" style="--card-accent:#E67E22;">
+      <div class="tool-card-head">
+        <div class="tool-card-meta">
+          <span class="tool-card-stamp">03 / Persistence &amp; Speed</span>
+          <h3>Data, Query Tuning &amp; Storage</h3>
+        </div>
+        <span class="tool-card-icon" aria-hidden="true">💾</span>
       </div>
-      <h3>DevOps, CI/CD &amp; Testing</h3>
-      <p class="craft-card-desc">Zero-downtime database migrations, container pods &amp; automated test suites.</p>
-      <div class="craft-tags">
-        <span class="craft-tag core">Docker</span>
-        <span class="craft-tag core">Kubernetes</span>
-        <span class="craft-tag core">Flyway</span>
-        <span class="craft-tag">GitLab CI/CD</span>
-        <span class="craft-tag">Rancher / OpenShift</span>
-        <span class="craft-tag">Gradle / Maven</span>
-        <span class="craft-tag">JUnit 5</span>
-        <span class="craft-tag">Spock &amp; AssertJ</span>
+      <p class="tool-card-desc">Execution plan optimization, distributed cache locks &amp; cryptographic vaults.</p>
+      <div class="tool-chips">
+        <span class="tool-chip core highlight">Oracle DB <small>~300×</small></span>
+        <span class="tool-chip core">Execution Plans</span>
+        <span class="tool-chip">Redis</span>
+        <span class="tool-chip">MinIO</span>
+        <span class="tool-chip">PostgreSQL</span>
+        <span class="tool-chip">MySQL</span>
+        <span class="tool-chip">Elasticsearch</span>
       </div>
-      <div class="craft-proof">
-        <span>↳ Verified:</span> 120+ Flyway migrations across 1M+ records · Automated regression safety in CI/CD
+      <div class="tool-proof">
+        <span class="tool-proof-tag">↳ Verified</span>
+        <span>~300× Oracle query acceleration · Redis distributed locks · AES-GCM encrypted archives</span>
+      </div>
+    </div>
+
+    <!-- BAY 04: DELIVERY & QUALITY -->
+    <div class="tool-card rv" style="--card-accent:var(--c-indigo);">
+      <div class="tool-card-head">
+        <div class="tool-card-meta">
+          <span class="tool-card-stamp">04 / Delivery &amp; Reliability</span>
+          <h3>DevOps, CI/CD &amp; Testing</h3>
+        </div>
+        <span class="tool-card-icon" aria-hidden="true">🚢</span>
+      </div>
+      <p class="tool-card-desc">Zero-downtime database migrations, container pods &amp; automated test suites.</p>
+      <div class="tool-chips">
+        <span class="tool-chip core">Docker</span>
+        <span class="tool-chip core">Kubernetes</span>
+        <span class="tool-chip core">Flyway</span>
+        <span class="tool-chip">GitLab CI/CD</span>
+        <span class="tool-chip">Rancher / OpenShift</span>
+        <span class="tool-chip">Gradle / Maven</span>
+        <span class="tool-chip">JUnit 5</span>
+        <span class="tool-chip">Spock &amp; AssertJ</span>
+      </div>
+      <div class="tool-proof">
+        <span class="tool-proof-tag">↳ Verified</span>
+        <span>120+ Flyway migrations across 1M+ records · Automated regression safety in CI/CD</span>
       </div>
     </div>
   </div>
 
   <!-- AUTHENTIC YELLOW STICKY NOTE -->
-  <div class="sticky-note rv">
-    <div class="sticky-tape" aria-hidden="true"></div>
-    <div class="sticky-head">
-      <h4><span aria-hidden="true">📌</span> P.S. Also In My Bag</h4>
-      <span class="sticky-sub">(Quick field notes on adjacent skills &amp; foundational roots)</span>
-    </div>
-    <div class="sticky-items">
-      <div class="sticky-item">
-        <b>🎨 Frontend Support</b>
-        <span>React &amp; TypeScript — UI &amp; layout defect triage on production web consoles.</span>
+  <div class="sticky-note-wrap rv">
+    <div class="sticky-note">
+      <div class="sticky-tape" aria-hidden="true"></div>
+      <span class="sticky-pin" aria-hidden="true">📌</span>
+      <div class="sticky-head">
+        <h4>P.S. Also In My Bag</h4>
+        <span class="sticky-sub">(Quick field notes on adjacent skills &amp; foundational roots)</span>
       </div>
-      <div class="sticky-item">
-        <b>🧪 Explorations</b>
-        <span>Go &amp; Vue 3 — Prototyping lightweight concurrency services &amp; reactive tools.</span>
-      </div>
-      <div class="sticky-item">
-        <b>💾 Where It Began</b>
-        <span>C# &amp; WinUI 3 — Native Windows file security &amp; multi-threaded media engines at IO STREAM.</span>
+      <div class="sticky-items">
+        <div class="sticky-item">
+          <b>🎨 Frontend Support</b>
+          <span>React &amp; TypeScript — UI &amp; layout defect triage on production web consoles.</span>
+        </div>
+        <div class="sticky-item">
+          <b>🧪 Explorations</b>
+          <span>Go &amp; Vue 3 — Prototyping lightweight concurrency services &amp; reactive tools.</span>
+        </div>
+        <div class="sticky-item">
+          <b>💾 Where It Began</b>
+          <span>C# &amp; WinUI 3 — Native Windows file security &amp; multi-threaded media engines at IO STREAM.</span>
+        </div>
       </div>
     </div>
   </div>
@@ -2511,6 +3571,424 @@ document.querySelectorAll('.proj-media').forEach(media => {
     node.addEventListener('blur', hide);
   });
 });
+
+// SYSTEM TELEMETRY & 3D DEV COMIC BOOK ENGINE
+(() => {
+  // 1. Right Margin Telemetry HUD Observer
+  const elev = document.getElementById('archElevVal');
+  const zone = document.getElementById('archZoneVal');
+  const scY = document.getElementById('archScrollY');
+
+  const sections = [
+    { id: 'about', label: 'ABOUT', chapIdx: 0 },
+    { id: 'work', label: 'WORK', chapIdx: 1 },
+    { id: 'achievements', label: 'HONORS', chapIdx: 2 },
+    { id: 'experience', label: 'EXP', chapIdx: 2 },
+    { id: 'skills', label: 'SKILLS', chapIdx: 3 },
+    { id: 'contact', label: 'CONTACT', chapIdx: 3 }
+  ].map(s => ({ ...s, el: document.getElementById(s.id) })).filter(s => s.el);
+
+  let ticking = false;
+  let lastManualInteractionTime = 0;
+
+  // 2. Comic Book Chapters Data & SVGs
+  const CHAPTERS = [
+    {
+      num: '01',
+      title: 'The Coffee Algorithm',
+      shortTitle: '01 · Coffee Ritual',
+      subtitle: 'THE MORNING ALGORITHM',
+      date: 'SAIGON · 07:30 AM',
+      category: 'PROLOGUE',
+      pageL: 'PAGE 01',
+      pageR: 'PAGE 02',
+      stamp: 'COMPILED WITH CAFFEINE',
+      art: `<svg width="155" height="155" viewBox="0 0 100 100" fill="none">
+        <!-- Phin Body with Metallic Sheen -->
+        <rect x="34" y="13" width="32" height="27" rx="3" stroke="#141414" stroke-width="3" fill="#EAE5D9"/>
+        <line x1="39" y1="18" x2="39" y2="36" stroke="#D5CFBE" stroke-width="2"/>
+        <rect x="23" y="40" width="54" height="4.5" rx="2" fill="#141414"/>
+        <rect x="41" y="6" width="18" height="7.5" rx="2" fill="#141414"/>
+        <!-- Clear Glass Cup -->
+        <path d="M26 46 L33 87 Q34 90 40 90 L60 90 Q66 90 67 87 L74 46 Z" stroke="#141414" stroke-width="3" fill="#FFF"/>
+        <!-- Condensed Milk Layer -->
+        <path d="M34 78 L36 88 L64 88 L66 78 Z" fill="#F4E0A5"/>
+        <!-- Rich Dark Roast Coffee -->
+        <path d="M28 54 L33 78 L67 78 L72 54 Z" fill="#3B2314"/>
+        <!-- Dripping Coffee Droplet -->
+        <circle cx="50" cy="48" r="3.2" fill="#3B2314"/>
+        <!-- Aromatic Steam Swirls -->
+        <path d="M41 4 Q38 -2 43 -6 Q47 -3 44 2" stroke="#E4472C" stroke-width="2" stroke-linecap="round"/>
+        <path d="M59 4 Q62 -2 57 -6 Q53 -3 56 2" stroke="#E4472C" stroke-width="2" stroke-linecap="round"/>
+      </svg>`,
+      story: `<h3>The Coffee Algorithm</h3>
+        <p>Before the first gRPC stream or Kafka consumer warms up, the Saigon phin must brew.</p>
+        <p>Saigon iced milk coffee is not just a drink—it is the mental compiler for high-concurrency architecture. <em>1 drop = 100 requests per second.</em></p>`
+    },
+    {
+      num: '02',
+      title: 'The 120s SQL Heist',
+      shortTitle: '02 · 120s SQL Heist',
+      subtitle: 'MEASURE FIRST, OPTIMIZE SECOND',
+      date: 'ORACLE · PRODUCTION',
+      category: 'QUERY TUNING',
+      pageL: 'PAGE 03',
+      pageR: 'PAGE 04',
+      stamp: 'EXECUTION PLAN: 0.4s',
+      art: `<svg width="155" height="155" viewBox="0 0 100 100" fill="none">
+        <!-- Detective Magnifying Glass -->
+        <circle cx="43" cy="42" r="26" stroke="#141414" stroke-width="3.5" fill="#FFF"/>
+        <line x1="62" y1="61" x2="84" y2="83" stroke="#141414" stroke-width="7.5" stroke-linecap="round"/>
+        <line x1="66" y1="65" x2="81" y2="80" stroke="#D4A359" stroke-width="3.5" stroke-linecap="round"/>
+        <!-- Speedometer Arc -->
+        <path d="M26 46 A 20 20 0 0 1 60 46" stroke="#E4472C" stroke-width="4.5" stroke-linecap="round"/>
+        <!-- Fast Needle in Green -->
+        <line x1="43" y1="44" x2="57" y2="32" stroke="#2FA36B" stroke-width="3.5" stroke-linecap="round"/>
+        <circle cx="43" cy="44" r="3.5" fill="#141414"/>
+        <text x="29" y="58" font-size="9" font-weight="800" fill="#141414">~300×</text>
+        <!-- Spark of Index Optimization -->
+        <path d="M68 20 L74 28 L69 29 L75 38 L68 28 L72 27 Z" fill="#E4472C"/>
+      </svg>`,
+      story: `<h3>The 120s SQL Heist</h3>
+        <p>1,000,000 records. A two-minute query bottleneck was threatening production launch.</p>
+        <p>Instead of requesting larger server clusters, I inspected the execution plan. One redundant filter eliminated: <strong>120s dropped to 0.4s</strong> without buying new hardware.</p>`
+    },
+    {
+      num: '03',
+      title: 'Kafka in the Tempest',
+      shortTitle: '03 · Kafka Storm',
+      subtitle: 'IDEMPOTENT EVENT STREAM',
+      date: 'EVENT BUS · CLUSTER',
+      category: 'STREAMING',
+      pageL: 'PAGE 05',
+      pageR: 'PAGE 06',
+      stamp: 'IDEMPOTENT · 100%',
+      art: `<svg width="155" height="155" viewBox="0 0 100 100" fill="none">
+        <!-- Partition Stream Pipeline -->
+        <rect x="14" y="44" width="72" height="20" rx="4" stroke="#141414" stroke-width="3" fill="#EAE5D9"/>
+        <!-- Safe Microservice Data Packets -->
+        <rect x="20" y="49" width="15" height="10" rx="2" fill="#2FA36B"/>
+        <rect x="42" y="49" width="15" height="10" rx="2" fill="#E4472C"/>
+        <rect x="64" y="49" width="15" height="10" rx="2" fill="#3F4FB3"/>
+        <!-- Protective Umbrella -->
+        <path d="M28 26 Q50 8 72 26 Z" fill="#E4472C" stroke="#141414" stroke-width="2.5"/>
+        <line x1="50" y1="26" x2="50" y2="38" stroke="#141414" stroke-width="3"/>
+        <path d="M50 38 Q50 42 46 42" stroke="#141414" stroke-width="3" fill="none"/>
+        <!-- Lightning Network Glitches -->
+        <path d="M20 18 L25 10 L22 22" stroke="#E4472C" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M78 18 L83 10 L80 22" stroke="#E4472C" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>`,
+      story: `<h3>Kafka in the Tempest</h3>
+        <p>Networks lie; connections drop. When the event stream turns chaotic, don't panic.</p>
+        <p>Idempotent consumers and deterministic partition keys are the engineer's true peace of mind. Duplicate packets bounce off, exactly-once semantics prevail.</p>`
+    },
+    {
+      num: '04',
+      title: 'Saigon Midnight Deploy',
+      shortTitle: '04 · Midnight Deploy',
+      subtitle: 'ZERO DOWNTIME HORIZON',
+      date: 'DISTRICT 1 · 00:00',
+      category: 'RELEASE',
+      pageL: 'PAGE 07',
+      pageR: 'PAGE 08',
+      stamp: 'ZERO DOWNTIME',
+      art: `<svg width="155" height="155" viewBox="0 0 100 100" fill="none">
+        <!-- Crescent Moon & Stars -->
+        <path d="M74 14 A 12 12 0 0 1 68 30 A 14 14 0 1 0 74 14 Z" fill="#F4E0A5"/>
+        <circle cx="28" cy="22" r="1.5" fill="#D4A359"/>
+        <circle cx="48" cy="16" r="1.5" fill="#D4A359"/>
+        <!-- Bitexco Architectural Tower Silhouette -->
+        <polygon points="46,28 54,28 58,84 42,84" fill="#141414"/>
+        <ellipse cx="50" cy="50" rx="10" ry="3.5" fill="#E4472C"/>
+        <!-- Glowing Green CRT Terminal -->
+        <rect x="14" y="58" width="36" height="26" rx="3" fill="#141414" stroke="#3C3B37" stroke-width="1.5"/>
+        <text x="18" y="71" font-size="5.5" font-weight="bold" fill="#2FA36B">200 OK</text>
+        <text x="18" y="78" font-size="4.5" fill="#FFF">LIVE 00:00</text>
+      </svg>`,
+      story: `<h3>Saigon Midnight Deploy</h3>
+        <p>00:00 Saigon. Zero failed healthchecks across all Kubernetes replicas. The city sleeps, but the distributed ledger hums steady.</p>
+        <p>Ready for the next high-throughput adventure. <em>Reach out and let's build something resilient!</em></p>`
+    }
+  ];
+
+  let currentChapter = 0;
+  let isFlipping = false;
+
+  // Synthesize crisp paper rustle sound via Web Audio API
+  function playPageTurnSound() {
+    try {
+      const AudioCtx = window.AudioContext || window.webkitAudioContext;
+      if (!AudioCtx) return;
+      const ctx = new AudioCtx();
+      const bufferSize = ctx.sampleRate * 0.12;
+      const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+      const data = buffer.getChannelData(0);
+      for (let i = 0; i < bufferSize; i++) {
+        data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (ctx.sampleRate * 0.035));
+      }
+      const noise = ctx.createBufferSource();
+      noise.buffer = buffer;
+      const filter = ctx.createBiquadFilter();
+      filter.type = 'bandpass';
+      filter.frequency.value = 1900;
+      filter.Q.value = 1.3;
+      const gain = ctx.createGain();
+      gain.gain.setValueAtTime(0.12, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.005, ctx.currentTime + 0.12);
+      noise.connect(filter);
+      filter.connect(gain);
+      gain.connect(ctx.destination);
+      noise.start();
+    } catch (e) {}
+  }
+
+  // DOM Elements
+  const dock = document.getElementById('bookDock');
+  const mobilePill = document.getElementById('bookMobilePill');
+  const overlay = document.getElementById('comicReaderOverlay');
+  const closeBtn = document.getElementById('bookCloseBtn');
+  const prevBtn = document.getElementById('prevChapBtn');
+  const nextBtn = document.getElementById('nextChapBtn');
+  const indicator = document.getElementById('spreadIndicator');
+  const dockTitle = document.getElementById('dockChapterTitle');
+  const mobileTitle = document.getElementById('mobilePillTitle');
+
+  const leftChapNum = document.getElementById('leftChapNum');
+  const leftChapDate = document.getElementById('leftChapDate');
+  const leftArtBox = document.getElementById('leftArtBox');
+  const leftSubtitle = document.getElementById('leftSubtitle');
+
+  const rightChapNum = document.getElementById('rightChapNum');
+  const rightCategory = document.getElementById('rightCategory');
+  const rightStoryBox = document.getElementById('rightStoryBox');
+  const rightPageNum = document.getElementById('rightPageNum');
+  const rightPageStamp = document.getElementById('rightPageStamp');
+
+  const flipper = document.getElementById('spreadFlipper');
+  const flipFront = document.getElementById('flipFront');
+  const flipBack = document.getElementById('flipBack');
+
+  function renderStaticChapter(idx) {
+    const ch = CHAPTERS[idx];
+    if (!ch) return;
+    if (leftChapNum) leftChapNum.textContent = `CH. ${ch.num}`;
+    if (leftChapDate) leftChapDate.textContent = ch.date;
+    if (leftArtBox) leftArtBox.innerHTML = ch.art;
+    if (leftSubtitle) leftSubtitle.textContent = ch.subtitle;
+
+    if (rightChapNum) rightChapNum.textContent = `CH. ${ch.num}`;
+    if (rightCategory) rightCategory.textContent = ch.category;
+    if (rightStoryBox) rightStoryBox.innerHTML = ch.story;
+    if (rightPageNum) rightPageNum.textContent = ch.pageR;
+    if (rightPageStamp && ch.stamp) rightPageStamp.textContent = ch.stamp;
+
+    document.querySelectorAll('.book-quick-tab').forEach((tab, i) => {
+      tab.classList.toggle('active', i === idx);
+    });
+
+    if (indicator) indicator.textContent = `Chapter ${idx + 1} of ${CHAPTERS.length} · ${ch.title}`;
+    if (dockTitle) dockTitle.textContent = ch.shortTitle;
+    if (mobileTitle) mobileTitle.textContent = `📖 DEV COMIC: CH.${idx + 1} ↷`;
+  }
+
+  function updateQuickTabs(idx) {
+    document.querySelectorAll('.book-quick-tab').forEach((tab, i) => {
+      tab.classList.toggle('active', i === idx);
+    });
+  }
+
+  function flipTo(targetIdx) {
+    if (isFlipping || targetIdx === currentChapter || targetIdx < 0 || targetIdx >= CHAPTERS.length) return;
+    isFlipping = true;
+    lastManualInteractionTime = Date.now();
+    playPageTurnSound();
+    updateQuickTabs(targetIdx);
+
+    const isForward = targetIdx > currentChapter;
+    const curCh = CHAPTERS[currentChapter];
+    const nextCh = CHAPTERS[targetIdx];
+
+    if (isForward) {
+      flipFront.innerHTML = `
+        <div class="page-header">
+          <span class="accent-tag">CH. ${curCh.num}</span>
+          <span>${curCh.category}</span>
+        </div>
+        <div class="page-text-content">${curCh.story}</div>
+        <div class="page-stamp">${curCh.stamp || 'VERIFIED'}</div>
+        <div class="page-footer"><span>FLIP ↷</span><span>${curCh.pageR}</span></div>
+      `;
+      flipBack.innerHTML = `
+        <div class="page-header">
+          <span class="accent-tag">CH. ${nextCh.num}</span>
+          <span>${nextCh.date}</span>
+        </div>
+        <div class="page-comic-art">${nextCh.art}</div>
+        <div class="page-footer"><span>${nextCh.subtitle}</span><span>${nextCh.pageL}</span></div>
+      `;
+
+      flipper.style.transition = 'none';
+      flipper.classList.remove('flipped');
+      flipper.classList.add('active');
+      flipper.offsetHeight; // reflow
+
+      // Pre-render the underlying right page with target content
+      if (rightChapNum) rightChapNum.textContent = `CH. ${nextCh.num}`;
+      if (rightCategory) rightCategory.textContent = nextCh.category;
+      if (rightStoryBox) rightStoryBox.innerHTML = nextCh.story;
+      if (rightPageNum) rightPageNum.textContent = nextCh.pageR;
+      if (rightPageStamp && nextCh.stamp) rightPageStamp.textContent = nextCh.stamp;
+
+      flipper.style.transition = 'transform 0.62s cubic-bezier(0.25, 1, 0.4, 1)';
+      flipper.classList.add('flipped');
+
+      setTimeout(() => {
+        currentChapter = targetIdx;
+        renderStaticChapter(currentChapter);
+        flipper.classList.remove('active', 'flipped');
+        isFlipping = false;
+      }, 640);
+    } else {
+      flipBack.innerHTML = `
+        <div class="page-header">
+          <span class="accent-tag">CH. ${curCh.num}</span>
+          <span>${curCh.date}</span>
+        </div>
+        <div class="page-comic-art">${curCh.art}</div>
+        <div class="page-footer"><span>${curCh.subtitle}</span><span>${curCh.pageL}</span></div>
+      `;
+      flipFront.innerHTML = `
+        <div class="page-header">
+          <span class="accent-tag">CH. ${nextCh.num}</span>
+          <span>${nextCh.category}</span>
+        </div>
+        <div class="page-text-content">${nextCh.story}</div>
+        <div class="page-stamp">${nextCh.stamp || 'VERIFIED'}</div>
+        <div class="page-footer"><span>FLIP ↷</span><span>${nextCh.pageR}</span></div>
+      `;
+
+      flipper.style.transition = 'none';
+      flipper.classList.add('flipped', 'active');
+      flipper.offsetHeight; // reflow
+
+      // Pre-render the underlying left page with target content
+      if (leftChapNum) leftChapNum.textContent = `CH. ${nextCh.num}`;
+      if (leftChapDate) leftChapDate.textContent = nextCh.date;
+      if (leftArtBox) leftArtBox.innerHTML = nextCh.art;
+      if (leftSubtitle) leftSubtitle.textContent = nextCh.subtitle;
+
+      flipper.style.transition = 'transform 0.62s cubic-bezier(0.25, 1, 0.4, 1)';
+      flipper.classList.remove('flipped');
+
+      setTimeout(() => {
+        currentChapter = targetIdx;
+        renderStaticChapter(currentChapter);
+        flipper.classList.remove('active');
+        isFlipping = false;
+      }, 640);
+    }
+  }
+
+  function openBook() {
+    if (!overlay) return;
+    overlay.classList.add('active');
+    overlay.setAttribute('aria-hidden', 'false');
+    renderStaticChapter(currentChapter);
+    playPageTurnSound();
+  }
+
+  function closeBook() {
+    if (!overlay) return;
+    overlay.classList.remove('active');
+    overlay.setAttribute('aria-hidden', 'true');
+  }
+
+  if (dock) dock.addEventListener('click', openBook);
+  if (mobilePill) mobilePill.addEventListener('click', openBook);
+  if (closeBtn) closeBtn.addEventListener('click', closeBook);
+
+  // Quick chapter jump buttons
+  document.querySelectorAll('.book-quick-tab').forEach((tab) => {
+    tab.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const chapIdx = parseInt(tab.dataset.chap, 10);
+      if (!isNaN(chapIdx)) flipTo(chapIdx);
+    });
+  });
+
+  if (overlay) {
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) closeBook();
+    });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (overlay && overlay.classList.contains('active')) {
+      if (e.key === 'Escape') closeBook();
+      else if (e.key === 'ArrowRight' || e.key === 'PageDown') flipTo(currentChapter + 1);
+      else if (e.key === 'ArrowLeft' || e.key === 'PageUp') flipTo(currentChapter - 1);
+    }
+  });
+
+  if (nextBtn) nextBtn.addEventListener('click', () => flipTo(currentChapter + 1));
+  if (prevBtn) prevBtn.addEventListener('click', () => flipTo(currentChapter - 1));
+
+  // Click on book spread to flip
+  const spreadRight = document.getElementById('spreadRightPage');
+  const spreadLeft = document.getElementById('spreadLeftPage');
+  if (spreadRight) spreadRight.addEventListener('click', () => flipTo(currentChapter + 1));
+  if (spreadLeft) spreadLeft.addEventListener('click', () => flipTo(currentChapter - 1));
+
+  // Initialize first chapter
+  renderStaticChapter(0);
+
+  // 3. Scroll Synchronization: Telemetry + Active Chapter Tracker
+  function updateTelemetryAndBook() {
+    ticking = false;
+    const scrollY = window.scrollY || window.pageYOffset || 0;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const ratio = docHeight > 0 ? Math.min(Math.max(scrollY / docHeight, 0), 1) : 0;
+    const pct = Math.round(ratio * 100);
+
+    if (elev) elev.textContent = String(pct).padStart(2, '0') + '%';
+    if (scY) scY.textContent = 'Y:' + String(Math.round(scrollY)).padStart(4, '0');
+
+    if (zone && sections.length > 0) {
+      const probeY = scrollY + window.innerHeight * 0.35;
+      let activeSection = sections[0];
+      for (let i = 0; i < sections.length; i++) {
+        const top = sections[i].el.offsetTop;
+        if (probeY >= top - 80) {
+          activeSection = sections[i];
+        }
+      }
+      if (zone.textContent !== activeSection.label) {
+        zone.textContent = activeSection.label;
+      }
+
+      // If user hasn't manually flipped in the last 12 seconds, sync chapter
+      if (Date.now() - lastManualInteractionTime > 12000 && activeSection.chapIdx !== currentChapter) {
+        if (overlay && overlay.classList.contains('active')) {
+          flipTo(activeSection.chapIdx);
+        } else {
+          currentChapter = activeSection.chapIdx;
+          renderStaticChapter(currentChapter);
+        }
+      }
+    }
+  }
+
+  function onScroll() {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(updateTelemetryAndBook);
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  updateTelemetryAndBook();
+})();
 
 // Scroll reveal observer
 const io = new IntersectionObserver(es => es.forEach(e => {
