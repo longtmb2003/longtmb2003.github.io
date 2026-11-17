@@ -164,7 +164,7 @@ a { color:inherit; text-decoration:none; }
   font:600 11.5px var(--mono);
   text-transform:uppercase;
   letter-spacing:.06em;
-  padding:9px 18px;
+  padding:11px 24px;
   border-radius:99px;
   background:var(--ink);
   color:var(--paper);
@@ -199,8 +199,9 @@ a { color:inherit; text-decoration:none; }
   display:flex;
   flex-wrap:wrap;
   align-items:center;
-  gap:12px;
-  margin-top:22px;
+  gap:18px;
+  margin-top:4px;
+  margin-bottom:28px;
 }
 .cv-cta {
   display:inline-flex;
@@ -209,7 +210,7 @@ a { color:inherit; text-decoration:none; }
   font:600 12px var(--mono);
   text-transform:uppercase;
   letter-spacing:.06em;
-  padding:9px 18px;
+  padding:11px 22px;
   border-radius:99px;
   background:var(--card);
   color:var(--ink);
@@ -233,7 +234,7 @@ a { color:inherit; text-decoration:none; }
 }
 
 /* HERO SECTION */
-.hero { position:relative; padding:36px 0 0; }
+.hero { position:relative; padding:44px 0 52px; }
 .hero-stage-container { position:relative; }
 
 /* Giant Watermarks */
@@ -256,7 +257,7 @@ a { color:inherit; text-decoration:none; }
   z-index:2;
   display:grid;
   grid-template-columns:minmax(0,1fr) minmax(360px,460px) minmax(0,1.05fr);
-  gap:24px;
+  gap:36px;
   align-items:start;
 }
 
@@ -265,14 +266,15 @@ a { color:inherit; text-decoration:none; }
 .intro-card { transition:opacity .35s, transform .35s; }
 .hero-left.has-active-card .intro-card { display:none; }
 
-.hero-left h1 { font-size:clamp(76px,8.5vw,130px); margin:8px 0 16px; }
-.hero-desc { color:var(--ink-2); font-size:15px; line-height:1.75; max-width:380px; }
+.hero-left h1 { font-size:clamp(76px,8.5vw,126px); margin:12px 0 22px; line-height:0.95; }
+.hero-desc { color:var(--ink-2); font-size:15.5px; line-height:1.8; max-width:440px; margin-bottom:18px; }
 .avail {
   display:inline-flex;
   align-items:center;
-  gap:8px;
-  margin-top:20px;
-  font:600 11px var(--mono);
+  gap:10px;
+  margin-top:6px;
+  margin-bottom:24px;
+  font:600 11.5px var(--mono);
   text-transform:uppercase;
   letter-spacing:.08em;
 }
@@ -286,9 +288,9 @@ a { color:inherit; text-decoration:none; }
 }
 .hero-stats-row {
   display:flex;
-  gap:18px;
-  margin-top:26px;
-  padding-top:20px;
+  gap:30px;
+  margin-top:0;
+  padding-top:24px;
   border-top:1px solid var(--line);
 }
 .h-stat b { display:block; font:400 24px/1 var(--display); color:var(--ink); }
@@ -449,7 +451,7 @@ a { color:inherit; text-decoration:none; }
   transition:background .2s, color .2s, border-color .2s, transform .2s;
 }
 .skip-interaction:hover { border-color:var(--ink); color:var(--ink); transform:translateY(-1px); }
-.intro-skip { margin-top:14px; }
+.intro-skip { margin-top:22px; padding:7px 16px; font-size:10px; }
 
 /* Editorial Paper Pointer Card & Gentle Soothing Arrow pointing to head */
 .bubble {
@@ -820,8 +822,8 @@ a { color:inherit; text-decoration:none; }
   list-style:none;
   display:flex;
   flex-direction:column;
-  gap:8px;
-  margin-bottom:20px;
+  gap:14px;
+  margin-bottom:24px;
 }
 .manifesto-item {
   display:flex;
@@ -883,7 +885,7 @@ a { color:inherit; text-decoration:none; }
   letter-spacing:.02em;
   color:var(--ink-2);
   margin-bottom:20px;
-  padding:12px 16px;
+  padding:14px 18px;
   background:var(--ghost);
   border-left:3px solid var(--accent);
   border-radius:0 8px 8px 0;
@@ -3381,17 +3383,17 @@ footer {
     </div>
 
     <nav class="nav">
-      <a href="#story-chronicles">Story</a>
-      <span class="nav-dot">✦</span>
       <a href="#about">About</a>
       <span class="nav-dot">✦</span>
       <a href="#work">Work</a>
       <span class="nav-dot">✦</span>
-      <a href="#achievements">Achievements</a>
-      <span class="nav-dot">✦</span>
       <a href="#experience">Experience</a>
       <span class="nav-dot">✦</span>
+      <a href="#achievements">Achievements</a>
+      <span class="nav-dot">✦</span>
       <a href="#skills">Skills</a>
+      <span class="nav-dot">✦</span>
+      <a href="#story-chronicles">Story</a>
     </nav>
 
     <div class="status-badge" title="Live Saigon Time (GMT+7)">
@@ -3403,12 +3405,12 @@ footer {
     <details class="mobile-index">
       <summary>Menu <span aria-hidden="true">+</span></summary>
       <nav aria-label="Page index">
-        <a href="#story-chronicles"><span>01</span> Story Chronicles</a>
-        <a href="#about"><span>02</span> Meet Long</a>
-        <a href="#work"><span>03</span> Work &amp; Case Studies</a>
+        <a href="#about"><span>01</span> Meet Long</a>
+        <a href="#work"><span>02</span> Work &amp; Case Studies</a>
+        <a href="#experience"><span>03</span> Experience</a>
         <a href="#achievements"><span>04</span> Certifications</a>
-        <a href="#experience"><span>05</span> Experience</a>
-        <a href="#skills"><span>06</span> Toolbox</a>
+        <a href="#skills"><span>05</span> Toolbox</a>
+        <a href="#story-chronicles"><span>06</span> Story Chronicles</a>
         <a href="#contact"><span>07</span> Contact &amp; Let's talk ↗</a>
       </nav>
     </details>
@@ -3417,871 +3419,6 @@ footer {
 </header>
 
 <main>
-<div class="wrap">
-  <!-- COLD OPEN: EDITORIAL STORY INVITATION (CALIF.IO / PHP2SHELL STYLE) -->
-  <section class="cold-open rv" aria-labelledby="storyOpening">
-    <h1 id="storyOpening">
-      <span class="kicker">CHRONICLES OF A BACKEND ENGINEER:</span>
-      A tale of <em>high concurrency</em>, the <em>120s SQL heist</em> &amp; the pursuit of <em>resilient systems</em>
-    </h1>
-    <p class="press-coverage">
-      Engineered for high throughput and public sector reliability at
-      <a href="#the-high-throughput">FTEL (FPT Telecom)</a>,
-      <a href="#the-120s-heist">GTEL OTS</a>, and
-      <a href="#the-crypt">IO STREAM</a>
-    </p>
-    <p class="invitation">
-      "To understand how I design distributed systems, optimize sub-second database pipelines, and enforce zero-downtime microservices today, join me on an illustrated journey through time..."
-    </p>
-    <nav class="shortcuts" aria-label="Start reading chronicle">
-      <a href="#the-origin">Begin in 2021 ↓</a>
-      <a href="#the-120s-heist">The 120s SQL Heist ↓</a>
-      <a href="#the-high-throughput">2026 Telecom Scale ↓</a>
-      <a href="#the-gatekeepers">Verified Credentials ↘</a>
-      <a href="#work">Technical Blueprint ↘</a>
-    </nav>
-  </section>
-</div>
-
-<!-- COMIC CHRONICLES: ILLUSTRATED CHAPTER JOURNEY (FULL WIDTH DARK THEME) -->
-<section class="comic-chronicles" id="story-chronicles" data-mode="story" aria-label="An illustrated journey through engineering history">
-  <!-- STICKY READER TOOLBAR -->
-  <div class="reader-toolbar">
-    <div class="reader-toolbar-inner">
-      <nav class="era-links" aria-label="Comic chapters navigation">
-        <a href="#the-origin" class="active" data-chapter="the-origin">2021 The Origin</a>
-        <a href="#the-crypt" data-chapter="the-crypt">2023 Desktop Crypt</a>
-        <a href="#the-120s-heist" data-chapter="the-120s-heist">2024 The 120s Heist</a>
-        <a href="#the-high-throughput" data-chapter="the-high-throughput">2026 Telecom Scale</a>
-        <a href="#the-gatekeepers" data-chapter="the-gatekeepers">2026 Gatekeepers</a>
-      </nav>
-      <div class="reader-mode" role="group" aria-label="Comic reading mode">
-        <button type="button" class="mode-btn active" id="btnStoryMode" data-mode="story" aria-pressed="true">Illustrated Story</button>
-        <button type="button" class="mode-btn" id="btnLogMode" data-mode="blueprint" aria-pressed="false">Technical Log</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- CHAPTER 01: 2021 -->
-  <article class="story-chapter" id="the-origin" aria-labelledby="ch1-heading">
-    <div class="chapter-heading">
-      <h2 id="ch1-heading"><span>2021 — 2025</span>Chapter 01: The Origin &amp; Academic Foundation</h2>
-      <small>1 / 5</small>
-    </div>
-    <div class="chapter-description">
-      <p>
-        The journey began in Ho Chi Minh City in 2021. Long before multi-node Kubernetes clusters or distributed gRPC streams, the foundation was built on rigorous computer science fundamentals: algorithm complexity, memory locality, tree traversal, and the daily Saigon phin coffee ritual. Four years of engineering at <strong>Ho Chi Minh City Open University</strong> culminated in graduating with Good honors and receiving the prestigious <strong>Academic Excellence Scholarship</strong>.
-      </p>
-    </div>
-    <div class="panel-layout">
-      <div class="comic-panel">
-        <div class="panel-art-wrap">
-          <span class="panel-badge">SAIGON · 07:30 AM</span>
-          <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="ch1Grid" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M 16 0 L 0 0 0 16" fill="none" stroke="#252822" stroke-width="0.8"/></pattern>
-              <linearGradient id="cGlassGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2A2D25"/><stop offset="100%" stop-color="#121310"/></linearGradient>
-              <linearGradient id="cEspressoGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#4A2E18"/><stop offset="100%" stop-color="#241408"/></linearGradient>
-              <linearGradient id="cMilkGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FFF4DD"/><stop offset="100%" stop-color="#E1BF86"/></linearGradient>
-            </defs>
-            <rect width="320" height="180" fill="url(#ch1Grid)"/>
-            <path d="M12 24 L12 12 L24 12 M308 24 L308 12 L296 12 M12 156 L12 168 L24 168 M308 156 L308 168 L296 168" stroke="#D4A359" stroke-width="1.2" opacity="0.6"/>
-            <!-- Telemetry readout right side -->
-            <text x="186" y="44" font-size="8.5" font-family="monospace" font-weight="bold" fill="#D4A359" letter-spacing="1">KERNEL: SAIGON//07:30</text>
-            <text x="186" y="60" font-size="7.5" font-family="monospace" fill="#888">EXTRACTION : 60 DPM</text>
-            <text x="186" y="74" font-size="7.5" font-family="monospace" fill="#888">BUFFER     : HOT ESPRESSO</text>
-            <text x="186" y="88" font-size="7.5" font-family="monospace" fill="#2FA36B">INITIALIZE : OK (0.04s)</text>
-            <text x="186" y="102" font-size="7.5" font-family="monospace" fill="#888">INPUT      : ROBUSTA 100%</text>
-            <line x1="186" y1="110" x2="295" y2="110" stroke="#363630" stroke-width="1"/>
-            <text x="186" y="124" font-size="7" font-family="monospace" fill="#D4A359">CONCURRENCY BRAIN READY</text>
-            <!-- Glass -->
-            <path d="M72 70 L82 156 Q84 164 94 164 L122 164 Q132 164 134 156 L144 70 Z" fill="url(#cGlassGrad)" stroke="#D4A359" stroke-width="1.8"/>
-            <path d="M85 142 L88 162 L128 162 L131 142 Z" fill="url(#cMilkGrad)"/>
-            <path d="M77 86 L85 142 L131 142 L139 86 Z" fill="url(#cEspressoGrad)"/>
-            <rect x="90" y="96" width="16" height="16" rx="3" fill="#3D453C" opacity="0.75" stroke="#2FA36B" stroke-width="0.8"/>
-            <rect x="110" y="106" width="16" height="16" rx="3" fill="#3D453C" opacity="0.75" stroke="#2FA36B" stroke-width="0.8"/>
-            <!-- Phin Saucer plate -->
-            <rect x="62" y="62" width="92" height="7" rx="2" fill="#20221E" stroke="#D4A359" stroke-width="1.5"/>
-            <!-- Phin Chamber -->
-            <path d="M76 22 L140 22 L134 62 L82 62 Z" fill="#272A24" stroke="#D4A359" stroke-width="1.8"/>
-            <!-- Phin Lid & Knob -->
-            <path d="M72 22 Q108 14 144 22 Z" fill="#363630" stroke="#D4A359" stroke-width="1.5"/>
-            <circle cx="108" cy="14" r="4.5" fill="#D4A359"/>
-            <path d="M100 10 Q98 2 104 -4 Q110 -10 106 -16" stroke="#E4472C" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.7"/>
-            <path d="M116 10 Q120 2 114 -4 Q108 -10 112 -16" stroke="#E4472C" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.7"/>
-            <!-- Drip bead -->
-            <circle cx="108" cy="67" r="2.2" fill="#D4A359"><animate attributeName="cy" values="67;86" dur="1.2s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0" dur="1.2s" repeatCount="indefinite"/></circle>
-            <ellipse cx="108" cy="86" rx="16" ry="2.5" fill="none" stroke="#D4A359" stroke-width="0.8"><animate attributeName="rx" values="3;16" dur="1.2s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0" dur="1.2s" repeatCount="indefinite"/></ellipse>
-          </svg>
-          <span class="panel-stamp">CAFFEINE COMPILER</span>
-        </div>
-        <p class="panel-caption">Before any service warms up, the phin brews. Saigon iced milk coffee isn't just a drink—it's the mental compiler for high-concurrency thinking.</p>
-        <div class="panel-dialogue">"1 drop = 100 requests per second."</div>
-      </div>
-
-      <div class="comic-panel">
-        <div class="panel-art-wrap">
-          <span class="panel-badge">CS LAB · MEMORY &amp; TREES</span>
-          <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="ch1TreeGrid" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M 16 0 L 0 0 0 16" fill="none" stroke="#252822" stroke-width="0.8"/></pattern>
-            </defs>
-            <rect width="320" height="180" fill="url(#ch1TreeGrid)"/>
-            <path d="M12 24 L12 12 L24 12 M308 24 L308 12 L296 12 M12 156 L12 168 L24 168 M308 156 L308 168 L296 168" stroke="#2FA36B" stroke-width="1.2" opacity="0.6"/>
-            <!-- Left Memory Layout matrix -->
-            <rect x="22" y="30" width="80" height="116" rx="4" fill="#181A16" stroke="#363630" stroke-width="1.2"/>
-            <text x="30" y="44" font-size="7.5" font-family="monospace" fill="#D4A359" font-weight="bold">HEAP / RAM</text>
-            <rect x="28" y="52" width="68" height="14" rx="2" fill="#20221E" stroke="#2FA36B" stroke-width="0.8"/>
-            <text x="32" y="62" font-size="6.5" font-family="monospace" fill="#2FA36B">0x7F · ROOT</text>
-            <rect x="28" y="70" width="68" height="14" rx="2" fill="#20221E" stroke="#363630" stroke-width="0.8"/>
-            <text x="32" y="80" font-size="6.5" font-family="monospace" fill="#888">0x8C · LEFT</text>
-            <rect x="28" y="88" width="68" height="14" rx="2" fill="#20221E" stroke="#363630" stroke-width="0.8"/>
-            <text x="32" y="98" font-size="6.5" font-family="monospace" fill="#888">0x9A · RIGHT</text>
-            <rect x="28" y="106" width="68" height="14" rx="2" fill="#20221E" stroke="#E4472C" stroke-width="0.8"/>
-            <text x="32" y="116" font-size="6.5" font-family="monospace" fill="#E4472C">0xB4 · LEAF</text>
-            <text x="30" y="136" font-size="6.5" font-family="monospace" fill="#2FA36B">ALIGN: 64-BYTE</text>
-            <!-- Right Tree Hierarchy -->
-            <line x1="210" y1="46" x2="160" y2="86" stroke="#2FA36B" stroke-width="1.6"/>
-            <line x1="210" y1="46" x2="260" y2="86" stroke="#D4A359" stroke-width="1.6"/>
-            <line x1="160" y1="86" x2="135" y2="132" stroke="#2FA36B" stroke-width="1.4"/>
-            <line x1="160" y1="86" x2="185" y2="132" stroke="#363630" stroke-width="1.4"/>
-            <line x1="260" y1="86" x2="235" y2="132" stroke="#363630" stroke-width="1.4"/>
-            <line x1="260" y1="86" x2="285" y2="132" stroke="#D4A359" stroke-width="1.4"/>
-            <!-- Pulsing traversal packet -->
-            <circle cx="210" cy="46" r="3.5" fill="#FFF"><animateMotion path="M0,0 L-50,40 L-75,86" dur="2s" repeatCount="indefinite"/></circle>
-            <!-- Nodes -->
-            <circle cx="210" cy="46" r="14" fill="#1C2E20" stroke="#2FA36B" stroke-width="2"/>
-            <text x="210" y="50" font-size="8.5" font-family="monospace" font-weight="bold" fill="#FFF" text-anchor="middle">50</text>
-            <circle cx="160" cy="86" r="12" fill="#1C2E20" stroke="#2FA36B" stroke-width="1.8"/>
-            <text x="160" y="90" font-size="8" font-family="monospace" font-weight="bold" fill="#FFF" text-anchor="middle">25</text>
-            <circle cx="260" cy="86" r="12" fill="#20221E" stroke="#D4A359" stroke-width="1.8"/>
-            <text x="260" y="90" font-size="8" font-family="monospace" font-weight="bold" fill="#FFF" text-anchor="middle">75</text>
-            <circle cx="135" cy="132" r="10" fill="#2E1C1A" stroke="#E4472C" stroke-width="1.8"/>
-            <text x="135" y="135.5" font-size="7.5" font-family="monospace" font-weight="bold" fill="#FFF" text-anchor="middle">12</text>
-            <circle cx="185" cy="132" r="10" fill="#20221E" stroke="#363630" stroke-width="1.4"/>
-            <text x="185" y="135.5" font-size="7.5" font-family="monospace" fill="#888" text-anchor="middle">38</text>
-            <circle cx="235" cy="132" r="10" fill="#20221E" stroke="#363630" stroke-width="1.4"/>
-            <text x="235" y="135.5" font-size="7.5" font-family="monospace" fill="#888" text-anchor="middle">62</text>
-            <circle cx="285" cy="132" r="10" fill="#272A24" stroke="#D4A359" stroke-width="1.4"/>
-            <text x="285" y="135.5" font-size="7.5" font-family="monospace" fill="#FFF" text-anchor="middle">90</text>
-            <rect x="135" y="152" width="150" height="16" rx="3" fill="#141613" stroke="#2FA36B" stroke-width="1"/>
-            <text x="210" y="163" font-size="7" font-family="monospace" fill="#2FA36B" font-weight="bold" text-anchor="middle">COMPLEXITY: O(log N) · BALANCED</text>
-          </svg>
-          <span class="panel-stamp">ALGORITHM MERIT</span>
-        </div>
-        <p class="panel-caption">Mastering relational database internal trees, memory pointers, operating system threads, and algorithmic efficiency from the ground up.</p>
-        <div class="panel-dialogue">"Theoretical rigor makes production debugging intuitive."</div>
-      </div>
-
-      <div class="comic-panel">
-        <div class="panel-art-wrap">
-          <span class="panel-badge">HCMCOU · DEGREE &amp; SCHOLARSHIP</span>
-          <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="ch1HcmcouGrid" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M 16 0 L 0 0 0 16" fill="none" stroke="#252822" stroke-width="0.8"/></pattern>
-              <linearGradient id="goldDiplomaGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#D4A359"/><stop offset="50%" stop-color="#FFF2D6"/><stop offset="100%" stop-color="#9E7332"/></linearGradient>
-            </defs>
-            <rect width="320" height="180" fill="url(#ch1HcmcouGrid)"/>
-            <path d="M12 24 L12 12 L24 12 M308 24 L308 12 L296 12 M12 156 L12 168 L24 168 M308 156 L308 168 L296 168" stroke="#D4A359" stroke-width="1.2" opacity="0.6"/>
-            <!-- Ornate Diploma certificate parchment frame -->
-            <rect x="30" y="20" width="260" height="140" rx="6" fill="#161814" stroke="url(#goldDiplomaGrad)" stroke-width="2"/>
-            <rect x="36" y="26" width="248" height="128" rx="4" fill="#1C1E1A" stroke="#363630" stroke-width="1" stroke-dasharray="3 3"/>
-            <!-- Center Seal / Laurel Emblem -->
-            <circle cx="160" cy="62" r="24" fill="#252822" stroke="url(#goldDiplomaGrad)" stroke-width="2"/>
-            <!-- Star in seal -->
-            <polygon points="160,46 164,56 174,58 166,65 168,76 160,70 152,76 154,65 146,58 156,56" fill="url(#goldDiplomaGrad)"/>
-            <!-- University & Degree details -->
-            <text x="160" y="100" font-size="10" font-family="monospace" font-weight="900" fill="#FFF" text-anchor="middle" letter-spacing="1">B.ENG INFORMATION TECHNOLOGY</text>
-            <text x="160" y="114" font-size="8" font-family="monospace" fill="#D4A359" text-anchor="middle">HO CHI MINH CITY OPEN UNIVERSITY</text>
-            <text x="160" y="126" font-size="7.5" font-family="monospace" fill="#2FA36B" text-anchor="middle" font-weight="bold">DEGREE CLASSIFICATION: GOOD · 2021 — 2025</text>
-            <!-- Scholarship Ribbon Banner -->
-            <rect x="68" y="134" width="184" height="14" rx="3" fill="#E4472C"/>
-            <text x="160" y="144" font-size="7" font-family="monospace" font-weight="900" fill="#FFF" text-anchor="middle" letter-spacing="0.5">★ ACADEMIC EXCELLENCE SCHOLARSHIP AWARDEE ★</text>
-          </svg>
-          <span class="panel-stamp">TOP HONORS</span>
-        </div>
-        <p class="panel-caption">Awarded the Academic Excellence Scholarship and graduated with a B.Eng in Information Technology (Grade: Good, 2021 — 2025).</p>
-        <div class="panel-dialogue">"Recognized for top-tier academic dedication."</div>
-      </div>
-    </div>
-    <details class="story-transcript">
-      <summary>▶ Read the technical log &amp; academic context</summary>
-      <div class="transcript-body">
-        <p><strong>Curriculum Core:</strong> Algorithmic analysis, relational database normalization, concurrency synchronization primitives, network socket programming, and software engineering architecture.</p>
-        <p><strong>Key Artifacts:</strong> Academic Excellence Scholarship (Jan 2025), B.Eng Degree in IT (Sep 2025). The rigorous foundation in B-trees, hashing strategies, and memory layouts later became the decisive weapon in solving Oracle query bottlenecks and tuning Kafka partition streaming in production.</p>
-      </div>
-    </details>
-  </article>
-
-  <!-- CHAPTER 02: 2023 -->
-  <article class="story-chapter" id="the-crypt" aria-labelledby="ch2-heading">
-    <div class="chapter-heading">
-      <h2 id="ch2-heading"><span>Oct 2023 — Jan 2024</span>Chapter 02: The Cryptographic Vault</h2>
-      <small>2 / 5</small>
-    </div>
-    <div class="chapter-description">
-      <p>
-        In late 2023, classroom theory met commercial software at <strong>IO STREAM</strong>. Tasked with crafting Windows desktop solutions utilizing <strong>C# and WinUI 3</strong>, the mission centered on local file security: designing cryptographic file encryption utilities, asynchronous multi-chunk downloaders, and multithreaded pipelines that never locked the user interface.
-      </p>
-    </div>
-    <div class="panel-layout">
-      <div class="comic-panel">
-        <div class="panel-art-wrap">
-          <span class="panel-badge">IO STREAM · WINUI 3</span>
-          <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="ch2WinGrid" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M 16 0 L 0 0 0 16" fill="none" stroke="#252822" stroke-width="0.8"/></pattern>
-              <linearGradient id="winGlassGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#232620"/><stop offset="100%" stop-color="#121310"/></linearGradient>
-            </defs>
-            <rect width="320" height="180" fill="url(#ch2WinGrid)"/>
-            <path d="M12 24 L12 12 L24 12 M308 24 L308 12 L296 12 M12 156 L12 168 L24 168 M308 156 L308 168 L296 168" stroke="#D4A359" stroke-width="1.2" opacity="0.6"/>
-            <rect x="26" y="24" width="268" height="136" rx="8" fill="url(#winGlassGrad)" stroke="#363630" stroke-width="1.5"/>
-            <path d="M26 32 Q26 24 34 24 L286 24 Q294 24 294 32 L294 44 L26 44 Z" fill="#1C1E1A"/>
-            <circle cx="42" cy="34" r="3.5" fill="#E4472C"/>
-            <circle cx="53" cy="34" r="3.5" fill="#D4A359"/>
-            <circle cx="64" cy="34" r="3.5" fill="#2FA36B"/>
-            <text x="160" y="37" font-size="7.5" font-family="monospace" fill="#888" text-anchor="middle">IoStream.Security.WinUI — ThreadPool: 8 Cores</text>
-            <rect x="40" y="54" width="240" height="18" rx="3" fill="#181A15" stroke="#2FA36B" stroke-width="0.8"/>
-            <text x="50" y="66" font-size="7.5" font-family="monospace" fill="#2FA36B" font-weight="bold">UI THREAD: 60.0 FPS · DISPATCHER OK</text>
-            <text x="235" y="66" font-size="7" font-family="monospace" fill="#D4A359">JANK: 0ms</text>
-            <text x="40" y="86" font-size="7" font-family="monospace" fill="#AAA">ASYNC WORKER #1 [AES-256 ENCRYPT]</text>
-            <rect x="40" y="92" width="240" height="8" rx="2" fill="#20221E"/>
-            <rect x="40" y="92" width="220" height="8" rx="2" fill="#2FA36B"/>
-            <text x="264" y="99" font-size="6.5" font-family="monospace" fill="#FFF">92%</text>
-            <text x="40" y="114" font-size="7" font-family="monospace" fill="#AAA">ASYNC WORKER #2 [PARALLEL CHUNK DOWNLOADER]</text>
-            <rect x="40" y="120" width="240" height="8" rx="2" fill="#20221E"/>
-            <rect x="40" y="120" width="186" height="8" rx="2" fill="#D4A359"/>
-            <text x="230" y="127" font-size="6.5" font-family="monospace" fill="#FFF">78%</text>
-            <rect x="40" y="136" width="240" height="14" rx="2" fill="#141513"/>
-            <text x="48" y="146" font-size="6.5" font-family="monospace" fill="#2FA36B">● DISPATCHERQUEUE: ASYNC/AWAIT NON-BLOCKING</text>
-          </svg>
-          <span class="panel-stamp">SMOOTH UI</span>
-        </div>
-        <p class="panel-caption">Engineered Windows desktop client software with WinUI 3. Decoupling computational tasks from the UI thread to guarantee zero frame stutter.</p>
-        <div class="panel-dialogue">"Technology should eliminate manual friction for users."</div>
-      </div>
-
-      <div class="comic-panel">
-        <div class="panel-art-wrap">
-          <span class="panel-badge">SECURITY · AES CIPHER</span>
-          <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="ch2AesGrid" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M 16 0 L 0 0 0 16" fill="none" stroke="#252822" stroke-width="0.8"/></pattern>
-              <linearGradient id="aesLaserGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#2FA36B" stop-opacity="0"/><stop offset="50%" stop-color="#2FA36B"/><stop offset="100%" stop-color="#2FA36B" stop-opacity="0"/></linearGradient>
-            </defs>
-            <rect width="320" height="180" fill="url(#ch2AesGrid)"/>
-            <path d="M12 24 L12 12 L24 12 M308 24 L308 12 L296 12 M12 156 L12 168 L24 168 M308 156 L308 168 L296 168" stroke="#D4A359" stroke-width="1.2" opacity="0.6"/>
-            <circle cx="160" cy="86" r="66" stroke="#363630" stroke-width="1.2" stroke-dasharray="4 4"/>
-            <circle cx="160" cy="86" r="50" stroke="#D4A359" stroke-width="1.6" stroke-dasharray="8 6"/>
-            <circle cx="160" cy="86" r="36" stroke="#2FA36B" stroke-width="1.8"/>
-            <polygon points="160,62 178,72 178,98 160,108 142,98 142,72" fill="#20221E" stroke="#D4A359" stroke-width="2"/>
-            <circle cx="160" cy="82" r="5.5" fill="#E4472C"/>
-            <polygon points="157,84 163,84 164,96 156,96" fill="#E4472C"/>
-            <rect x="80" y="85" width="160" height="2" fill="url(#aesLaserGrad)"><animate attributeName="y" values="30;140;30" dur="3s" repeatCount="indefinite"/></rect>
-            <text x="24" y="44" font-size="7" font-family="monospace" fill="#2FA36B">0x7F 0xA4 0x12 0x90</text>
-            <text x="24" y="56" font-size="7" font-family="monospace" fill="#888">IV : 96-BIT RANDOM</text>
-            <text x="24" y="68" font-size="7" font-family="monospace" fill="#D4A359">KEY: 256-BIT SYMMETRIC</text>
-            <text x="220" y="118" font-size="7" font-family="monospace" fill="#2FA36B">AUTH TAG: 128-BIT</text>
-            <text x="220" y="130" font-size="7" font-family="monospace" fill="#888">TAMPER-PROOF : YES</text>
-            <text x="220" y="142" font-size="7" font-family="monospace" fill="#E4472C">NO PLAINTEXT ON DISK</text>
-          </svg>
-          <span class="panel-stamp">AES-256 VAULT</span>
-        </div>
-        <p class="panel-caption">Crafted byte-level cryptographic utilities for local file security, safeguarding customer media and confidential data against inspection.</p>
-        <div class="panel-dialogue">"Integrity and privacy must be baked into the architecture."</div>
-      </div>
-
-      <div class="comic-panel">
-        <div class="panel-art-wrap">
-          <span class="panel-badge">ASYNC · CONCURRENCY</span>
-          <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="ch2ChunkGrid" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M 16 0 L 0 0 0 16" fill="none" stroke="#252822" stroke-width="0.8"/></pattern>
-            </defs>
-            <rect width="320" height="180" fill="url(#ch2ChunkGrid)"/>
-            <path d="M12 24 L12 12 L24 12 M308 24 L308 12 L296 12 M12 156 L12 168 L24 168 M308 156 L308 168 L296 168" stroke="#D4A359" stroke-width="1.2" opacity="0.6"/>
-            <!-- 4 Parallel Streaming Lanes -->
-            <rect x="28" y="28" width="264" height="24" rx="4" fill="#181A15" stroke="#363630" stroke-width="1"/>
-            <text x="36" y="43" font-size="7.5" font-family="monospace" fill="#D4A359">THREAD 01</text>
-            <rect x="100" y="34" width="30" height="12" rx="2" fill="#2FA36B"><animate attributeName="x" values="100;230;100" dur="2.4s" repeatCount="indefinite"/></rect>
-            <text x="248" y="43" font-size="7" font-family="monospace" fill="#2FA36B">CHUNK #1 ✓</text>
-            <rect x="28" y="58" width="264" height="24" rx="4" fill="#181A15" stroke="#363630" stroke-width="1"/>
-            <text x="36" y="73" font-size="7.5" font-family="monospace" fill="#D4A359">THREAD 02</text>
-            <rect x="100" y="64" width="45" height="12" rx="2" fill="#2FA36B"><animate attributeName="x" values="100;220;100" dur="2.8s" begin="0.3s" repeatCount="indefinite"/></rect>
-            <text x="248" y="73" font-size="7" font-family="monospace" fill="#2FA36B">CHUNK #2 ✓</text>
-            <rect x="28" y="88" width="264" height="24" rx="4" fill="#181A15" stroke="#363630" stroke-width="1"/>
-            <text x="36" y="103" font-size="7.5" font-family="monospace" fill="#D4A359">THREAD 03</text>
-            <rect x="100" y="94" width="38" height="12" rx="2" fill="#D4A359"><animate attributeName="x" values="100;215;100" dur="2.1s" begin="0.6s" repeatCount="indefinite"/></rect>
-            <text x="248" y="103" font-size="7" font-family="monospace" fill="#D4A359">CHUNK #3 ↻</text>
-            <rect x="28" y="118" width="264" height="24" rx="4" fill="#181A15" stroke="#363630" stroke-width="1"/>
-            <text x="36" y="133" font-size="7.5" font-family="monospace" fill="#D4A359">THREAD 04</text>
-            <rect x="100" y="124" width="50" height="12" rx="2" fill="#2FA36B"><animate attributeName="x" values="100;225;100" dur="2.6s" begin="0.2s" repeatCount="indefinite"/></rect>
-            <text x="248" y="133" font-size="7" font-family="monospace" fill="#2FA36B">CHUNK #4 ✓</text>
-            <rect x="28" y="148" width="264" height="18" rx="3" fill="#141613" stroke="#2FA36B" stroke-width="1"/>
-            <text x="160" y="160" font-size="7" font-family="monospace" fill="#2FA36B" font-weight="bold" text-anchor="middle">PIPELINE: MULTI-PART STREAM · MD5 CHECKSUM VERIFIED</text>
-          </svg>
-          <span class="panel-stamp">NON-BLOCKING</span>
-        </div>
-        <p class="panel-caption">Built parallel media chunk downloaders using modern C# async/await patterns, bounded thread pools, and cancellation tokens.</p>
-        <div class="panel-dialogue">"Concurrence without race conditions is true craftsmanship."</div>
-      </div>
-    </div>
-    <details class="story-transcript">
-      <summary>▶ Read the technical log &amp; desktop architecture</summary>
-      <div class="transcript-body">
-        <p><strong>Stack &amp; Frameworks:</strong> C#, .NET, WinUI 3, Windows App SDK, Cryptography APIs.</p>
-        <p><strong>Engineering Takeaway:</strong> Learned the intricacies of thread synchronization, byte streams, and memory buffers. Managing local machine resources laid the groundwork for managing cloud container resources in distributed microservices.</p>
-      </div>
-    </details>
-  </article>
-
-  <!-- CHAPTER 03: 2024 - 2026 -->
-  <article class="story-chapter" id="the-120s-heist" aria-labelledby="ch3-heading">
-    <div class="chapter-heading">
-      <h2 id="ch3-heading"><span>Sep 2024 — Sep 2026</span>Chapter 03: The 120s SQL Heist &amp; Distributed Operations</h2>
-      <small>3 / 5</small>
-    </div>
-    <div class="chapter-description">
-      <p>
-        In September 2024, the engineering scope expanded to high-throughput scale at <strong>GTEL OTS</strong>. Over two intense years, I architected and operated Spring Boot microservices powering three mission-critical platforms: a <em>Real-Time Operations &amp; Dispatch Engine</em>, an <em>Enterprise Notification Platform</em>, and a <em>Smart City Edge Vision Ingestion System</em>.
-      </p>
-      <p>
-        Then arrived the production bottleneck: a 1,000,000-record query was freezing the operations dashboard at 120 seconds. Rather than demanding expensive cloud scaling, I dove into the Oracle execution plan. One redundant filter eliminated: <strong>120 seconds plummeted to 0.4 seconds — a ~300× performance breakthrough</strong> on the exact same server!
-      </p>
-    </div>
-        <div class="panel-layout">
-      <div class="comic-panel">
-        <div class="panel-art-wrap">
-          <span class="panel-badge">PRODUCTION ALERT · 120 SECONDS</span>
-          <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="ch3p1Grid" width="16" height="16" patternUnits="userSpaceOnUse">
-                <path d="M 16 0 L 0 0 0 16" fill="none" stroke="#252822" stroke-width="0.8"/>
-              </pattern>
-              <radialGradient id="alertGlow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#E4472C" stop-opacity="0.25"/>
-                <stop offset="100%" stop-color="#E4472C" stop-opacity="0"/>
-              </radialGradient>
-            </defs>
-            <rect width="320" height="180" fill="url(#ch3p1Grid)"/>
-            <path d="M12 24 L12 12 L24 12 M308 24 L308 12 L296 12 M12 156 L12 168 L24 168 M308 156 L308 168 L296 168" stroke="#E4472C" stroke-width="1.2" opacity="0.6"/>
-            <circle cx="160" cy="80" r="58" fill="url(#alertGlow)"/>
-            <circle cx="160" cy="80" r="54" stroke="#E4472C" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.8"/>
-            <circle cx="160" cy="80" r="38" stroke="#363630" stroke-width="1"/>
-            <line x1="160" y1="80" x2="160" y2="44" stroke="#E4472C" stroke-width="3" stroke-linecap="round"/>
-            <line x1="160" y1="80" x2="198" y2="80" stroke="#E4472C" stroke-width="2.5" stroke-linecap="round"/>
-            <circle cx="160" cy="80" r="4.5" fill="#E4472C"/>
-            <circle cx="160" cy="44" r="3" fill="#FFF"><animate attributeName="opacity" values="0.2;1;0.2" dur="0.8s" repeatCount="indefinite"/></circle>
-            <rect x="95" y="104" width="130" height="26" rx="4" fill="#1C1514" stroke="#E4472C" stroke-width="1.2"/>
-            <text x="160" y="121" font-size="13" font-weight="900" font-family="monospace" fill="#E4472C" text-anchor="middle" letter-spacing="1">119.8s TIMEOUT</text>
-            <text x="24" y="38" font-size="7" font-family="monospace" fill="#E4472C" font-weight="bold">! SLA ALERT: BREACH</text>
-            <text x="24" y="50" font-size="6.5" font-family="monospace" fill="#888">ORACLE 19c ENGINE</text>
-            <text x="24" y="62" font-size="6.5" font-family="monospace" fill="#888">POOL: 100% SATURATED</text>
-            <text x="24" y="74" font-size="6.5" font-family="monospace" fill="#E4472C">CPU SPIKE: 99.8%</text>
-            <text x="296" y="38" font-size="7" font-family="monospace" fill="#888" text-anchor="end">QUERY AUTOPSY</text>
-            <text x="296" y="50" font-size="6.5" font-family="monospace" fill="#D4A359" text-anchor="end">ROWS: 1,000,000+</text>
-            <text x="296" y="62" font-size="6.5" font-family="monospace" fill="#E4472C" text-anchor="end">STATUS: HANGING</text>
-            <text x="296" y="74" font-size="6.5" font-family="monospace" fill="#888" text-anchor="end">BUFFER GETS: 1.4M</text>
-            <rect x="24" y="146" width="272" height="18" rx="3" fill="#141513" stroke="#363630" stroke-width="0.8"/>
-            <path d="M 32 155 L 70 155 L 76 149 L 82 161 L 88 152 L 94 158 L 100 155 L 170 155 L 174 148 L 180 162 L 186 155 L 290 155" stroke="#E4472C" stroke-width="1.2" fill="none"/>
-            <text x="200" y="158" font-size="6" font-family="monospace" fill="#E4472C">DASHBOARD UNRESPONSIVE (120s)</text>
-          </svg>
-          <span class="panel-stamp">CRITICAL BOTTLENECK</span>
-        </div>
-        <p class="panel-caption">1,000,000 records. A two-minute query bottleneck was threatening the release of the core operations platform.</p>
-        <div class="panel-dialogue">"Adding hardware won't fix a fundamentally broken execution plan."</div>
-      </div>
-
-      <div class="comic-panel">
-        <div class="panel-art-wrap">
-          <span class="panel-badge">ORACLE · EXPLAIN PLAN ANALYSIS</span>
-          <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="ch3p2Grid" width="16" height="16" patternUnits="userSpaceOnUse">
-                <path d="M 16 0 L 0 0 0 16" fill="none" stroke="#252822" stroke-width="0.8"/>
-              </pattern>
-              <linearGradient id="scanBeam" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#D4A359" stop-opacity="0"/>
-                <stop offset="50%" stop-color="#D4A359" stop-opacity="0.35"/>
-                <stop offset="100%" stop-color="#D4A359" stop-opacity="0"/>
-              </linearGradient>
-            </defs>
-            <rect width="320" height="180" fill="url(#ch3p2Grid)"/>
-            <path d="M12 24 L12 12 L24 12 M308 24 L308 12 L296 12 M12 156 L12 168 L24 168 M308 156 L308 168 L296 168" stroke="#D4A359" stroke-width="1.2" opacity="0.6"/>
-            <rect x="24" y="22" width="272" height="18" rx="3" fill="#1C1E1A" stroke="#363630" stroke-width="0.8"/>
-            <text x="32" y="34" font-size="7" font-family="monospace" fill="#D4A359" font-weight="bold">ORACLE 19c · EXPLAIN PLAN FOR SELECT ...</text>
-            <text x="288" y="34" font-size="6.5" font-family="monospace" fill="#888" text-anchor="end">CBO: ALL_ROWS</text>
-            <rect x="24" y="46" width="272" height="22" rx="3" fill="#161814" stroke="#363630" stroke-width="0.8"/>
-            <text x="32" y="60" font-size="7" font-family="monospace" fill="#EEE">SELECT STATEMENT</text>
-            <text x="170" y="60" font-size="6.5" font-family="monospace" fill="#888">COST: 842,110</text>
-            <text x="240" y="60" font-size="6.5" font-family="monospace" fill="#888">ROWS: 1.05M</text>
-            <rect x="36" y="74" width="260" height="30" rx="3" fill="#241412" stroke="#E4472C" stroke-width="1.2"/>
-            <path d="M 28 68 L 28 89 L 36 89" stroke="#E4472C" stroke-width="1" fill="none"/>
-            <circle cx="46" cy="85" r="3" fill="#E4472C"/>
-            <text x="54" y="87" font-size="7.5" font-family="monospace" fill="#E4472C" font-weight="bold">❌ TABLE ACCESS FULL · AUDIT_RECORDS</text>
-            <text x="54" y="98" font-size="6.5" font-family="monospace" fill="#D4A359">ROOT CAUSE: UNINDEXED PREDICATE + REDUNDANT JOIN</text>
-            <rect x="36" y="74" width="260" height="30" rx="3" fill="url(#scanBeam)"><animate attributeName="opacity" values="0.1;0.6;0.1" dur="2s" repeatCount="indefinite"/></rect>
-            <rect x="36" y="110" width="260" height="28" rx="3" fill="#142218" stroke="#2FA36B" stroke-width="1.2"/>
-            <path d="M 28 89 L 28 124 L 36 124" stroke="#2FA36B" stroke-width="1" fill="none"/>
-            <circle cx="46" cy="120" r="3" fill="#2FA36B"/>
-            <text x="54" y="122" font-size="7.5" font-family="monospace" fill="#2FA36B" font-weight="bold">✓ INDEX RANGE SCAN · IDX_ORG_PARTITION</text>
-            <text x="54" y="132" font-size="6.5" font-family="monospace" fill="#888">COST: 3 · BUFFER GETS: 42 · PRUNED 99.9% PARTITIONS</text>
-            <rect x="24" y="144" width="272" height="20" rx="3" fill="#141513" stroke="#2FA36B" stroke-width="0.8"/>
-            <text x="32" y="157" font-size="6.5" font-family="monospace" fill="#2FA36B" font-weight="bold">DIAGNOSIS: CLAUSE SURGERY + COVERING COMPOSITE INDEX</text>
-            <text x="288" y="157" font-size="6.5" font-family="monospace" fill="#D4A359" text-anchor="end">CBO OPTIMIZED ✓</text>
-          </svg>
-          <span class="panel-stamp">ROOT CAUSE FOUND</span>
-        </div>
-        <p class="panel-caption">Deep query autopsy: An unindexed join condition forced a catastrophic full table scan across partitioned audit logs.</p>
-        <div class="panel-dialogue">"Inspect the indexes, remove redundant clauses, enforce partition pruning."</div>
-      </div>
-
-      <div class="comic-panel">
-        <div class="panel-art-wrap">
-          <span class="panel-badge">OPTIMIZED RESULT · 0.4 SECONDS</span>
-          <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="ch3p3Grid" width="16" height="16" patternUnits="userSpaceOnUse">
-                <path d="M 16 0 L 0 0 0 16" fill="none" stroke="#252822" stroke-width="0.8"/>
-              </pattern>
-              <radialGradient id="speedGlow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#2FA36B" stop-opacity="0.3"/>
-                <stop offset="100%" stop-color="#2FA36B" stop-opacity="0"/>
-              </radialGradient>
-            </defs>
-            <rect width="320" height="180" fill="url(#ch3p3Grid)"/>
-            <path d="M12 24 L12 12 L24 12 M308 24 L308 12 L296 12 M12 156 L12 168 L24 168 M308 156 L308 168 L296 168" stroke="#D4A359" stroke-width="1.2" opacity="0.6"/>
-            <circle cx="160" cy="105" r="68" fill="url(#speedGlow)"/>
-            <path d="M 100 110 A 60 60 0 1 1 220 110" stroke="#262822" stroke-width="8" stroke-linecap="round"/>
-            <path d="M 200 68 A 60 60 0 0 1 220 110" stroke="#E4472C" stroke-width="8" stroke-linecap="round" stroke-dasharray="3 3"/>
-            <path d="M 100 110 A 60 60 0 0 1 160 50" stroke="#2FA36B" stroke-width="8" stroke-linecap="round"/>
-            <line x1="160" y1="110" x2="116" y2="84" stroke="#2FA36B" stroke-width="3.5" stroke-linecap="round">
-              <animateTransform attributeName="transform" type="rotate" from="40 160 110" to="0 160 110" dur="1s" fill="freeze"/>
-            </line>
-            <circle cx="160" cy="110" r="6" fill="#EEE7D7" stroke="#2FA36B" stroke-width="2"/>
-            <text x="160" y="98" font-size="22" font-weight="900" font-family="monospace" fill="#2FA36B" text-anchor="middle">~300×</text>
-            <text x="160" y="124" font-size="7.5" font-family="monospace" fill="#D4A359" text-anchor="middle" font-weight="bold">LATENCY: 0.38s</text>
-            <rect x="24" y="24" width="80" height="34" rx="3" fill="#1C1514" stroke="#E4472C" stroke-width="0.8"/>
-            <text x="32" y="37" font-size="6" font-family="monospace" fill="#888">BEFORE TUNE</text>
-            <text x="32" y="50" font-size="10" font-weight="900" font-family="monospace" fill="#E4472C">120.0s</text>
-            <rect x="216" y="24" width="80" height="34" rx="3" fill="#142218" stroke="#2FA36B" stroke-width="0.8"/>
-            <text x="224" y="37" font-size="6" font-family="monospace" fill="#888">AFTER TUNE</text>
-            <text x="224" y="50" font-size="10" font-weight="900" font-family="monospace" fill="#2FA36B">0.38s ✓</text>
-            <rect x="24" y="146" width="272" height="18" rx="3" fill="#141513" stroke="#2FA36B" stroke-width="0.8"/>
-            <text x="32" y="158" font-size="6.5" font-family="monospace" fill="#2FA36B">BUFFER GETS: 1.4M → 42 (-99.9%)</text>
-            <text x="288" y="158" font-size="6.5" font-family="monospace" fill="#D4A359" text-anchor="end">CLOUD COST INCREASE: bash.00</text>
-          </svg>
-          <span class="panel-stamp">0.4s SPEEDUP</span>
-        </div>
-        <p class="panel-caption">Execution plan transformed: Query response dropped from 120s down to 0.4s. Instantaneous queries without purchasing new hardware.</p>
-        <div class="panel-dialogue">"~300× faster. Zero cloud cost increase."</div>
-      </div>
-
-      <div class="comic-panel">
-        <div class="panel-art-wrap">
-          <span class="panel-badge">10+ SERVICES · 120+ MIGRATIONS</span>
-          <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="ch3p4Grid" width="16" height="16" patternUnits="userSpaceOnUse">
-                <path d="M 16 0 L 0 0 0 16" fill="none" stroke="#252822" stroke-width="0.8"/>
-              </pattern>
-            </defs>
-            <rect width="320" height="180" fill="url(#ch3p4Grid)"/>
-            <path d="M12 24 L12 12 L24 12 M308 24 L308 12 L296 12 M12 156 L12 168 L24 168 M308 156 L308 168 L296 168" stroke="#D4A359" stroke-width="1.2" opacity="0.6"/>
-            <rect x="24" y="68" width="272" height="28" rx="4" fill="#1C1E1A" stroke="#D4A359" stroke-width="1.2"/>
-            <text x="34" y="85" font-size="7.5" font-family="monospace" fill="#D4A359" font-weight="bold">KAFKA CLUSTER EVENT BUS</text>
-            <text x="286" y="85" font-size="6.5" font-family="monospace" fill="#2FA36B" text-anchor="end">10+ TOPICS · ZERO DROP</text>
-            <circle cx="160" cy="82" r="3.5" fill="#2FA36B"><animate attributeName="cx" values="120;250;120" dur="3s" repeatCount="indefinite"/></circle>
-            <circle cx="180" cy="82" r="3" fill="#D4A359"><animate attributeName="cx" values="240;110;240" dur="2.6s" repeatCount="indefinite"/></circle>
-            <rect x="24" y="24" width="76" height="32" rx="3" fill="#181A15" stroke="#363630" stroke-width="1"/>
-            <text x="30" y="37" font-size="6.5" font-family="monospace" fill="#2FA36B" font-weight="bold">CORE-OPS</text>
-            <text x="30" y="48" font-size="5.5" font-family="monospace" fill="#888">SPRING BOOT 3</text>
-            <line x1="62" y1="56" x2="62" y2="68" stroke="#2FA36B" stroke-width="1.2" stroke-dasharray="2 2"/>
-            <rect x="122" y="24" width="76" height="32" rx="3" fill="#181A15" stroke="#363630" stroke-width="1"/>
-            <text x="128" y="37" font-size="6.5" font-family="monospace" fill="#D4A359" font-weight="bold">NOTIFY-ENGINE</text>
-            <text x="128" y="48" font-size="5.5" font-family="monospace" fill="#888">KAFKA / FEIGN</text>
-            <line x1="160" y1="56" x2="160" y2="68" stroke="#D4A359" stroke-width="1.2" stroke-dasharray="2 2"/>
-            <rect x="220" y="24" width="76" height="32" rx="3" fill="#181A15" stroke="#363630" stroke-width="1"/>
-            <text x="226" y="37" font-size="6.5" font-family="monospace" fill="#2FA36B" font-weight="bold">EDGE-INGEST</text>
-            <text x="226" y="48" font-size="5.5" font-family="monospace" fill="#888">gRPC PROTOBUF</text>
-            <line x1="258" y1="56" x2="258" y2="68" stroke="#2FA36B" stroke-width="1.2" stroke-dasharray="2 2"/>
-            <rect x="24" y="110" width="272" height="48" rx="4" fill="#151713" stroke="#2FA36B" stroke-width="1"/>
-            <text x="34" y="124" font-size="7" font-family="monospace" fill="#2FA36B" font-weight="bold">FLYWAY PIPELINE: 120+ MIGRATIONS (ZERO-LOCK DDL)</text>
-            <line x1="34" y1="136" x2="286" y2="136" stroke="#363630" stroke-width="2"/>
-            <circle cx="50" cy="136" r="4" fill="#2FA36B"/>
-            <circle cx="100" cy="136" r="4" fill="#2FA36B"/>
-            <circle cx="160" cy="136" r="4" fill="#2FA36B"/>
-            <circle cx="220" cy="136" r="4" fill="#2FA36B"/>
-            <circle cx="270" cy="136" r="5" fill="#D4A359"/>
-            <text x="50" y="150" font-size="5.5" font-family="monospace" fill="#888" text-anchor="middle">V01</text>
-            <text x="100" y="150" font-size="5.5" font-family="monospace" fill="#888" text-anchor="middle">V42</text>
-            <text x="160" y="150" font-size="5.5" font-family="monospace" fill="#888" text-anchor="middle">V88</text>
-            <text x="220" y="150" font-size="5.5" font-family="monospace" fill="#888" text-anchor="middle">V115</text>
-            <text x="270" y="150" font-size="5.5" font-family="monospace" fill="#D4A359" text-anchor="middle" font-weight="bold">V120+ ✓</text>
-          </svg>
-          <span class="panel-stamp">ZERO DOWNTIME</span>
-        </div>
-        <p class="panel-caption">Authored 120+ Flyway zero-downtime database migrations and architected shared gRPC/Feign contract libraries across 10+ distributed microservices.</p>
-        <div class="panel-dialogue">"Contracts enforce microservice order. Migrations safeguard state."</div>
-      </div>
-    </div>
-    <details class="story-transcript">
-      <summary>▶ Read technical architecture specifications</summary>
-      <div class="transcript-body">
-        <p><strong>Architecture Pattern:</strong> Event-Driven Architecture (EDA) &amp; Microservices with typed Protobuf/gRPC contracts.</p>
-        <p><strong>Core Stack:</strong> Java 17/21, Spring Boot 3, Oracle 19c, Apache Kafka, Redis, Elasticsearch, Docker/K8s.</p>
-        <p><strong>Key Milestones:</strong> 120+ zero-downtime Flyway migrations, sub-second query tuning via execution plan optimization, shared Feign/gRPC libraries across 10+ internal services, automated test safety via JUnit 5 &amp; Spock.</p>
-      </div>
-    </details>
-  </article>
-
-  <!-- CHAPTER 04: 2026 - PRESENT -->
-    <article class="story-chapter" id="the-high-throughput" aria-labelledby="ch4-heading">
-    <div class="chapter-heading">
-      <h2 id="ch4-heading"><span>Oct 2026 — Present</span>Chapter 04: Telecommunication Scale &amp; Production Hardening</h2>
-      <small>4 / 5</small>
-    </div>
-    <div class="chapter-description">
-      <p>
-        In late 2026, the engineering horizon expanded into large-scale telecommunications at <strong>FTel (FPT Telecom)</strong>. Stepping into high-throughput ecosystem operations, the focus shifted from greenfield development to enterprise platform hardening and high-availability architecture.
-      </p>
-      <p>
-        At telecommunication scale, stability is paramount. My operational responsibility centers on platform reliability: operating and hardening distributed Spring Boot microservices, building comprehensive end-to-end integration safety harnesses, and enforcing strict service-level agreements (SLAs) with <strong>100% production uptime and zero service disruption</strong>.
-      </p>
-    </div>
-    <div class="panel-layout">
-      <!-- Panel 1 -->
-      <div class="comic-panel">
-        <div class="panel-art-wrap">
-          <span class="panel-badge">TELECOM INFRASTRUCTURE · ARCHITECTURE NEXUS</span>
-          <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="ch4p1Grid" width="16" height="16" patternUnits="userSpaceOnUse">
-                <path d="M 16 0 L 0 0 0 16" fill="none" stroke="#252822" stroke-width="0.8"/>
-              </pattern>
-              <radialGradient id="allianceGlow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#D4A359" stop-opacity="0.2"/>
-                <stop offset="100%" stop-color="#D4A359" stop-opacity="0"/>
-              </radialGradient>
-            </defs>
-            <rect width="320" height="180" fill="url(#ch4p1Grid)"/>
-            <path d="M12 24 L12 12 L24 12 M308 24 L308 12 L296 12 M12 156 L12 168 L24 168 M308 156 L308 168 L296 168" stroke="#D4A359" stroke-width="1.2" opacity="0.6"/>
-            <circle cx="160" cy="85" r="62" fill="url(#allianceGlow)"/>
-            <polygon points="160,28 206,54 206,108 160,134 114,108 114,54" stroke="#D4A359" stroke-width="1.8" fill="#1C1E1A"/>
-            <polygon points="160,38 196,59 196,103 160,124 124,103 124,59" stroke="#363630" stroke-width="1" fill="#141513"/>
-            <!-- Distributed Service Mesh Nodes -->
-            <circle cx="160" cy="81" r="16" fill="#20221E" stroke="#2FA36B" stroke-width="1.5"/>
-            <circle cx="160" cy="81" r="5" fill="#2FA36B"/>
-            <line x1="160" y1="65" x2="160" y2="46" stroke="#2FA36B" stroke-width="1.2"/>
-            <circle cx="160" cy="46" r="3" fill="#2FA36B"/>
-            <line x1="174" y1="89" x2="190" y2="98" stroke="#D4A359" stroke-width="1.2"/>
-            <circle cx="190" cy="98" r="3" fill="#D4A359"/>
-            <line x1="146" y1="89" x2="130" y2="98" stroke="#D4A359" stroke-width="1.2"/>
-            <circle cx="130" cy="98" r="3" fill="#D4A359"/>
-            <line x1="174" y1="73" x2="190" y2="64" stroke="#D4A359" stroke-width="1.2"/>
-            <circle cx="190" cy="64" r="3" fill="#D4A359"/>
-            <line x1="146" y1="73" x2="130" y2="64" stroke="#D4A359" stroke-width="1.2"/>
-            <circle cx="130" cy="64" r="3" fill="#D4A359"/>
-            <circle cx="160" cy="81" r="48" stroke="#2FA36B" stroke-width="1" stroke-dasharray="4 4"><animateTransform attributeName="transform" type="rotate" from="0 160 81" to="360 160 81" dur="18s" repeatCount="indefinite"/></circle>
-            <rect x="24" y="32" width="76" height="28" rx="3" fill="#181A15" stroke="#363630" stroke-width="0.8"/>
-            <text x="30" y="44" font-size="6" font-family="monospace" fill="#888">ARCHITECTURE</text>
-            <text x="30" y="54" font-size="7.5" font-weight="bold" font-family="monospace" fill="#D4A359">CORE MESH</text>
-            <rect x="220" y="32" width="76" height="28" rx="3" fill="#181A15" stroke="#363630" stroke-width="0.8"/>
-            <text x="226" y="44" font-size="6" font-family="monospace" fill="#888">ECOSYSTEM</text>
-            <text x="226" y="54" font-size="7.5" font-weight="bold" font-family="monospace" fill="#2FA36B">FTEL SCALE</text>
-            <rect x="24" y="146" width="272" height="18" rx="3" fill="#141513" stroke="#D4A359" stroke-width="0.8"/>
-            <text x="160" y="158" font-size="7" font-family="monospace" fill="#D4A359" font-weight="bold" text-anchor="middle">HIGH-AVAILABILITY CLUSTER · DISTRIBUTED ARCHITECTURE · ZERO DISRUPTION</text>
-          </svg>
-          <span class="panel-stamp">TELECOM SCALE</span>
-        </div>
-        <p class="panel-caption">Expanding engineering scope to high-throughput telecommunication platforms, architecting reliable distributed services at scale.</p>
-        <div class="panel-dialogue">"High-throughput telecom systems demand absolute architectural discipline."</div>
-      </div>
-
-      <!-- Panel 2 -->
-      <div class="comic-panel">
-        <div class="panel-art-wrap">
-          <span class="panel-badge">PRODUCTION HARDENING · VERIFIED QUALITY</span>
-          <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="ch4p2Grid" width="16" height="16" patternUnits="userSpaceOnUse">
-                <path d="M 16 0 L 0 0 0 16" fill="none" stroke="#252822" stroke-width="0.8"/>
-              </pattern>
-              <radialGradient id="acceptGlow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#2FA36B" stop-opacity="0.2"/>
-                <stop offset="100%" stop-color="#2FA36B" stop-opacity="0"/>
-              </radialGradient>
-            </defs>
-            <rect width="320" height="180" fill="url(#ch4p2Grid)"/>
-            <path d="M12 24 L12 12 L24 12 M308 24 L308 12 L296 12 M12 156 L12 168 L24 168 M308 156 L308 168 L296 168" stroke="#D4A359" stroke-width="1.2" opacity="0.6"/>
-            <rect x="24" y="22" width="194" height="142" rx="5" fill="#181A15" stroke="#363630" stroke-width="1.2"/>
-            <rect x="24" y="22" width="194" height="22" rx="4" fill="#1E201B"/>
-            <text x="34" y="36" font-size="7.5" font-family="monospace" fill="#D4A359" font-weight="bold">PRODUCTION HARDENING &amp; ASSURANCE SUITE</text>
-            <rect x="34" y="52" width="12" height="12" rx="2" fill="#1A281E" stroke="#2FA36B" stroke-width="1"/>
-            <path d="M 37 58 L 40 61 L 44 55" stroke="#2FA36B" stroke-width="1.4" fill="none"/>
-            <text x="52" y="61" font-size="7" font-family="monospace" fill="#EEE">Core Platform Microservices</text>
-            <text x="180" y="61" font-size="6.5" font-family="monospace" fill="#2FA36B" text-anchor="end">100% OPERATIONAL</text>
-            <rect x="34" y="72" width="12" height="12" rx="2" fill="#1A281E" stroke="#2FA36B" stroke-width="1"/>
-            <path d="M 37 78 L 40 81 L 44 75" stroke="#2FA36B" stroke-width="1.4" fill="none"/>
-            <text x="52" y="81" font-size="7" font-family="monospace" fill="#EEE">End-to-End Integration Suites</text>
-            <text x="180" y="81" font-size="6.5" font-family="monospace" fill="#2FA36B" text-anchor="end">PASSED ✓</text>
-            <rect x="34" y="92" width="12" height="12" rx="2" fill="#1A281E" stroke="#2FA36B" stroke-width="1"/>
-            <path d="M 37 98 L 40 101 L 44 95" stroke="#2FA36B" stroke-width="1.4" fill="none"/>
-            <text x="52" y="101" font-size="7" font-family="monospace" fill="#EEE">Architecture &amp; Migration Runbooks</text>
-            <text x="180" y="101" font-size="6.5" font-family="monospace" fill="#2FA36B" text-anchor="end">VERIFIED</text>
-            <rect x="34" y="112" width="12" height="12" rx="2" fill="#1A281E" stroke="#2FA36B" stroke-width="1"/>
-            <path d="M 37 118 L 40 121 L 44 115" stroke="#2FA36B" stroke-width="1.4" fill="none"/>
-            <text x="52" y="121" font-size="7" font-family="monospace" fill="#EEE">Security &amp; RBAC Validation</text>
-            <text x="180" y="121" font-size="6.5" font-family="monospace" fill="#2FA36B" text-anchor="end">ENFORCED</text>
-            <rect x="34" y="134" width="174" height="20" rx="3" fill="#141513" stroke="#2FA36B" stroke-width="0.8"/>
-            <text x="42" y="147" font-size="6.5" font-family="monospace" fill="#2FA36B">QUALITY TARGET: PRODUCTION EXCELLENCE</text>
-            <g transform="translate(262, 93) rotate(-12)">
-              <circle cx="0" cy="0" r="42" fill="url(#acceptGlow)"/>
-              <circle cx="0" cy="0" r="38" stroke="#2FA36B" stroke-width="2" stroke-dasharray="5 3"/>
-              <circle cx="0" cy="0" r="32" stroke="#2FA36B" stroke-width="1"/>
-              <text x="0" y="-12" font-size="6.5" font-family="monospace" fill="#D4A359" text-anchor="middle" font-weight="bold">SYSTEM</text>
-              <text x="0" y="2" font-size="9" font-weight="900" font-family="monospace" fill="#2FA36B" text-anchor="middle">HARDENED</text>
-              <text x="0" y="14" font-size="6" font-family="monospace" fill="#D4A359" text-anchor="middle">&amp; VERIFIED</text>
-              <path d="M -16 20 L 16 20" stroke="#2FA36B" stroke-width="1"/>
-              <text x="0" y="26" font-size="5" font-family="monospace" fill="#888" text-anchor="middle">SLA: 99.99%</text>
-            </g>
-          </svg>
-          <span class="panel-stamp">HIGH RELIABILITY</span>
-        </div>
-        <p class="panel-caption">Hardening backend service modules, comprehensive integration test suites, and operational runbooks to ensure bulletproof platform stability.</p>
-        <div class="panel-dialogue">"Engineering excellence is proven through automated testing and flawless reliability."</div>
-      </div>
-
-      <!-- Panel 3 -->
-      <div class="comic-panel">
-        <div class="panel-art-wrap">
-          <span class="panel-badge">PLATFORM · ZERO DOWNTIME</span>
-          <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="ch4p3Grid" width="16" height="16" patternUnits="userSpaceOnUse">
-                <path d="M 16 0 L 0 0 0 16" fill="none" stroke="#252822" stroke-width="0.8"/>
-              </pattern>
-            </defs>
-            <rect width="320" height="180" fill="url(#ch4p3Grid)"/>
-            <path d="M12 24 L12 12 L24 12 M308 24 L308 12 L296 12 M12 156 L12 168 L24 168 M308 156 L308 168 L296 168" stroke="#D4A359" stroke-width="1.2" opacity="0.6"/>
-            <rect x="24" y="24" width="140" height="138" rx="4" fill="#141513" stroke="#363630" stroke-width="1.5"/>
-            <rect x="24" y="24" width="140" height="14" rx="3" fill="#1E201B"/>
-            <text x="32" y="34" font-size="6.5" font-family="monospace" fill="#D4A359">RACK-01 // PRODUCTION</text>
-            <rect x="30" y="44" width="128" height="24" rx="2" fill="#1A1C18" stroke="#2FA36B" stroke-width="0.8"/>
-            <circle cx="38" cy="56" r="2.5" fill="#2FA36B"><animate attributeName="opacity" values="0.4;1;0.4" dur="1.2s" repeatCount="indefinite"/></circle>
-            <circle cx="46" cy="56" r="2.5" fill="#2FA36B"/>
-            <text x="56" y="58" font-size="6.5" font-family="monospace" fill="#EEE">NODE-A: DISPATCH CORE</text>
-            <text x="146" y="58" font-size="6" font-family="monospace" fill="#2FA36B" text-anchor="end">HEALTHY</text>
-            <rect x="30" y="72" width="128" height="24" rx="2" fill="#1A1C18" stroke="#2FA36B" stroke-width="0.8"/>
-            <circle cx="38" cy="84" r="2.5" fill="#2FA36B"/>
-            <circle cx="46" cy="84" r="2.5" fill="#2FA36B"><animate attributeName="opacity" values="0.4;1;0.4" dur="0.9s" repeatCount="indefinite"/></circle>
-            <text x="56" y="86" font-size="6.5" font-family="monospace" fill="#EEE">NODE-B: NOTIFICATION</text>
-            <text x="146" y="86" font-size="6" font-family="monospace" fill="#2FA36B" text-anchor="end">HEALTHY</text>
-            <rect x="30" y="100" width="128" height="24" rx="2" fill="#1A1C18" stroke="#2FA36B" stroke-width="0.8"/>
-            <circle cx="38" cy="112" r="2.5" fill="#2FA36B"/>
-            <circle cx="46" cy="112" r="2.5" fill="#2FA36B"/>
-            <text x="56" y="114" font-size="6.5" font-family="monospace" fill="#EEE">NODE-C: INGESTION PIPELINE</text>
-            <text x="146" y="114" font-size="6" font-family="monospace" fill="#2FA36B" text-anchor="end">HEALTHY</text>
-            <rect x="30" y="130" width="128" height="24" rx="2" fill="#101812" stroke="#2FA36B" stroke-width="0.8"/>
-            <text x="94" y="144" font-size="6.5" font-family="monospace" fill="#2FA36B" font-weight="bold" text-anchor="middle">LOAD BALANCER: ACTIVE</text>
-            <rect x="174" y="24" width="122" height="138" rx="4" fill="#151713" stroke="#2FA36B" stroke-width="1.2"/>
-            <rect x="174" y="24" width="122" height="16" rx="3" fill="#1A281E"/>
-            <text x="182" y="35" font-size="6.5" font-family="monospace" fill="#2FA36B" font-weight="bold">HEARTBEAT TELEMETRY</text>
-            <text x="235" y="66" font-size="18" font-weight="900" font-family="monospace" fill="#2FA36B" text-anchor="middle">100.0%</text>
-            <text x="235" y="78" font-size="6.5" font-family="monospace" fill="#D4A359" text-anchor="middle">UPTIME MAINTAINED</text>
-            <rect x="182" y="86" width="106" height="34" rx="3" fill="#0E120F" stroke="#253528" stroke-width="0.8"/>
-            <path d="M 184 103 L 202 103 L 206 94 L 210 114 L 214 100 L 218 106 L 222 103 L 244 103 L 248 94 L 252 114 L 256 100 L 260 106 L 264 103 L 286 103" stroke="#2FA36B" stroke-width="1.4" fill="none"/>
-            <text x="184" y="133" font-size="6" font-family="monospace" fill="#888">OUTAGE SECONDS : 0s</text>
-            <text x="184" y="143" font-size="6" font-family="monospace" fill="#888">DROPPED REQUESTS: 0</text>
-            <text x="184" y="153" font-size="6" font-family="monospace" fill="#2FA36B" font-weight="bold">SLA TARGET: 100% MET ✓</text>
-          </svg>
-          <span class="panel-stamp">100% UPTIME</span>
-        </div>
-        <p class="panel-caption">Operating critical dispatch and notification microservices continuously with 100% availability and zero service disruption.</p>
-        <div class="panel-dialogue">"Users and downstream services experience uninterrupted 100% availability."</div>
-      </div>
-    </div>
-    <details class="story-transcript">
-      <summary>▶ Read platform architecture &amp; operational SLAs</summary>
-      <div class="transcript-body">
-        <p><strong>Platform Scope:</strong> High-availability telecommunication backend services and streaming microservices at FPT Telecom (FTel).</p>
-        <p><strong>Engineering Focus:</strong> Automated integration test safety (JUnit 5, Spock), zero-downtime rolling deployments, architectural runbooks, and cross-service contract enforcement via gRPC/Feign.</p>
-        <p><strong>Operational SLA:</strong> 100% production uptime, zero data loss, sub-second latency, and uninterrupted service delivery across all mission-critical platform modules.</p>
-      </div>
-    </details>
-  </article>
-
-  <!-- CHAPTER 05: OCTOBER 2026 -->
-  <article class="story-chapter" id="the-gatekeepers" aria-labelledby="ch5-heading">
-    <div class="chapter-heading">
-      <h2 id="ch5-heading"><span>October 31, 2026</span>Chapter 05: The Gatekeepers &amp; Verified Mastery</h2>
-      <small>5 / 5</small>
-    </div>
-    <div class="chapter-description">
-      <p>
-        Engineering claims in a portfolio are easy to write; verifying them against world-class industry standards is what establishes absolute trust. In October 2026, I earned the prestigious <strong>LFEL1004: Authentication &amp; Authorization for Web/API</strong> certification issued by <strong>The Linux Foundation</strong>.
-      </p>
-      <p>
-        Covering OAuth 2.0, OpenID Connect flows, Single Sign-On (SSO), Role-Based Access Control (RBAC), Multi-Factor Authentication (MFA), and token security, this credential verifies the ability to enforce least-privilege security at scale. Paired with the verified <strong>HackerRank SQL (Advanced)</strong> credential, it proves mastery of both identity gatekeeping and database performance.
-      </p>
-    </div>
-        <div class="panel-layout">
-      <div class="comic-panel">
-        <div class="panel-art-wrap">
-          <span class="panel-badge">LINUX FOUNDATION · LFEL1004</span>
-          <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="ch5p1Grid" width="16" height="16" patternUnits="userSpaceOnUse">
-                <path d="M 16 0 L 0 0 0 16" fill="none" stroke="#252822" stroke-width="0.8"/>
-              </pattern>
-              <radialGradient id="lfGlow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#2FA36B" stop-opacity="0.25"/>
-                <stop offset="100%" stop-color="#2FA36B" stop-opacity="0"/>
-              </radialGradient>
-            </defs>
-            <rect width="320" height="180" fill="url(#ch5p1Grid)"/>
-            <path d="M12 24 L12 12 L24 12 M308 24 L308 12 L296 12 M12 156 L12 168 L24 168 M308 156 L308 168 L296 168" stroke="#D4A359" stroke-width="1.2" opacity="0.6"/>
-            <rect x="24" y="24" width="176" height="138" rx="4" fill="#141513" stroke="#363630" stroke-width="1.2"/>
-            <rect x="24" y="24" width="176" height="16" rx="3" fill="#1A1C18"/>
-            <text x="32" y="35" font-size="6.5" font-family="monospace" fill="#D4A359" font-weight="bold">OAUTH 2.0 / OIDC TOKEN INSPECTOR</text>
-            <rect x="32" y="46" width="160" height="20" rx="2" fill="#221514" stroke="#E4472C" stroke-width="0.8"/>
-            <text x="38" y="58" font-size="6.5" font-family="monospace" fill="#E4472C">HEADER: {"alg":"RS256","typ":"JWT"}</text>
-            <rect x="32" y="70" width="160" height="42" rx="2" fill="#201C14" stroke="#D4A359" stroke-width="0.8"/>
-            <text x="38" y="82" font-size="6" font-family="monospace" fill="#D4A359">PAYLOAD: {</text>
-            <text x="44" y="92" font-size="6" font-family="monospace" fill="#D4A359">"sub":"engineer_01","iss":"linuxfound",</text>
-            <text x="44" y="102" font-size="6" font-family="monospace" fill="#D4A359">"roles":["ADMIN","SECURITY_AUDIT"] }</text>
-            <rect x="32" y="116" width="160" height="20" rx="2" fill="#142218" stroke="#2FA36B" stroke-width="0.8"/>
-            <text x="38" y="129" font-size="6.5" font-family="monospace" fill="#2FA36B">SIGNATURE: SHA256_WITH_RSA ✓</text>
-            <rect x="32" y="140" width="160" height="14" rx="2" fill="#161E17"/>
-            <text x="112" y="150" font-size="6" font-family="monospace" fill="#2FA36B" font-weight="bold" text-anchor="middle">TOKEN VALIDATED · LEAST PRIVILEGE</text>
-            <g transform="translate(254, 88)">
-              <circle cx="0" cy="0" r="46" fill="url(#lfGlow)"/>
-              <polygon points="0,-42 36,-20 36,22 0,44 -36,22 -36,-20" stroke="#D4A359" stroke-width="2" fill="#1C1E1A"/>
-              <polygon points="0,-34 28,-16 28,18 0,36 -28,18 -28,-16" stroke="#2FA36B" stroke-width="1.2" fill="#141814"/>
-              <rect x="-10" y="-4" width="20" height="18" rx="3" fill="#D4A359"/>
-              <path d="M -7 -4 L -7 -12 Q -7 -19 0 -19 Q 7 -19 7 -12 L 7 -4" stroke="#D4A359" stroke-width="2.5" fill="none"/>
-              <circle cx="0" cy="3" r="2.5" fill="#141814"/>
-              <polygon points="-1,4 1,4 1.5,9 -1.5,9" fill="#141814"/>
-              <text x="0" y="24" font-size="5.5" font-weight="bold" font-family="monospace" fill="#2FA36B" text-anchor="middle">LFEL1004</text>
-              <text x="0" y="31" font-size="4.5" font-family="monospace" fill="#D4A359" text-anchor="middle">VERIFIED</text>
-            </g>
-            <text x="254" y="152" font-size="5.5" font-family="monospace" fill="#888" text-anchor="middle">CREDLY: vA3RkD3tbU6DYUpmmhEtbw</text>
-          </svg>
-          <span class="panel-stamp">CREDLY VERIFIED</span>
-        </div>
-        <p class="panel-caption">The Linux Foundation LFEL1004: Configured and enforced identity and access controls: OAuth 2.0, OpenID Connect, RBAC, and token security.</p>
-        <div class="panel-dialogue">"Enforce least-privilege access across every API boundary."</div>
-      </div>
-
-      <div class="comic-panel">
-        <div class="panel-art-wrap">
-          <span class="panel-badge">HACKERRANK · SQL ADVANCED</span>
-          <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="ch5p2Grid" width="16" height="16" patternUnits="userSpaceOnUse">
-                <path d="M 16 0 L 0 0 0 16" fill="none" stroke="#252822" stroke-width="0.8"/>
-              </pattern>
-              <radialGradient id="sqlGlow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#2FA36B" stop-opacity="0.25"/>
-                <stop offset="100%" stop-color="#2FA36B" stop-opacity="0"/>
-              </radialGradient>
-            </defs>
-            <rect width="320" height="180" fill="url(#ch5p2Grid)"/>
-            <path d="M12 24 L12 12 L24 12 M308 24 L308 12 L296 12 M12 156 L12 168 L24 168 M308 156 L308 168 L296 168" stroke="#D4A359" stroke-width="1.2" opacity="0.6"/>
-            <rect x="24" y="24" width="180" height="138" rx="4" fill="#141513" stroke="#363630" stroke-width="1.2"/>
-            <rect x="24" y="24" width="180" height="16" rx="3" fill="#1A1C18"/>
-            <text x="32" y="35" font-size="6.5" font-family="monospace" fill="#2FA36B" font-weight="bold">HACKERRANK ADVANCED SQL ENGINE</text>
-            <rect x="32" y="46" width="164" height="74" rx="2" fill="#161814" stroke="#252822" stroke-width="0.8"/>
-            <text x="38" y="58" font-size="6" font-family="monospace" fill="#2FA36B">WITH ranked_events AS (</text>
-            <text x="44" y="68" font-size="6" font-family="monospace" fill="#FFF">SELECT org_id, amount,</text>
-            <text x="44" y="78" font-size="6" font-family="monospace" fill="#D4A359">DENSE_RANK() OVER (</text>
-            <text x="50" y="88" font-size="6" font-family="monospace" fill="#D4A359">PARTITION BY org_id ORDER BY ts DESC</text>
-            <text x="44" y="98" font-size="6" font-family="monospace" fill="#D4A359">) as rnk FROM audit_logs )</text>
-            <text x="38" y="108" font-size="6" font-family="monospace" fill="#2FA36B">SELECT * FROM ranked_events WHERE rnk &lt;= 3;</text>
-            <rect x="32" y="124" width="164" height="30" rx="2" fill="#152018" stroke="#2FA36B" stroke-width="0.8"/>
-            <text x="38" y="136" font-size="6" font-family="monospace" fill="#2FA36B">COST: O(N log N) · HASH AGGREGATE</text>
-            <text x="38" y="146" font-size="6" font-family="monospace" fill="#D4A359">ALL TEST CASES PASSED: 100% SCORE</text>
-            <g transform="translate(258, 86)">
-              <circle cx="0" cy="0" r="44" fill="url(#sqlGlow)"/>
-              <path d="M -20 -28 L 20 -28 L 16 6 Q 0 16 0 16 Q 0 16 -16 6 Z" fill="#20221E" stroke="#D4A359" stroke-width="2"/>
-              <path d="M -20 -22 L -28 -14 Q -28 -2 -18 -2" stroke="#D4A359" stroke-width="2" fill="none"/>
-              <path d="M 20 -22 L 28 -14 Q 28 -2 18 -2" stroke="#D4A359" stroke-width="2" fill="none"/>
-              <line x1="0" y1="16" x2="0" y2="28" stroke="#D4A359" stroke-width="3"/>
-              <rect x="-14" y="28" width="28" height="6" rx="2" fill="#D4A359"/>
-              <polygon points="0,-18 3,-10 11,-10 5,-4 7,4 0,0 -7,4 -5,-4 -11,-10 -3,-10" fill="#2FA36B"/>
-              <text x="0" y="3" font-size="5.5" font-family="monospace" fill="#FFF" font-weight="bold" text-anchor="middle">SQL ADV</text>
-            </g>
-            <text x="258" y="146" font-size="6.5" font-family="monospace" fill="#2FA36B" font-weight="bold" text-anchor="middle">VERIFIED BADGE</text>
-            <text x="258" y="156" font-size="5.5" font-family="monospace" fill="#888" text-anchor="middle">ID: 801c9ad5b55e</text>
-          </svg>
-          <span class="panel-stamp">VERIFIED MASTERY</span>
-        </div>
-        <p class="panel-caption">HackerRank SQL (Advanced): Analytical window functions, query execution plan tuning, indexing strategies, and database design.</p>
-        <div class="panel-dialogue">"ID: 801c9ad5b55e · Officially verified."</div>
-      </div>
-
-      <div class="comic-panel">
-        <div class="panel-art-wrap">
-          <span class="panel-badge">SECURITY &amp; COMPLIANCE</span>
-          <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="ch5p3Grid" width="16" height="16" patternUnits="userSpaceOnUse">
-                <path d="M 16 0 L 0 0 0 16" fill="none" stroke="#252822" stroke-width="0.8"/>
-              </pattern>
-              <radialGradient id="defenseGlow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#2FA36B" stop-opacity="0.3"/>
-                <stop offset="100%" stop-color="#2FA36B" stop-opacity="0"/>
-              </radialGradient>
-            </defs>
-            <rect width="320" height="180" fill="url(#ch5p3Grid)"/>
-            <path d="M12 24 L12 12 L24 12 M308 24 L308 12 L296 12 M12 156 L12 168 L24 168 M308 156 L308 168 L296 168" stroke="#D4A359" stroke-width="1.2" opacity="0.6"/>
-            <circle cx="160" cy="85" r="66" fill="url(#defenseGlow)"/>
-            <circle cx="160" cy="85" r="62" stroke="#363630" stroke-width="1.2" stroke-dasharray="6 4"/>
-            <circle cx="160" cy="85" r="48" stroke="#D4A359" stroke-width="1.5" stroke-dasharray="8 6"/>
-            <circle cx="160" cy="85" r="34" stroke="#2FA36B" stroke-width="1.8"/>
-            <circle cx="160" cy="85" r="20" fill="#1C2E20" stroke="#2FA36B" stroke-width="2"/>
-            <path d="M 152 85 L 158 91 L 169 79" stroke="#2FA36B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <line x1="160" y1="85" x2="222" y2="85" stroke="#2FA36B" stroke-width="1.5" opacity="0.7">
-              <animateTransform attributeName="transform" type="rotate" from="0 160 85" to="360 160 85" dur="10s" repeatCount="indefinite"/>
-            </line>
-            <text x="24" y="38" font-size="6.5" font-family="monospace" fill="#888">LAYER 1</text>
-            <text x="24" y="48" font-size="7" font-family="monospace" fill="#EEE">mTLS 1.3 / ENCRYPTED IN-FLIGHT</text>
-            <text x="24" y="128" font-size="6.5" font-family="monospace" fill="#888">LAYER 2</text>
-            <text x="24" y="138" font-size="7" font-family="monospace" fill="#D4A359">OIDC IDENTITY &amp; SSO TOKEN</text>
-            <text x="296" y="38" font-size="6.5" font-family="monospace" fill="#888" text-anchor="end">LAYER 3</text>
-            <text x="296" y="48" font-size="7" font-family="monospace" fill="#2FA36B" text-anchor="end">FINE-GRAINED RBAC GATE</text>
-            <text x="296" y="128" font-size="6.5" font-family="monospace" fill="#888" text-anchor="end">LAYER 4</text>
-            <text x="296" y="138" font-size="7" font-family="monospace" fill="#2FA36B" text-anchor="end">AES-256 GCM ENCRYPTED AT-REST</text>
-            <rect x="24" y="148" width="272" height="18" rx="3" fill="#141513" stroke="#2FA36B" stroke-width="0.8"/>
-            <text x="160" y="160" font-size="7" font-family="monospace" fill="#2FA36B" font-weight="bold" text-anchor="middle">DEFENSE-IN-DEPTH: ZERO UNAUTHENTICATED PATHS · ZERO DEFECTS</text>
-          </svg>
-          <span class="panel-stamp">ZERO DEFECTS</span>
-        </div>
-        <p class="panel-caption">Global credentials validate production practices: Zero unauthenticated paths, strict RBAC, least privilege, and sub-second data execution.</p>
-        <div class="panel-dialogue">"Security is verified, never assumed."</div>
-      </div>
-    </div>
-    <details class="story-transcript">
-      <summary>▶ Read the technical log &amp; verification criteria</summary>
-      <div class="transcript-body">
-        <p><strong>Linux Foundation LFEL1004:</strong> Passed final exam with &gt;70% passing grade. Verified proficiency in OAuth 2.0 authorization code / PKCE flows, OpenID Connect ID tokens, Single Sign-On (SSO), RBAC roles, MFA integration, and JWT cryptographic signature verification.</p>
-        <p><strong>HackerRank SQL (Advanced):</strong> Verification ID <code>801c9ad5b55e</code>. Verified analytical aggregations, recursive CTEs, query plan index scans, and database schema performance.</p>
-      </div>
-    </details>
-  </article>
-
-  <!-- COMIC END EDITORIAL SHELL -->
-  <div class="comic-end-shell">
-    <div>
-      <p>The story is proven in production code.</p>
-      <span style="font:500 13px var(--mono); color:#9E9D93;">Explore the architecture blueprints, case studies &amp; certified toolkit below.</span>
-    </div>
-    <a href="#work">
-      <span>Inspect Technical Blueprint</span>
-      <span>↓</span>
-    </a>
-  </div>
-</section>
 
 <div class="wrap">
 
@@ -4296,10 +3433,10 @@ footer {
     <!-- LEFT: INTRO / POLAROID SCRAP CARD -->
     <div class="hero-left" id="heroLeft">
       <div class="intro-card" id="introCard">
-        <p class="label">Backend Java Developer · Ho Chi Minh City</p>
+        <p class="label">Backend Engineer (Java) · Tan Phu District, Ho Chi Minh City</p>
         <h1 class="display">Long<br>Tran</h1>
-        <p class="hero-desc">I build <strong>Spring Boot microservices</strong> for telecommunications and large-scale public sector platforms: identity &amp; access security (LFEL1004 certified), event-driven streaming with Kafka and gRPC, and database optimization (HackerRank SQL Advanced, execution plan tuning), from schema design to Kubernetes.</p>
-        <div class="avail">Open to new opportunities</div>
+        <p class="hero-desc">Backend Java Engineer with <strong>2+ years building and operating Spring Boot microservices</strong> for large-scale government platforms. Strong in <strong>event-driven integration (Kafka, gRPC)</strong>, <strong>Oracle performance tuning</strong>, <strong>API security (OAuth2/OIDC, JWT, RBAC, OTP)</strong> and production troubleshooting on <strong>Kubernetes/OpenShift</strong>. Uses AI coding assistants (Claude Code, Codex, Gemini) for planning, implementation and unit testing to speed up delivery, with every output human-reviewed. Seeking a mid-level backend role in a security-sensitive, high-reliability environment such as banking.</p>
+        <div class="avail">Open to mid-level backend roles in security-sensitive &amp; high-reliability environments</div>
         <div class="hero-actions">
           <a class="cv-cta" href="assets/CV_LongTran_BackendJavaDeveloper.pdf" target="_blank" download="CV_LongTran_BackendJavaDeveloper.pdf">
             <span>Download CV</span>
@@ -4312,7 +3449,7 @@ footer {
           <div class="h-stat"><b>1M+</b><span>Records migrated</span></div>
           <div class="h-stat"><b>~300×</b><span>Query speedup</span></div>
         </div>
-        <a class="skip-interaction intro-skip" href="#work">Skip the interaction → View work</a>
+        <a class="skip-interaction intro-skip" href="#work">Explore architecture blueprints → View work</a>
       </div>
 
       <!-- POLAROID STORY CARD CONTAINER -->
@@ -4418,14 +3555,13 @@ footer {
 
       <div class="trusted-block">
         <span class="label">Experience shaped by:</span>
-        <p class="trusted-names">FTEL · GTEL OTS · Real-Time Operations Engines · High-Throughput Vision &amp; Ingestion Platforms · IO STREAM</p>
+        <p class="trusted-names">GTEL OTS (now part of FTEL) · Public-Safety Operations · Enterprise Notification Platforms · IO STREAM</p>
       </div>
     </div>
   </div>
 </section>
 </div>
 
-<!-- TICKER STRIP -->
 <div class="ticker" aria-hidden="true">
   <div class="ticker-track">
     <span>Java</span><span>✦</span><span>Spring Boot</span><span>✦</span><span>Kafka</span><span>✦</span><span>gRPC</span><span>✦</span><span>Oracle</span><span>✦</span><span>Redis</span><span>✦</span><span>MongoDB</span><span>✦</span><span>Kubernetes</span><span>✦</span><span>Elasticsearch</span><span>✦</span><span>AWS</span><span>✦</span>
@@ -4434,7 +3570,6 @@ footer {
 </div>
 
 <div class="wrap">
-<!-- WORK SECTION WITH 6 INTERACTIVE ARCHITECTURE DIAGRAMS -->
 <section id="work">
   <div class="sec-head rv">
     <h2 class="display">Selected Work <span class="accent">(06)</span></h2>
@@ -4619,16 +3754,12 @@ footer {
         <div><b>1</b><span>access policy shared by every service</span></div>
       </div>
       <dl class="cs-body">
-        <dt>Problem</dt>
-        <dd>OTP codes needed protection at rest and against brute force, and administrators needed to tune the rules without a redeploy.</dd>
-        <dt>My part</dt>
-        <dd>Built the OTP flow (encryption, expiry, lockout, resend quota) and the per-group access-time and session-timeout policies.</dd>
-        <dt>Key decisions</dt>
-        <dd>Codes stored <strong>AES-GCM-encrypted</strong> · limits editable at runtime through an admin API · policies set per role group and pushed to other services over <strong>gRPC</strong> · debug mode guarded by config outside production.</dd>
-        <dt>Result</dt>
-        <dd>Login security rules can be adjusted per group at runtime, and <b class="m">every service applies the same access policy</b>.</dd>
-        <dt>What I learned</dt>
-        <dd>Security rules change more often than code. Making them configurable mattered as much as the encryption itself.</dd>
+        <dt>Challenge</dt>
+        <dd>Preventing brute-force attacks and securing one-time login credentials at rest across distributed auth services.</dd>
+        <dt>Architecture</dt>
+        <dd>Engineered AES-GCM encrypted codes at rest, brute-force lockout, and resend throttling, isolated from JWT issuance.</dd>
+        <dt>Outcome</dt>
+        <dd><b class="m">Zero cleartext OTPs</b> stored at rest; session timeouts and security policies dynamically enforced over gRPC.</dd>
       </dl>
       <div class="chip-row"><span class="chip">Spring Security</span><span class="chip">AES-GCM</span><span class="chip">gRPC</span></div>
     </div>
@@ -4778,7 +3909,131 @@ footer {
   </div>
 </section>
 
-<!-- ACHIEVEMENTS SECTION -->
+<section id="experience">
+  <div class="sec-head rv">
+    <h2 class="display">Experience &amp; Career</h2>
+    <p>Engineering journey across production systems, high-throughput backend services, and academic foundations.</p>
+  </div>
+
+  <div class="xp-timeline">
+    <!-- GTEL OTS (NOW A PART OF FTEL) - CURRENT -->
+    <article class="xp-item spotlight-card xp-current rv">
+      <div class="xp-side">
+        <span class="xp-badge-current"><i class="live-dot"></i> CURRENT ROLE</span>
+        <div class="xp-date">Sep 2024 — Present</div>
+        <span class="xp-location" style="font:500 11.5px var(--mono); color:var(--mute);">🏢 Ho Chi Minh City</span>
+      </div>
+      <div class="xp-card-main">
+        <div class="xp-header-row">
+          <h3 class="xp-role">Backend Java Developer</h3>
+          <span class="xp-co">GTEL OTS <small style="font-weight:400; opacity:0.85;">(now a part of FTEL)</small></span>
+        </div>
+        <p class="xp-desc">
+          Building and operating high-throughput Spring Boot microservices for large-scale government platforms and enterprise communication systems: event-driven streaming, sub-second database tuning, and API security on Kubernetes &amp; OpenShift.
+        </p>
+
+        <!-- Sub-platform 1 -->
+        <div class="xp-platform" style="margin-top:14px; padding-top:10px; border-top:1px dashed var(--line);">
+          <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:4px; flex-wrap:wrap; gap:4px;">
+            <h4 style="font:700 13.5px/1.3 var(--sans); color:var(--ink); margin:0;">Public-Safety Command &amp; User-Management Platform</h4>
+            <span style="font:600 11px var(--mono); color:var(--accent);">Nov 2024 — Present</span>
+          </div>
+          <ul class="xp-highlights" style="margin-top:4px;">
+            <li><strong>gRPC-to-Kafka Incident Pipeline:</strong> Decoupled streaming; 3 downstream systems consume 1 stream with 0 producer changes.</li>
+            <li><strong>Execution-Plan Tuning:</strong> Slashed org-tree user loading from <strong>~120s to ~0.4s (~300× faster)</strong> via Oracle index tuning.</li>
+            <li><strong>Live Re-platforming &amp; RBAC:</strong> Migrated <strong>1M+ records</strong> from .NET to Spring Boot with real-time sync; built multi-level RBAC with row-level data scoping.</li>
+          </ul>
+        </div>
+
+        <!-- Sub-platform 2 -->
+        <div class="xp-platform" style="margin-top:14px; padding-top:10px; border-top:1px dashed var(--line);">
+          <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:4px; flex-wrap:wrap; gap:4px;">
+            <h4 style="font:700 13.5px/1.3 var(--sans); color:var(--ink); margin:0;">Enterprise Notification &amp; Communication Platform</h4>
+            <span style="font:600 11px var(--mono); color:var(--accent);">Jan 2026 — Present</span>
+          </div>
+          <ul class="xp-highlights" style="margin-top:4px;">
+            <li><strong>Cryptographic Auth &amp; Fast Search:</strong> Built OTP auth with AES-GCM encryption at rest, lockout &amp; PII masking; replaced full CLOB scans with normalized indexed search.</li>
+            <li><strong>Distributed Backup &amp; Reliability:</strong> Orchestrated cross-system backups (Oracle, ES, MinIO) via Kafka &amp; Redis locks; authored <strong>120+ Flyway migrations</strong>; resolved 50+ production bugs with JUnit 5/Spock tests.</li>
+          </ul>
+        </div>
+
+        <!-- Sub-platform 3 -->
+        <div class="xp-platform" style="margin-top:14px; padding-top:10px; border-top:1px dashed var(--line);">
+          <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:4px; flex-wrap:wrap; gap:4px;">
+            <h4 style="font:700 13.5px/1.3 var(--sans); color:var(--ink); margin:0;">Public-Safety Monitoring &amp; Citizen Services Platform</h4>
+            <span style="font:600 11px var(--mono); color:var(--mute);">Sep 2024 — Feb 2025</span>
+          </div>
+          <ul class="xp-highlights" style="margin-top:4px;">
+            <li><strong>AI Edge Vision:</strong> Built penalty &amp; query services ingesting telemetry from <strong>~2,000 AI cameras</strong>; unified lookups behind a reusable Spring AOP aspect.</li>
+          </ul>
+          <p style="font:italic 11px/1.4 var(--sans); color:var(--mute); margin:4px 0 0;">* Due to confidentiality, agency names and system metrics are generalized.</p>
+        </div>
+
+        <div class="xp-chips" style="margin-top:16px;">
+          <span class="xp-chip active">Java 17 / 21</span>
+          <span class="xp-chip active">Spring Boot 3</span>
+          <span class="xp-chip">Apache Kafka</span>
+          <span class="xp-chip">gRPC / Feign</span>
+          <span class="xp-chip">Oracle (Plan Tuning)</span>
+          <span class="xp-chip">Flyway (120+ migrations)</span>
+          <span class="xp-chip">Redis Distributed Lock</span>
+          <span class="xp-chip">Kubernetes / OpenShift</span>
+          <span class="xp-chip">AES-GCM / RBAC / OTP</span>
+          <span class="xp-chip">JUnit 5 / Spock</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- IO STREAM -->
+    <article class="xp-item spotlight-card rv">
+      <div class="xp-side">
+        <span class="xp-badge-past">4 MONTHS</span>
+        <div class="xp-date">Oct 2023 — Jan 2024</div>
+        <span class="xp-location" style="font:500 11.5px var(--mono); color:var(--mute);">🏢 Desktop Engineering</span>
+      </div>
+      <div class="xp-card-main">
+        <div class="xp-header-row">
+          <h3 class="xp-role">Desktop App Developer</h3>
+          <span class="xp-co">IO STREAM</span>
+        </div>
+        <p class="xp-desc">
+          Engineered Windows desktop client applications in C# and WinUI 3 architecture. Built native file security utilities, cryptography tools, and asynchronous multithreaded media downloaders.
+        </p>
+        <div class="xp-chips">
+          <span class="xp-chip">C# / .NET</span>
+          <span class="xp-chip">WinUI 3</span>
+          <span class="xp-chip">File Security &amp; Encryption</span>
+          <span class="xp-chip">Multithreading</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- HCMC OPEN UNIVERSITY -->
+    <article class="xp-item spotlight-card rv">
+      <div class="xp-side">
+        <span class="xp-badge-past">ALUMNUS</span>
+        <div class="xp-date">Sep 2021 — Sep 2025</div>
+        <span class="xp-location" style="font:500 11.5px var(--mono); color:var(--mute);">🎓 University</span>
+      </div>
+      <div class="xp-card-main">
+        <div class="xp-header-row">
+          <h3 class="xp-role">Bachelor of Engineering, Information Technology</h3>
+          <span class="xp-co">Ho Chi Minh City Open University</span>
+        </div>
+        <p class="xp-desc">
+          Graduated with Good classification. Honored with Academic Excellence Scholarship (Jan 2025). Rigorous foundations in algorithm complexity, database internals, data structures, and distributed systems.
+        </p>
+        <div class="xp-chips">
+          <span class="xp-chip">Algorithms &amp; Data Structures</span>
+          <span class="xp-chip">Database Internals</span>
+          <span class="xp-chip">Distributed Systems</span>
+          <span class="xp-chip">Software Architecture</span>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
 <section id="achievements">
   <div class="sec-head rv">
     <h2 class="display">Certifications &amp; Recognition</h2>
@@ -5027,134 +4282,6 @@ footer {
   </div>
 </section>
 
-<!-- EXPERIENCE SECTION -->
-<section id="experience">
-  <div class="sec-head rv">
-    <h2 class="display">Experience &amp; Career</h2>
-    <p>Engineering journey across production systems, high-throughput backend services, and academic foundations.</p>
-  </div>
-
-  <div class="xp-timeline">
-    <!-- FTEL (FPT TELECOM) - CURRENT -->
-    <article class="xp-item spotlight-card xp-current rv">
-      <div class="xp-side">
-        <span class="xp-badge-current"><i class="live-dot"></i> CURRENT ROLE</span>
-        <div class="xp-date">Oct 2026 — Present</div>
-        <span class="xp-location" style="font:500 11.5px var(--mono); color:var(--mute);">🏢 Ho Chi Minh City · FTel</span>
-      </div>
-      <div class="xp-card-main">
-        <div class="xp-header-row">
-          <h3 class="xp-role">Backend Java Developer</h3>
-          <span class="xp-co">FTEL · FPT Telecom</span>
-        </div>
-        <p class="xp-desc">
-          Architecting and operating high-reliability Spring Boot backend microservices within FPT Telecom's distributed infrastructure. Focused on production hardening, automated end-to-end integration testing, and maintaining mission-critical platform availability with zero service disruption.
-        </p>
-        <ul class="xp-highlights">
-          <li><strong>High Availability &amp; Zero Downtime:</strong> Operating distributed Spring Boot microservices, Kafka streaming pipelines, and typed gRPC contracts with 100% production uptime and uninterrupted service delivery.</li>
-          <li><strong>Production Hardening &amp; Testing:</strong> Authoring comprehensive automated integration test suites and technical architecture runbooks, eliminating edge-case failure modes across inter-service dependencies.</li>
-          <li><strong>Data Consistency &amp; Contract Safety:</strong> Auditing database transaction boundaries, optimizing high-volume query execution plans, and enforcing strict schema contracts across high-throughput telemetry streams.</li>
-        </ul>
-        <div class="xp-chips">
-          <span class="xp-chip active">Java 17 / 21</span>
-          <span class="xp-chip active">Spring Boot 3</span>
-          <span class="xp-chip">High Availability (HA)</span>
-          <span class="xp-chip">gRPC / Feign</span>
-          <span class="xp-chip">Apache Kafka</span>
-          <span class="xp-chip">Oracle 19c</span>
-          <span class="xp-chip">PostgreSQL</span>
-          <span class="xp-chip">Docker / K8s</span>
-          <span class="xp-chip">JUnit 5 / CI/CD</span>
-        </div>
-      </div>
-    </article>
-
-    <!-- GTEL OTS -->
-    <article class="xp-item spotlight-card rv">
-      <div class="xp-side">
-        <span class="xp-badge-past">2 YEARS</span>
-        <div class="xp-date">Sep 2024 — Sep 2026</div>
-        <span class="xp-location" style="font:500 11.5px var(--mono); color:var(--mute);">🏢 Ho Chi Minh City</span>
-      </div>
-      <div class="xp-card-main">
-        <div class="xp-header-row">
-          <h3 class="xp-role">Backend Java Developer</h3>
-          <span class="xp-co">GTEL OTS</span>
-        </div>
-        <p class="xp-desc">
-          Architected and maintained Spring Boot microservices for high-throughput public sector and enterprise platforms:
-        </p>
-        <ul class="xp-highlights">
-          <li><strong>Key Platforms:</strong> Real-time operations &amp; dispatch engine (Nov 2024 – Sep 2026), high-volume enterprise notification engine (Jan 2026 – Sep 2026), and smart city vision/telemetry services (Sep 2024 – Feb 2025).</li>
-          <li><strong>Service Contracts:</strong> Architected shared gRPC and Spring Cloud Feign client libraries adopted across 10+ inter-service microservice boundaries.</li>
-          <li><strong>Database Engineering &amp; Optimization:</strong> Authored 120+ Flyway migrations and tuned complex Oracle SQL execution plans (indexes, hints, partition pruning), delivering ~300× query execution speedups.</li>
-          <li><strong>Quality &amp; APIs:</strong> Strengthened test coverage with JUnit 5 &amp; Spock, authored comprehensive OpenAPI/Swagger contracts, and resolved React/TypeScript defects on operator management dashboards.</li>
-        </ul>
-        <div class="xp-chips">
-          <span class="xp-chip active">Java 17 / 21</span>
-          <span class="xp-chip">Spring Boot 3</span>
-          <span class="xp-chip">gRPC / Protobuf</span>
-          <span class="xp-chip">Oracle DB</span>
-          <span class="xp-chip">PostgreSQL</span>
-          <span class="xp-chip">Flyway</span>
-          <span class="xp-chip">Redis</span>
-          <span class="xp-chip">Kafka</span>
-          <span class="xp-chip">Docker</span>
-        </div>
-      </div>
-    </article>
-
-    <!-- IO STREAM -->
-    <article class="xp-item spotlight-card rv">
-      <div class="xp-side">
-        <span class="xp-badge-past">4 MONTHS</span>
-        <div class="xp-date">Oct 2023 — Jan 2024</div>
-        <span class="xp-location" style="font:500 11.5px var(--mono); color:var(--mute);">🏢 Internship / Junior</span>
-      </div>
-      <div class="xp-card-main">
-        <div class="xp-header-row">
-          <h3 class="xp-role">Desktop App Developer</h3>
-          <span class="xp-co">IO STREAM</span>
-        </div>
-        <p class="xp-desc">
-          Engineered Windows desktop client software utilizing modern C# and WinUI 3 architecture. Focused on high-performance local file security, encryption utilities, and asynchronous media processing downloaders.
-        </p>
-        <div class="xp-chips">
-          <span class="xp-chip">C# / .NET</span>
-          <span class="xp-chip">WinUI 3</span>
-          <span class="xp-chip">File Security &amp; Encryption</span>
-          <span class="xp-chip">Multithreading</span>
-        </div>
-      </div>
-    </article>
-
-    <!-- HCMC OPEN UNIVERSITY -->
-    <article class="xp-item spotlight-card rv">
-      <div class="xp-side">
-        <span class="xp-badge-past">ALUMNUS</span>
-        <div class="xp-date">Sep 2021 — Sep 2025</div>
-        <span class="xp-location" style="font:500 11.5px var(--mono); color:var(--mute);">🎓 University</span>
-      </div>
-      <div class="xp-card-main">
-        <div class="xp-header-row">
-          <h3 class="xp-role">B.Eng in Information Technology</h3>
-          <span class="xp-co">Ho Chi Minh City Open University</span>
-        </div>
-        <p class="xp-desc">
-          Graduated with Good degree classification. Built rigorous fundamentals in computer science: algorithms, data structure design, relational &amp; non-relational database internals, computer networking, and distributed systems. Honored with Academic Excellence Scholarship.
-        </p>
-        <div class="xp-chips">
-          <span class="xp-chip">Algorithms &amp; Data Structures</span>
-          <span class="xp-chip">Database Internals</span>
-          <span class="xp-chip">Distributed Systems</span>
-          <span class="xp-chip">Software Architecture</span>
-        </div>
-      </div>
-    </article>
-  </div>
-</section>
-
-<!-- TOOLBOX SECTION -->
 <section id="skills">
   <div class="sec-head rv">
     <h2 class="display">Toolbox</h2>
@@ -5276,28 +4403,884 @@ footer {
       </div>
       <div class="sticky-items">
         <div class="sticky-item">
-          <b>🎨 Frontend Support</b>
-          <span>React &amp; TypeScript — UI &amp; layout defect triage on production web consoles.</span>
+          <b>🤖 AI-Assisted Modern Dev</b>
+          <span>Claude Code, Codex, Gemini — High-velocity architecture planning, code implementation &amp; test suites, with all code strictly human-reviewed.</span>
         </div>
         <div class="sticky-item">
-          <b>🧪 Explorations</b>
-          <span>Go &amp; Vue 3 — Prototyping lightweight concurrency services &amp; reactive tools.</span>
+          <b>🌐 Languages &amp; Scores</b>
+          <span>Vietnamese (Native) · English (TOEIC 665) — Technical reading, API specs &amp; documentation.</span>
         </div>
         <div class="sticky-item">
-          <b>💾 Where It Began</b>
-          <span>C# &amp; WinUI 3 — Native Windows file security &amp; multi-threaded media engines at IO STREAM.</span>
+          <b>🎨 Adjacent Technologies</b>
+          <span>Go &amp; Vue 3 (AI-assisted) · React &amp; TypeScript (UI defect triage) · C# &amp; WinUI (desktop origins).</span>
         </div>
       </div>
     </div>
   </div>
 </section>
+</div>
 
-<!-- CONTACT SECTION -->
+<div class="wrap">
+  <!-- COLD OPEN: EDITORIAL STORY INVITATION (CALIF.IO / PHP2SHELL STYLE) -->
+  <section class="cold-open rv" aria-labelledby="storyOpening">
+    <h1 id="storyOpening">
+      <span class="kicker">CHRONICLES OF A BACKEND ENGINEER:</span>
+      A tale of <em>high concurrency</em>, the <em>120s SQL heist</em> &amp; the pursuit of <em>resilient systems</em>
+    </h1>
+    <p class="press-coverage">
+      Engineered for high throughput and public sector reliability at
+      <a href="#the-high-throughput">GTEL OTS (now a part of FTEL)</a> and
+      <a href="#the-crypt">IO STREAM</a>
+    </p>
+    <p class="invitation">
+      "Behind every resilient microservice and sub-second query is an engineering story. An illustrated journey from university algorithms to distributed telemetry pipelines."
+    </p>
+    <nav class="shortcuts" aria-label="Start reading chronicle">
+      <a href="#the-origin">2021 The Origin ↓</a>
+      <a href="#the-crypt">2023 Desktop Crypt ↓</a>
+      <a href="#the-120s-heist">2024 The 120s Heist ↓</a>
+      <a href="#the-high-throughput">2026 Telecom Scale ↓</a>
+      <a href="#the-gatekeepers">Verified Credentials ↘</a>
+    </nav>
+  </section>
+</div>
+
+<section class="comic-chronicles" id="story-chronicles" data-mode="story" aria-label="An illustrated journey through engineering history">
+  <!-- STICKY READER TOOLBAR -->
+  <div class="reader-toolbar">
+    <div class="reader-toolbar-inner">
+      <nav class="era-links" aria-label="Comic chapters navigation">
+        <a href="#the-origin" class="active" data-chapter="the-origin">2021 The Origin</a>
+        <a href="#the-crypt" data-chapter="the-crypt">2023 Desktop Crypt</a>
+        <a href="#the-120s-heist" data-chapter="the-120s-heist">2024 The 120s Heist</a>
+        <a href="#the-high-throughput" data-chapter="the-high-throughput">2026 Telecom Scale</a>
+        <a href="#the-gatekeepers" data-chapter="the-gatekeepers">2026 Gatekeepers</a>
+      </nav>
+      <div class="reader-mode" role="group" aria-label="Comic reading mode">
+        <button type="button" class="mode-btn active" id="btnStoryMode" data-mode="story" aria-pressed="true">Illustrated Story</button>
+        <button type="button" class="mode-btn" id="btnLogMode" data-mode="blueprint" aria-pressed="false">Technical Log</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHAPTER 01: 2021 -->
+  <article class="story-chapter" id="the-origin" aria-labelledby="ch1-heading">
+    <div class="chapter-heading">
+      <h2 id="ch1-heading"><span>2021 — 2025</span>Chapter 01: The Origin &amp; Academic Foundation</h2>
+      <small>1 / 5</small>
+    </div>
+    <div class="chapter-description">
+      <p>
+        Computer science fundamentals at Ho Chi Minh City Open University: algorithm complexity, memory locality, and the daily Saigon phin coffee ritual. Graduated with Good honors and awarded the Academic Excellence Scholarship.
+      </p>
+    </div>
+    <div class="panel-layout">
+      <div class="comic-panel">
+        <div class="panel-art-wrap">
+          <span class="panel-badge">SAIGON · 07:30 AM</span>
+          <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="ch1Grid" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M 16 0 L 0 0 0 16" fill="none" stroke="#252822" stroke-width="0.8"/></pattern>
+              <linearGradient id="cGlassGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2A2D25"/><stop offset="100%" stop-color="#121310"/></linearGradient>
+              <linearGradient id="cEspressoGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#4A2E18"/><stop offset="100%" stop-color="#241408"/></linearGradient>
+              <linearGradient id="cMilkGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FFF4DD"/><stop offset="100%" stop-color="#E1BF86"/></linearGradient>
+            </defs>
+            <rect width="320" height="180" fill="url(#ch1Grid)"/>
+            <path d="M12 24 L12 12 L24 12 M308 24 L308 12 L296 12 M12 156 L12 168 L24 168 M308 156 L308 168 L296 168" stroke="#D4A359" stroke-width="1.2" opacity="0.6"/>
+            <!-- Telemetry readout right side -->
+            <text x="186" y="44" font-size="8.5" font-family="monospace" font-weight="bold" fill="#D4A359" letter-spacing="1">KERNEL: SAIGON//07:30</text>
+            <text x="186" y="60" font-size="7.5" font-family="monospace" fill="#888">EXTRACTION : 60 DPM</text>
+            <text x="186" y="74" font-size="7.5" font-family="monospace" fill="#888">BUFFER     : HOT ESPRESSO</text>
+            <text x="186" y="88" font-size="7.5" font-family="monospace" fill="#2FA36B">INITIALIZE : OK (0.04s)</text>
+            <text x="186" y="102" font-size="7.5" font-family="monospace" fill="#888">INPUT      : ROBUSTA 100%</text>
+            <line x1="186" y1="110" x2="295" y2="110" stroke="#363630" stroke-width="1"/>
+            <text x="186" y="124" font-size="7" font-family="monospace" fill="#D4A359">CONCURRENCY BRAIN READY</text>
+            <!-- Glass -->
+            <path d="M72 70 L82 156 Q84 164 94 164 L122 164 Q132 164 134 156 L144 70 Z" fill="url(#cGlassGrad)" stroke="#D4A359" stroke-width="1.8"/>
+            <path d="M85 142 L88 162 L128 162 L131 142 Z" fill="url(#cMilkGrad)"/>
+            <path d="M77 86 L85 142 L131 142 L139 86 Z" fill="url(#cEspressoGrad)"/>
+            <rect x="90" y="96" width="16" height="16" rx="3" fill="#3D453C" opacity="0.75" stroke="#2FA36B" stroke-width="0.8"/>
+            <rect x="110" y="106" width="16" height="16" rx="3" fill="#3D453C" opacity="0.75" stroke="#2FA36B" stroke-width="0.8"/>
+            <!-- Phin Saucer plate -->
+            <rect x="62" y="62" width="92" height="7" rx="2" fill="#20221E" stroke="#D4A359" stroke-width="1.5"/>
+            <!-- Phin Chamber -->
+            <path d="M76 22 L140 22 L134 62 L82 62 Z" fill="#272A24" stroke="#D4A359" stroke-width="1.8"/>
+            <!-- Phin Lid & Knob -->
+            <path d="M72 22 Q108 14 144 22 Z" fill="#363630" stroke="#D4A359" stroke-width="1.5"/>
+            <circle cx="108" cy="14" r="4.5" fill="#D4A359"/>
+            <path d="M100 10 Q98 2 104 -4 Q110 -10 106 -16" stroke="#E4472C" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.7"/>
+            <path d="M116 10 Q120 2 114 -4 Q108 -10 112 -16" stroke="#E4472C" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.7"/>
+            <!-- Drip bead -->
+            <circle cx="108" cy="67" r="2.2" fill="#D4A359"><animate attributeName="cy" values="67;86" dur="1.2s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0" dur="1.2s" repeatCount="indefinite"/></circle>
+            <ellipse cx="108" cy="86" rx="16" ry="2.5" fill="none" stroke="#D4A359" stroke-width="0.8"><animate attributeName="rx" values="3;16" dur="1.2s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0" dur="1.2s" repeatCount="indefinite"/></ellipse>
+          </svg>
+          <span class="panel-stamp">CAFFEINE COMPILER</span>
+        </div>
+        <p class="panel-caption">Before any service warms up, the phin brews. Saigon iced milk coffee isn't just a drink—it's the mental compiler for high-concurrency thinking.</p>
+        <div class="panel-dialogue">"1 drop = 100 requests per second."</div>
+      </div>
+
+      <div class="comic-panel">
+        <div class="panel-art-wrap">
+          <span class="panel-badge">CS LAB · MEMORY &amp; TREES</span>
+          <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="ch1TreeGrid" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M 16 0 L 0 0 0 16" fill="none" stroke="#252822" stroke-width="0.8"/></pattern>
+            </defs>
+            <rect width="320" height="180" fill="url(#ch1TreeGrid)"/>
+            <path d="M12 24 L12 12 L24 12 M308 24 L308 12 L296 12 M12 156 L12 168 L24 168 M308 156 L308 168 L296 168" stroke="#2FA36B" stroke-width="1.2" opacity="0.6"/>
+            <!-- Left Memory Layout matrix -->
+            <rect x="22" y="30" width="80" height="116" rx="4" fill="#181A16" stroke="#363630" stroke-width="1.2"/>
+            <text x="30" y="44" font-size="7.5" font-family="monospace" fill="#D4A359" font-weight="bold">HEAP / RAM</text>
+            <rect x="28" y="52" width="68" height="14" rx="2" fill="#20221E" stroke="#2FA36B" stroke-width="0.8"/>
+            <text x="32" y="62" font-size="6.5" font-family="monospace" fill="#2FA36B">0x7F · ROOT</text>
+            <rect x="28" y="70" width="68" height="14" rx="2" fill="#20221E" stroke="#363630" stroke-width="0.8"/>
+            <text x="32" y="80" font-size="6.5" font-family="monospace" fill="#888">0x8C · LEFT</text>
+            <rect x="28" y="88" width="68" height="14" rx="2" fill="#20221E" stroke="#363630" stroke-width="0.8"/>
+            <text x="32" y="98" font-size="6.5" font-family="monospace" fill="#888">0x9A · RIGHT</text>
+            <rect x="28" y="106" width="68" height="14" rx="2" fill="#20221E" stroke="#E4472C" stroke-width="0.8"/>
+            <text x="32" y="116" font-size="6.5" font-family="monospace" fill="#E4472C">0xB4 · LEAF</text>
+            <text x="30" y="136" font-size="6.5" font-family="monospace" fill="#2FA36B">ALIGN: 64-BYTE</text>
+            <!-- Right Tree Hierarchy -->
+            <line x1="210" y1="46" x2="160" y2="86" stroke="#2FA36B" stroke-width="1.6"/>
+            <line x1="210" y1="46" x2="260" y2="86" stroke="#D4A359" stroke-width="1.6"/>
+            <line x1="160" y1="86" x2="135" y2="132" stroke="#2FA36B" stroke-width="1.4"/>
+            <line x1="160" y1="86" x2="185" y2="132" stroke="#363630" stroke-width="1.4"/>
+            <line x1="260" y1="86" x2="235" y2="132" stroke="#363630" stroke-width="1.4"/>
+            <line x1="260" y1="86" x2="285" y2="132" stroke="#D4A359" stroke-width="1.4"/>
+            <!-- Pulsing traversal packet -->
+            <circle cx="210" cy="46" r="3.5" fill="#FFF"><animateMotion path="M0,0 L-50,40 L-75,86" dur="2s" repeatCount="indefinite"/></circle>
+            <!-- Nodes -->
+            <circle cx="210" cy="46" r="14" fill="#1C2E20" stroke="#2FA36B" stroke-width="2"/>
+            <text x="210" y="50" font-size="8.5" font-family="monospace" font-weight="bold" fill="#FFF" text-anchor="middle">50</text>
+            <circle cx="160" cy="86" r="12" fill="#1C2E20" stroke="#2FA36B" stroke-width="1.8"/>
+            <text x="160" y="90" font-size="8" font-family="monospace" font-weight="bold" fill="#FFF" text-anchor="middle">25</text>
+            <circle cx="260" cy="86" r="12" fill="#20221E" stroke="#D4A359" stroke-width="1.8"/>
+            <text x="260" y="90" font-size="8" font-family="monospace" font-weight="bold" fill="#FFF" text-anchor="middle">75</text>
+            <circle cx="135" cy="132" r="10" fill="#2E1C1A" stroke="#E4472C" stroke-width="1.8"/>
+            <text x="135" y="135.5" font-size="7.5" font-family="monospace" font-weight="bold" fill="#FFF" text-anchor="middle">12</text>
+            <circle cx="185" cy="132" r="10" fill="#20221E" stroke="#363630" stroke-width="1.4"/>
+            <text x="185" y="135.5" font-size="7.5" font-family="monospace" fill="#888" text-anchor="middle">38</text>
+            <circle cx="235" cy="132" r="10" fill="#20221E" stroke="#363630" stroke-width="1.4"/>
+            <text x="235" y="135.5" font-size="7.5" font-family="monospace" fill="#888" text-anchor="middle">62</text>
+            <circle cx="285" cy="132" r="10" fill="#272A24" stroke="#D4A359" stroke-width="1.4"/>
+            <text x="285" y="135.5" font-size="7.5" font-family="monospace" fill="#FFF" text-anchor="middle">90</text>
+            <rect x="135" y="152" width="150" height="16" rx="3" fill="#141613" stroke="#2FA36B" stroke-width="1"/>
+            <text x="210" y="163" font-size="7" font-family="monospace" fill="#2FA36B" font-weight="bold" text-anchor="middle">COMPLEXITY: O(log N) · BALANCED</text>
+          </svg>
+          <span class="panel-stamp">ALGORITHM MERIT</span>
+        </div>
+        <p class="panel-caption">Mastering relational database internal trees, memory pointers, operating system threads, and algorithmic efficiency from the ground up.</p>
+        <div class="panel-dialogue">"Theoretical rigor makes production debugging intuitive."</div>
+      </div>
+
+      <div class="comic-panel">
+        <div class="panel-art-wrap">
+          <span class="panel-badge">HCMCOU · DEGREE &amp; SCHOLARSHIP</span>
+          <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="ch1HcmcouGrid" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M 16 0 L 0 0 0 16" fill="none" stroke="#252822" stroke-width="0.8"/></pattern>
+              <linearGradient id="goldDiplomaGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#D4A359"/><stop offset="50%" stop-color="#FFF2D6"/><stop offset="100%" stop-color="#9E7332"/></linearGradient>
+            </defs>
+            <rect width="320" height="180" fill="url(#ch1HcmcouGrid)"/>
+            <path d="M12 24 L12 12 L24 12 M308 24 L308 12 L296 12 M12 156 L12 168 L24 168 M308 156 L308 168 L296 168" stroke="#D4A359" stroke-width="1.2" opacity="0.6"/>
+            <!-- Ornate Diploma certificate parchment frame -->
+            <rect x="30" y="20" width="260" height="140" rx="6" fill="#161814" stroke="url(#goldDiplomaGrad)" stroke-width="2"/>
+            <rect x="36" y="26" width="248" height="128" rx="4" fill="#1C1E1A" stroke="#363630" stroke-width="1" stroke-dasharray="3 3"/>
+            <!-- Center Seal / Laurel Emblem -->
+            <circle cx="160" cy="62" r="24" fill="#252822" stroke="url(#goldDiplomaGrad)" stroke-width="2"/>
+            <!-- Star in seal -->
+            <polygon points="160,46 164,56 174,58 166,65 168,76 160,70 152,76 154,65 146,58 156,56" fill="url(#goldDiplomaGrad)"/>
+            <!-- University & Degree details -->
+            <text x="160" y="100" font-size="10" font-family="monospace" font-weight="900" fill="#FFF" text-anchor="middle" letter-spacing="1">B.ENG INFORMATION TECHNOLOGY</text>
+            <text x="160" y="114" font-size="8" font-family="monospace" fill="#D4A359" text-anchor="middle">HO CHI MINH CITY OPEN UNIVERSITY</text>
+            <text x="160" y="126" font-size="7.5" font-family="monospace" fill="#2FA36B" text-anchor="middle" font-weight="bold">DEGREE CLASSIFICATION: GOOD · 2021 — 2025</text>
+            <!-- Scholarship Ribbon Banner -->
+            <rect x="68" y="134" width="184" height="14" rx="3" fill="#E4472C"/>
+            <text x="160" y="144" font-size="7" font-family="monospace" font-weight="900" fill="#FFF" text-anchor="middle" letter-spacing="0.5">★ ACADEMIC EXCELLENCE SCHOLARSHIP AWARDEE ★</text>
+          </svg>
+          <span class="panel-stamp">TOP HONORS</span>
+        </div>
+        <p class="panel-caption">Awarded the Academic Excellence Scholarship and graduated with a B.Eng in Information Technology (Grade: Good, 2021 — 2025).</p>
+        <div class="panel-dialogue">"Recognized for top-tier academic dedication."</div>
+      </div>
+    </div>
+    <details class="story-transcript">
+      <summary>▶ Read the technical log &amp; academic context</summary>
+      <div class="transcript-body">
+        <p><strong>Curriculum Core:</strong> Algorithmic analysis, relational database normalization, concurrency synchronization primitives, network socket programming, and software engineering architecture.</p>
+        <p><strong>Key Artifacts:</strong> Academic Excellence Scholarship (Jan 2025), B.Eng Degree in IT (Sep 2025). The rigorous foundation in B-trees, hashing strategies, and memory layouts later became the decisive weapon in solving Oracle query bottlenecks and tuning Kafka partition streaming in production.</p>
+      </div>
+    </details>
+  </article>
+
+  <!-- CHAPTER 02: 2023 -->
+  <article class="story-chapter" id="the-crypt" aria-labelledby="ch2-heading">
+    <div class="chapter-heading">
+      <h2 id="ch2-heading"><span>Oct 2023 — Jan 2024</span>Chapter 02: The Cryptographic Vault</h2>
+      <small>2 / 5</small>
+    </div>
+    <div class="chapter-description">
+      <p>
+        Classroom theory met commercial software at <strong>IO STREAM</strong>: multithreaded media downloaders, asynchronous scheduling, and local file encryption utilities in C# and WinUI 3.
+      </p>
+    </div>
+    <div class="panel-layout">
+      <div class="comic-panel">
+        <div class="panel-art-wrap">
+          <span class="panel-badge">IO STREAM · WINUI 3</span>
+          <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="ch2WinGrid" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M 16 0 L 0 0 0 16" fill="none" stroke="#252822" stroke-width="0.8"/></pattern>
+              <linearGradient id="winGlassGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#232620"/><stop offset="100%" stop-color="#121310"/></linearGradient>
+            </defs>
+            <rect width="320" height="180" fill="url(#ch2WinGrid)"/>
+            <path d="M12 24 L12 12 L24 12 M308 24 L308 12 L296 12 M12 156 L12 168 L24 168 M308 156 L308 168 L296 168" stroke="#D4A359" stroke-width="1.2" opacity="0.6"/>
+            <rect x="26" y="24" width="268" height="136" rx="8" fill="url(#winGlassGrad)" stroke="#363630" stroke-width="1.5"/>
+            <path d="M26 32 Q26 24 34 24 L286 24 Q294 24 294 32 L294 44 L26 44 Z" fill="#1C1E1A"/>
+            <circle cx="42" cy="34" r="3.5" fill="#E4472C"/>
+            <circle cx="53" cy="34" r="3.5" fill="#D4A359"/>
+            <circle cx="64" cy="34" r="3.5" fill="#2FA36B"/>
+            <text x="160" y="37" font-size="7.5" font-family="monospace" fill="#888" text-anchor="middle">IoStream.Security.WinUI — ThreadPool: 8 Cores</text>
+            <rect x="40" y="54" width="240" height="18" rx="3" fill="#181A15" stroke="#2FA36B" stroke-width="0.8"/>
+            <text x="50" y="66" font-size="7.5" font-family="monospace" fill="#2FA36B" font-weight="bold">UI THREAD: 60.0 FPS · DISPATCHER OK</text>
+            <text x="235" y="66" font-size="7" font-family="monospace" fill="#D4A359">JANK: 0ms</text>
+            <text x="40" y="86" font-size="7" font-family="monospace" fill="#AAA">ASYNC WORKER #1 [AES-256 ENCRYPT]</text>
+            <rect x="40" y="92" width="240" height="8" rx="2" fill="#20221E"/>
+            <rect x="40" y="92" width="220" height="8" rx="2" fill="#2FA36B"/>
+            <text x="264" y="99" font-size="6.5" font-family="monospace" fill="#FFF">92%</text>
+            <text x="40" y="114" font-size="7" font-family="monospace" fill="#AAA">ASYNC WORKER #2 [PARALLEL CHUNK DOWNLOADER]</text>
+            <rect x="40" y="120" width="240" height="8" rx="2" fill="#20221E"/>
+            <rect x="40" y="120" width="186" height="8" rx="2" fill="#D4A359"/>
+            <text x="230" y="127" font-size="6.5" font-family="monospace" fill="#FFF">78%</text>
+            <rect x="40" y="136" width="240" height="14" rx="2" fill="#141513"/>
+            <text x="48" y="146" font-size="6.5" font-family="monospace" fill="#2FA36B">● DISPATCHERQUEUE: ASYNC/AWAIT NON-BLOCKING</text>
+          </svg>
+          <span class="panel-stamp">SMOOTH UI</span>
+        </div>
+        <p class="panel-caption">Engineered Windows desktop client software with WinUI 3. Decoupling computational tasks from the UI thread to guarantee zero frame stutter.</p>
+        <div class="panel-dialogue">"Technology should eliminate manual friction for users."</div>
+      </div>
+
+      <div class="comic-panel">
+        <div class="panel-art-wrap">
+          <span class="panel-badge">SECURITY · AES CIPHER</span>
+          <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="ch2AesGrid" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M 16 0 L 0 0 0 16" fill="none" stroke="#252822" stroke-width="0.8"/></pattern>
+              <linearGradient id="aesLaserGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#2FA36B" stop-opacity="0"/><stop offset="50%" stop-color="#2FA36B"/><stop offset="100%" stop-color="#2FA36B" stop-opacity="0"/></linearGradient>
+            </defs>
+            <rect width="320" height="180" fill="url(#ch2AesGrid)"/>
+            <path d="M12 24 L12 12 L24 12 M308 24 L308 12 L296 12 M12 156 L12 168 L24 168 M308 156 L308 168 L296 168" stroke="#D4A359" stroke-width="1.2" opacity="0.6"/>
+            <circle cx="160" cy="86" r="66" stroke="#363630" stroke-width="1.2" stroke-dasharray="4 4"/>
+            <circle cx="160" cy="86" r="50" stroke="#D4A359" stroke-width="1.6" stroke-dasharray="8 6"/>
+            <circle cx="160" cy="86" r="36" stroke="#2FA36B" stroke-width="1.8"/>
+            <polygon points="160,62 178,72 178,98 160,108 142,98 142,72" fill="#20221E" stroke="#D4A359" stroke-width="2"/>
+            <circle cx="160" cy="82" r="5.5" fill="#E4472C"/>
+            <polygon points="157,84 163,84 164,96 156,96" fill="#E4472C"/>
+            <rect x="80" y="85" width="160" height="2" fill="url(#aesLaserGrad)"><animate attributeName="y" values="30;140;30" dur="3s" repeatCount="indefinite"/></rect>
+            <text x="24" y="44" font-size="7" font-family="monospace" fill="#2FA36B">0x7F 0xA4 0x12 0x90</text>
+            <text x="24" y="56" font-size="7" font-family="monospace" fill="#888">IV : 96-BIT RANDOM</text>
+            <text x="24" y="68" font-size="7" font-family="monospace" fill="#D4A359">KEY: 256-BIT SYMMETRIC</text>
+            <text x="220" y="118" font-size="7" font-family="monospace" fill="#2FA36B">AUTH TAG: 128-BIT</text>
+            <text x="220" y="130" font-size="7" font-family="monospace" fill="#888">TAMPER-PROOF : YES</text>
+            <text x="220" y="142" font-size="7" font-family="monospace" fill="#E4472C">NO PLAINTEXT ON DISK</text>
+          </svg>
+          <span class="panel-stamp">AES-256 VAULT</span>
+        </div>
+        <p class="panel-caption">Crafted byte-level cryptographic utilities for local file security, safeguarding customer media and confidential data against inspection.</p>
+        <div class="panel-dialogue">"Integrity and privacy must be baked into the architecture."</div>
+      </div>
+
+      <div class="comic-panel">
+        <div class="panel-art-wrap">
+          <span class="panel-badge">ASYNC · CONCURRENCY</span>
+          <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="ch2ChunkGrid" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M 16 0 L 0 0 0 16" fill="none" stroke="#252822" stroke-width="0.8"/></pattern>
+            </defs>
+            <rect width="320" height="180" fill="url(#ch2ChunkGrid)"/>
+            <path d="M12 24 L12 12 L24 12 M308 24 L308 12 L296 12 M12 156 L12 168 L24 168 M308 156 L308 168 L296 168" stroke="#D4A359" stroke-width="1.2" opacity="0.6"/>
+            <!-- 4 Parallel Streaming Lanes -->
+            <rect x="28" y="28" width="264" height="24" rx="4" fill="#181A15" stroke="#363630" stroke-width="1"/>
+            <text x="36" y="43" font-size="7.5" font-family="monospace" fill="#D4A359">THREAD 01</text>
+            <rect x="100" y="34" width="30" height="12" rx="2" fill="#2FA36B"><animate attributeName="x" values="100;230;100" dur="2.4s" repeatCount="indefinite"/></rect>
+            <text x="248" y="43" font-size="7" font-family="monospace" fill="#2FA36B">CHUNK #1 ✓</text>
+            <rect x="28" y="58" width="264" height="24" rx="4" fill="#181A15" stroke="#363630" stroke-width="1"/>
+            <text x="36" y="73" font-size="7.5" font-family="monospace" fill="#D4A359">THREAD 02</text>
+            <rect x="100" y="64" width="45" height="12" rx="2" fill="#2FA36B"><animate attributeName="x" values="100;220;100" dur="2.8s" begin="0.3s" repeatCount="indefinite"/></rect>
+            <text x="248" y="73" font-size="7" font-family="monospace" fill="#2FA36B">CHUNK #2 ✓</text>
+            <rect x="28" y="88" width="264" height="24" rx="4" fill="#181A15" stroke="#363630" stroke-width="1"/>
+            <text x="36" y="103" font-size="7.5" font-family="monospace" fill="#D4A359">THREAD 03</text>
+            <rect x="100" y="94" width="38" height="12" rx="2" fill="#D4A359"><animate attributeName="x" values="100;215;100" dur="2.1s" begin="0.6s" repeatCount="indefinite"/></rect>
+            <text x="248" y="103" font-size="7" font-family="monospace" fill="#D4A359">CHUNK #3 ↻</text>
+            <rect x="28" y="118" width="264" height="24" rx="4" fill="#181A15" stroke="#363630" stroke-width="1"/>
+            <text x="36" y="133" font-size="7.5" font-family="monospace" fill="#D4A359">THREAD 04</text>
+            <rect x="100" y="124" width="50" height="12" rx="2" fill="#2FA36B"><animate attributeName="x" values="100;225;100" dur="2.6s" begin="0.2s" repeatCount="indefinite"/></rect>
+            <text x="248" y="133" font-size="7" font-family="monospace" fill="#2FA36B">CHUNK #4 ✓</text>
+            <rect x="28" y="148" width="264" height="18" rx="3" fill="#141613" stroke="#2FA36B" stroke-width="1"/>
+            <text x="160" y="160" font-size="7" font-family="monospace" fill="#2FA36B" font-weight="bold" text-anchor="middle">PIPELINE: MULTI-PART STREAM · MD5 CHECKSUM VERIFIED</text>
+          </svg>
+          <span class="panel-stamp">NON-BLOCKING</span>
+        </div>
+        <p class="panel-caption">Built parallel media chunk downloaders using modern C# async/await patterns, bounded thread pools, and cancellation tokens.</p>
+        <div class="panel-dialogue">"Concurrence without race conditions is true craftsmanship."</div>
+      </div>
+    </div>
+    <details class="story-transcript">
+      <summary>▶ Read the technical log &amp; desktop architecture</summary>
+      <div class="transcript-body">
+        <p><strong>Stack &amp; Frameworks:</strong> C#, .NET, WinUI 3, Windows App SDK, Cryptography APIs.</p>
+        <p><strong>Engineering Takeaway:</strong> Learned the intricacies of thread synchronization, byte streams, and memory buffers. Managing local machine resources laid the groundwork for managing cloud container resources in distributed microservices.</p>
+      </div>
+    </details>
+  </article>
+
+  <!-- CHAPTER 03: 2024 - 2026 -->
+  <article class="story-chapter" id="the-120s-heist" aria-labelledby="ch3-heading">
+    <div class="chapter-heading">
+      <h2 id="ch3-heading"><span>Sep 2024 — Sep 2026</span>Chapter 03: The 120s SQL Heist &amp; Distributed Operations</h2>
+      <small>3 / 5</small>
+    </div>
+    <div class="chapter-description">
+      <p>
+        High-throughput public sector platforms at <strong>GTEL OTS</strong>: while migrating a legacy .NET monolith (1M+ records) to Spring Boot, organisation user queries took ~120s. By analyzing Oracle execution plans and eliminating full table scans, query latency plummeted from <strong>~120s down to ~0.4s (~300× speedup)</strong>.
+      </p>
+    </div>
+        <div class="panel-layout">
+      <div class="comic-panel">
+        <div class="panel-art-wrap">
+          <span class="panel-badge">PRODUCTION ALERT · 120 SECONDS</span>
+          <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="ch3p1Grid" width="16" height="16" patternUnits="userSpaceOnUse">
+                <path d="M 16 0 L 0 0 0 16" fill="none" stroke="#252822" stroke-width="0.8"/>
+              </pattern>
+              <radialGradient id="alertGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#E4472C" stop-opacity="0.25"/>
+                <stop offset="100%" stop-color="#E4472C" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <rect width="320" height="180" fill="url(#ch3p1Grid)"/>
+            <path d="M12 24 L12 12 L24 12 M308 24 L308 12 L296 12 M12 156 L12 168 L24 168 M308 156 L308 168 L296 168" stroke="#E4472C" stroke-width="1.2" opacity="0.6"/>
+            <circle cx="160" cy="80" r="58" fill="url(#alertGlow)"/>
+            <circle cx="160" cy="80" r="54" stroke="#E4472C" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.8"/>
+            <circle cx="160" cy="80" r="38" stroke="#363630" stroke-width="1"/>
+            <line x1="160" y1="80" x2="160" y2="44" stroke="#E4472C" stroke-width="3" stroke-linecap="round"/>
+            <line x1="160" y1="80" x2="198" y2="80" stroke="#E4472C" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="160" cy="80" r="4.5" fill="#E4472C"/>
+            <circle cx="160" cy="44" r="3" fill="#FFF"><animate attributeName="opacity" values="0.2;1;0.2" dur="0.8s" repeatCount="indefinite"/></circle>
+            <rect x="95" y="104" width="130" height="26" rx="4" fill="#1C1514" stroke="#E4472C" stroke-width="1.2"/>
+            <text x="160" y="121" font-size="13" font-weight="900" font-family="monospace" fill="#E4472C" text-anchor="middle" letter-spacing="1">119.8s TIMEOUT</text>
+            <text x="24" y="38" font-size="7" font-family="monospace" fill="#E4472C" font-weight="bold">! SLA ALERT: BREACH</text>
+            <text x="24" y="50" font-size="6.5" font-family="monospace" fill="#888">ORACLE 19c ENGINE</text>
+            <text x="24" y="62" font-size="6.5" font-family="monospace" fill="#888">POOL: 100% SATURATED</text>
+            <text x="24" y="74" font-size="6.5" font-family="monospace" fill="#E4472C">CPU SPIKE: 99.8%</text>
+            <text x="296" y="38" font-size="7" font-family="monospace" fill="#888" text-anchor="end">QUERY AUTOPSY</text>
+            <text x="296" y="50" font-size="6.5" font-family="monospace" fill="#D4A359" text-anchor="end">ROWS: 1,000,000+</text>
+            <text x="296" y="62" font-size="6.5" font-family="monospace" fill="#E4472C" text-anchor="end">STATUS: HANGING</text>
+            <text x="296" y="74" font-size="6.5" font-family="monospace" fill="#888" text-anchor="end">BUFFER GETS: 1.4M</text>
+            <rect x="24" y="146" width="272" height="18" rx="3" fill="#141513" stroke="#363630" stroke-width="0.8"/>
+            <path d="M 32 155 L 70 155 L 76 149 L 82 161 L 88 152 L 94 158 L 100 155 L 170 155 L 174 148 L 180 162 L 186 155 L 290 155" stroke="#E4472C" stroke-width="1.2" fill="none"/>
+            <text x="200" y="158" font-size="6" font-family="monospace" fill="#E4472C">DASHBOARD UNRESPONSIVE (120s)</text>
+          </svg>
+          <span class="panel-stamp">CRITICAL BOTTLENECK</span>
+        </div>
+        <p class="panel-caption">1,000,000 records. A two-minute query bottleneck was threatening the release of the core operations platform.</p>
+        <div class="panel-dialogue">"Adding hardware won't fix a fundamentally broken execution plan."</div>
+      </div>
+
+      <div class="comic-panel">
+        <div class="panel-art-wrap">
+          <span class="panel-badge">ORACLE · EXPLAIN PLAN ANALYSIS</span>
+          <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="ch3p2Grid" width="16" height="16" patternUnits="userSpaceOnUse">
+                <path d="M 16 0 L 0 0 0 16" fill="none" stroke="#252822" stroke-width="0.8"/>
+              </pattern>
+              <linearGradient id="scanBeam" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#D4A359" stop-opacity="0"/>
+                <stop offset="50%" stop-color="#D4A359" stop-opacity="0.35"/>
+                <stop offset="100%" stop-color="#D4A359" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <rect width="320" height="180" fill="url(#ch3p2Grid)"/>
+            <path d="M12 24 L12 12 L24 12 M308 24 L308 12 L296 12 M12 156 L12 168 L24 168 M308 156 L308 168 L296 168" stroke="#D4A359" stroke-width="1.2" opacity="0.6"/>
+            <rect x="24" y="22" width="272" height="18" rx="3" fill="#1C1E1A" stroke="#363630" stroke-width="0.8"/>
+            <text x="32" y="34" font-size="7" font-family="monospace" fill="#D4A359" font-weight="bold">ORACLE 19c · EXPLAIN PLAN FOR SELECT ...</text>
+            <text x="288" y="34" font-size="6.5" font-family="monospace" fill="#888" text-anchor="end">CBO: ALL_ROWS</text>
+            <rect x="24" y="46" width="272" height="22" rx="3" fill="#161814" stroke="#363630" stroke-width="0.8"/>
+            <text x="32" y="60" font-size="7" font-family="monospace" fill="#EEE">SELECT STATEMENT</text>
+            <text x="170" y="60" font-size="6.5" font-family="monospace" fill="#888">COST: 842,110</text>
+            <text x="240" y="60" font-size="6.5" font-family="monospace" fill="#888">ROWS: 1.05M</text>
+            <rect x="36" y="74" width="260" height="30" rx="3" fill="#241412" stroke="#E4472C" stroke-width="1.2"/>
+            <path d="M 28 68 L 28 89 L 36 89" stroke="#E4472C" stroke-width="1" fill="none"/>
+            <circle cx="46" cy="85" r="3" fill="#E4472C"/>
+            <text x="54" y="87" font-size="7.5" font-family="monospace" fill="#E4472C" font-weight="bold">❌ TABLE ACCESS FULL · AUDIT_RECORDS</text>
+            <text x="54" y="98" font-size="6.5" font-family="monospace" fill="#D4A359">ROOT CAUSE: UNINDEXED PREDICATE + REDUNDANT JOIN</text>
+            <rect x="36" y="74" width="260" height="30" rx="3" fill="url(#scanBeam)"><animate attributeName="opacity" values="0.1;0.6;0.1" dur="2s" repeatCount="indefinite"/></rect>
+            <rect x="36" y="110" width="260" height="28" rx="3" fill="#142218" stroke="#2FA36B" stroke-width="1.2"/>
+            <path d="M 28 89 L 28 124 L 36 124" stroke="#2FA36B" stroke-width="1" fill="none"/>
+            <circle cx="46" cy="120" r="3" fill="#2FA36B"/>
+            <text x="54" y="122" font-size="7.5" font-family="monospace" fill="#2FA36B" font-weight="bold">✓ INDEX RANGE SCAN · IDX_ORG_PARTITION</text>
+            <text x="54" y="132" font-size="6.5" font-family="monospace" fill="#888">COST: 3 · BUFFER GETS: 42 · PRUNED 99.9% PARTITIONS</text>
+            <rect x="24" y="144" width="272" height="20" rx="3" fill="#141513" stroke="#2FA36B" stroke-width="0.8"/>
+            <text x="32" y="157" font-size="6.5" font-family="monospace" fill="#2FA36B" font-weight="bold">DIAGNOSIS: CLAUSE SURGERY + COVERING COMPOSITE INDEX</text>
+            <text x="288" y="157" font-size="6.5" font-family="monospace" fill="#D4A359" text-anchor="end">CBO OPTIMIZED ✓</text>
+          </svg>
+          <span class="panel-stamp">ROOT CAUSE FOUND</span>
+        </div>
+        <p class="panel-caption">Deep query autopsy: An unindexed join condition forced a catastrophic full table scan across partitioned audit logs.</p>
+        <div class="panel-dialogue">"Inspect the indexes, remove redundant clauses, enforce partition pruning."</div>
+      </div>
+
+      <div class="comic-panel">
+        <div class="panel-art-wrap">
+          <span class="panel-badge">OPTIMIZED RESULT · 0.4 SECONDS</span>
+          <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="ch3p3Grid" width="16" height="16" patternUnits="userSpaceOnUse">
+                <path d="M 16 0 L 0 0 0 16" fill="none" stroke="#252822" stroke-width="0.8"/>
+              </pattern>
+              <radialGradient id="speedGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#2FA36B" stop-opacity="0.3"/>
+                <stop offset="100%" stop-color="#2FA36B" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <rect width="320" height="180" fill="url(#ch3p3Grid)"/>
+            <path d="M12 24 L12 12 L24 12 M308 24 L308 12 L296 12 M12 156 L12 168 L24 168 M308 156 L308 168 L296 168" stroke="#D4A359" stroke-width="1.2" opacity="0.6"/>
+            <circle cx="160" cy="105" r="68" fill="url(#speedGlow)"/>
+            <path d="M 100 110 A 60 60 0 1 1 220 110" stroke="#262822" stroke-width="8" stroke-linecap="round"/>
+            <path d="M 200 68 A 60 60 0 0 1 220 110" stroke="#E4472C" stroke-width="8" stroke-linecap="round" stroke-dasharray="3 3"/>
+            <path d="M 100 110 A 60 60 0 0 1 160 50" stroke="#2FA36B" stroke-width="8" stroke-linecap="round"/>
+            <line x1="160" y1="110" x2="116" y2="84" stroke="#2FA36B" stroke-width="3.5" stroke-linecap="round">
+              <animateTransform attributeName="transform" type="rotate" from="40 160 110" to="0 160 110" dur="1s" fill="freeze"/>
+            </line>
+            <circle cx="160" cy="110" r="6" fill="#EEE7D7" stroke="#2FA36B" stroke-width="2"/>
+            <text x="160" y="98" font-size="22" font-weight="900" font-family="monospace" fill="#2FA36B" text-anchor="middle">~300×</text>
+            <text x="160" y="124" font-size="7.5" font-family="monospace" fill="#D4A359" text-anchor="middle" font-weight="bold">LATENCY: 0.38s</text>
+            <rect x="24" y="24" width="80" height="34" rx="3" fill="#1C1514" stroke="#E4472C" stroke-width="0.8"/>
+            <text x="32" y="37" font-size="6" font-family="monospace" fill="#888">BEFORE TUNE</text>
+            <text x="32" y="50" font-size="10" font-weight="900" font-family="monospace" fill="#E4472C">120.0s</text>
+            <rect x="216" y="24" width="80" height="34" rx="3" fill="#142218" stroke="#2FA36B" stroke-width="0.8"/>
+            <text x="224" y="37" font-size="6" font-family="monospace" fill="#888">AFTER TUNE</text>
+            <text x="224" y="50" font-size="10" font-weight="900" font-family="monospace" fill="#2FA36B">0.38s ✓</text>
+            <rect x="24" y="146" width="272" height="18" rx="3" fill="#141513" stroke="#2FA36B" stroke-width="0.8"/>
+            <text x="32" y="158" font-size="6.5" font-family="monospace" fill="#2FA36B">BUFFER GETS: 1.4M → 42 (-99.9%)</text>
+            <text x="288" y="158" font-size="6.5" font-family="monospace" fill="#D4A359" text-anchor="end">CLOUD COST INCREASE: bash.00</text>
+          </svg>
+          <span class="panel-stamp">0.4s SPEEDUP</span>
+        </div>
+        <p class="panel-caption">Execution plan transformed: Query response dropped from 120s down to 0.4s. Instantaneous queries without purchasing new hardware.</p>
+        <div class="panel-dialogue">"~300× faster. Zero cloud cost increase."</div>
+      </div>
+
+      <div class="comic-panel">
+        <div class="panel-art-wrap">
+          <span class="panel-badge">10+ SERVICES · 120+ MIGRATIONS</span>
+          <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="ch3p4Grid" width="16" height="16" patternUnits="userSpaceOnUse">
+                <path d="M 16 0 L 0 0 0 16" fill="none" stroke="#252822" stroke-width="0.8"/>
+              </pattern>
+            </defs>
+            <rect width="320" height="180" fill="url(#ch3p4Grid)"/>
+            <path d="M12 24 L12 12 L24 12 M308 24 L308 12 L296 12 M12 156 L12 168 L24 168 M308 156 L308 168 L296 168" stroke="#D4A359" stroke-width="1.2" opacity="0.6"/>
+            <rect x="24" y="68" width="272" height="28" rx="4" fill="#1C1E1A" stroke="#D4A359" stroke-width="1.2"/>
+            <text x="34" y="85" font-size="7.5" font-family="monospace" fill="#D4A359" font-weight="bold">KAFKA CLUSTER EVENT BUS</text>
+            <text x="286" y="85" font-size="6.5" font-family="monospace" fill="#2FA36B" text-anchor="end">10+ TOPICS · ZERO DROP</text>
+            <circle cx="160" cy="82" r="3.5" fill="#2FA36B"><animate attributeName="cx" values="120;250;120" dur="3s" repeatCount="indefinite"/></circle>
+            <circle cx="180" cy="82" r="3" fill="#D4A359"><animate attributeName="cx" values="240;110;240" dur="2.6s" repeatCount="indefinite"/></circle>
+            <rect x="24" y="24" width="76" height="32" rx="3" fill="#181A15" stroke="#363630" stroke-width="1"/>
+            <text x="30" y="37" font-size="6.5" font-family="monospace" fill="#2FA36B" font-weight="bold">CORE-OPS</text>
+            <text x="30" y="48" font-size="5.5" font-family="monospace" fill="#888">SPRING BOOT 3</text>
+            <line x1="62" y1="56" x2="62" y2="68" stroke="#2FA36B" stroke-width="1.2" stroke-dasharray="2 2"/>
+            <rect x="122" y="24" width="76" height="32" rx="3" fill="#181A15" stroke="#363630" stroke-width="1"/>
+            <text x="128" y="37" font-size="6.5" font-family="monospace" fill="#D4A359" font-weight="bold">NOTIFY-ENGINE</text>
+            <text x="128" y="48" font-size="5.5" font-family="monospace" fill="#888">KAFKA / FEIGN</text>
+            <line x1="160" y1="56" x2="160" y2="68" stroke="#D4A359" stroke-width="1.2" stroke-dasharray="2 2"/>
+            <rect x="220" y="24" width="76" height="32" rx="3" fill="#181A15" stroke="#363630" stroke-width="1"/>
+            <text x="226" y="37" font-size="6.5" font-family="monospace" fill="#2FA36B" font-weight="bold">EDGE-INGEST</text>
+            <text x="226" y="48" font-size="5.5" font-family="monospace" fill="#888">gRPC PROTOBUF</text>
+            <line x1="258" y1="56" x2="258" y2="68" stroke="#2FA36B" stroke-width="1.2" stroke-dasharray="2 2"/>
+            <rect x="24" y="110" width="272" height="48" rx="4" fill="#151713" stroke="#2FA36B" stroke-width="1"/>
+            <text x="34" y="124" font-size="7" font-family="monospace" fill="#2FA36B" font-weight="bold">FLYWAY PIPELINE: 120+ MIGRATIONS (ZERO-LOCK DDL)</text>
+            <line x1="34" y1="136" x2="286" y2="136" stroke="#363630" stroke-width="2"/>
+            <circle cx="50" cy="136" r="4" fill="#2FA36B"/>
+            <circle cx="100" cy="136" r="4" fill="#2FA36B"/>
+            <circle cx="160" cy="136" r="4" fill="#2FA36B"/>
+            <circle cx="220" cy="136" r="4" fill="#2FA36B"/>
+            <circle cx="270" cy="136" r="5" fill="#D4A359"/>
+            <text x="50" y="150" font-size="5.5" font-family="monospace" fill="#888" text-anchor="middle">V01</text>
+            <text x="100" y="150" font-size="5.5" font-family="monospace" fill="#888" text-anchor="middle">V42</text>
+            <text x="160" y="150" font-size="5.5" font-family="monospace" fill="#888" text-anchor="middle">V88</text>
+            <text x="220" y="150" font-size="5.5" font-family="monospace" fill="#888" text-anchor="middle">V115</text>
+            <text x="270" y="150" font-size="5.5" font-family="monospace" fill="#D4A359" text-anchor="middle" font-weight="bold">V120+ ✓</text>
+          </svg>
+          <span class="panel-stamp">ZERO DOWNTIME</span>
+        </div>
+        <p class="panel-caption">Authored 120+ Flyway zero-downtime database migrations and architected shared gRPC/Feign contract libraries across 10+ distributed microservices.</p>
+        <div class="panel-dialogue">"Contracts enforce microservice order. Migrations safeguard state."</div>
+      </div>
+    </div>
+    <details class="story-transcript">
+      <summary>▶ Read technical architecture specifications</summary>
+      <div class="transcript-body">
+        <p><strong>Architecture Pattern:</strong> Event-Driven Architecture (EDA) &amp; Microservices with typed Protobuf/gRPC contracts.</p>
+        <p><strong>Core Stack:</strong> Java 17/21, Spring Boot 3, Oracle 19c, Apache Kafka, Redis, Elasticsearch, Docker/K8s.</p>
+        <p><strong>Key Milestones:</strong> 120+ zero-downtime Flyway migrations, sub-second query tuning via execution plan optimization, shared Feign/gRPC libraries across 10+ internal services, automated test safety via JUnit 5 &amp; Spock.</p>
+      </div>
+    </details>
+  </article>
+
+  <!-- CHAPTER 04: 2026 - PRESENT -->
+    <article class="story-chapter" id="the-high-throughput" aria-labelledby="ch4-heading">
+    <div class="chapter-heading">
+      <h2 id="ch4-heading"><span>Oct 2026 — Present</span>Chapter 04: Telecommunication Scale &amp; Production Hardening</h2>
+      <small>4 / 5</small>
+    </div>
+    <div class="chapter-description">
+      <p>
+        Telecommunication scale as GTEL OTS joined <strong>FTel (FPT Telecom)</strong>: operating and hardening distributed Spring Boot microservices, decoupled gRPC-to-Kafka pipelines, and maintaining <strong>100% production uptime with zero service disruption</strong>.
+      </p>
+    </div>
+    <div class="panel-layout">
+      <!-- Panel 1 -->
+      <div class="comic-panel">
+        <div class="panel-art-wrap">
+          <span class="panel-badge">TELECOM INFRASTRUCTURE · ARCHITECTURE NEXUS</span>
+          <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="ch4p1Grid" width="16" height="16" patternUnits="userSpaceOnUse">
+                <path d="M 16 0 L 0 0 0 16" fill="none" stroke="#252822" stroke-width="0.8"/>
+              </pattern>
+              <radialGradient id="allianceGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#D4A359" stop-opacity="0.2"/>
+                <stop offset="100%" stop-color="#D4A359" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <rect width="320" height="180" fill="url(#ch4p1Grid)"/>
+            <path d="M12 24 L12 12 L24 12 M308 24 L308 12 L296 12 M12 156 L12 168 L24 168 M308 156 L308 168 L296 168" stroke="#D4A359" stroke-width="1.2" opacity="0.6"/>
+            <circle cx="160" cy="85" r="62" fill="url(#allianceGlow)"/>
+            <polygon points="160,28 206,54 206,108 160,134 114,108 114,54" stroke="#D4A359" stroke-width="1.8" fill="#1C1E1A"/>
+            <polygon points="160,38 196,59 196,103 160,124 124,103 124,59" stroke="#363630" stroke-width="1" fill="#141513"/>
+            <!-- Distributed Service Mesh Nodes -->
+            <circle cx="160" cy="81" r="16" fill="#20221E" stroke="#2FA36B" stroke-width="1.5"/>
+            <circle cx="160" cy="81" r="5" fill="#2FA36B"/>
+            <line x1="160" y1="65" x2="160" y2="46" stroke="#2FA36B" stroke-width="1.2"/>
+            <circle cx="160" cy="46" r="3" fill="#2FA36B"/>
+            <line x1="174" y1="89" x2="190" y2="98" stroke="#D4A359" stroke-width="1.2"/>
+            <circle cx="190" cy="98" r="3" fill="#D4A359"/>
+            <line x1="146" y1="89" x2="130" y2="98" stroke="#D4A359" stroke-width="1.2"/>
+            <circle cx="130" cy="98" r="3" fill="#D4A359"/>
+            <line x1="174" y1="73" x2="190" y2="64" stroke="#D4A359" stroke-width="1.2"/>
+            <circle cx="190" cy="64" r="3" fill="#D4A359"/>
+            <line x1="146" y1="73" x2="130" y2="64" stroke="#D4A359" stroke-width="1.2"/>
+            <circle cx="130" cy="64" r="3" fill="#D4A359"/>
+            <circle cx="160" cy="81" r="48" stroke="#2FA36B" stroke-width="1" stroke-dasharray="4 4"><animateTransform attributeName="transform" type="rotate" from="0 160 81" to="360 160 81" dur="18s" repeatCount="indefinite"/></circle>
+            <rect x="24" y="32" width="76" height="28" rx="3" fill="#181A15" stroke="#363630" stroke-width="0.8"/>
+            <text x="30" y="44" font-size="6" font-family="monospace" fill="#888">ARCHITECTURE</text>
+            <text x="30" y="54" font-size="7.5" font-weight="bold" font-family="monospace" fill="#D4A359">CORE MESH</text>
+            <rect x="220" y="32" width="76" height="28" rx="3" fill="#181A15" stroke="#363630" stroke-width="0.8"/>
+            <text x="226" y="44" font-size="6" font-family="monospace" fill="#888">ECOSYSTEM</text>
+            <text x="226" y="54" font-size="7.5" font-weight="bold" font-family="monospace" fill="#2FA36B">FTEL SCALE</text>
+            <rect x="24" y="146" width="272" height="18" rx="3" fill="#141513" stroke="#D4A359" stroke-width="0.8"/>
+            <text x="160" y="158" font-size="7" font-family="monospace" fill="#D4A359" font-weight="bold" text-anchor="middle">HIGH-AVAILABILITY CLUSTER · DISTRIBUTED ARCHITECTURE · ZERO DISRUPTION</text>
+          </svg>
+          <span class="panel-stamp">TELECOM SCALE</span>
+        </div>
+        <p class="panel-caption">Expanding engineering scope to high-throughput telecommunication platforms, architecting reliable distributed services at scale.</p>
+        <div class="panel-dialogue">"High-throughput telecom systems demand absolute architectural discipline."</div>
+      </div>
+
+      <!-- Panel 2 -->
+      <div class="comic-panel">
+        <div class="panel-art-wrap">
+          <span class="panel-badge">PRODUCTION HARDENING · VERIFIED QUALITY</span>
+          <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="ch4p2Grid" width="16" height="16" patternUnits="userSpaceOnUse">
+                <path d="M 16 0 L 0 0 0 16" fill="none" stroke="#252822" stroke-width="0.8"/>
+              </pattern>
+              <radialGradient id="acceptGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#2FA36B" stop-opacity="0.2"/>
+                <stop offset="100%" stop-color="#2FA36B" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <rect width="320" height="180" fill="url(#ch4p2Grid)"/>
+            <path d="M12 24 L12 12 L24 12 M308 24 L308 12 L296 12 M12 156 L12 168 L24 168 M308 156 L308 168 L296 168" stroke="#D4A359" stroke-width="1.2" opacity="0.6"/>
+            <rect x="24" y="22" width="194" height="142" rx="5" fill="#181A15" stroke="#363630" stroke-width="1.2"/>
+            <rect x="24" y="22" width="194" height="22" rx="4" fill="#1E201B"/>
+            <text x="34" y="36" font-size="7.5" font-family="monospace" fill="#D4A359" font-weight="bold">PRODUCTION HARDENING &amp; ASSURANCE SUITE</text>
+            <rect x="34" y="52" width="12" height="12" rx="2" fill="#1A281E" stroke="#2FA36B" stroke-width="1"/>
+            <path d="M 37 58 L 40 61 L 44 55" stroke="#2FA36B" stroke-width="1.4" fill="none"/>
+            <text x="52" y="61" font-size="7" font-family="monospace" fill="#EEE">Core Platform Microservices</text>
+            <text x="180" y="61" font-size="6.5" font-family="monospace" fill="#2FA36B" text-anchor="end">100% OPERATIONAL</text>
+            <rect x="34" y="72" width="12" height="12" rx="2" fill="#1A281E" stroke="#2FA36B" stroke-width="1"/>
+            <path d="M 37 78 L 40 81 L 44 75" stroke="#2FA36B" stroke-width="1.4" fill="none"/>
+            <text x="52" y="81" font-size="7" font-family="monospace" fill="#EEE">End-to-End Integration Suites</text>
+            <text x="180" y="81" font-size="6.5" font-family="monospace" fill="#2FA36B" text-anchor="end">PASSED ✓</text>
+            <rect x="34" y="92" width="12" height="12" rx="2" fill="#1A281E" stroke="#2FA36B" stroke-width="1"/>
+            <path d="M 37 98 L 40 101 L 44 95" stroke="#2FA36B" stroke-width="1.4" fill="none"/>
+            <text x="52" y="101" font-size="7" font-family="monospace" fill="#EEE">Architecture &amp; Migration Runbooks</text>
+            <text x="180" y="101" font-size="6.5" font-family="monospace" fill="#2FA36B" text-anchor="end">VERIFIED</text>
+            <rect x="34" y="112" width="12" height="12" rx="2" fill="#1A281E" stroke="#2FA36B" stroke-width="1"/>
+            <path d="M 37 118 L 40 121 L 44 115" stroke="#2FA36B" stroke-width="1.4" fill="none"/>
+            <text x="52" y="121" font-size="7" font-family="monospace" fill="#EEE">Security &amp; RBAC Validation</text>
+            <text x="180" y="121" font-size="6.5" font-family="monospace" fill="#2FA36B" text-anchor="end">ENFORCED</text>
+            <rect x="34" y="134" width="174" height="20" rx="3" fill="#141513" stroke="#2FA36B" stroke-width="0.8"/>
+            <text x="42" y="147" font-size="6.5" font-family="monospace" fill="#2FA36B">QUALITY TARGET: PRODUCTION EXCELLENCE</text>
+            <g transform="translate(262, 93) rotate(-12)">
+              <circle cx="0" cy="0" r="42" fill="url(#acceptGlow)"/>
+              <circle cx="0" cy="0" r="38" stroke="#2FA36B" stroke-width="2" stroke-dasharray="5 3"/>
+              <circle cx="0" cy="0" r="32" stroke="#2FA36B" stroke-width="1"/>
+              <text x="0" y="-12" font-size="6.5" font-family="monospace" fill="#D4A359" text-anchor="middle" font-weight="bold">SYSTEM</text>
+              <text x="0" y="2" font-size="9" font-weight="900" font-family="monospace" fill="#2FA36B" text-anchor="middle">HARDENED</text>
+              <text x="0" y="14" font-size="6" font-family="monospace" fill="#D4A359" text-anchor="middle">&amp; VERIFIED</text>
+              <path d="M -16 20 L 16 20" stroke="#2FA36B" stroke-width="1"/>
+              <text x="0" y="26" font-size="5" font-family="monospace" fill="#888" text-anchor="middle">SLA: 99.99%</text>
+            </g>
+          </svg>
+          <span class="panel-stamp">HIGH RELIABILITY</span>
+        </div>
+        <p class="panel-caption">Hardening backend service modules, comprehensive integration test suites, and operational runbooks to ensure bulletproof platform stability.</p>
+        <div class="panel-dialogue">"Engineering excellence is proven through automated testing and flawless reliability."</div>
+      </div>
+
+      <!-- Panel 3 -->
+      <div class="comic-panel">
+        <div class="panel-art-wrap">
+          <span class="panel-badge">PLATFORM · ZERO DOWNTIME</span>
+          <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="ch4p3Grid" width="16" height="16" patternUnits="userSpaceOnUse">
+                <path d="M 16 0 L 0 0 0 16" fill="none" stroke="#252822" stroke-width="0.8"/>
+              </pattern>
+            </defs>
+            <rect width="320" height="180" fill="url(#ch4p3Grid)"/>
+            <path d="M12 24 L12 12 L24 12 M308 24 L308 12 L296 12 M12 156 L12 168 L24 168 M308 156 L308 168 L296 168" stroke="#D4A359" stroke-width="1.2" opacity="0.6"/>
+            <rect x="24" y="24" width="140" height="138" rx="4" fill="#141513" stroke="#363630" stroke-width="1.5"/>
+            <rect x="24" y="24" width="140" height="14" rx="3" fill="#1E201B"/>
+            <text x="32" y="34" font-size="6.5" font-family="monospace" fill="#D4A359">RACK-01 // PRODUCTION</text>
+            <rect x="30" y="44" width="128" height="24" rx="2" fill="#1A1C18" stroke="#2FA36B" stroke-width="0.8"/>
+            <circle cx="38" cy="56" r="2.5" fill="#2FA36B"><animate attributeName="opacity" values="0.4;1;0.4" dur="1.2s" repeatCount="indefinite"/></circle>
+            <circle cx="46" cy="56" r="2.5" fill="#2FA36B"/>
+            <text x="56" y="58" font-size="6.5" font-family="monospace" fill="#EEE">NODE-A: DISPATCH CORE</text>
+            <text x="146" y="58" font-size="6" font-family="monospace" fill="#2FA36B" text-anchor="end">HEALTHY</text>
+            <rect x="30" y="72" width="128" height="24" rx="2" fill="#1A1C18" stroke="#2FA36B" stroke-width="0.8"/>
+            <circle cx="38" cy="84" r="2.5" fill="#2FA36B"/>
+            <circle cx="46" cy="84" r="2.5" fill="#2FA36B"><animate attributeName="opacity" values="0.4;1;0.4" dur="0.9s" repeatCount="indefinite"/></circle>
+            <text x="56" y="86" font-size="6.5" font-family="monospace" fill="#EEE">NODE-B: NOTIFICATION</text>
+            <text x="146" y="86" font-size="6" font-family="monospace" fill="#2FA36B" text-anchor="end">HEALTHY</text>
+            <rect x="30" y="100" width="128" height="24" rx="2" fill="#1A1C18" stroke="#2FA36B" stroke-width="0.8"/>
+            <circle cx="38" cy="112" r="2.5" fill="#2FA36B"/>
+            <circle cx="46" cy="112" r="2.5" fill="#2FA36B"/>
+            <text x="56" y="114" font-size="6.5" font-family="monospace" fill="#EEE">NODE-C: INGESTION PIPELINE</text>
+            <text x="146" y="114" font-size="6" font-family="monospace" fill="#2FA36B" text-anchor="end">HEALTHY</text>
+            <rect x="30" y="130" width="128" height="24" rx="2" fill="#101812" stroke="#2FA36B" stroke-width="0.8"/>
+            <text x="94" y="144" font-size="6.5" font-family="monospace" fill="#2FA36B" font-weight="bold" text-anchor="middle">LOAD BALANCER: ACTIVE</text>
+            <rect x="174" y="24" width="122" height="138" rx="4" fill="#151713" stroke="#2FA36B" stroke-width="1.2"/>
+            <rect x="174" y="24" width="122" height="16" rx="3" fill="#1A281E"/>
+            <text x="182" y="35" font-size="6.5" font-family="monospace" fill="#2FA36B" font-weight="bold">HEARTBEAT TELEMETRY</text>
+            <text x="235" y="66" font-size="18" font-weight="900" font-family="monospace" fill="#2FA36B" text-anchor="middle">100.0%</text>
+            <text x="235" y="78" font-size="6.5" font-family="monospace" fill="#D4A359" text-anchor="middle">UPTIME MAINTAINED</text>
+            <rect x="182" y="86" width="106" height="34" rx="3" fill="#0E120F" stroke="#253528" stroke-width="0.8"/>
+            <path d="M 184 103 L 202 103 L 206 94 L 210 114 L 214 100 L 218 106 L 222 103 L 244 103 L 248 94 L 252 114 L 256 100 L 260 106 L 264 103 L 286 103" stroke="#2FA36B" stroke-width="1.4" fill="none"/>
+            <text x="184" y="133" font-size="6" font-family="monospace" fill="#888">OUTAGE SECONDS : 0s</text>
+            <text x="184" y="143" font-size="6" font-family="monospace" fill="#888">DROPPED REQUESTS: 0</text>
+            <text x="184" y="153" font-size="6" font-family="monospace" fill="#2FA36B" font-weight="bold">SLA TARGET: 100% MET ✓</text>
+          </svg>
+          <span class="panel-stamp">100% UPTIME</span>
+        </div>
+        <p class="panel-caption">Operating critical dispatch and notification microservices continuously with 100% availability and zero service disruption.</p>
+        <div class="panel-dialogue">"Users and downstream services experience uninterrupted 100% availability."</div>
+      </div>
+    </div>
+    <details class="story-transcript">
+      <summary>▶ Read platform architecture &amp; operational SLAs</summary>
+      <div class="transcript-body">
+        <p><strong>Platform Scope:</strong> High-availability telecommunication backend services and streaming microservices at FPT Telecom (FTel).</p>
+        <p><strong>Engineering Focus:</strong> Automated integration test safety (JUnit 5, Spock), zero-downtime rolling deployments, architectural runbooks, and cross-service contract enforcement via gRPC/Feign.</p>
+        <p><strong>Operational SLA:</strong> 100% production uptime, zero data loss, sub-second latency, and uninterrupted service delivery across all mission-critical platform modules.</p>
+      </div>
+    </details>
+  </article>
+
+  <!-- CHAPTER 05: OCTOBER 2026 -->
+  <article class="story-chapter" id="the-gatekeepers" aria-labelledby="ch5-heading">
+    <div class="chapter-heading">
+      <h2 id="ch5-heading"><span>October 31, 2026</span>Chapter 05: The Gatekeepers &amp; Verified Mastery</h2>
+      <small>5 / 5</small>
+    </div>
+    <div class="chapter-description">
+      <p>
+        Validating backend engineering competence against world-class benchmarks: <strong>Linux Foundation LFEL1004</strong> (OAuth 2.0/OIDC, SSO, RBAC token security) and <strong>HackerRank SQL (Advanced)</strong> (analytical window queries, execution plans, schema performance).
+      </p>
+    </div>
+        <div class="panel-layout">
+      <div class="comic-panel">
+        <div class="panel-art-wrap">
+          <span class="panel-badge">LINUX FOUNDATION · LFEL1004</span>
+          <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="ch5p1Grid" width="16" height="16" patternUnits="userSpaceOnUse">
+                <path d="M 16 0 L 0 0 0 16" fill="none" stroke="#252822" stroke-width="0.8"/>
+              </pattern>
+              <radialGradient id="lfGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#2FA36B" stop-opacity="0.25"/>
+                <stop offset="100%" stop-color="#2FA36B" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <rect width="320" height="180" fill="url(#ch5p1Grid)"/>
+            <path d="M12 24 L12 12 L24 12 M308 24 L308 12 L296 12 M12 156 L12 168 L24 168 M308 156 L308 168 L296 168" stroke="#D4A359" stroke-width="1.2" opacity="0.6"/>
+            <rect x="24" y="24" width="176" height="138" rx="4" fill="#141513" stroke="#363630" stroke-width="1.2"/>
+            <rect x="24" y="24" width="176" height="16" rx="3" fill="#1A1C18"/>
+            <text x="32" y="35" font-size="6.5" font-family="monospace" fill="#D4A359" font-weight="bold">OAUTH 2.0 / OIDC TOKEN INSPECTOR</text>
+            <rect x="32" y="46" width="160" height="20" rx="2" fill="#221514" stroke="#E4472C" stroke-width="0.8"/>
+            <text x="38" y="58" font-size="6.5" font-family="monospace" fill="#E4472C">HEADER: {"alg":"RS256","typ":"JWT"}</text>
+            <rect x="32" y="70" width="160" height="42" rx="2" fill="#201C14" stroke="#D4A359" stroke-width="0.8"/>
+            <text x="38" y="82" font-size="6" font-family="monospace" fill="#D4A359">PAYLOAD: {</text>
+            <text x="44" y="92" font-size="6" font-family="monospace" fill="#D4A359">"sub":"engineer_01","iss":"linuxfound",</text>
+            <text x="44" y="102" font-size="6" font-family="monospace" fill="#D4A359">"roles":["ADMIN","SECURITY_AUDIT"] }</text>
+            <rect x="32" y="116" width="160" height="20" rx="2" fill="#142218" stroke="#2FA36B" stroke-width="0.8"/>
+            <text x="38" y="129" font-size="6.5" font-family="monospace" fill="#2FA36B">SIGNATURE: SHA256_WITH_RSA ✓</text>
+            <rect x="32" y="140" width="160" height="14" rx="2" fill="#161E17"/>
+            <text x="112" y="150" font-size="6" font-family="monospace" fill="#2FA36B" font-weight="bold" text-anchor="middle">TOKEN VALIDATED · LEAST PRIVILEGE</text>
+            <g transform="translate(254, 88)">
+              <circle cx="0" cy="0" r="46" fill="url(#lfGlow)"/>
+              <polygon points="0,-42 36,-20 36,22 0,44 -36,22 -36,-20" stroke="#D4A359" stroke-width="2" fill="#1C1E1A"/>
+              <polygon points="0,-34 28,-16 28,18 0,36 -28,18 -28,-16" stroke="#2FA36B" stroke-width="1.2" fill="#141814"/>
+              <rect x="-10" y="-4" width="20" height="18" rx="3" fill="#D4A359"/>
+              <path d="M -7 -4 L -7 -12 Q -7 -19 0 -19 Q 7 -19 7 -12 L 7 -4" stroke="#D4A359" stroke-width="2.5" fill="none"/>
+              <circle cx="0" cy="3" r="2.5" fill="#141814"/>
+              <polygon points="-1,4 1,4 1.5,9 -1.5,9" fill="#141814"/>
+              <text x="0" y="24" font-size="5.5" font-weight="bold" font-family="monospace" fill="#2FA36B" text-anchor="middle">LFEL1004</text>
+              <text x="0" y="31" font-size="4.5" font-family="monospace" fill="#D4A359" text-anchor="middle">VERIFIED</text>
+            </g>
+            <text x="254" y="152" font-size="5.5" font-family="monospace" fill="#888" text-anchor="middle">CREDLY: vA3RkD3tbU6DYUpmmhEtbw</text>
+          </svg>
+          <span class="panel-stamp">CREDLY VERIFIED</span>
+        </div>
+        <p class="panel-caption">The Linux Foundation LFEL1004: Configured and enforced identity and access controls: OAuth 2.0, OpenID Connect, RBAC, and token security.</p>
+        <div class="panel-dialogue">"Enforce least-privilege access across every API boundary."</div>
+      </div>
+
+      <div class="comic-panel">
+        <div class="panel-art-wrap">
+          <span class="panel-badge">HACKERRANK · SQL ADVANCED</span>
+          <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="ch5p2Grid" width="16" height="16" patternUnits="userSpaceOnUse">
+                <path d="M 16 0 L 0 0 0 16" fill="none" stroke="#252822" stroke-width="0.8"/>
+              </pattern>
+              <radialGradient id="sqlGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#2FA36B" stop-opacity="0.25"/>
+                <stop offset="100%" stop-color="#2FA36B" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <rect width="320" height="180" fill="url(#ch5p2Grid)"/>
+            <path d="M12 24 L12 12 L24 12 M308 24 L308 12 L296 12 M12 156 L12 168 L24 168 M308 156 L308 168 L296 168" stroke="#D4A359" stroke-width="1.2" opacity="0.6"/>
+            <rect x="24" y="24" width="180" height="138" rx="4" fill="#141513" stroke="#363630" stroke-width="1.2"/>
+            <rect x="24" y="24" width="180" height="16" rx="3" fill="#1A1C18"/>
+            <text x="32" y="35" font-size="6.5" font-family="monospace" fill="#2FA36B" font-weight="bold">HACKERRANK ADVANCED SQL ENGINE</text>
+            <rect x="32" y="46" width="164" height="74" rx="2" fill="#161814" stroke="#252822" stroke-width="0.8"/>
+            <text x="38" y="58" font-size="6" font-family="monospace" fill="#2FA36B">WITH ranked_events AS (</text>
+            <text x="44" y="68" font-size="6" font-family="monospace" fill="#FFF">SELECT org_id, amount,</text>
+            <text x="44" y="78" font-size="6" font-family="monospace" fill="#D4A359">DENSE_RANK() OVER (</text>
+            <text x="50" y="88" font-size="6" font-family="monospace" fill="#D4A359">PARTITION BY org_id ORDER BY ts DESC</text>
+            <text x="44" y="98" font-size="6" font-family="monospace" fill="#D4A359">) as rnk FROM audit_logs )</text>
+            <text x="38" y="108" font-size="6" font-family="monospace" fill="#2FA36B">SELECT * FROM ranked_events WHERE rnk &lt;= 3;</text>
+            <rect x="32" y="124" width="164" height="30" rx="2" fill="#152018" stroke="#2FA36B" stroke-width="0.8"/>
+            <text x="38" y="136" font-size="6" font-family="monospace" fill="#2FA36B">COST: O(N log N) · HASH AGGREGATE</text>
+            <text x="38" y="146" font-size="6" font-family="monospace" fill="#D4A359">ALL TEST CASES PASSED: 100% SCORE</text>
+            <g transform="translate(258, 86)">
+              <circle cx="0" cy="0" r="44" fill="url(#sqlGlow)"/>
+              <path d="M -20 -28 L 20 -28 L 16 6 Q 0 16 0 16 Q 0 16 -16 6 Z" fill="#20221E" stroke="#D4A359" stroke-width="2"/>
+              <path d="M -20 -22 L -28 -14 Q -28 -2 -18 -2" stroke="#D4A359" stroke-width="2" fill="none"/>
+              <path d="M 20 -22 L 28 -14 Q 28 -2 18 -2" stroke="#D4A359" stroke-width="2" fill="none"/>
+              <line x1="0" y1="16" x2="0" y2="28" stroke="#D4A359" stroke-width="3"/>
+              <rect x="-14" y="28" width="28" height="6" rx="2" fill="#D4A359"/>
+              <polygon points="0,-18 3,-10 11,-10 5,-4 7,4 0,0 -7,4 -5,-4 -11,-10 -3,-10" fill="#2FA36B"/>
+              <text x="0" y="3" font-size="5.5" font-family="monospace" fill="#FFF" font-weight="bold" text-anchor="middle">SQL ADV</text>
+            </g>
+            <text x="258" y="146" font-size="6.5" font-family="monospace" fill="#2FA36B" font-weight="bold" text-anchor="middle">VERIFIED BADGE</text>
+            <text x="258" y="156" font-size="5.5" font-family="monospace" fill="#888" text-anchor="middle">ID: 801c9ad5b55e</text>
+          </svg>
+          <span class="panel-stamp">VERIFIED MASTERY</span>
+        </div>
+        <p class="panel-caption">HackerRank SQL (Advanced): Analytical window functions, query execution plan tuning, indexing strategies, and database design.</p>
+        <div class="panel-dialogue">"ID: 801c9ad5b55e · Officially verified."</div>
+      </div>
+
+      <div class="comic-panel">
+        <div class="panel-art-wrap">
+          <span class="panel-badge">SECURITY &amp; COMPLIANCE</span>
+          <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="ch5p3Grid" width="16" height="16" patternUnits="userSpaceOnUse">
+                <path d="M 16 0 L 0 0 0 16" fill="none" stroke="#252822" stroke-width="0.8"/>
+              </pattern>
+              <radialGradient id="defenseGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#2FA36B" stop-opacity="0.3"/>
+                <stop offset="100%" stop-color="#2FA36B" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <rect width="320" height="180" fill="url(#ch5p3Grid)"/>
+            <path d="M12 24 L12 12 L24 12 M308 24 L308 12 L296 12 M12 156 L12 168 L24 168 M308 156 L308 168 L296 168" stroke="#D4A359" stroke-width="1.2" opacity="0.6"/>
+            <circle cx="160" cy="85" r="66" fill="url(#defenseGlow)"/>
+            <circle cx="160" cy="85" r="62" stroke="#363630" stroke-width="1.2" stroke-dasharray="6 4"/>
+            <circle cx="160" cy="85" r="48" stroke="#D4A359" stroke-width="1.5" stroke-dasharray="8 6"/>
+            <circle cx="160" cy="85" r="34" stroke="#2FA36B" stroke-width="1.8"/>
+            <circle cx="160" cy="85" r="20" fill="#1C2E20" stroke="#2FA36B" stroke-width="2"/>
+            <path d="M 152 85 L 158 91 L 169 79" stroke="#2FA36B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <line x1="160" y1="85" x2="222" y2="85" stroke="#2FA36B" stroke-width="1.5" opacity="0.7">
+              <animateTransform attributeName="transform" type="rotate" from="0 160 85" to="360 160 85" dur="10s" repeatCount="indefinite"/>
+            </line>
+            <text x="24" y="38" font-size="6.5" font-family="monospace" fill="#888">LAYER 1</text>
+            <text x="24" y="48" font-size="7" font-family="monospace" fill="#EEE">mTLS 1.3 / ENCRYPTED IN-FLIGHT</text>
+            <text x="24" y="128" font-size="6.5" font-family="monospace" fill="#888">LAYER 2</text>
+            <text x="24" y="138" font-size="7" font-family="monospace" fill="#D4A359">OIDC IDENTITY &amp; SSO TOKEN</text>
+            <text x="296" y="38" font-size="6.5" font-family="monospace" fill="#888" text-anchor="end">LAYER 3</text>
+            <text x="296" y="48" font-size="7" font-family="monospace" fill="#2FA36B" text-anchor="end">FINE-GRAINED RBAC GATE</text>
+            <text x="296" y="128" font-size="6.5" font-family="monospace" fill="#888" text-anchor="end">LAYER 4</text>
+            <text x="296" y="138" font-size="7" font-family="monospace" fill="#2FA36B" text-anchor="end">AES-256 GCM ENCRYPTED AT-REST</text>
+            <rect x="24" y="148" width="272" height="18" rx="3" fill="#141513" stroke="#2FA36B" stroke-width="0.8"/>
+            <text x="160" y="160" font-size="7" font-family="monospace" fill="#2FA36B" font-weight="bold" text-anchor="middle">DEFENSE-IN-DEPTH: ZERO UNAUTHENTICATED PATHS · ZERO DEFECTS</text>
+          </svg>
+          <span class="panel-stamp">ZERO DEFECTS</span>
+        </div>
+        <p class="panel-caption">Global credentials validate production practices: Zero unauthenticated paths, strict RBAC, least privilege, and sub-second data execution.</p>
+        <div class="panel-dialogue">"Security is verified, never assumed."</div>
+      </div>
+    </div>
+    <details class="story-transcript">
+      <summary>▶ Read the technical log &amp; verification criteria</summary>
+      <div class="transcript-body">
+        <p><strong>Linux Foundation LFEL1004:</strong> Passed final exam with &gt;70% passing grade. Verified proficiency in OAuth 2.0 authorization code / PKCE flows, OpenID Connect ID tokens, Single Sign-On (SSO), RBAC roles, MFA integration, and JWT cryptographic signature verification.</p>
+        <p><strong>HackerRank SQL (Advanced):</strong> Verification ID <code>801c9ad5b55e</code>. Verified analytical aggregations, recursive CTEs, query plan index scans, and database schema performance.</p>
+      </div>
+    </details>
+  </article>
+
+  <!-- COMIC END EDITORIAL SHELL -->
+  <div class="comic-end-shell">
+    <div>
+      <p>Looking for a backend engineer for your next mission?</p>
+      <span style="font:500 13px var(--mono); color:#9E9D93;">Open for security-sensitive, high-reliability backend opportunities in Ho Chi Minh City or remote.</span>
+    </div>
+    <a href="#contact">
+      <span>Get in touch / Let's talk</span>
+      <span>↓</span>
+    </a>
+  </div>
+</section>
+
+<div class="wrap">
 <section id="contact">
   <p class="label rv">Got a backend problem?</p>
   <h2 class="display contact-big rv">Let's<br><a href="mailto:tranminhbaolong.forwork@gmail.com">talk ↗</a></h2>
   <p class="contact-copy rv">Open to Backend Java roles and systems where engineering quality matters.</p>
-  <p class="avail-row rv"><span>Available for Backend Java roles</span><span>Ho Chi Minh City</span><span>Open to remote</span></p>
+  <p class="avail-row rv"><span>Available for Backend Java roles</span><span>Tan Phu District, Ho Chi Minh City</span><span>Open to remote</span></p>
   <div class="contact-primary rv">
     <a href="mailto:tranminhbaolong.forwork@gmail.com"><small>Email</small>tranminhbaolong.forwork@gmail.com</a>
     <a href="https://linkedin.com/in/long-tmb" target="_blank" rel="noopener"><small>LinkedIn</small>in/long-tmb ↗</a>
@@ -5369,7 +5352,8 @@ footer {
     </div>
   </div>
 </div>
-</div></main>
+</div>
+</main>
 
 <!-- SCRIPT LIBRARIES & INTERACTION ENGINE -->
 <script>

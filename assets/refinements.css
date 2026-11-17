@@ -37,3 +37,17 @@
   .proj-media { padding:24px 12px; }
   .case-body { padding-left:12px; }
 }
+
+/* Typography & Button Spacing Enhancements */
+.hero { padding: 48px 0 56px !important; }
+.hero-grid { gap: 36px !important; }
+.hero-left h1 { margin: 12px 0 22px !important; line-height: 0.95 !important; }
+.hero-desc { font-size: 15.5px !important; line-height: 1.85 !important; max-width: 440px !important; margin-bottom: 22px !important; }
+.avail { margin-top: 4px !important; margin-bottom: 24px !important; gap: 10px !important; }
+.hero-actions { gap: 18px !important; margin-top: 6px !important; margin-bottom: 30px !important; }
+.cv-cta { padding: 11px 22px !important; gap: 10px !important; }
+.hire { padding: 11px 24px !important; }
+.hero-stats-row { gap: 30px !important; margin-top: 0 !important; padding-top: 24px !important; }
+.intro-skip { margin-top: 22px !important; padding: 7px 16px !important; }
+.topbar .wrap { gap: 20px !important; }
+.nav { gap: 24px !important; }
