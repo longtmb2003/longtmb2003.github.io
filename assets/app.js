@@ -436,7 +436,6 @@ c.init(ENCRYPT_MODE, key,
       { id: 'experience', label: 'EXP' },
       { id: 'achievements', label: 'HONORS' },
       { id: 'skills', label: 'SKILLS' },
-      { id: 'patchbay', label: 'PATCHBAY' },
       { id: 'contact', label: 'CONTACT' }
     ].map(s => ({ ...s, el: document.getElementById(s.id) })).filter(s => s.el);
 
@@ -476,6 +475,44 @@ c.init(ENCRYPT_MODE, key,
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll, { passive: true });
     updateOnFrame();
+  })();
+
+  // =========================================================================
+  // 6B. INTERACTIVE LAB 3-TAB CONSOLE CONTROLLER (WAI-ARIA + KEYBOARD + RESIZE)
+  // =========================================================================
+  (() => {
+    const tabs = [...document.querySelectorAll('.lab-tab[data-lab-tab]')];
+    if (tabs.length === 0) return;
+
+    function activateLabTab(nextTab, moveFocus = false) {
+      tabs.forEach(tab => {
+        const selected = tab === nextTab;
+        tab.classList.toggle('active', selected);
+        tab.setAttribute('aria-selected', String(selected));
+        tab.tabIndex = selected ? 0 : -1;
+        const panelId = tab.getAttribute('aria-controls');
+        const panel = panelId ? document.getElementById(panelId) : null;
+        if (panel) panel.hidden = !selected;
+      });
+      if (moveFocus) nextTab.focus();
+      SFX.select();
+      requestAnimationFrame(() => window.dispatchEvent(new Event('resize')));
+    }
+
+    tabs.forEach((tab, idx) => {
+      tab.addEventListener('click', () => activateLabTab(tab, false));
+      tab.addEventListener('keydown', e => {
+        let targetIdx = -1;
+        if (e.key === 'ArrowRight') targetIdx = (idx + 1) % tabs.length;
+        else if (e.key === 'ArrowLeft') targetIdx = (idx - 1 + tabs.length) % tabs.length;
+        else if (e.key === 'Home') targetIdx = 0;
+        else if (e.key === 'End') targetIdx = tabs.length - 1;
+        if (targetIdx >= 0) {
+          e.preventDefault();
+          activateLabTab(tabs[targetIdx], true);
+        }
+      });
+    });
   })();
 
   // =========================================================================
@@ -1291,31 +1328,444 @@ c.init(ENCRYPT_MODE, key,
   })();
 
   // =========================================================================
-  // 10. MAGNETIC CONTACT CTA (ZERO LAYOUT THRASHING) + ONE-CLICK EMAIL COPY
+  // 10. MAGNETIC CONTACT CTA, EXECUTIVE BUSINESS CARD & VCARD (.vcf) EXPORT
   // =========================================================================
   (() => {
-    const emailCopyBtn = document.getElementById('copyEmailBtn');
-    if (emailCopyBtn) {
-      let copyEmailTimer = 0;
-      emailCopyBtn.addEventListener('click', () => {
-        const email = emailCopyBtn.dataset.email || 'tranminhbaolong.forwork@gmail.com';
+    const isVi = document.documentElement.lang === 'vi';
+
+    function wireCopyButton(btnId, dataAttr, fallbackVal, toastEn, toastVi) {
+      const btn = document.getElementById(btnId);
+      if (!btn) return;
+      const idleText = btn.dataset.copyLabel || 'Copy';
+      const copiedText = btn.dataset.copiedLabel || '✓ Copied';
+      let timer = 0;
+      btn.addEventListener('click', () => {
+        const val = btn.dataset[dataAttr] || fallbackVal;
         const onCopied = () => {
-          emailCopyBtn.classList.add('copied');
-          emailCopyBtn.textContent = '✓ Copied';
+          btn.classList.add('copied');
+          btn.textContent = copiedText;
           SFX.chime();
-          showToast('Email copied to clipboard!');
-          clearTimeout(copyEmailTimer);
-          copyEmailTimer = window.setTimeout(() => {
-            emailCopyBtn.classList.remove('copied');
-            emailCopyBtn.textContent = 'Copy';
+          showToast(isVi ? toastVi : toastEn);
+          clearTimeout(timer);
+          timer = window.setTimeout(() => {
+            btn.classList.remove('copied');
+            btn.textContent = idleText;
           }, 2200);
         };
         if (navigator.clipboard?.writeText) {
-          navigator.clipboard.writeText(email).then(onCopied).catch(() => showToast(email));
+          navigator.clipboard.writeText(val).then(onCopied).catch(() => showToast(val));
         } else {
-          showToast(email);
+          showToast(val);
         }
       });
+    }
+
+    wireCopyButton('copyEmailBtn', 'email', 'tranminhbaolong.forwork@gmail.com', 'Email copied to clipboard!', 'Đã sao chép địa chỉ Email!');
+    wireCopyButton('copyPhoneBtn', 'phone', '+84905195128', 'Phone number copied to clipboard!', 'Đã sao chép số điện thoại!');
+    wireCopyButton('copySiteUrlBtn', 'siteUrl', 'https://longtmb2003.github.io/', 'Portfolio URL copied to clipboard!', 'Đã sao chép liên kết!');
+
+    const flipper = document.getElementById('bizCardFlipper');
+    if (flipper) {
+      const frontFace = flipper.querySelector('.biz-face-front');
+      const backFace = flipper.querySelector('.biz-face-back');
+      const flipBtns = [...flipper.querySelectorAll('[data-biz-flip]')];
+      if (backFace) backFace.inert = true;
+
+      flipBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const flipped = flipper.classList.toggle('is-flipped');
+          if (frontFace) {
+            frontFace.setAttribute('aria-hidden', String(flipped));
+            frontFace.inert = flipped;
+            frontFace.style.transform = '';
+          }
+          if (backFace) {
+            backFace.setAttribute('aria-hidden', String(!flipped));
+            backFace.inert = !flipped;
+          }
+          SFX.select();
+          const nextBtn = (flipped ? backFace : frontFace)?.querySelector('[data-biz-flip]');
+          nextBtn?.focus({ preventScroll: true });
+        });
+      });
+    }
+
+    const vcardBtn = document.getElementById('downloadVcardBtn');
+    if (vcardBtn) {
+      vcardBtn.addEventListener('click', () => {
+        const vcfLines = [
+          'BEGIN:VCARD',
+          'VERSION:3.0',
+          'N:Tran;Long;;;',
+          'FN:Long Tran',
+          'ORG:GTEL OTS (part of FTEL)',
+          'TITLE:Full-Stack Engineer (Java & React)',
+          'TEL;TYPE=CELL,VOICE:+84905195128',
+          'EMAIL;TYPE=INTERNET,WORK:tranminhbaolong.forwork@gmail.com',
+          'URL:https://longtmb2003.github.io/',
+          'ADR;TYPE=WORK:;;Tan Phu District;Ho Chi Minh City;;;Vietnam',
+          'NOTE:Full-Stack Engineer (Java / Spring Boot / React) & Web Studio: https://longtmb2003.github.io/studio.html',
+          'END:VCARD'
+        ];
+        const blob = new Blob([vcfLines.join('\r\n')], { type: 'text/vcard;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'Long_Tran_Contact.vcf';
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+        SFX.chime();
+        showToast(isVi ? 'Đã tải tệp danh bạ (.vcf)!' : 'Contact card (.vcf) saved!');
+      });
+    }
+
+    const bizCard = document.getElementById('execBizCard');
+    if (bizCard && window.matchMedia('(pointer: fine)').matches) {
+      let targetRx = 0;
+      let targetRy = 0;
+      let curRx = 0;
+      let curRy = 0;
+      let tiltRaf = 0;
+
+      function animateTilt() {
+        curRx += (targetRx - curRx) * 0.12;
+        curRy += (targetRy - curRy) * 0.12;
+        if (Math.abs(targetRx - curRx) < 0.015 && Math.abs(targetRy - curRy) < 0.015) {
+          curRx = targetRx;
+          curRy = targetRy;
+          bizCard.style.transform = (curRx === 0 && curRy === 0) ? '' : `rotateX(${curRx.toFixed(2)}deg) rotateY(${curRy.toFixed(2)}deg)`;
+          tiltRaf = 0;
+          return;
+        }
+        bizCard.style.transform = `rotateX(${curRx.toFixed(2)}deg) rotateY(${curRy.toFixed(2)}deg)`;
+        tiltRaf = requestAnimationFrame(animateTilt);
+      }
+
+      bizCard.addEventListener('pointermove', e => {
+        if (flipper?.classList.contains('is-flipped')) return;
+        const rect = bizCard.getBoundingClientRect();
+        if (!rect.width || !rect.height) return;
+        const px = ((e.clientX - rect.left) / rect.width) * 100;
+        const py = ((e.clientY - rect.top) / rect.height) * 100;
+        bizCard.style.setProperty('--biz-x', `${px.toFixed(1)}%`);
+        bizCard.style.setProperty('--biz-y', `${py.toFixed(1)}%`);
+        if (!isReducedMotion()) {
+          targetRx = ((py - 50) / 50) * -2.2;
+          targetRy = ((px - 50) / 50) * 2.8;
+          if (!tiltRaf) tiltRaf = requestAnimationFrame(animateTilt);
+        }
+      });
+      bizCard.addEventListener('pointerleave', () => {
+        targetRx = 0;
+        targetRy = 0;
+        if (!tiltRaf) tiltRaf = requestAnimationFrame(animateTilt);
+      });
+    }
+
+    // Featured Exhibition Stage (#exhibitStage on studio.html — vandanar.design-inspired)
+    const exhibitStage = document.getElementById('exhibitStage');
+    if (exhibitStage) {
+      const EXHIBITS = [
+        {
+          url: 'vodinhlong-graduation.vercel.app',
+          href: 'https://vodinhlong-graduation.vercel.app/',
+          img: 'assets/projects/vodinhlong.webp',
+          alt: 'Vo Dinh Long — FIT HCMUS Graduation Invitation screenshot',
+          role: 'Interactive Ceremony Invite · 2026',
+          title: 'Võ Đình Long — FIT HCMUS Graduation',
+          summary: 'Vintage airmail envelope interaction ("Swipe to unseal"), Canvas particle ambiance, custom guest-named invite URLs, Hall 1 map, and live wish wall.'
+        },
+        {
+          url: 'phamminhphuong-graduation.vercel.app',
+          href: 'https://phamminhphuong-graduation.vercel.app/',
+          img: 'assets/projects/phamminhphuong.webp',
+          alt: 'Pham Minh Phuong — HCMUT Graduation Keepsake screenshot',
+          role: 'Story-Driven Keepsake Web · 2026',
+          title: 'Phạm Minh Phương — HCMUT Keepsake',
+          summary: 'Royal-navy wax-seal envelope opening into a family tribute letter, Gate A2 memory timeline, interactive graduate trivia quiz, gallery, and wish wall.'
+        },
+        {
+          url: 'tranhuynhanhthu.vercel.app',
+          href: 'https://tranhuynhanhthu.vercel.app/',
+          img: 'assets/projects/tranhuynhanhthu.webp',
+          alt: 'Tran Huynh Anh Thu — Creative Marketer Portfolio screenshot',
+          role: 'Editorial Brand Portfolio · React + Vite',
+          title: 'Trần Huỳnh Anh Thư — Digital Marketer',
+          summary: 'Magazine-grade portfolio ("The Art of Exploring") with bilingual VI/EN switch, 3D motion toggle, 4+ years of multi-industry campaigns, and 18.6× ROAS proof.'
+        },
+        {
+          url: 'tranthihongngoc.vercel.app',
+          href: 'https://tranthihongngoc.vercel.app/',
+          img: 'assets/projects/tranthihongngoc.webp',
+          alt: 'Tran Thi Hong Ngoc — IMC Specialist Portfolio screenshot',
+          role: 'Executive Case-Study Portfolio · Next.js',
+          title: 'Trần Thị Hồng Ngọc — IMC Specialist',
+          summary: 'Next.js personal brand portfolio highlighting 1.5M+ influencer reach, 50+ short-form videos, 20+ PR/OOH placements, ATS view, and Kiều by KITA / UEH cases.'
+        }
+      ];
+
+      const railItems = [...exhibitStage.querySelectorAll('[data-exhibit-idx]')];
+      const imgEl = document.getElementById('exhibitImg');
+      const urlEl = document.getElementById('exhibitUrl');
+      const cntEl = document.getElementById('exhibitCounter');
+      const linkEl = document.getElementById('exhibitLink');
+      const roleEl = document.getElementById('exhibitRole');
+      const titleEl = document.getElementById('exhibitTitle');
+      const sumEl = document.getElementById('exhibitSummary');
+      const ctaEl = document.getElementById('exhibitCta');
+      let currentEx = 0;
+
+      function selectExhibit(idx, playSound) {
+        if (idx === currentEx || !EXHIBITS[idx]) return;
+        currentEx = idx;
+        const item = EXHIBITS[idx];
+        railItems.forEach((b, i) => {
+          const active = i === idx;
+          b.classList.toggle('active', active);
+          b.setAttribute('aria-selected', String(active));
+        });
+        if (imgEl) {
+          imgEl.classList.add('is-swapping');
+          window.setTimeout(() => {
+            imgEl.src = item.img;
+            imgEl.alt = item.alt;
+            imgEl.classList.remove('is-swapping');
+          }, 120);
+        }
+        if (urlEl) urlEl.textContent = item.url;
+        if (cntEl) cntEl.textContent = `0${idx + 1} / 0${EXHIBITS.length}`;
+        if (linkEl) linkEl.href = item.href;
+        if (roleEl) roleEl.textContent = item.role;
+        if (titleEl) titleEl.textContent = item.title;
+        if (sumEl) sumEl.textContent = item.summary;
+        if (ctaEl) ctaEl.href = item.href;
+        if (playSound) SFX.tick();
+      }
+
+      railItems.forEach(btn => {
+        const idx = Number(btn.dataset.exhibitIdx);
+        btn.addEventListener('click', () => selectExhibit(idx, true));
+        btn.addEventListener('mouseenter', () => selectExhibit(idx, false));
+      });
+    }
+
+    // Client & Web Studio: category filter + Desktop/Mobile viewport morph
+    const studioBtns = document.querySelectorAll('.studio-filter-btn');
+    const studioCards = document.querySelectorAll('.studio-card');
+    studioBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        studioBtns.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-pressed', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-pressed', 'true');
+        const filter = btn.dataset.studioFilter;
+        SFX.tick();
+        studioCards.forEach(card => {
+          const match = filter === 'all' || card.dataset.studioCat === filter;
+          card.classList.toggle('hidden', !match);
+          card.classList.toggle('fade-in', match);
+        });
+      });
+    });
+
+    const showcaseGrid = document.getElementById('studioShowcaseGrid');
+    const vpBtns = document.querySelectorAll('[data-vp]');
+    if (showcaseGrid && vpBtns.length > 0) {
+      vpBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          vpBtns.forEach(b => {
+            b.classList.remove('active');
+            b.setAttribute('aria-pressed', 'false');
+          });
+          btn.classList.add('active');
+          btn.setAttribute('aria-pressed', 'true');
+          showcaseGrid.classList.toggle('mobile-preview-mode', btn.dataset.vp === 'mobile');
+          SFX.select();
+        });
+      });
+    }
+
+    // Live Bespoke Sandbox (#atelierSandbox on studio.html)
+    const sandbox = document.getElementById('atelierSandbox');
+    if (sandbox) {
+      const nameInput = document.getElementById('sandboxNameInput');
+      const displayEl = document.getElementById('sbxDisplayName');
+      const slugEl = document.getElementById('sbxUrlSlug');
+      const stageEl = document.getElementById('sandboxStage');
+      const kickerEl = document.getElementById('sbxKicker');
+      const badgeEl = document.getElementById('sbxBadge');
+      const greetingEl = document.getElementById('sbxGreeting');
+      const descEl = document.getElementById('sbxDesc');
+      const pillsEl = document.getElementById('sbxPills');
+      const sparkBtn = document.getElementById('sandboxSparkBtn');
+      const particlesEl = document.getElementById('sbxParticles');
+      const modeBtns = sandbox.querySelectorAll('[data-sbx-mode]');
+      const swatchBtns = sandbox.querySelectorAll('[data-sbx-theme]');
+
+      const MODES = {
+        invite: {
+          kicker: 'CLASS OF 2026 · HONORS CEREMONY',
+          badge: 'VIP INVITE',
+          greeting: 'Cordially inviting you to celebrate',
+          desc: 'Interactive ceremony map, ambient soundtrack, personalized guest pass & live wishbook.',
+          pills: ['♫ Audio', '📍 Venue Map', '💌 Guestbook'],
+          suffix: '-graduation.vercel.app'
+        },
+        portfolio: {
+          kicker: 'SELECTED WORKS · EDITION 2026',
+          badge: 'OPEN TO WORK',
+          greeting: 'Creative Direction & Case Studies by',
+          desc: 'Editorial case studies, verified KPI impact, bilingual SEO metadata & custom domain.',
+          pills: ['⚛ React / Next.js', '📊 KPI Proof', '🌐 Custom OG'],
+          suffix: '.vercel.app'
+        }
+      };
+      let currentMode = 'invite';
+
+      function syncSandboxName() {
+        const raw = (nameInput?.value || '').trim() || 'Your Name';
+        if (displayEl) displayEl.textContent = raw.toUpperCase();
+        if (slugEl) {
+          const slug = raw.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'your-site';
+          slugEl.textContent = `${slug}${MODES[currentMode].suffix}`;
+        }
+      }
+
+      function burstParticles() {
+        if (!particlesEl || isReducedMotion()) return;
+        for (let i = 0; i < 18; i++) {
+          const dot = document.createElement('span');
+          dot.className = 'sbx-dot-spark';
+          const angle = (Math.PI * 2 * i) / 18 + (Math.random() - 0.5) * 0.35;
+          const dist = 45 + Math.random() * 95;
+          dot.style.left = `${45 + Math.random() * 10}%`;
+          dot.style.top = `${45 + Math.random() * 10}%`;
+          dot.style.setProperty('--tx', `${(Math.cos(angle) * dist).toFixed(1)}px`);
+          dot.style.setProperty('--ty', `${(Math.sin(angle) * dist).toFixed(1)}px`);
+          dot.addEventListener('animationend', () => dot.remove());
+          particlesEl.appendChild(dot);
+        }
+      }
+
+      nameInput?.addEventListener('input', syncSandboxName);
+
+      modeBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          currentMode = btn.dataset.sbxMode || 'invite';
+          modeBtns.forEach(b => {
+            const active = b === btn;
+            b.classList.toggle('active', active);
+            b.setAttribute('aria-pressed', String(active));
+          });
+          const cfg = MODES[currentMode];
+          if (kickerEl) kickerEl.textContent = cfg.kicker;
+          if (badgeEl) badgeEl.textContent = cfg.badge;
+          if (greetingEl) greetingEl.textContent = cfg.greeting;
+          if (descEl) descEl.textContent = cfg.desc;
+          if (pillsEl) {
+            pillsEl.textContent = '';
+            cfg.pills.forEach(label => {
+              const s = document.createElement('span');
+              s.textContent = label;
+              pillsEl.appendChild(s);
+            });
+          }
+          syncSandboxName();
+          SFX.select();
+        });
+      });
+
+      swatchBtns.forEach(sw => {
+        sw.addEventListener('click', () => {
+          swatchBtns.forEach(b => {
+            const active = b === sw;
+            b.classList.toggle('active', active);
+            b.setAttribute('aria-pressed', String(active));
+          });
+          if (stageEl) stageEl.dataset.theme = sw.dataset.sbxTheme || 'gold';
+          SFX.tick();
+        });
+      });
+
+      sparkBtn?.addEventListener('click', () => {
+        burstParticles();
+        SFX.raceDone();
+      });
+    }
+
+    // Interactive Project Blueprint Configurator (#blueprint on studio.html)
+    const bpTicket = document.getElementById('bpTicket');
+    if (bpTicket) {
+      const fmtBtns = [...document.querySelectorAll('[data-bp-format]')];
+      const modBtns = [...document.querySelectorAll('[data-bp-mod]')];
+      const etaEl = document.getElementById('bpEtaBadge');
+      const titleEl = document.getElementById('bpSelectedFormat');
+      const countEl = document.getElementById('bpModCount');
+      const briefEl = document.getElementById('bpBriefPreview');
+      const zaloBtn = document.getElementById('bpZaloBtn');
+      const emailLink = document.getElementById('bpEmailLink');
+
+      function updateBlueprint() {
+        const activeFmt = fmtBtns.find(b => b.classList.contains('active')) || fmtBtns[0];
+        const fmtName = activeFmt?.dataset.bpFormat || 'Custom Website';
+        const baseDays = Number(activeFmt?.dataset.bpDays || 3);
+        const activeMods = modBtns.filter(b => b.classList.contains('active'));
+        const addDays = activeMods.reduce((sum, b) => sum + Number(b.dataset.bpAdd || 0), 0);
+        const minD = Math.max(2, Math.floor(baseDays + addDays * 0.6));
+        const maxD = Math.max(minD + 1, Math.ceil(baseDays + addDays));
+
+        const modNames = activeMods.map(b => b.dataset.bpMod);
+        const brief = modNames.length > 0
+          ? `Hi Long, I'd like to commission a ${fmtName} with ${modNames.join(', ')}.`
+          : `Hi Long, I'd like to commission a ${fmtName}.`;
+
+        if (titleEl) titleEl.textContent = fmtName;
+        if (etaEl) etaEl.textContent = `EST. ${minD}–${maxD} DAYS`;
+        if (countEl) countEl.textContent = `${activeMods.length} active`;
+        if (briefEl) briefEl.textContent = brief;
+        if (emailLink) {
+          const subject = encodeURIComponent(`Website Commission Inquiry — ${fmtName}`);
+          const body = encodeURIComponent(`${brief}\n\nTimeline / Target Date:\nReference or Links:\n`);
+          emailLink.href = `mailto:tranminhbaolong.forwork@gmail.com?subject=${subject}&body=${body}`;
+        }
+        return brief;
+      }
+
+      fmtBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          fmtBtns.forEach(b => {
+            const active = b === btn;
+            b.classList.toggle('active', active);
+            b.setAttribute('aria-pressed', String(active));
+          });
+          SFX.select();
+          updateBlueprint();
+        });
+      });
+
+      modBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const next = !btn.classList.contains('active');
+          btn.classList.toggle('active', next);
+          btn.setAttribute('aria-pressed', String(next));
+          SFX.tick();
+          updateBlueprint();
+        });
+      });
+
+      zaloBtn?.addEventListener('click', () => {
+        const brief = updateBlueprint();
+        navigator.clipboard?.writeText(brief).catch(() => {});
+        SFX.chime();
+        showToast('Project brief copied! Paste it in Zalo ↗');
+        window.open('https://zalo.me/0905195128', '_blank', 'noopener,noreferrer');
+      });
+
+      updateBlueprint();
     }
 
     const contactHeading = document.getElementById('contactMagnetic');
@@ -1465,32 +1915,26 @@ c.init(ENCRYPT_MODE, key,
   })();
 
   // =========================================================================
-  // 12. CERTIFICATE CATEGORY FILTER & LIGHTBOX MODAL (FULL FOCUS MANAGEMENT)
+  // 12. CERTIFICATE LIGHTBOX MODAL (FULL FOCUS MANAGEMENT)
   // =========================================================================
   (() => {
-    const filterBtns = document.querySelectorAll('.cert-filter-btn');
-    const certCards = document.querySelectorAll('.cert-card');
-
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => {
-          b.classList.remove('active');
-          b.setAttribute('aria-pressed', 'false');
-        });
-        btn.classList.add('active');
-        btn.setAttribute('aria-pressed', 'true');
-        const filter = btn.dataset.filter;
-        SFX.tick();
-
-        certCards.forEach(card => {
-          const match = filter === 'all' || card.dataset.category === filter;
-          card.classList.toggle('hidden', !match);
-          card.classList.toggle('fade-in', match);
-        });
-      });
-    });
-
     const certData = {
+      'claude-code-in-action': {
+        title: 'Claude Code in Action',
+        issuer: 'Anthropic · Claude Academy',
+        date: 'November 2026',
+        earner: 'Long Tran',
+        authority: 'Claude Academy (Anthropic)',
+        credId: '75ff886b-739a-41af-8dca-4b7404e60825',
+        verifyUrl: 'https://academy.claude.com/badges/75ff886b-739a-41af-8dca-4b7404e60825',
+        desc: 'Completed Anthropic\'s intermediate Claude Code in Action curriculum focused on steering long-horizon agentic workflows: Plan Mode scoping, lean CLAUDE.md guardrails, reusable skills, test-gated hooks, headless CI/CD integration, and rigorous verification of autonomous runs.',
+        skills: ['Plan Mode Scoping', 'CLAUDE.md Guardrails', 'Reusable Agent Skills', 'Test-Gated Hooks', 'Headless CI/CD', 'Unsupervised Verification'],
+        badgeImg: null,
+        icon: 'AI',
+        certDoc: null,
+        statusText: 'Verified Badge · Claude Academy',
+        isHonor: false
+      },
       'claude-code-101': {
         title: 'Claude Code 101',
         issuer: 'Anthropic · Claude Academy',
@@ -1502,7 +1946,7 @@ c.init(ENCRYPT_MODE, key,
         desc: 'Completed Anthropic\'s official Claude Code 101 course covering agentic coding workflows, codebase exploration, structured planning, AI-assisted implementation and unit testing, and human-reviewed production software delivery.',
         skills: ['Claude Code', 'Agentic Workflows', 'Context Engineering', 'Codebase Navigation', 'AI-Assisted Testing', 'Human-Reviewed Delivery'],
         badgeImg: null,
-        icon: '✦',
+        icon: 'AI',
         certDoc: null,
         statusText: 'Verified on Claude Academy',
         isHonor: false
@@ -1536,38 +1980,6 @@ c.init(ENCRYPT_MODE, key,
         certDoc: 'assets/certs/hackerrank-sql-advanced-cert.jpg',
         statusText: 'Verified on HackerRank',
         isHonor: false
-      },
-      'ou-scholarship': {
-        title: 'Academic Excellence Scholarship',
-        issuer: 'Ho Chi Minh City Open University (HCMCOU)',
-        date: 'Awarded January 2025',
-        earner: 'Long Trần',
-        authority: 'HCMCOU Faculty of IT',
-        credId: 'OU-SCHOLARSHIP-2025',
-        verifyUrl: 'https://ou.edu.vn',
-        desc: 'Awarded for outstanding academic ranking, consistent top-tier GPA, and academic dedication during Bachelor of Engineering in Information Technology studies.',
-        skills: ['Academic Merit', 'Top Tier Performance', 'Computer Science Foundations'],
-        badgeImg: null,
-        icon: '🎓',
-        certDoc: null,
-        statusText: 'Academic Honor',
-        isHonor: true
-      },
-      'ou-degree': {
-        title: 'B.Eng in Information Technology',
-        issuer: 'Ho Chi Minh City Open University · Grade: Good',
-        date: 'Graduated Sep 2025 (2021 — 2025)',
-        earner: 'Long Trần',
-        authority: 'HCMCOU Degree Registry',
-        credId: 'B.Eng IT (2021-2025)',
-        verifyUrl: 'https://ou.edu.vn',
-        desc: 'Four-year engineering degree curriculum comprising algorithmic problem-solving, data structures, relational and distributed database systems, operating system design, networking, and software engineering architecture.',
-        skills: ['Software Engineering', 'Data Structures & Algorithms', 'Database Systems', 'Distributed Computing', 'System Architecture'],
-        badgeImg: null,
-        icon: '📜',
-        certDoc: null,
-        statusText: 'Graduated with Honors',
-        isHonor: true
       }
     };
 
