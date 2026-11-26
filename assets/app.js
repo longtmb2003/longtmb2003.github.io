@@ -201,15 +201,7 @@ c.init(ENCRYPT_MODE, key,
       text: 'Actively preparing for the AWS Certified Solutions Architect – Associate (SAA-C03). Bridging software and cloud infra: resilient multi-AZ VPC topologies, Kubernetes orchestration, Docker pipelines, and cost-effective scalability.',
       chips: ['AWS SAA-C03', 'Kubernetes', 'Docker', 'Multi-AZ'],
       visual: `<div class="mat mat-paper"><div class="mat-note">SAA-C03 · just started<br>☐ IAM &amp; accounts<br>☐ VPC, subnets, NAT<br>☐ S3 · RDS · DynamoDB<br>☐ HA &amp; disaster recovery</div><span class="mat-cap">my study list</span></div>`
-    },
-    {
-      id: 'gaming',
-      tag: 'Competitive gaming',
-      title: 'LoL, Valorant & CS:GO 🎮',
-      text: 'Some of my favourite gaming moments start when a round looks lost and the team needs one clear call. Valorant, CS:GO and League taught me to stay calm, share only the useful information and commit to a decision together — habits that follow me into incident debugging too.',
-      chips: ['Valorant', 'CS:GO', 'League of Legends', 'Teamplay', 'Clutch'],
-      visual: `<div class="mat mat-paper"><div class="mat-note">Clutch rules:<br>1. stay calm<br>2. one clear call<br>3. commit together</div><svg class="mat-doodle" viewBox="0 0 60 60" aria-hidden="true"><circle cx="30" cy="30" r="20"/><path d="M30 4v16M30 40v16M4 30h16M40 30h16"/></svg><span class="mat-cap">notebook</span></div>`
-    },
+    },,
     {
       id: 'sql',
       tag: 'HackerRank · Jul 2026',
@@ -217,36 +209,7 @@ c.init(ENCRYPT_MODE, key,
       text: 'Earned the HackerRank SQL (Advanced) certificate in July 2026. The exercises sharpened joins, window functions and query design — the same fundamentals I use when reading and reshaping production queries.',
       chips: ['HackerRank Certified', 'Window Functions', 'Query Design'],
       visual: `<div class="mat mat-paper"><div class="mat-ticket"><span class="mat-kicker">Certificate · HackerRank</span><strong>SQL (Advanced)</strong><span>Long Tran</span><span>Issued Jul 5, 2026</span><a href="https://www.hackerrank.com/certificates/801c9ad5b55e" target="_blank" rel="noopener noreferrer" class="mat-stamp" style="text-decoration:none;cursor:pointer;">✓ Certified ↗</a></div></div>`
-    },
-    {
-      id: 'scholarship',
-      tag: 'HCMC Open University · Jan 2025',
-      title: 'Academic Excellence Scholarship 🎓',
-      text: 'Awarded the Academic Excellence Scholarship in January 2025 while finishing my B.Eng in Information Technology (Graduated Sep 2025 with "Good" honors). Four years of computer science fundamentals, data structures and algorithms.',
-      chips: ['B.Eng in IT', 'Scholarship Awardee', '2021 — 2025'],
-      visual: `<div class="mat mat-paper"><div class="mat-ticket"><span class="mat-kicker">HCMC Open University</span><strong>Academic Excellence Scholarship</strong><span>B.Eng Information Technology</span><span>January 2025</span><span class="mat-stamp">✓ Awarded</span></div></div>`
-    },
-    {
-      id: 'marketing',
-      tag: 'New path · 2026',
-      title: 'Digital Marketing & Growth 📈',
-      text: 'I started learning marketing because reliable software is only useful when people understand and adopt it. SEO, analytics and conversion journeys give me a new lens on backend decisions: not only whether a system works, but whether it helps the product reach the right outcome.',
-      chips: ['Funnel Analytics', 'SEO Telemetry', 'Growth Strategy'],
-      visual: `<div class="mat mat-paper"><div class="mat-note">Why should anyone care?<br>visit → read → try → stay</div><svg class="mat-doodle" viewBox="0 0 60 60" aria-hidden="true"><path d="M6 8h48L36 32v18l-12 6V32Z"/></svg><span class="mat-cap">notebook</span></div>`
-    },
-    {
-      id: 'csharp',
-      tag: 'IO STREAM · 2023',
-      title: 'Where It Began: C# & WinUI 🪟',
-      text: 'My professional engineering foundation began at IO STREAM crafting native Windows applications with C# and modern WinUI: file security utilities, encryption and multi-threaded media downloaders. Instilled my obsession with low-level execution speed.',
-      chips: ['C# / .NET', 'WinUI 3', 'File Security', 'Desktop'],
-      visual: `<div class="mat mat-term"><div class="mat-bar"><i></i><i></i><i></i><span>MainWindow.xaml.cs</span></div><pre><span class="c">// IO STREAM · 2023 · WinUI 3</span>
-<span class="k">private async void</span> Download_Click(
-    <span class="k">object</span> sender, RoutedEventArgs e)
-{
-    <span class="k">await</span> downloader.StartAsync(url, progress);
-}</pre><span class="mat-cap">simplified</span></div>`
-    }
+    },,,
   ];
 
   (() => {
@@ -2196,5 +2159,417 @@ c.init(ENCRYPT_MODE, key,
     reducedMotionQuery.addEventListener('change', syncSvgMotion);
     const pVisual = document.getElementById('pVisual');
     if (pVisual) new MutationObserver(syncSvgMotion).observe(pVisual, { childList: true });
+  })();
+
+  // =========================================================================
+  // 14. SUMI BRUSH INTRO CURTAIN, GOLD-FOIL SPOTLIGHT & MAGNETIC CTA PULL
+  // =========================================================================
+  (() => {
+    // A. Sleek Architectural Intro Curtain (fast ~0.85s, once per session, instant skip)
+    const intro = document.getElementById('sumiIntro');
+    if (intro) {
+      const skipBtn = document.getElementById('sumiIntroSkip');
+      const countEl = document.getElementById('sumiIntroCount');
+      const fillEl = document.getElementById('sumiIntroFill');
+      const captionEl = document.getElementById('sumiIntroCaption');
+      const storageKey = 'lt_arch_intro_seen_v2';
+      let seen = false;
+      try { seen = sessionStorage.getItem(storageKey) === '1'; } catch (_) {}
+
+      const finishIntro = () => {
+        if (intro.classList.contains('is-done')) return;
+        intro.classList.add('is-done');
+        intro.setAttribute('aria-hidden', 'true');
+        try { sessionStorage.setItem(storageKey, '1'); } catch (_) {}
+        window.setTimeout(() => intro.remove(), 660);
+      };
+
+      if (seen || isReducedMotion()) {
+        intro.remove();
+      } else {
+        skipBtn?.addEventListener('click', () => {
+          SFX.tick();
+          finishIntro();
+        });
+
+        const isStudioPage = document.title.toLowerCase().includes('studio');
+        const stages = isStudioPage
+          ? ['loading studio…', 'framing 04 live works…', 'ready']
+          : ['loading systems…', 'calibrating 120s → 0.4s…', 'ready'];
+        const duration = 850;
+        const start = performance.now();
+
+        const tick = (now) => {
+          if (intro.classList.contains('is-done')) return;
+          const t = Math.min(1, (now - start) / duration);
+          const eased = 1 - Math.pow(1 - t, 3);
+          const pct = Math.round(eased * 100);
+          if (countEl) countEl.textContent = String(pct).padStart(3, '0');
+          if (fillEl) fillEl.style.width = `${pct}%`;
+          if (captionEl) {
+            captionEl.textContent = pct < 45 ? stages[0] : pct < 90 ? stages[1] : stages[2];
+          }
+          if (t < 1) {
+            requestAnimationFrame(tick);
+          } else {
+            window.setTimeout(finishIntro, 140);
+          }
+        };
+        requestAnimationFrame(tick);
+        // Failsafe: guarantee dismissal even if rAF is throttled in background tabs
+        window.setTimeout(finishIntro, duration + 450);
+      }
+    }
+
+    // B. Gold-Foil Pointer Spotlight on cards (pointer-fine devices only)
+    const isFinePointer = window.matchMedia('(pointer: fine)').matches;
+    if (isFinePointer && !isReducedMotion()) {
+      document.querySelectorAll('.case-study, .cert-card, .studio-card, .does > div, .exhibit-stage').forEach(el => {
+        el.classList.add('foil-card');
+        el.addEventListener('pointermove', e => {
+          const r = el.getBoundingClientRect();
+          el.style.setProperty('--foil-x', `${(e.clientX - r.left).toFixed(1)}px`);
+          el.style.setProperty('--foil-y', `${(e.clientY - r.top).toFixed(1)}px`);
+        }, { passive: true });
+      });
+
+      // C. Gentle Magnetic Pull on primary CTA buttons (±4px)
+      document.querySelectorAll('.hire, .scb-btn.primary, .wps-btn, .cv-cta').forEach(btn => {
+        btn.classList.add('mag-btn');
+        btn.addEventListener('pointermove', e => {
+          const r = btn.getBoundingClientRect();
+          const dx = ((e.clientX - r.left) / r.width - 0.5) * 8;
+          const dy = ((e.clientY - r.top) / r.height - 0.5) * 6;
+          btn.style.transform = `translate3d(${dx.toFixed(1)}px, ${dy.toFixed(1)}px, 0)`;
+        }, { passive: true });
+        btn.addEventListener('pointerleave', () => {
+          btn.style.transform = '';
+        });
+      });
+    }
+
+    // D. Selected Work Filter Pills (index.html — All / Featured / More Systems)
+    const workFilterBtns = [...document.querySelectorAll('[data-work-filter]')];
+    if (workFilterBtns.length > 0) {
+      const workGroups = [...document.querySelectorAll('[data-work-group]')];
+      workFilterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const target = btn.dataset.workFilter;
+          workFilterBtns.forEach(b => {
+            const active = b === btn;
+            b.classList.toggle('active', active);
+            b.setAttribute('aria-pressed', String(active));
+          });
+          workGroups.forEach(el => {
+            const show = target === 'all' || el.dataset.workGroup === target;
+            el.classList.toggle('is-work-hidden', !show);
+          });
+          SFX.select();
+        });
+      });
+    }
+
+    // E. Staggered Reveal Delay Assignment for sibling cards
+    document.querySelectorAll('.dossier-grid, .more-grid, .cert-grid, .toolbox-grid, .studio-grid, .dual-teasers, .process-grid').forEach(grid => {
+      [...grid.children].forEach((child, idx) => {
+        if (child.classList.contains('rv')) {
+          child.style.setProperty('--rv-delay', `${Math.min(idx * 75, 300)}ms`);
+        }
+      });
+    });
+
+    // F. Smooth Cross-Page Transition Curtain (index.html ⇄ studio.html ⇄ story.html)
+    if (!isReducedMotion()) {
+      const veil = document.createElement('div');
+      veil.className = 'page-veil';
+      veil.setAttribute('aria-hidden', 'true');
+      const veilLabel = document.createElement('span');
+      veilLabel.className = 'page-veil-label';
+      veil.appendChild(veilLabel);
+      document.body.appendChild(veil);
+
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href') || '';
+        if (!href || href.startsWith('#') || href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:') || a.hasAttribute('download') || a.target === '_blank') return;
+        if (!/\.(html)(#.*)?$/i.test(href)) return;
+        a.addEventListener('click', e => {
+          if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+          e.preventDefault();
+          const lower = href.toLowerCase();
+          veilLabel.textContent = lower.includes('studio')
+            ? 'Entering Web Studio'
+            : lower.includes('story')
+              ? 'Opening Chronicles'
+              : 'Engineering Portfolio';
+          veil.classList.add('is-entering');
+          SFX.select();
+          window.setTimeout(() => { window.location.href = href; }, 430);
+        });
+      });
+    }
+
+    // G. Floating Curiosity Chapter Dock ("What's Next?" Storyteller + Chapter Map + Ambient Aura)
+    const sections = [...document.querySelectorAll('main section[id]')];
+    if (sections.length >= 3) {
+      const labels = {
+        about: 'Intro',
+        work: 'Enterprise Systems',
+        lab: 'Performance Lab',
+        experience: 'Experience',
+        achievements: 'Certifications',
+        skills: 'Toolbox',
+        contact: 'Business Card',
+        'studio-top': 'Live Sandbox',
+        showcase: '04 Live Works',
+        blueprint: 'Configurator',
+        process: 'Delivery Flow'
+      };
+      const hooks = {
+        work: '06 Architecture Blueprints',
+        lab: '120s → 0.4s Live Benchmark',
+        experience: 'Career & HCMC OU Honors',
+        achievements: '04 Verified Certs',
+        skills: 'Full-Stack Toolbox',
+        contact: 'Flip My 3D Card ↻',
+        showcase: '04 Real Client Websites',
+        blueprint: 'Estimate Your Site',
+        process: '2–5 Day Delivery'
+      };
+      const moodAuras = [
+        { x: '78%', y: '18%', c1: 'rgba(196, 70, 46, .08)', c2: 'rgba(226, 206, 176, .18)' },
+        { x: '24%', y: '34%', c1: 'rgba(59, 94, 108, .08)', c2: 'rgba(226, 206, 176, .16)' },
+        { x: '76%', y: '48%', c1: 'rgba(34, 122, 80, .08)', c2: 'rgba(196, 70, 46, .06)' },
+        { x: '30%', y: '62%', c1: 'rgba(176, 109, 34, .08)', c2: 'rgba(226, 206, 176, .16)' },
+        { x: '72%', y: '74%', c1: 'rgba(196, 70, 46, .08)', c2: 'rgba(59, 94, 108, .07)' }
+      ];
+
+      let aura = null;
+      if (!isReducedMotion()) {
+        aura = document.createElement('div');
+        aura.className = 'scroll-aura';
+        aura.setAttribute('aria-hidden', 'true');
+        document.body.prepend(aura);
+      }
+
+      const dock = document.createElement('aside');
+      dock.className = 'story-dock';
+      dock.setAttribute('aria-label', 'Chapter progress and next section');
+      const mapItemsHtml = sections.map((sec, i) => {
+        const num = String(i + 1).padStart(2, '0');
+        const name = labels[sec.id] || sec.id;
+        return `<button type="button" class="dock-map-item" data-dock-jump="${sec.id}"><b>${name}</b><span>${num}</span></button>`;
+      }).join('');
+
+      dock.innerHTML = `
+        <div class="dock-map" id="dockMap" role="menu">${mapItemsHtml}</div>
+        <button type="button" class="story-dock-trigger" id="dockMapTrigger" aria-expanded="false" aria-controls="dockMap" title="Open chapter map">
+          <div class="story-dock-ring" aria-hidden="true">
+            <svg viewBox="0 0 22 22"><circle class="ring-bg" cx="11" cy="11" r="9"/><circle class="ring-fg" id="dockRingFg" cx="11" cy="11" r="9"/></svg>
+          </div>
+          <span class="story-dock-now"><strong id="dockNowNum">01</strong> <span id="dockNowName">Intro</span> ▾</span>
+        </button>
+        <span class="story-dock-divider" aria-hidden="true"></span>
+        <button type="button" class="story-dock-next" id="dockNextBtn">Next: <span id="dockNextName">06 Architecture Blueprints</span> ↓</button>
+      `;
+      document.body.appendChild(dock);
+
+      const ringFg = dock.querySelector('#dockRingFg');
+      const nowNum = dock.querySelector('#dockNowNum');
+      const nowName = dock.querySelector('#dockNowName');
+      const nextBtn = dock.querySelector('#dockNextBtn');
+      const mapEl = dock.querySelector('#dockMap');
+      const mapTrigger = dock.querySelector('#dockMapTrigger');
+      const mapBtns = [...dock.querySelectorAll('[data-dock-jump]')];
+      const circum = 56.55;
+      let activeIdx = 0;
+
+      const setMapOpen = (open) => {
+        mapEl?.classList.toggle('is-open', open);
+        mapTrigger?.setAttribute('aria-expanded', String(open));
+      };
+      mapTrigger?.addEventListener('click', e => {
+        e.stopPropagation();
+        SFX.tick();
+        setMapOpen(!mapEl?.classList.contains('is-open'));
+      });
+      document.addEventListener('click', e => {
+        if (mapEl?.classList.contains('is-open') && !dock.contains(e.target)) setMapOpen(false);
+      });
+      mapBtns.forEach(b => {
+        b.addEventListener('click', () => {
+          const target = document.getElementById(b.dataset.dockJump);
+          setMapOpen(false);
+          SFX.select();
+          target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      });
+
+      const updateDock = () => {
+        const y = window.scrollY;
+        const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+        const pct = Math.min(1, Math.max(0, y / maxScroll));
+        if (ringFg) ringFg.style.strokeDashoffset = String((circum * (1 - pct)).toFixed(2));
+        dock.classList.toggle('is-visible', y > 180);
+
+        const probe = y + window.innerHeight * 0.36;
+        let idx = 0;
+        sections.forEach((sec, i) => {
+          if (sec.offsetTop <= probe) idx = i;
+        });
+        activeIdx = idx;
+        const curId = sections[idx].id;
+        if (nowNum) nowNum.textContent = String(idx + 1).padStart(2, '0');
+        if (nowName) nowName.textContent = labels[curId] || curId;
+        mapBtns.forEach((b, i) => b.classList.toggle('active', i === idx));
+
+        if (aura) {
+          const mood = moodAuras[idx % moodAuras.length];
+          aura.style.setProperty('--aura-x', mood.x);
+          aura.style.setProperty('--aura-y', mood.y);
+          aura.style.setProperty('--aura-c1', mood.c1);
+          aura.style.setProperty('--aura-c2', mood.c2);
+        }
+
+        const isLast = idx >= sections.length - 1;
+        if (isLast) {
+          if (nextBtn) nextBtn.innerHTML = `Back to <span>Top</span> ↑`;
+        } else {
+          const nextId = sections[idx + 1].id;
+          const hookText = hooks[nextId] || labels[nextId] || nextId;
+          if (nextBtn) nextBtn.innerHTML = `Next: <span>${hookText}</span> ↓`;
+        }
+      };
+
+      nextBtn?.addEventListener('click', () => {
+        SFX.tick();
+        setMapOpen(false);
+        if (activeIdx >= sections.length - 1) {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          sections[activeIdx + 1].scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+
+      window.addEventListener('scroll', updateDock, { passive: true });
+      updateDock();
+    }
+
+    // G2. Scroll-Triggered Shimmer Sweep + Spring Metric Count-Up
+    if ('IntersectionObserver' in window && !isReducedMotion()) {
+      const shimmerTargets = document.querySelectorAll('.hero-perf-card, .dossier-card, .perf-pill-card, .cert-card, .exhibit-stage, .studio-card');
+      const shimmerObs = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('shimmer-play');
+          shimmerObs.unobserve(entry.target);
+        });
+      }, { threshold: 0.2 });
+      shimmerTargets.forEach(el => {
+        el.classList.add('shimmer-card');
+        shimmerObs.observe(el);
+      });
+
+      const countTargets = [...document.querySelectorAll('.studio-stats b')];
+      const countObs = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          const el = entry.target;
+          countObs.unobserve(el);
+          const raw = el.textContent.trim();
+          const m = raw.match(/^([^\d]*)(\d+)(.*)$/);
+          if (!m) return;
+          const prefix = m[1], targetNum = parseInt(m[2], 10), suffix = m[3];
+          const pad = m[2].length > 1 && m[2].startsWith('0') ? m[2].length : 0;
+          const dur = 760;
+          const t0 = performance.now();
+          const step = now => {
+            const p = Math.min(1, (now - t0) / dur);
+            const val = Math.round((1 - Math.pow(1 - p, 3)) * targetNum);
+            el.textContent = `${prefix}${pad ? String(val).padStart(pad, '0') : val}${suffix}`;
+            if (p < 1) requestAnimationFrame(step);
+            else el.textContent = raw;
+          };
+          requestAnimationFrame(step);
+        });
+      }, { threshold: 0.4 });
+      countTargets.forEach(el => countObs.observe(el));
+    }
+
+    // H. Ambient Spring Cursor Orb + Subtle 3D Perspective Tilt (desktop fine pointer)
+    if (isFinePointer && !isReducedMotion()) {
+      const orb = document.createElement('div');
+      orb.className = 'cursor-orb';
+      orb.setAttribute('aria-hidden', 'true');
+      const orbLabel = document.createElement('span');
+      orbLabel.className = 'cursor-orb-label';
+      orb.appendChild(orbLabel);
+      document.body.appendChild(orb);
+
+      let tx = -100, ty = -100, cx = -100, cy = -100, rafId = 0;
+      const loop = () => {
+        cx += (tx - cx) * 0.18;
+        cy += (ty - cy) * 0.18;
+        orb.style.transform = `translate3d(${cx.toFixed(1)}px, ${cy.toFixed(1)}px, 0)`;
+        if (Math.abs(tx - cx) > 0.2 || Math.abs(ty - cy) > 0.2) {
+          rafId = requestAnimationFrame(loop);
+        } else {
+          rafId = 0;
+        }
+      };
+
+      document.addEventListener('pointermove', e => {
+        tx = e.clientX;
+        ty = e.clientY;
+        orb.classList.add('is-active');
+        if (!rafId) rafId = requestAnimationFrame(loop);
+      }, { passive: true });
+
+      document.addEventListener('pointerleave', () => orb.classList.remove('is-active'));
+
+      const bindOrbLabel = (selector, text) => {
+        document.querySelectorAll(selector).forEach(el => {
+          el.addEventListener('pointerenter', () => {
+            orbLabel.textContent = text;
+            orb.classList.add('is-pill');
+          });
+          el.addEventListener('pointerleave', () => orb.classList.remove('is-pill'));
+        });
+      };
+      bindOrbLabel('#headBtn, #speechBubble', 'OPEN');
+      bindOrbLabel('.studio-shot-wrap, .exhibit-shot-link', 'LIVE ↗');
+      bindOrbLabel('.cert-card', 'VERIFY');
+      bindOrbLabel('.biz-card-stage', 'FLIP ↻');
+      bindOrbLabel('.chronicles-teaser', 'EXPLORE →');
+
+      // Subtle 3D tilt (±3deg) on featured gallery/cert cards
+      document.querySelectorAll('.studio-card, .cert-card').forEach(card => {
+        card.classList.add('tilt-card');
+        card.addEventListener('pointermove', e => {
+          const r = card.getBoundingClientRect();
+          const rx = (((e.clientY - r.top) / r.height) - 0.5) * -5;
+          const ry = (((e.clientX - r.left) / r.width) - 0.5) * 5;
+          card.style.transform = `perspective(900px) rotateX(${rx.toFixed(2)}deg) rotateY(${ry.toFixed(2)}deg) translateY(-4px)`;
+        }, { passive: true });
+        card.addEventListener('pointerleave', () => {
+          card.style.transform = '';
+        });
+      });
+
+      // Scroll-velocity subtle parallax on Criss-Cross Ribbon
+      const ribbons = [...document.querySelectorAll('.cross-ribbon')];
+      if (ribbons.length > 0) {
+        let lastY = window.scrollY;
+        window.addEventListener('scroll', () => {
+          const dy = window.scrollY - lastY;
+          lastY = window.scrollY;
+          const shift = Math.max(-18, Math.min(18, dy * 0.35));
+          ribbons.forEach((r, i) => {
+            const angle = r.classList.contains('back') ? 1.35 : -1.35;
+            const dir = i % 2 === 0 ? 1 : -1;
+            r.style.transform = `rotate(${angle}deg) translate3d(${(shift * dir).toFixed(1)}px, 0, 0)`;
+          });
+        }, { passive: true });
+      }
+    }
   })();
 })();
