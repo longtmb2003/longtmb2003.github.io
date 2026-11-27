@@ -172,8 +172,8 @@ audit-event-log
     },
     {
       id: 'oracle',
-      tag: 'Performance',
-      title: 'Oracle Tuning (~300× Faster) ⚡',
+      tag: 'Performance · ~300×',
+      title: 'Performance Tuning (120s → 0.4s) ⚡',
       text: 'A critical organisation screen used to make everyone wait about two minutes. I followed the execution plan to one filter that looked harmless, changed it to use the indexed organisation ID, and watched the same screen return in ~0.4s. That moment made performance work feel less like magic and more like patient investigation.',
       chips: ['Oracle DB', 'Execution Plans', 'Query Tuning', '~300× Boost'],
       visual: `<div class="mat mat-term"><div class="mat-bar"><i></i><i></i><i></i><span>execution plan</span></div><pre><span class="c">-- before · ~120s</span>
@@ -195,21 +195,13 @@ c.init(ENCRYPT_MODE, key,
 <span class="c">// stored with expiry + attempt counter</span></pre><span class="mat-cap">simplified</span></div>`
     },
     {
-      id: 'aws',
-      tag: 'Just started · 2026',
-      title: 'AWS Solutions Architect ☁️',
-      text: 'Actively preparing for the AWS Certified Solutions Architect – Associate (SAA-C03). Bridging software and cloud infra: resilient multi-AZ VPC topologies, Kubernetes orchestration, Docker pipelines, and cost-effective scalability.',
-      chips: ['AWS SAA-C03', 'Kubernetes', 'Docker', 'Multi-AZ'],
-      visual: `<div class="mat mat-paper"><div class="mat-note">SAA-C03 · just started<br>☐ IAM &amp; accounts<br>☐ VPC, subnets, NAT<br>☐ S3 · RDS · DynamoDB<br>☐ HA &amp; disaster recovery</div><span class="mat-cap">my study list</span></div>`
-    },,
-    {
       id: 'sql',
-      tag: 'HackerRank · Jul 2026',
+      tag: 'HackerRank · Verified',
       title: 'SQL (Advanced) Certified 🏅',
-      text: 'Earned the HackerRank SQL (Advanced) certificate in July 2026. The exercises sharpened joins, window functions and query design — the same fundamentals I use when reading and reshaping production queries.',
+      text: 'Earned the HackerRank SQL (Advanced) certificate alongside Linux Foundation LFEL1004 & Claude Code in Action. The fundamentals directly power how I read and reshape production queries.',
       chips: ['HackerRank Certified', 'Window Functions', 'Query Design'],
-      visual: `<div class="mat mat-paper"><div class="mat-ticket"><span class="mat-kicker">Certificate · HackerRank</span><strong>SQL (Advanced)</strong><span>Long Tran</span><span>Issued Jul 5, 2026</span><a href="https://www.hackerrank.com/certificates/801c9ad5b55e" target="_blank" rel="noopener noreferrer" class="mat-stamp" style="text-decoration:none;cursor:pointer;">✓ Certified ↗</a></div></div>`
-    },,,
+      visual: `<div class="mat mat-paper"><div class="mat-ticket"><span class="mat-kicker">Certificate · HackerRank</span><strong>SQL (Advanced)</strong><span>Long Tran</span><span>Verified Credential</span><a href="https://www.hackerrank.com/certificates/801c9ad5b55e" target="_blank" rel="noopener noreferrer" class="mat-stamp" style="text-decoration:none;cursor:pointer;">✓ Certified ↗</a></div></div>`
+    }
   ];
 
   (() => {
@@ -1510,7 +1502,6 @@ c.init(ENCRYPT_MODE, key,
       railItems.forEach(btn => {
         const idx = Number(btn.dataset.exhibitIdx);
         btn.addEventListener('click', () => selectExhibit(idx, true));
-        btn.addEventListener('mouseenter', () => selectExhibit(idx, false));
       });
     }
 
@@ -2541,20 +2532,7 @@ c.init(ENCRYPT_MODE, key,
       bindOrbLabel('.biz-card-stage', 'FLIP ↻');
       bindOrbLabel('.chronicles-teaser', 'EXPLORE →');
 
-      // Subtle 3D tilt (±3deg) on featured gallery/cert cards
-      document.querySelectorAll('.studio-card, .cert-card').forEach(card => {
-        card.classList.add('tilt-card');
-        card.addEventListener('pointermove', e => {
-          const r = card.getBoundingClientRect();
-          const rx = (((e.clientY - r.top) / r.height) - 0.5) * -5;
-          const ry = (((e.clientX - r.left) / r.width) - 0.5) * 5;
-          card.style.transform = `perspective(900px) rotateX(${rx.toFixed(2)}deg) rotateY(${ry.toFixed(2)}deg) translateY(-4px)`;
-        }, { passive: true });
-        card.addEventListener('pointerleave', () => {
-          card.style.transform = '';
-        });
-      });
-
+      // Keep card hover calm & steady (no dizzy 3D wobble when sweeping cursor fast)
       // Scroll-velocity subtle parallax on Criss-Cross Ribbon
       const ribbons = [...document.querySelectorAll('.cross-ribbon')];
       if (ribbons.length > 0) {
